@@ -1,0 +1,11 @@
+# VERIFY
+
+All paths in this file are relative to the `igcse-chem-pipeline` folder.
+
+Read `agents/03_verifier.md` and follow it exactly.
+
+Your assigned topic is: [TOPIC]
+
+Handle only batches whose id starts with `T<NN>` for that topic, including its `-fix<N>` batches. Ignore all others completely, including for queue counts, and update only `logs/progress/topic_<NN>.json`. The one exception is the calibration count, which looks across every topic.
+
+Do exactly this one stage, then stop.

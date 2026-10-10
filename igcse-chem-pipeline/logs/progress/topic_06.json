@@ -1,0 +1,13 @@
+{
+  "topic_id": "6",
+  "topic_name": "Chemical reactions",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+  ],
+  "last_batch": "T06_20260923_01"
+}

@@ -1,0 +1,17 @@
+{
+  "topic_id": "11",
+  "topic_name": "Organic chemistry",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5",
+    "11.6",
+    "11.7",
+    "11.8"
+  ],
+  "last_batch": "T11_20260925_01"
+}

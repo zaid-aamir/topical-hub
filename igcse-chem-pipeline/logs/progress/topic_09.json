@@ -1,0 +1,15 @@
+{
+  "topic_id": "9",
+  "topic_name": "Metals",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5",
+    "9.6"
+  ],
+  "last_batch": "T09_20260925_01"
+}

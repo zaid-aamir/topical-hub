@@ -1,0 +1,203 @@
+{
+  "old_correct": {
+    "Q1": "A",
+    "Q2": "B",
+    "Q3": "A",
+    "Q4": "A",
+    "Q5": "B",
+    "Q6": "C",
+    "Q7": "B",
+    "Q8": "C",
+    "Q9": "B",
+    "Q10": "B",
+    "Q11": "B",
+    "Q12": "A",
+    "Q13": "B",
+    "Q14": "A",
+    "Q15": "B"
+  },
+  "mapping": {
+    "Q1": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "Q2": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "Q3": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "Q4": {
+      "A": "C",
+      "B": "A",
+      "C": "B",
+      "D": "D"
+    },
+    "Q5": {
+      "B": "D",
+      "A": "A",
+      "C": "B",
+      "D": "C"
+    },
+    "Q6": {
+      "C": "B",
+      "A": "A",
+      "B": "C",
+      "D": "D"
+    },
+    "Q7": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "Q8": {
+      "C": "A",
+      "A": "B",
+      "B": "C",
+      "D": "D"
+    },
+    "Q9": {
+      "B": "C",
+      "A": "A",
+      "C": "B",
+      "D": "D"
+    },
+    "Q10": {
+      "B": "A",
+      "A": "B",
+      "C": "C",
+      "D": "D"
+    },
+    "Q11": {
+      "B": "C",
+      "A": "A",
+      "C": "B",
+      "D": "D"
+    },
+    "Q12": {
+      "A": "C",
+      "B": "A",
+      "C": "B",
+      "D": "D"
+    },
+    "Q13": {
+      "B": "D",
+      "A": "A",
+      "C": "B",
+      "D": "C"
+    },
+    "Q14": {
+      "A": "B",
+      "B": "A",
+      "C": "C",
+      "D": "D"
+    },
+    "Q15": {
+      "B": "D",
+      "A": "A",
+      "C": "B",
+      "D": "C"
+    }
+  },
+  "old_opts": {
+    "Q1": {
+      "A": "Exothermic, because thermal energy is transferred to the surroundings",
+      "B": "Endothermic, because thermal energy is transferred to the surroundings",
+      "C": "Exothermic, because thermal energy is taken in from the surroundings",
+      "D": "Endothermic, because thermal energy is taken in from the surroundings"
+    },
+    "Q2": {
+      "A": "Exothermic, because thermal energy is taken in from the surroundings",
+      "B": "Endothermic, because thermal energy is taken in from the surroundings",
+      "C": "Exothermic, because thermal energy is released to the surroundings",
+      "D": "Endothermic, because thermal energy is released to the surroundings"
+    },
+    "Q3": {
+      "A": "Exothermic, because thermal energy is transferred to the surroundings",
+      "B": "Endothermic, because thermal energy is transferred to the surroundings",
+      "C": "Exothermic, because thermal energy is taken in from the surroundings",
+      "D": "Endothermic, because thermal energy is taken in from the surroundings"
+    },
+    "Q4": {
+      "A": "\u2212394 kJ/mol",
+      "B": "+394 kJ/mol",
+      "C": "\u2212197 kJ/mol",
+      "D": "+788 kJ/mol"
+    },
+    "Q5": {
+      "A": "Positive, because the reaction is exothermic",
+      "B": "Negative, because the reaction is exothermic",
+      "C": "Positive, because the reaction is endothermic",
+      "D": "Negative, because the reaction is endothermic"
+    },
+    "Q6": {
+      "A": "Positive, because the reaction is exothermic",
+      "B": "Negative, because the reaction is exothermic",
+      "C": "Positive, because the reaction is endothermic",
+      "D": "Negative, because the reaction is endothermic"
+    },
+    "Q7": {
+      "A": "The total energy released when the reaction takes place",
+      "B": "The minimum energy that colliding particles must have in order to react",
+      "C": "The energy needed to break all the bonds in the reactants",
+      "D": "The difference in energy between the reactants and the products"
+    },
+    "Q8": {
+      "A": "\u2206H decreases by 110 kJ/mol",
+      "B": "\u2206H increases by 110 kJ/mol",
+      "C": "\u2206H is unchanged",
+      "D": "\u2206H becomes zero"
+    },
+    "Q9": {
+      "A": "Breaking the O=O bond releases energy, and forming the S=O bonds also releases energy",
+      "B": "Breaking the O=O bond absorbs energy, and forming the S=O bonds releases energy",
+      "C": "Breaking the O=O bond absorbs energy, and forming the S=O bonds also absorbs energy",
+      "D": "Breaking the O=O bond releases energy, and forming the S=O bonds absorbs energy"
+    },
+    "Q10": {
+      "A": "Exothermic, because energy is released as the Cl\u2013Cl bond breaks",
+      "B": "Endothermic, because energy is absorbed as the Cl\u2013Cl bond breaks",
+      "C": "Exothermic, because energy is absorbed as the Cl\u2013Cl bond breaks",
+      "D": "Endothermic, because energy is released as the Cl\u2013Cl bond breaks"
+    },
+    "Q11": {
+      "A": "The energy needed to break the bonds in the reactants is greater than the energy released forming the bonds in the products",
+      "B": "The energy needed to break the bonds in the reactants is less than the energy released forming the bonds in the products",
+      "C": "The energy needed to break the bonds in the reactants is exactly equal to the energy released forming the bonds in the products",
+      "D": "No bonds are broken in an exothermic reaction"
+    },
+    "Q12": {
+      "A": "\u2212184 kJ/mol",
+      "B": "+184 kJ/mol",
+      "C": "\u2212247 kJ/mol",
+      "D": "\u22121540 kJ/mol"
+    },
+    "Q13": {
+      "A": "Activation energy decreases, \u2206H decreases",
+      "B": "Activation energy decreases, \u2206H unchanged",
+      "C": "Activation energy unchanged, \u2206H decreases",
+      "D": "Activation energy increases, \u2206H unchanged"
+    },
+    "Q14": {
+      "A": "It is exothermic, because thermal energy is released to the surroundings",
+      "B": "It is endothermic, because thermal energy is released to the surroundings",
+      "C": "It is exothermic, because thermal energy is absorbed from the surroundings",
+      "D": "It is endothermic, because thermal energy is absorbed from the surroundings"
+    },
+    "Q15": {
+      "A": "\u221292 kJ/mol",
+      "B": "+92 kJ/mol",
+      "C": "\u221246 kJ/mol",
+      "D": "+184 kJ/mol"
+    }
+  }
+}

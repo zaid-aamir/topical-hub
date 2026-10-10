@@ -1,0 +1,12 @@
+{
+  "topic_id": "3",
+  "topic_name": "Stoichiometry",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "3.1",
+    "3.2",
+    "3.3"
+  ],
+  "last_batch": "T03_20260923_01"
+}

@@ -1,0 +1,14 @@
+{
+  "topic_id": "12",
+  "topic_name": "Experimental techniques and chemical analysis",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "12.1",
+    "12.2",
+    "12.3",
+    "12.4",
+    "12.5"
+  ],
+  "last_batch": "T12_20260925_01"
+}

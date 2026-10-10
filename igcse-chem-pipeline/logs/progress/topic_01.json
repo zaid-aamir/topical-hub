@@ -1,0 +1,11 @@
+{
+  "topic_id": "1",
+  "topic_name": "States of matter",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "1.1",
+    "1.2"
+  ],
+  "last_batch": "T01_20260923_01"
+}

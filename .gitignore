@@ -1,0 +1,32 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+out/
+.astro/
+.next/
+.vercel/
+.netlify/
+.wrangler/
+.cache/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Cambridge's syllabus PDF is their copyright: keep it on this computer only, never in the public repo
+igcse-chem-pipeline/reference/*.pdf

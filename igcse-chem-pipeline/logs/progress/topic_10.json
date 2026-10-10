@@ -1,0 +1,12 @@
+{
+  "topic_id": "10",
+  "topic_name": "Chemistry of the environment",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "10.1",
+    "10.2",
+    "10.3"
+  ],
+  "last_batch": "T10_20260925_01"
+}

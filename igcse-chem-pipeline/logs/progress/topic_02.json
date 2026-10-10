@@ -1,0 +1,16 @@
+{
+  "topic_id": "2",
+  "topic_name": "Atoms, elements and compounds",
+  "batches_drafted": 1,
+  "batches_approved": 1,
+  "subtopics_covered": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7"
+  ],
+  "last_batch": "T02_20260923_01"
+}
