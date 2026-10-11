@@ -31,7 +31,7 @@ The build settings below are the only ones that matter. Everything else can stay
    5. **Build output directory:** `dist`.
    6. Click **Root directory (advanced)** to expand it and enter `Website`. This is essential: the website project lives in the `Website/` folder, and the build reads the question content from `../igcse-chem-pipeline/`, which is in the same clone.
    7. Click **Environment variables (advanced)**, then **Add variable**. Variable name `NODE_VERSION`, value `24`. (The repo also has `Website/.nvmrc` saying `24`; the variable is a belt-and-braces copy so the build never falls back to an old Node.)
-8. Click **Save and Deploy**. Cloudflare clones the repo, runs `npm install` and `npm run build` inside `Website/`, and uploads `dist/`. The build log streams on screen; the content validation prints one line like `360 questions across 12 topics`, then `check-dist: OK`. The first build takes two to four minutes.
+8. Click **Save and Deploy**. Cloudflare clones the repo, runs `npm install` and `npm run build` inside `Website/`, and uploads `dist/`. The build log streams on screen; the content validation prints one line, `Content OK: 12 topics, 360 questions (180 MCQ, 180 structured)`, and the post-build checks end with `check-dist: OK`. The first build takes two to four minutes.
 9. When the log ends with **Success**, the page shows the deployment URL. For a project named `topical-hub` it is `https://topical-hub.pages.dev` (each deployment also gets its own `https://<hash>.topical-hub.pages.dev` preview URL, listed under **Deployments**). Click **Continue to project** and then the URL to open the live site.
 
 ## 2. If the project name was not available

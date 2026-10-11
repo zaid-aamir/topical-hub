@@ -267,7 +267,8 @@ test.describe('topic page', () => {
     await expect(row.locator('td').first().locator('button.option')).toHaveCount(1);
     await row.locator('td').last().click();
     await expect(row.locator('button.option')).toHaveAttribute('data-state', /^(correct|wrong)$/);
-    const card = page.locator('article.question', { has: row });
+    // The enclosing card: `{ has: row }` would be re-scoped per article and match every table MCQ.
+    const card = row.locator('xpath=ancestor::article[1]');
     await expect(card).toHaveAttribute('data-answered', /^(correct|wrong)$/);
   });
 
