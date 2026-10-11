@@ -59,10 +59,12 @@ export interface McqQuestion extends QuestionBase {
   options: McqOption[];
   /**
    * Present when the options were a Markdown table whose first column is the letter.
-   * `headers` are the header-row cells after the (blank) first cell, Markdown inline source.
+   * `headers` are the header-row cells after the first cell, Markdown inline source.
+   * `letterHeader` is the first header cell when it is not blank (2 of the 20 table MCQs have
+   * one, e.g. "Option" or "sample"); absent when that cell is blank.
    * Render as a table where each row is a selectable option.
    */
-  optionTable?: { headers: string[] };
+  optionTable?: { headers: string[]; letterHeader?: string };
   answer: OptionLetter;
   /** Markdown. Always present for MCQs. */
   rationale: string;
@@ -107,6 +109,13 @@ export interface MarkPoint {
   text: string;
   /** Nested bullets (indented `- ` lines), e.g. under "any three from (1 each, max 3):". */
   children: MarkPoint[];
+  /**
+   * True when this line was plain text inside a part section rather than a `- ` bullet, e.g.
+   * "Any two from:" or "Advantages of method 1 (fermentation), any two from:" (T08 Q17, T11 Q5,
+   * Q18, Q22, Q28). It labels the bullets that follow it: render it without a bullet marker.
+   * Always `kind: 'point'` and no children.
+   */
+  isLabel?: boolean;
 }
 
 /** The marking points for one part or sub-part, from a head such as `**(a)** [2]` or `**(b)(i)** [1]`. */
@@ -161,6 +170,19 @@ export interface Topic {
   /** Questions in file order. */
   questions: Question[];
   counts: TopicCounts;
+  /**
+   * Set by the loader when a `## Q<n>` in questions.md has no entry in markscheme.md, an entry
+   * has no question, or the two disagree about the type (MCQ vs structured). Such questions are
+   * left out of `questions`. validateTopics() turns any entry here into a build failure, so pages
+   * never see a Topic with this field set.
+   */
+  unmatched?: UnmatchedEntry[];
+}
+
+/** One pairing problem between questions.md and markscheme.md, matched by `## Q<n>` heading. */
+export interface UnmatchedEntry {
+  number: number;
+  problem: 'question-without-entry' | 'entry-without-question' | 'type-mismatch';
 }
 
 /** Thrown by the loader/validator when the content violates the contract. Fails the build. */
