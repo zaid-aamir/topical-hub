@@ -1,0 +1,40 @@
+---
+/**
+ * One question on the printable questions page: the head, the stem, static options or the parts
+ * with ruled answer lines. No answers, no buttons, no report link. The article keeps id="q<n>"
+ * so the render audit can locate each question.
+ */
+import type { Question } from '../../content';
+import { mdBlock } from '../../lib/markdown';
+import QuestionHead from './QuestionHead.astro';
+import McqOptions from './McqOptions.astro';
+import StructuredParts from './StructuredParts.astro';
+
+interface Props {
+  question: Question;
+}
+
+const { question } = Astro.props;
+const anchor = `q${question.number}`;
+const stemId = `${anchor}-stem`;
+---
+<article
+  class="question"
+  id={anchor}
+  data-question-id={question.id}
+  data-tier={question.tier}
+  data-type={question.type}
+  data-number={question.number}
+>
+  <QuestionHead question={question} />
+  <div class="question-body">
+    {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem)} />}
+    {
+      question.type === 'mcq' ? (
+        <McqOptions question={question} stemId={stemId} interactive={false} />
+      ) : (
+        <StructuredParts question={question} lines />
+      )
+    }
+  </div>
+</article>

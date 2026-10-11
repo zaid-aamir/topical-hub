@@ -1,0 +1,30 @@
+---
+/**
+ * One question on the printable mark scheme: the head (number, tier, sub-topic, marks) and the
+ * same answer panel the topic page shows, always visible. id="q<n>" keeps the numbering aligned
+ * with the questions sheet and lets the render audit locate each entry.
+ */
+import type { Question } from '../../content';
+import QuestionHead from './QuestionHead.astro';
+import AnswerPanel from './AnswerPanel.astro';
+
+interface Props {
+  question: Question;
+}
+
+const { question } = Astro.props;
+const anchor = `q${question.number}`;
+---
+<article
+  class="question"
+  id={anchor}
+  data-question-id={question.id}
+  data-tier={question.tier}
+  data-type={question.type}
+  data-number={question.number}
+>
+  <QuestionHead question={question} />
+  <div class="question-body">
+    <AnswerPanel question={question} />
+  </div>
+</article>

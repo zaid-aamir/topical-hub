@@ -1,0 +1,49 @@
+---
+/**
+ * Printable mark scheme: /igcse/chemistry-0620/<slug>/print-answers/
+ *
+ * Every question's answer, marking points and worked solution, numbered to match the questions
+ * sheet. Uses the same AnswerPanel/MarkScheme components as the topic page so the markup is the
+ * same everywhere. noindex; no header; only the one "Print this page" button.
+ */
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PrintAnswer from '../../../../components/question/PrintAnswer.astro';
+import { countsSentence } from '../../../../components/question/labels';
+import { loadAllTopics } from '../../../../content';
+import { SITE_NAME, SUBJECT } from '../../../../config';
+
+export const getStaticPaths = (() =>
+  loadAllTopics().map((topic) => ({ params: { slug: topic.slug }, props: { topic } }))) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { topic } = Astro.props;
+const topicPath = `/${SUBJECT.path}/${topic.slug}/`;
+const path = `${topicPath}print-answers/`;
+const title = `${topic.topicName} — printable mark scheme | ${SITE_NAME}`;
+const description =
+  `Printable mark scheme and worked solutions for the ${topic.counts.total} exam-style questions on ${topic.topicName} ` +
+  `for ${SUBJECT.fullName}, numbered to match the printable questions.`;
+---
+<BaseLayout title={title} description={description} canonicalPath={path} noindex bodyClass="print-page">
+  <div class="shell">
+    <div class="measure">
+      <div class="page-title">
+        <p class="page-label">{SITE_NAME}, {SUBJECT.shortName} exam-style questions: mark scheme</p>
+        <h1>{topic.topicName}</h1>
+        <p class="page-summary">Mark scheme and worked solutions for {countsSentence(topic.counts)}.</p>
+      </div>
+
+      <div class="print-actions">
+        <button class="button" type="button" onclick="window.print()">Print this page</button>
+        <a href={topicPath}>Back to the topic page</a>
+        <a href={`${topicPath}print/`}>Print the questions</a>
+      </div>
+
+      <div class="question-list">
+        {topic.questions.map((question) => <PrintAnswer question={question} />)}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
