@@ -2,6 +2,8 @@
 
 ## What this is
 
+**Site name: Topical Hub.** Repo: github.com/zaid-aamir/topical-hub (public).
+
 A website of **original, exam-style topical practice questions** for Cambridge IGCSE Chemistry 0620 (syllabus for exams in 2026–2028), with mark schemes and worked solutions. It's free, organised by topic, and will be funded by ads later.
 
 The owner is an IGCSE student building this as a business, and wants **speed**: ship a working site fast, then improve it. Talk to them directly, with no flattery. Push back on weak ideas, and say plainly when something is fine.
