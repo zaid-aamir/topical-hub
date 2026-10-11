@@ -1,0 +1,1258 @@
+/*
+ * Topical Hub global styles: reset, type, layout primitives and the components shared across pages.
+ *
+ * Conventions
+ * - Element selectors only in the base layer below (specificity 0,0,1).
+ * - Components are single classes plus attribute states (0,1,0 / 0,2,0). Nothing fights.
+ * - Colours and sizes come from tokens.css. No shadows, no gradients, no decorative motion.
+ * - Class names and expected markup are listed in the component comments; they are the contract
+ *   between this file and the page templates (see CONTRACT.md, "DOM contract").
+ */
+
+/* ---------------------------------------------------------------------------
+   1. Reset
+   --------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote,
+dl,
+dd,
+fieldset,
+legend {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  fill: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+   2. Base type and page
+   --------------------------------------------------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 1.5rem;
+    --card-pad: 1.5rem;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: var(--leading-heading);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3,
+h4 {
+  font-weight: 600;
+  line-height: var(--leading-tight);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+h4 {
+  font-size: var(--text-body);
+}
+
+p,
+li {
+  max-width: var(--measure);
+}
+
+small,
+.small {
+  font-size: var(--text-small);
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+sup,
+sub {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.45em;
+}
+
+sub {
+  top: 0.25em;
+}
+
+code,
+kbd,
+pre {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: var(--space-6) 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Focus: always visible, same ring everywhere. */
+:focus {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Default controls. Any bare <button> or <select> is already a usable 44px control;
+   the component classes below only change what differs. */
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+button:disabled {
+  cursor: default;
+  border-color: var(--rule);
+  background: var(--paper);
+  color: var(--ink-muted);
+}
+
+select {
+  min-height: var(--tap);
+  max-width: 100%;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* Tables: 1px rules, tabular figures, a little air in each cell. Every table produced from
+   Markdown is wrapped in .table-scroll by the markdown module. */
+table {
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+}
+
+th,
+td {
+  padding: 0.375rem 0.625rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  background: var(--paper);
+}
+
+/* ---------------------------------------------------------------------------
+   3. Layout primitives and utilities
+   --------------------------------------------------------------------------- */
+
+/* Page shell: header, footer and page content sit inside one of these. */
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Text measure. .prose also adds vertical rhythm for static pages (About, Privacy, 404). */
+.measure,
+.prose {
+  max-width: var(--measure);
+}
+
+.prose > * + * {
+  margin-top: 1em;
+}
+
+.prose > h2 {
+  margin-top: 2em;
+}
+
+.prose > h3 {
+  margin-top: 1.5em;
+}
+
+.prose > h2 + *,
+.prose > h3 + * {
+  margin-top: 0.5em;
+}
+
+.prose > ul,
+.prose > ol {
+  padding-left: 1.5rem;
+}
+
+.prose li + li {
+  margin-top: 0.35em;
+}
+
+/* Main region grows so the footer sits at the bottom of short pages. */
+.site-main {
+  flex: 1 0 auto;
+  padding-block: var(--space-6) var(--space-12);
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Horizontal scroll container for tables. Never wider than its parent, never the page. */
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: var(--space-3);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll:focus-visible {
+  outline-offset: 0;
+}
+
+/* Plain horizontal link row, e.g. "Print the questions   Print the mark scheme". No dots, no arrows. */
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  padding: 0;
+  margin: var(--space-4) 0;
+  list-style: none;
+}
+
+/* ---------------------------------------------------------------------------
+   4. Site header and footer
+   --------------------------------------------------------------------------- */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  min-height: 3.5rem;
+  padding-block: var(--space-2);
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  padding-block: var(--space-2);
+}
+
+.wordmark:hover {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0 var(--space-2);
+  color: var(--ink);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav-link:hover,
+.site-nav-link[aria-current='page'] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+  text-decoration-color: var(--accent);
+}
+
+.theme-toggle {
+  width: var(--tap);
+  height: var(--tap);
+  padding: 0;
+  flex: none;
+}
+
+/* Narrow phones: keep the header on one row. */
+@media (max-width: 25rem) {
+  .wordmark {
+    font-size: 1.25rem;
+  }
+
+  .site-nav {
+    gap: var(--space-1);
+  }
+
+  .site-nav-link {
+    font-size: 0.875rem;
+  }
+}
+
+.theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-moon {
+  display: var(--show-moon);
+}
+
+.icon-sun {
+  display: var(--show-sun);
+}
+
+.site-footer {
+  margin-top: auto;
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+.site-footer-inner {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+}
+
+/* ---------------------------------------------------------------------------
+   5. Page title block: small muted label, then the h1, then a plain sentence.
+      <div class="page-title"><p class="page-label">Topic 4</p><h1>Electrochemistry</h1>
+        <p class="page-summary">30 questions: 15 multiple choice, 15 structured.</p></div>
+   --------------------------------------------------------------------------- */
+
+.page-title {
+  margin-block: var(--space-2) var(--space-6);
+}
+
+.page-label {
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.page-summary {
+  margin-top: var(--space-3);
+}
+
+/* ---------------------------------------------------------------------------
+   6. Topic grid (subject page). The whole card is one link.
+      <ul class="topic-grid"><li><a class="topic-card" href="…">
+        <span class="topic-card-number">4</span>
+        <span class="topic-card-name">Electrochemistry</span>
+        <span class="topic-card-counts">30 questions: 15 multiple choice, 15 structured</span>
+      </a></li></ul>
+   --------------------------------------------------------------------------- */
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-4);
+  padding: 0;
+  margin-block: var(--space-6);
+  list-style: none;
+}
+
+.topic-grid > li {
+  max-width: none;
+  display: flex;
+}
+
+.topic-card {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: var(--space-3);
+  row-gap: var(--space-1);
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.topic-card:hover {
+  border-color: var(--accent);
+}
+
+.topic-card:hover .topic-card-name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  text-decoration-color: var(--accent);
+}
+
+.topic-card-number {
+  grid-row: 1 / span 2;
+  font-family: var(--font-serif);
+  font-size: var(--text-numeral);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+.topic-card-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.topic-card-counts {
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+/* ---------------------------------------------------------------------------
+   7. Filters (topic page). Groups are fieldsets with a legend; the legend is floated so it
+      becomes an ordinary flex item instead of the browser's special legend box.
+      <div class="filters" data-filters>
+        <fieldset data-filter-group="tier"><legend>Tier</legend>
+          <button type="button" data-filter="tier" data-value="all" aria-pressed="true">All</button> …
+        </fieldset>
+        <fieldset data-filter-group="subtopic"><legend>Subtopic</legend><select data-filter="subtopic">…</select></fieldset>
+        <p class="filter-hint">Extended candidates are examined on Core and Supplement content, so keep All.</p>
+      </div>
+      <p data-filter-count role="status">Showing 30 of 30 questions</p>
+      <p data-score role="status">3 / 5 correct</p>
+   --------------------------------------------------------------------------- */
+
+.filters {
+  display: grid;
+  gap: var(--space-3);
+  margin-block: var(--space-5);
+}
+
+.filters fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.filters legend {
+  float: left;
+  width: 4.5rem;
+  flex: none;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+
+/* On phones the label takes its own row, so wrapped pills line up under the first pill. */
+@media (max-width: 40rem) {
+  .filters legend {
+    width: 100%;
+  }
+}
+
+.filters [data-filter] {
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.filters button[data-filter] {
+  padding: 0 0.875rem;
+}
+
+.filters button[data-filter]:hover {
+  border-color: var(--accent);
+}
+
+.filters button[data-filter][aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.filters select[data-filter] {
+  flex: 1 1 14rem;
+  max-width: 24rem;
+  min-width: 0;
+}
+
+.filter-hint {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+p[data-filter-count] {
+  margin-block: var(--space-4);
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+}
+
+p[data-score] {
+  margin-block: var(--space-4);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+p[data-score]:empty,
+p[data-filter-count]:empty {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   8. Question card
+      <article class="question" id="q16" data-question-id="…" data-tier="supplement" data-type="structured" …>
+        <div class="question-head">
+          <span class="question-number">16</span>
+          <span class="badge badge-supplement">Supplement</span>
+          <span class="subtopic">Electrolysis</span>
+          <span class="marks">[7]</span>          (brackets are in the text)
+        </div>
+        <div class="question-body">…stem, parts or options…</div>
+        <p class="feedback" role="status"></p>     (MCQ)
+        <div class="question-actions">
+          <button class="toggle-answer" aria-expanded="false" aria-controls="q16-answer">Show mark scheme</button>
+          <a class="report-link" href="…" target="_blank" rel="noopener noreferrer">Report an error</a>
+        </div>
+        <div class="answer" id="q16-answer" hidden>…</div>
+      </article>
+   --------------------------------------------------------------------------- */
+
+.question-list {
+  display: grid;
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+.question {
+  padding: var(--card-pad);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  min-width: 0;
+  scroll-margin-top: var(--space-4);
+}
+
+.question-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.question-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-numeral);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  min-width: 1.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.badge-core {
+  color: var(--ink-muted);
+}
+
+.badge-supplement {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+  color: var(--accent);
+}
+
+.subtopic {
+  flex: 1 1 8rem;
+  min-width: 0;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+.marks {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.question-body {
+  min-width: 0;
+}
+
+.question-body > * + *,
+.stem > * + * {
+  margin-top: var(--space-3);
+}
+
+/* ---------------------------------------------------------------------------
+   9. Structured parts. Label column fixed, text wraps, marks sit flush right on the last line,
+      exactly as on a paper. Sub-parts are indented by one label column.
+      <div class="parts">
+        <div class="part"><span class="part-label">(a)</span><div class="part-text">…</div><span class="part-marks">[2]</span></div>
+        <div class="part subpart"><span class="part-label">(i)</span><div class="part-text">…</div><span class="part-marks">[1]</span></div>
+      </div>
+   --------------------------------------------------------------------------- */
+
+.parts {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.part,
+.subpart {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.subpart {
+  margin-left: 2.25rem;
+}
+
+.part-label {
+  flex: 0 0 2.25rem;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.part-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.part-text > * + * {
+  margin-top: var(--space-2);
+}
+
+.part-marks {
+  flex: none;
+  align-self: flex-end;
+  margin-left: auto;
+  padding-left: var(--space-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+   10. MCQ options: a stack of full-width buttons. Letter in a fixed 2rem slot, text wraps.
+       <div class="options" role="group" aria-labelledby="q1-stem">
+         <button class="option" type="button" data-letter="A" aria-pressed="false">
+           <span class="option-letter">A</span><span class="option-text">…</span>
+         </button>
+       </div>
+       States: [aria-pressed="true"] chosen; [data-state="correct"|"wrong"] after answering; disabled.
+   --------------------------------------------------------------------------- */
+
+.options {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.option {
+  --state: var(--accent);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: var(--tap);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  transition:
+    background-color var(--duration) ease-out,
+    border-color var(--duration) ease-out;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.option-letter {
+  flex: 0 0 2rem;
+  font-weight: 600;
+}
+
+.option-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.option[aria-pressed='true'] {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.option[data-state='correct'] {
+  --state: var(--ok);
+  background: var(--ok-soft);
+  border-color: var(--ok);
+  box-shadow: inset 0 0 0 1px var(--ok);
+}
+
+.option[data-state='wrong'] {
+  --state: var(--bad);
+  background: var(--bad-soft);
+  border-color: var(--bad);
+  box-shadow: inset 0 0 0 1px var(--bad);
+}
+
+/* Disabled options keep full ink contrast; the state colours carry the result. */
+.option:disabled {
+  color: var(--ink);
+  opacity: 1;
+}
+
+.option:disabled:not([data-state]) {
+  border-color: var(--rule);
+  background: var(--surface);
+}
+
+/* Tick or cross after the text of a marked option, drawn in the state colour. */
+.option[data-state]::after {
+  content: '';
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  margin-top: 0.1em;
+  background: var(--state);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.option[data-state='correct']::after {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.option[data-state='wrong']::after {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 5l10 10M15 5L5 15' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Table-shaped options: one row per option, the whole row is the tap target.
+   <div class="table-scroll"><table class="options-table"><thead><tr><th>…</th>…</tr></thead>
+     <tbody><tr class="option-row" data-letter="A"><td><button class="option" data-letter="A" aria-pressed="false">A</button></td><td>yes</td>…</tr>
+   The row takes the same states as its button (set on the row, or found via :has()). */
+
+.options-table {
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.options-table td {
+  vertical-align: middle;
+  transition: background-color var(--duration) ease-out;
+}
+
+.options-table .option {
+  width: var(--tap);
+  min-width: var(--tap);
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  transition: none;
+}
+
+.options-table .option::after {
+  display: none;
+}
+
+.options-table .option[data-state] {
+  box-shadow: none;
+  color: var(--ink);
+}
+
+.option-row {
+  cursor: pointer;
+}
+
+.option-row:hover td {
+  background: var(--accent-soft);
+}
+
+.option-row[aria-pressed='true'] td,
+.option-row:has(.option[aria-pressed='true']) td {
+  background: var(--accent-soft);
+}
+
+.option-row[data-state='correct'] td,
+.option-row:has(.option[data-state='correct']) td {
+  background: var(--ok-soft);
+}
+
+.option-row[data-state='wrong'] td,
+.option-row:has(.option[data-state='wrong']) td {
+  background: var(--bad-soft);
+}
+
+.option-row:has(.option:disabled) {
+  cursor: default;
+}
+
+/* Non-interactive option list for print pages: same letter slot, no buttons.
+   <ol class="options-static"><li class="option-static"><span class="option-letter">A</span><span class="option-text">…</span></li></ol> */
+.options-static {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.option-static {
+  display: flex;
+  gap: var(--space-2);
+  max-width: none;
+}
+
+/* ---------------------------------------------------------------------------
+   11. Feedback line (MCQ). Text is always present; the tick or cross is drawn with currentColor,
+       keyed on the card's data-answered state.
+   --------------------------------------------------------------------------- */
+
+.feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-weight: 600;
+  max-width: none;
+}
+
+.feedback:empty {
+  display: none;
+}
+
+.feedback::before {
+  content: '';
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2em;
+  background: currentColor;
+  -webkit-mask: var(--icon, none) center / contain no-repeat;
+  mask: var(--icon, none) center / contain no-repeat;
+}
+
+.question[data-answered='correct'] .feedback {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color: var(--ok);
+}
+
+.question[data-answered='wrong'] .feedback {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 5l10 10M15 5L5 15' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  color: var(--bad);
+}
+
+/* ---------------------------------------------------------------------------
+   12. Question actions and buttons
+   --------------------------------------------------------------------------- */
+
+.question-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* Outlined accent button; filled when active. .button is the same look for other pages. */
+.toggle-answer,
+.button {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.toggle-answer:hover,
+.button:hover {
+  background: var(--accent-soft);
+}
+
+.toggle-answer[aria-expanded='true'],
+.button-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.toggle-answer[aria-expanded='true']:hover,
+.button-primary:hover {
+  background: var(--accent);
+}
+
+.report-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  margin-left: auto;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+/* ---------------------------------------------------------------------------
+   13. Answer panel, mark scheme and worked solution
+       <div class="answer" id="q16-answer" hidden>
+         <section class="markscheme" aria-labelledby="q16-ms"><h3 class="ms-heading" id="q16-ms">Mark scheme</h3>
+           <div class="ms-part">
+             <div class="ms-head"><span class="ms-label">(a)</span><span class="ms-note">any two from:</span><span class="ms-marks">[2]</span></div>
+             <ul class="ms-points"><li class="ms-point" data-kind="point">hydrogen (1)</li>
+               <li class="ms-point" data-kind="allow"><span class="ms-keyword">ALLOW</span> H2</li></ul>
+           </div>
+         </section>
+         <section class="worked-solution"><h3 class="ws-heading">Worked solution</h3>…</section>
+       </div>
+       MCQ panels: <p class="ms-answer">Answer: C</p> then the worked solution or rationale.
+   --------------------------------------------------------------------------- */
+
+.answer {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--paper);
+  min-width: 0;
+}
+
+.answer > * + * {
+  margin-top: var(--space-4);
+}
+
+.ms-heading,
+.ws-heading {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: 0;
+  margin: 0 0 var(--space-2);
+}
+
+.ms-answer {
+  font-weight: 600;
+}
+
+.ms-part + .ms-part {
+  margin-top: var(--space-3);
+}
+
+.ms-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  font-weight: 600;
+}
+
+.ms-label {
+  flex: none;
+  min-width: 2.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ms-note {
+  flex: 1 1 8rem;
+  min-width: 0;
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ms-marks {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ms-points {
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ms-point {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-top: var(--space-1);
+  max-width: none;
+}
+
+.ms-point::before {
+  content: '';
+  position: absolute;
+  left: 0.125rem;
+  top: 0.7em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.ms-point > .ms-points {
+  margin-top: var(--space-1);
+}
+
+/* Keyword points: the keyword is in the text (ALLOW, REJECT, IGNORE, ECF); the colour and the
+   left rule only reinforce it. */
+.ms-point[data-kind='allow'],
+.ms-point[data-kind='reject'],
+.ms-point[data-kind='ignore'],
+.ms-point[data-kind='ecf'] {
+  --kind: var(--accent);
+  padding-left: 1rem;
+  border-left: 3px solid var(--kind);
+}
+
+.ms-point[data-kind='allow']::before,
+.ms-point[data-kind='reject']::before,
+.ms-point[data-kind='ignore']::before,
+.ms-point[data-kind='ecf']::before {
+  display: none;
+}
+
+.ms-point[data-kind='reject'] {
+  --kind: var(--bad);
+}
+
+.ms-point[data-kind='ignore'] {
+  --kind: var(--ink-muted);
+}
+
+.ms-keyword {
+  color: var(--kind, var(--accent));
+  font-size: var(--text-small);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.worked-solution {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+}
+
+.worked-solution > * + * {
+  margin-top: var(--space-3);
+}
+
+/* ---------------------------------------------------------------------------
+   14. Print-page specific screen styles (the print rules live in print.css)
+   --------------------------------------------------------------------------- */
+
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-block: var(--space-4);
+}

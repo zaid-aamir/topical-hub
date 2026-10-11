@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, SUBJECT, GITHUB_REPO, REPORT_FORM_URL } from '../config';
+
+const subjectPath = `/${SUBJECT.path}/`;
+const repoUrl = `https://github.com/${GITHUB_REPO}`;
+const reportsGoToForm = REPORT_FORM_URL !== '';
+---
+<BaseLayout
+  title={`About ${SITE_NAME}`}
+  description={`What ${SITE_NAME} is: free, original exam-style topical questions for ${SUBJECT.fullName}, with mark schemes and worked solutions, how they were made, and how to report an error.`}
+  canonicalPath="/about/"
+>
+  <div class="shell">
+    <article class="prose">
+      <h1>About {SITE_NAME}</h1>
+      <p>
+        {SITE_NAME} is a free collection of exam-style practice questions for
+        <a href={subjectPath}>{SUBJECT.fullName}</a> (the syllabus for exams in {SUBJECT.syllabusYears}),
+        sorted by topic. Every question comes with a mark scheme and a worked solution, hidden until you
+        choose to look, so you can attempt the question first and then mark your own answer.
+      </p>
+
+      <h2>Where the questions come from</h2>
+      <p>
+        The questions are original. They are written in the style of the exam so that practising them
+        feels like the real thing, but they are not past papers, and nothing is copied from Cambridge
+        question papers or mark schemes.
+      </p>
+      <p>
+        Every question, mark scheme and worked solution was written and checked with AI tools. No teacher
+        or examiner has reviewed them. Mistakes are possible: if anything looks wrong, use the Report an
+        error link under that question.
+      </p>
+
+      <h2>Reporting an error</h2>
+      <p>
+        Each question has a Report an error link. It opens a short report with the question's id and web
+        address already filled in, so you only need to say what looks wrong.
+        {reportsGoToForm
+          ? ' The report goes to a form, and nothing on the form identifies you unless you choose to add your details.'
+          : ' Until the report form is ready, the link opens a new issue on the public GitHub repository, which needs a GitHub account.'}
+      </p>
+      <p>
+        Reports are read, and corrections are published to the site. The whole site, including every
+        question, is open source
+        <a href={repoUrl} rel="noopener">on GitHub</a>.
+      </p>
+
+      <h2>Independence</h2>
+      <p>
+        {SITE_NAME} is independent and is not affiliated with or endorsed by Cambridge University Press
+        &amp; Assessment. The qualification is named only to say what the questions are for.
+      </p>
+
+      <h2>Free, with no accounts</h2>
+      <p>
+        Everything on the site is free to use. There is nothing to sign up for and nothing to download.
+        The site keeps no record of what you answer; your score on a page lasts only as long as the page is
+        open. See the <a href="/privacy/">privacy page</a> for the full list, which is short.
+      </p>
+    </article>
+  </div>
+</BaseLayout>

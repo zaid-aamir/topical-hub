@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, SUBJECT } from '../config';
+
+const subjectPath = `/${SUBJECT.path}/`;
+---
+<BaseLayout
+  title={`Page not found | ${SITE_NAME}`}
+  description={`This page does not exist on ${SITE_NAME}. Go to the home page or browse the ${SUBJECT.shortName} topics.`}
+  canonicalPath="/404"
+  noindex
+>
+  <div class="shell">
+    <article class="prose">
+      <h1>Page not found</h1>
+      <p>There is no page at this address. It may have been mistyped, or the page may have moved.</p>
+      <ul>
+        <li><a href="/">Go to the home page</a></li>
+        <li><a href={subjectPath}>Browse the {SUBJECT.shortName} topics</a></li>
+      </ul>
+    </article>
+  </div>
+</BaseLayout>

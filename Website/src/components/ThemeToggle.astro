@@ -1,0 +1,59 @@
+---
+/**
+ * Light/dark theme toggle. See CONTRACT.md "DOM contract":
+ * button#theme-toggle with aria-pressed="true" when dark is active and an aria-label saying what
+ * pressing will do. The choice is stored under localStorage["theme"] inside try/catch.
+ *
+ * Which icon shows is decided in CSS from the effective theme (tokens --show-moon/--show-sun), so
+ * it is right at first paint even before this script runs: a moon when light is active (pressing
+ * goes dark), a sun when dark is active. The script keeps the aria state in step.
+ */
+---
+<button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+  <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+    <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" />
+  </svg>
+  <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" />
+  </svg>
+</button>
+
+<script>
+  const button = document.getElementById('theme-toggle');
+  if (button instanceof HTMLButtonElement) {
+    const root = document.documentElement;
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const LIGHT_PAPER = '#f4f5f2';
+    const DARK_PAPER = '#0f161d';
+
+    const isDark = (): boolean => {
+      const chosen = root.dataset.theme;
+      return chosen ? chosen === 'dark' : systemDark.matches;
+    };
+
+    const reflect = (): void => {
+      const dark = isDark();
+      button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      const colour = dark ? DARK_PAPER : LIGHT_PAPER;
+      document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+        meta.setAttribute('content', colour);
+      });
+    };
+
+    button.addEventListener('click', () => {
+      const next = isDark() ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {
+        // Storage can be unavailable (private mode, blocked). The theme still changes for this page.
+      }
+      reflect();
+    });
+
+    systemDark.addEventListener('change', reflect);
+    reflect();
+  }
+</script>

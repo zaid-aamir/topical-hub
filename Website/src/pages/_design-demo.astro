@@ -1,0 +1,302 @@
+---
+/**
+ * PRIVATE design demo. The leading underscore keeps this file out of routing, so it is never
+ * built or published. It renders every component state with realistic content so the styles in
+ * src/styles can be checked by eye (see test-results/demo-shots.mjs for the screenshot script).
+ *
+ * The markup here is hand-written HTML in the shapes described in CONTRACT.md and global.css.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Design demo | Topical Hub"
+  description="Private page that renders every component state for visual checks."
+  canonicalPath="/_design-demo/"
+  noindex
+>
+  <div class="shell">
+    <div class="page-title">
+      <p class="page-label">Topic 4</p>
+      <h1>Electrochemistry</h1>
+      <p class="page-summary">30 questions: 15 multiple choice, 15 structured.</p>
+    </div>
+
+    <div class="filters" data-filters>
+      <fieldset data-filter-group="tier">
+        <legend>Tier</legend>
+        <button type="button" data-filter="tier" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="tier" data-value="core" aria-pressed="false">Core only</button>
+        <button type="button" data-filter="tier" data-value="supplement" aria-pressed="false">Supplement only</button>
+      </fieldset>
+      <fieldset data-filter-group="type">
+        <legend>Type</legend>
+        <button type="button" data-filter="type" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="type" data-value="mcq" aria-pressed="false">Multiple choice</button>
+        <button type="button" data-filter="type" data-value="structured" aria-pressed="false">Structured</button>
+      </fieldset>
+      <fieldset data-filter-group="subtopic">
+        <legend>Subtopic</legend>
+        <label class="visually-hidden" for="demo-subtopic">Subtopic</label>
+        <select id="demo-subtopic" data-filter="subtopic">
+          <option value="all">All subtopics</option>
+          <option value="4.1">4.1 Electrolysis</option>
+          <option value="4.2">4.2 Hydrogen–oxygen fuel cells</option>
+        </select>
+      </fieldset>
+      <p class="filter-hint">Extended candidates are examined on Core and Supplement content, so keep All.</p>
+    </div>
+    <ul class="link-row">
+      <li><a href="#">Print the questions</a></li>
+      <li><a href="#">Print the mark scheme</a></li>
+    </ul>
+    <p data-filter-count role="status">Showing 30 of 30 questions</p>
+    <p data-score role="status">1 / 2 correct</p>
+
+    <div class="measure">
+      <div class="question-list">
+        <!-- MCQ, plain options, not yet answered -->
+        <article class="question" id="q1" data-question-id="T04_20260923_01_Q1" data-tier="core" data-type="mcq" data-subtopic="4.1" data-number="1">
+          <div class="question-head">
+            <h2 class="question-number"><span class="visually-hidden">Question </span>1</h2>
+            <span class="badge badge-core">Core</span>
+            <span class="subtopic">Electrolysis</span>
+            <span class="marks">[1]</span>
+          </div>
+          <div class="question-body">
+            <div class="stem" id="q1-stem">
+              <p>Which statement is the correct definition of electrolysis?</p>
+            </div>
+            <div class="options" role="group" aria-labelledby="q1-stem">
+              <button class="option" type="button" data-letter="A" aria-pressed="false"><span class="option-letter">A</span><span class="option-text">The decomposition of an ionic compound, when molten or in aqueous solution, by the passage of an electric current</span></button>
+              <button class="option" type="button" data-letter="B" aria-pressed="false"><span class="option-letter">B</span><span class="option-text">The breakdown of a compound using heat energy alone</span></button>
+              <button class="option" type="button" data-letter="C" aria-pressed="false"><span class="option-letter">C</span><span class="option-text">The reaction of a metal with an acid to produce a salt and hydrogen</span></button>
+              <button class="option" type="button" data-letter="D" aria-pressed="false"><span class="option-letter">D</span><span class="option-text">The process by which a metal ore is converted into the pure metal by heating with carbon</span></button>
+            </div>
+          </div>
+          <p class="feedback" role="status"></p>
+          <div class="question-actions">
+            <button class="toggle-answer" type="button" aria-expanded="false" aria-controls="q1-answer">Show answer</button>
+            <a class="report-link" href="#" target="_blank" rel="noopener noreferrer">Report an error</a>
+          </div>
+          <div class="answer" id="q1-answer" hidden></div>
+        </article>
+
+        <!-- MCQ, answered wrong, panel open -->
+        <article class="question" id="q2" data-question-id="T04_20260923_01_Q2" data-tier="core" data-type="mcq" data-subtopic="4.1" data-number="2" data-answered="wrong">
+          <div class="question-head">
+            <h2 class="question-number"><span class="visually-hidden">Question </span>2</h2>
+            <span class="badge badge-core">Core</span>
+            <span class="subtopic">Electrolysis</span>
+            <span class="marks">[1]</span>
+          </div>
+          <div class="question-body">
+            <div class="stem" id="q2-stem">
+              <p>Molten zinc chloride is electrolysed using two graphite rods connected to a battery. What is the name given to the positive electrode?</p>
+            </div>
+            <div class="options" role="group" aria-labelledby="q2-stem">
+              <button class="option" type="button" data-letter="A" aria-pressed="true" data-state="wrong" disabled><span class="option-letter">A</span><span class="option-text">cathode</span></button>
+              <button class="option" type="button" data-letter="B" aria-pressed="false" data-state="correct" disabled><span class="option-letter">B</span><span class="option-text">anode</span></button>
+              <button class="option" type="button" data-letter="C" aria-pressed="false" disabled><span class="option-letter">C</span><span class="option-text">electrolyte</span></button>
+              <button class="option" type="button" data-letter="D" aria-pressed="false" disabled><span class="option-letter">D</span><span class="option-text">terminal</span></button>
+            </div>
+          </div>
+          <p class="feedback" role="status">Not quite. The answer is B</p>
+          <div class="question-actions">
+            <button class="toggle-answer" type="button" aria-expanded="true" aria-controls="q2-answer">Hide answer</button>
+            <a class="report-link" href="#" target="_blank" rel="noopener noreferrer">Report an error</a>
+          </div>
+          <div class="answer" id="q2-answer">
+            <p class="ms-answer">Answer: B</p>
+            <section class="worked-solution">
+              <h3 class="ws-heading" id="q2-ws">Worked solution</h3>
+              <p>In electrolysis the electrode connected to the positive terminal of the power supply is the anode. Negative ions (anions) are attracted to it and lose electrons there, so chloride ions, Cl−, are oxidised to chlorine gas, Cl2. The cathode is the negative electrode, where Zn2+ ions gain electrons. "Electrolyte" is the molten zinc chloride itself and "terminal" is part of the battery, not an electrode.</p>
+            </section>
+          </div>
+        </article>
+
+        <!-- MCQ, table-shaped options, answered correct -->
+        <article class="question" id="q3" data-question-id="T01_20260923_01_Q1" data-tier="core" data-type="mcq" data-subtopic="1.1" data-number="3" data-answered="correct">
+          <div class="question-head">
+            <h2 class="question-number"><span class="visually-hidden">Question </span>3</h2>
+            <span class="badge badge-core">Core</span>
+            <span class="subtopic">Solids, liquids and gases</span>
+            <span class="marks">[1]</span>
+          </div>
+          <div class="question-body">
+            <div class="stem" id="q3-stem">
+              <p>Which row correctly describes the properties of a liquid?</p>
+            </div>
+            <div class="table-scroll" tabindex="0">
+              <table class="options-table" role="group" aria-labelledby="q3-stem">
+                <thead>
+                  <tr><th><span class="visually-hidden">Option</span></th><th>Has a fixed shape?</th><th>Has a fixed volume?</th><th>Flows easily?</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="option-row" data-letter="A"><td><button class="option" type="button" data-letter="A" aria-pressed="false" disabled>A</button></td><td>yes</td><td>yes</td><td>no</td></tr>
+                  <tr class="option-row" data-letter="B"><td><button class="option" type="button" data-letter="B" aria-pressed="false" disabled>B</button></td><td>no</td><td>no</td><td>yes</td></tr>
+                  <tr class="option-row" data-letter="C"><td><button class="option" type="button" data-letter="C" aria-pressed="true" data-state="correct" disabled>C</button></td><td>no</td><td>yes</td><td>yes</td></tr>
+                  <tr class="option-row" data-letter="D"><td><button class="option" type="button" data-letter="D" aria-pressed="false" disabled>D</button></td><td>yes</td><td>no</td><td>no</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="feedback" role="status">Correct</p>
+          <div class="question-actions">
+            <button class="toggle-answer" type="button" aria-expanded="false" aria-controls="q3-answer">Show answer</button>
+            <a class="report-link" href="#" target="_blank" rel="noopener noreferrer">Report an error</a>
+          </div>
+          <div class="answer" id="q3-answer" hidden></div>
+        </article>
+
+        <!-- Structured, with a GFM table in the stem, parts and sub-parts, mark scheme open -->
+        <article class="question" id="q16" data-question-id="T04_20260923_01_Q16" data-tier="supplement" data-type="structured" data-subtopic="4.1" data-number="16">
+          <div class="question-head">
+            <h2 class="question-number"><span class="visually-hidden">Question </span>16</h2>
+            <span class="badge badge-supplement">Supplement</span>
+            <span class="subtopic">Electrolysis</span>
+            <span class="marks">[7]</span>
+          </div>
+          <div class="question-body">
+            <div class="stem">
+              <p>Two separate electrolysis experiments are carried out using inert electrodes. The table shows the electrolyte used in each experiment and the volume of gas collected at the anode after 10 minutes.</p>
+              <div class="table-scroll" tabindex="0">
+                <table>
+                  <thead>
+                    <tr><th>Experiment</th><th>Electrolyte</th><th>Concentration / mol/dm³</th><th>Gas at anode / cm³</th><th>Observation at anode</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>sodium iodide(aq)</td><td>0.05</td><td>24</td><td>colourless gas, relights a glowing splint</td></tr>
+                    <tr><td>2</td><td>sodium iodide(aq)</td><td>2.00</td><td>0</td><td>brown colour spreads from the electrode</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="parts">
+              <div class="part"><span class="part-label">(a)</span><div class="part-text"><p>State the product formed at the cathode in both experiments, and explain why sodium metal is not formed there.</p></div><span class="part-marks">[2]</span></div>
+              <div class="part"><span class="part-label">(b)</span><div class="part-text"><p>Identify the product formed at the anode in</p></div></div>
+              <div class="part subpart"><span class="part-label">(i)</span><div class="part-text"><p>Experiment 1 (dilute solution)</p></div><span class="part-marks">[1]</span></div>
+              <div class="part subpart"><span class="part-label">(ii)</span><div class="part-text"><p>Experiment 2 (concentrated solution).</p></div><span class="part-marks">[1]</span></div>
+              <div class="part"><span class="part-label">(c)</span><div class="part-text"><p>Explain, in terms of the ions present, why the anode product is different between the two experiments. Write an ionic half-equation for the reaction at the anode in Experiment 2, showing Cu²⁺-style charges as in I⁻ and SO₄²⁻.</p></div><span class="part-marks">[3]</span></div>
+            </div>
+          </div>
+          <div class="question-actions">
+            <button class="toggle-answer" type="button" aria-expanded="true" aria-controls="q16-answer">Hide mark scheme</button>
+            <a class="report-link" href="#" target="_blank" rel="noopener noreferrer">Report an error</a>
+          </div>
+          <div class="answer" id="q16-answer">
+            <section class="markscheme">
+              <h3 class="ms-heading" id="q16-ms">Mark scheme</h3>
+              <div class="ms-part">
+                <div class="ms-head"><span class="ms-label">(a)</span><span class="ms-marks">[2]</span></div>
+                <ul class="ms-points">
+                  <li class="ms-point" data-kind="point">hydrogen (1)</li>
+                  <li class="ms-point" data-kind="point">sodium is more reactive than hydrogen, so H+ ions are discharged (reduced) in preference to Na+ ions (1)</li>
+                  <li class="ms-point" data-kind="allow"><span class="ms-keyword">ALLOW</span> H2 / hydrogen gas</li>
+                  <li class="ms-point" data-kind="reject"><span class="ms-keyword">REJECT</span> sodium</li>
+                </ul>
+              </div>
+              <div class="ms-part">
+                <div class="ms-head"><span class="ms-label">(b)(i)</span><span class="ms-marks">[1]</span></div>
+                <ul class="ms-points">
+                  <li class="ms-point" data-kind="point">oxygen (1)</li>
+                  <li class="ms-point" data-kind="ignore"><span class="ms-keyword">IGNORE</span> references to water being split</li>
+                </ul>
+              </div>
+              <div class="ms-part">
+                <div class="ms-head"><span class="ms-label">(b)(ii)</span><span class="ms-marks">[1]</span></div>
+                <ul class="ms-points">
+                  <li class="ms-point" data-kind="point">iodine (1)</li>
+                </ul>
+              </div>
+              <div class="ms-part">
+                <div class="ms-head"><span class="ms-label">(c)</span><span class="ms-note">any three from:</span><span class="ms-marks">[3]</span></div>
+                <ul class="ms-points">
+                  <li class="ms-point" data-kind="point">in the dilute solution, iodide ions are present at a much lower concentration than hydroxide ions / water molecules, so hydroxide ions / water are preferentially discharged, producing oxygen (1)</li>
+                  <li class="ms-point" data-kind="point">in the concentrated solution, iodide ions are at a much higher concentration, so iodide ions are discharged instead, producing iodine (1)</li>
+                  <li class="ms-point" data-kind="point">2I− → I2 + 2e− (1)
+                    <ul class="ms-points">
+                      <li class="ms-point" data-kind="point">correct species and balancing (1)</li>
+                      <li class="ms-point" data-kind="allow"><span class="ms-keyword">ALLOW</span> 2I− − 2e− → I2</li>
+                    </ul>
+                  </li>
+                  <li class="ms-point" data-kind="ecf"><span class="ms-keyword">ECF</span> for a correct explanation based on an incorrect product named in (b)(ii)</li>
+                </ul>
+              </div>
+            </section>
+            <section class="worked-solution">
+              <h3 class="ws-heading" id="q16-ws">Worked solution</h3>
+              <p>In both experiments the cathode product is the same: hydrogen, because sodium is far more reactive than hydrogen and so Na+ ions are never discharged in aqueous solution; H+ ions are reduced instead. At the anode, the outcome depends on concentration.</p>
+              <p>In the dilute solution there are relatively few I− ions compared with the water and OH− present, so oxygen is produced from the oxidation of water or hydroxide ions. In the concentrated solution there are far more I− ions available, so these are discharged in preference, producing iodine: 2I− → I2 + 2e−. Selective discharge therefore depends not only on general reactivity but also on the relative concentration of ions in solution.</p>
+            </section>
+          </div>
+        </article>
+
+        <!-- Structured, closed -->
+        <article class="question" id="q6" data-question-id="T04_20260923_01_Q6" data-tier="core" data-type="structured" data-subtopic="4.1" data-number="6">
+          <div class="question-head">
+            <h2 class="question-number"><span class="visually-hidden">Question </span>6</h2>
+            <span class="badge badge-core">Core</span>
+            <span class="subtopic">Electrolysis</span>
+            <span class="marks">[6]</span>
+          </div>
+          <div class="question-body">
+            <div class="stem">
+              <p>Molten lead(II) bromide is electrolysed in a school laboratory using two graphite electrodes connected to a power supply.</p>
+            </div>
+            <div class="parts">
+              <div class="part"><span class="part-label">(a)</span><div class="part-text"><p>State which electrode, the anode or the cathode, is the negative electrode, and name the product that forms there.</p></div><span class="part-marks">[2]</span></div>
+              <div class="part"><span class="part-label">(b)</span><div class="part-text"><p>State the product that forms at the anode.</p></div><span class="part-marks">[1]</span></div>
+              <div class="part"><span class="part-label">(c)</span><div class="part-text"><p>Describe two observations that would confirm the identity of the product at the anode.</p></div><span class="part-marks">[2]</span></div>
+              <div class="part"><span class="part-label">(d)</span><div class="part-text"><p>State the name of the molten substance that is decomposed in this experiment.</p></div><span class="part-marks">[1]</span></div>
+            </div>
+          </div>
+          <div class="question-actions">
+            <button class="toggle-answer" type="button" aria-expanded="false" aria-controls="q6-answer">Show mark scheme</button>
+            <a class="report-link" href="#" target="_blank" rel="noopener noreferrer">Report an error</a>
+          </div>
+          <div class="answer" id="q6-answer" hidden></div>
+        </article>
+      </div>
+    </div>
+
+    <h2>Topic cards</h2>
+    <ul class="topic-grid">
+      <li>
+        <a class="topic-card" href="#">
+          <span class="topic-card-number">1</span>
+          <span class="topic-card-name">States of matter</span>
+          <span class="topic-card-counts">30 questions: 15 multiple choice, 15 structured</span>
+        </a>
+      </li>
+      <li>
+        <a class="topic-card" href="#">
+          <span class="topic-card-number">4</span>
+          <span class="topic-card-name">Electrochemistry</span>
+          <span class="topic-card-counts">30 questions: 15 multiple choice, 15 structured</span>
+        </a>
+      </li>
+      <li>
+        <a class="topic-card" href="#">
+          <span class="topic-card-number">12</span>
+          <span class="topic-card-name">Experimental techniques and chemical analysis</span>
+          <span class="topic-card-counts">30 questions: 14 multiple choice, 16 structured</span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Buttons, badges and answer lines</h2>
+    <div class="measure">
+      <div class="print-actions">
+        <button type="button" class="button">Print this page</button>
+        <button type="button" class="button-primary">Primary</button>
+        <button type="button">Plain button</button>
+        <button type="button" disabled>Disabled</button>
+        <span class="badge badge-core">Core</span>
+        <span class="badge badge-supplement">Supplement</span>
+      </div>
+      <p>Unicode formulae for glyph checks: H₂SO₄, Cu²⁺, SO₄²⁻, 2H₂O, 25 cm³, 0.1 mol/dm³.</p>
+      <div class="part"><span class="part-label">(a)</span><div class="part-text"><p>Print pages add ruled answer lines under each part, two per mark.</p></div><span class="part-marks">[2]</span></div>
+      <div class="answer-lines" data-lines="4"></div>
+    </div>
+  </div>
+</BaseLayout>

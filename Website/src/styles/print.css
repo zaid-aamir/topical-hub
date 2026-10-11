@@ -1,0 +1,241 @@
+/*
+ * Print rules. Imported by BaseLayout on every page; everything in here is scoped to @media print
+ * or to body.print-page, so it costs nothing on screen elsewhere.
+ *
+ * Answer lines: `<div class="answer-lines" data-lines="4"></div>` renders four ruled lines, 9 mm
+ * apart, light grey. The count comes from the data-lines attribute (1 to 20 are mapped below);
+ * for other counts set the custom property inline as well: style="--lines: 24".
+ * The lines are a repeating gradient, so print-color-adjust: exact keeps them when the browser's
+ * "print backgrounds" option is off; the last line is a real border as a fallback.
+ */
+
+.answer-lines {
+  --line-colour: var(--rule);
+  height: calc(var(--lines, 2) * 9mm - 1px);
+  margin: 2mm 0 5mm 3rem;
+  border-bottom: 1px solid var(--line-colour);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(9mm - 1px),
+    var(--line-colour) calc(9mm - 1px),
+    var(--line-colour) 9mm
+  );
+  background-size: 100% 9mm;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.answer-lines[data-lines='1'] { --lines: 1; }
+.answer-lines[data-lines='2'] { --lines: 2; }
+.answer-lines[data-lines='3'] { --lines: 3; }
+.answer-lines[data-lines='4'] { --lines: 4; }
+.answer-lines[data-lines='5'] { --lines: 5; }
+.answer-lines[data-lines='6'] { --lines: 6; }
+.answer-lines[data-lines='7'] { --lines: 7; }
+.answer-lines[data-lines='8'] { --lines: 8; }
+.answer-lines[data-lines='9'] { --lines: 9; }
+.answer-lines[data-lines='10'] { --lines: 10; }
+.answer-lines[data-lines='11'] { --lines: 11; }
+.answer-lines[data-lines='12'] { --lines: 12; }
+.answer-lines[data-lines='13'] { --lines: 13; }
+.answer-lines[data-lines='14'] { --lines: 14; }
+.answer-lines[data-lines='15'] { --lines: 15; }
+.answer-lines[data-lines='16'] { --lines: 16; }
+.answer-lines[data-lines='17'] { --lines: 17; }
+.answer-lines[data-lines='18'] { --lines: 18; }
+.answer-lines[data-lines='19'] { --lines: 19; }
+.answer-lines[data-lines='20'] { --lines: 20; }
+
+/* On screen, the print pages are a plain booklet preview: no card chrome, one column. */
+.print-page .question {
+  padding: var(--space-4) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+
+  /* Black on white whatever the theme. Tokens are redefined so every component follows. */
+  :root,
+  :root[data-theme],
+  :root:not([data-theme='light']) {
+    color-scheme: light;
+    --paper: #fff;
+    --surface: #fff;
+    --ink: #000;
+    --ink-muted: #333;
+    --rule: #777;
+    --accent: #000;
+    --on-accent: #fff;
+    --accent-soft: #fff;
+    --ok: #000;
+    --ok-soft: #fff;
+    --bad: #000;
+    --bad-soft: #fff;
+    --text-body: 11pt;
+    --text-small: 9.5pt;
+    --text-h1: 20pt;
+    --text-h2: 15pt;
+    --text-numeral: 14pt;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: #000;
+    min-height: 0;
+  }
+
+  body {
+    display: block;
+    line-height: 1.45;
+  }
+
+  .site-header,
+  .site-footer,
+  .filters,
+  .question-actions,
+  .report-link,
+  .skip-link,
+  .theme-toggle,
+  .print-actions,
+  .link-row,
+  p[data-filter-count],
+  p[data-score],
+  button:not(.option) {
+    display: none;
+  }
+
+  .site-main {
+    padding: 0;
+  }
+
+  .shell {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* The topic title is ordinary flow at the top, so it prints on the first page only. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .page-title {
+    margin: 0 0 6mm;
+  }
+
+  .question {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 4mm 0;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #bbb;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .question-list {
+    display: block;
+  }
+
+  .question-head {
+    margin-bottom: 2mm;
+  }
+
+  .badge {
+    border-color: #777;
+    background: transparent;
+    color: #000;
+  }
+
+  /* Options print as a plain list: no boxes, no states. */
+  .option {
+    min-height: 0;
+    padding: 0.5mm 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    color: #000;
+    transition: none;
+  }
+
+  .option[aria-pressed='true'],
+  .option[data-state],
+  .option:disabled {
+    box-shadow: none;
+    background: transparent;
+    color: #000;
+  }
+
+  .option::after,
+  .feedback::before {
+    display: none;
+  }
+
+  .option-row td {
+    background: transparent;
+  }
+
+  .options-table .option {
+    width: auto;
+    min-width: 0;
+    justify-content: flex-start;
+  }
+
+  .answer {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .answer[hidden] {
+    display: none !important;
+  }
+
+  .answer-lines {
+    --line-colour: #b0b0b0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ms-point[data-kind='allow'],
+  .ms-point[data-kind='reject'],
+  .ms-point[data-kind='ignore'],
+  .ms-point[data-kind='ecf'] {
+    --kind: #000;
+  }
+
+  .table-scroll {
+    overflow: visible;
+  }
+
+  table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #000;
+  }
+
+  th {
+    background: transparent;
+  }
+}

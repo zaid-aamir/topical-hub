@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, REPORT_FORM_URL } from '../config';
+
+const reportsGoToForm = REPORT_FORM_URL !== '';
+---
+<BaseLayout
+  title={`Privacy | ${SITE_NAME}`}
+  description={`${SITE_NAME} has no accounts, no cookies, no analytics and no ads. The only thing stored is your light or dark theme choice, in your own browser.`}
+  canonicalPath="/privacy/"
+>
+  <div class="shell">
+    <article class="prose">
+      <h1>Privacy</h1>
+      <p>This page is short because the site does very little with your data.</p>
+
+      <h2>What the site does not do</h2>
+      <ul>
+        <li>No accounts. There is nothing to sign up for or log in to.</li>
+        <li>No cookies.</li>
+        <li>No analytics or tracking scripts of any kind.</li>
+        <li>No ads in this version of the site.</li>
+        <li>No record of which questions you open or how you answer them. A page's "correct" count lives in memory and is gone when you leave the page.</li>
+      </ul>
+
+      <h2>The one thing stored</h2>
+      <p>
+        If you switch between the light and dark theme, your choice is saved in your browser's localStorage
+        under the key <code>theme</code>, so the site looks the same next time. That value never leaves your
+        device; clearing the site's data in your browser removes it.
+      </p>
+
+      <h2>Error reports</h2>
+      <p>
+        The Report an error link under each question takes you
+        {reportsGoToForm ? ' to a report form run by its provider' : ' to GitHub'}. Anything you write
+        there is handled by that service under its own privacy policy, not by {SITE_NAME}.
+      </p>
+
+      <h2>Hosting</h2>
+      <p>
+        The site is a set of static files served by a hosting provider. {SITE_NAME} itself runs no server
+        code and keeps no logs.
+      </p>
+    </article>
+  </div>
+</BaseLayout>
