@@ -1,0 +1,77 @@
+---
+/**
+ * The four options of an MCQ.
+ *
+ * Interactive (topic page): plain options are a stack of button.option inside
+ * div.options[role=group]; table-shaped options are table.options-table whose rows are
+ * tr.option-row with the button in the first cell (the script makes the whole row the tap target).
+ *
+ * Static (print page): ol.options-static, or the same table with a plain letter instead of a
+ * button. No states, nothing to press.
+ *
+ * Option text is Markdown inline source and is rendered with mdInline (escaped, chem formatted).
+ */
+import type { McqQuestion } from '../../content';
+import { mdInline } from '../../lib/markdown';
+
+interface Props {
+  question: McqQuestion;
+  /** id of the stem element that labels the option group. */
+  stemId: string;
+  /** False on print pages: no buttons. */
+  interactive?: boolean;
+}
+
+const { question, stemId, interactive = true } = Astro.props;
+const table = question.optionTable;
+---
+{
+  table ? (
+    <div class="table-scroll" tabindex="0">
+      <table class="options-table">
+        <thead>
+          <tr>
+            {table.letterHeader ? (
+              <th set:html={mdInline(table.letterHeader)} />
+            ) : (
+              <th><span class="visually-hidden">Option</span></th>
+            )}
+            {table.headers.map((header) => <th set:html={mdInline(header)} />)}
+          </tr>
+        </thead>
+        <tbody>
+          {question.options.map((option) => (
+            <tr class={interactive ? 'option-row' : undefined} data-letter={option.letter}>
+              <td>
+                {interactive ? (
+                  <button class="option" type="button" data-letter={option.letter} aria-pressed="false">{option.letter}</button>
+                ) : (
+                  <span class="option-letter">{option.letter}</span>
+                )}
+              </td>
+              {(option.cells ?? [option.text]).map((cell) => <td set:html={mdInline(cell)} />)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : interactive ? (
+    <div class="options" role="group" aria-labelledby={stemId}>
+      {question.options.map((option) => (
+        <button class="option" type="button" data-letter={option.letter} aria-pressed="false">
+          <span class="option-letter">{option.letter}</span>
+          <span class="option-text" set:html={mdInline(option.text)} />
+        </button>
+      ))}
+    </div>
+  ) : (
+    <ol class="options-static" role="list">
+      {question.options.map((option) => (
+        <li class="option-static">
+          <span class="option-letter">{option.letter}</span>
+          <span class="option-text" set:html={mdInline(option.text)} />
+        </li>
+      ))}
+    </ol>
+  )
+}

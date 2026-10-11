@@ -1,0 +1,38 @@
+---
+/**
+ * The contents of an answer panel, shared by the topic page (inside div.answer, hidden until
+ * opened) and the printable mark scheme (always visible).
+ *
+ * MCQ: "Answer: C" then the worked solution, or the rationale when the question has no worked
+ * solution (30 of 180 MCQs); the heading says which. Structured: the mark scheme, then the
+ * worked solution.
+ */
+import type { Question } from '../../content';
+import { mdBlock } from '../../lib/markdown';
+import MarkScheme from './MarkScheme.astro';
+
+interface Props {
+  question: Question;
+}
+
+const { question } = Astro.props;
+---
+{
+  question.type === 'mcq' ? (
+    <>
+      <p class="ms-answer">Answer: {question.answer}</p>
+      <section class="worked-solution">
+        <h3 class="ws-heading">{question.workedSolution !== undefined ? 'Worked solution' : 'Explanation'}</h3>
+        <Fragment set:html={mdBlock(question.workedSolution ?? question.rationale)} />
+      </section>
+    </>
+  ) : (
+    <>
+      <MarkScheme parts={question.markScheme} />
+      <section class="worked-solution">
+        <h3 class="ws-heading">Worked solution</h3>
+        <Fragment set:html={mdBlock(question.workedSolution)} />
+      </section>
+    </>
+  )
+}

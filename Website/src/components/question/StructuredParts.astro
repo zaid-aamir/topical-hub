@@ -1,0 +1,44 @@
+---
+/**
+ * The parts (a), (b), ... of a structured question and their sub-parts (i), (ii), ... Each row is
+ * label | text | [marks], marks flush right as on a paper. A part whose marks live only on its
+ * sub-parts has no .part-marks; a part with no text of its own (e.g. "(a) (i) ...") is just its
+ * label. With `lines`, the print page gets ruled answer space under every marked part and every
+ * sub-part: two lines per mark, at least two.
+ */
+import type { StructuredQuestion } from '../../content';
+import { mdBlock } from '../../lib/markdown';
+import { answerLineCount } from './labels';
+
+interface Props {
+  question: StructuredQuestion;
+  /** Print pages: add div.answer-lines[data-lines] under every marked part and sub-part. */
+  lines?: boolean;
+}
+
+const { question, lines = false } = Astro.props;
+---
+<div class="parts">
+  {
+    question.parts.map((part) => (
+      <>
+        <div class="part">
+          <span class="part-label">({part.label})</span>
+          {part.text !== '' && <div class="part-text" set:html={mdBlock(part.text)} />}
+          {part.marks !== null && <span class="part-marks">[{part.marks}]</span>}
+        </div>
+        {lines && part.marks !== null && <div class="answer-lines" data-lines={answerLineCount(part.marks)} />}
+        {part.subparts.map((subpart) => (
+          <>
+            <div class="part subpart">
+              <span class="part-label">({subpart.label})</span>
+              <div class="part-text" set:html={mdBlock(subpart.text)} />
+              <span class="part-marks">[{subpart.marks}]</span>
+            </div>
+            {lines && <div class="answer-lines" data-lines={answerLineCount(subpart.marks)} />}
+          </>
+        ))}
+      </>
+    ))
+  }
+</div>

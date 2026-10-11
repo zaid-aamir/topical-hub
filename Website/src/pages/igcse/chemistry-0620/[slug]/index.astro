@@ -1,0 +1,91 @@
+---
+/**
+ * Topic page: /igcse/chemistry-0620/<slug>/
+ *
+ * All 30 questions of one topic, in file order, each with its answer panel in the HTML (hidden
+ * until opened). Filters, MCQ marking and the panels are handled by src/scripts/topic.ts; with
+ * JavaScript off the <noscript> styles show every answer and hide the dead controls.
+ */
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuestionCard from '../../../../components/question/QuestionCard.astro';
+import { countsSentence } from '../../../../components/question/labels';
+import { loadAllTopics } from '../../../../content';
+import { SITE_NAME, SUBJECT } from '../../../../config';
+
+export const getStaticPaths = (() =>
+  loadAllTopics().map((topic) => ({ params: { slug: topic.slug }, props: { topic } }))) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { topic } = Astro.props;
+const path = `/${SUBJECT.path}/${topic.slug}/`;
+const title = `${topic.topicName} — ${SUBJECT.shortName} exam-style questions with answers | ${SITE_NAME}`;
+const description =
+  `${topic.counts.total} original exam-style questions on ${topic.topicName} for ${SUBJECT.fullName} ` +
+  `(${topic.counts.mcq} multiple choice, ${topic.counts.structured} structured), each with a mark scheme and worked solution.`;
+---
+<BaseLayout title={title} description={description} canonicalPath={path} ogType="article">
+  <div class="shell">
+    <div class="page-title">
+      <p class="page-label">Topic {topic.topicNumber}</p>
+      <h1>{topic.topicName}</h1>
+      <p class="page-summary">{countsSentence(topic.counts)}.</p>
+    </div>
+
+    <div class="filters" data-filters>
+      <fieldset data-filter-group="tier">
+        <legend>Tier</legend>
+        <button type="button" data-filter="tier" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="tier" data-value="core" aria-pressed="false">Core only</button>
+        <button type="button" data-filter="tier" data-value="supplement" aria-pressed="false">Supplement only</button>
+      </fieldset>
+      <fieldset data-filter-group="type">
+        <legend>Type</legend>
+        <button type="button" data-filter="type" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="type" data-value="mcq" aria-pressed="false">Multiple choice</button>
+        <button type="button" data-filter="type" data-value="structured" aria-pressed="false">Structured</button>
+      </fieldset>
+      <fieldset data-filter-group="subtopic">
+        <legend>Subtopic</legend>
+        <label class="visually-hidden" for="subtopic-filter">Subtopic</label>
+        <select id="subtopic-filter" data-filter="subtopic">
+          <option value="all">All subtopics</option>
+          {topic.subtopics.map((subtopic) => <option value={subtopic.id}>{subtopic.id} {subtopic.name}</option>)}
+        </select>
+      </fieldset>
+      <p class="filter-hint">Extended candidates are examined on Core and Supplement content, so keep All.</p>
+      <p data-filter-count role="status"></p>
+      <p data-score role="status"></p>
+    </div>
+
+    <ul class="link-row">
+      <li><a href={`${path}print/`}>Print the questions</a></li>
+      <li><a href={`${path}print-answers/`}>Print the mark scheme</a></li>
+    </ul>
+
+    <div class="measure">
+      <div class="question-list">
+        {topic.questions.map((question) => <QuestionCard question={question} slug={topic.slug} />)}
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <style is:inline>
+      /* Without JavaScript every answer is shown and the controls that need it are hidden. */
+      .answer[hidden] {
+        display: block !important;
+      }
+      .toggle-answer,
+      .feedback,
+      .filters {
+        display: none !important;
+      }
+    </style>
+  </noscript>
+
+  <script>
+    import '../../../../scripts/topic';
+  </script>
+</BaseLayout>

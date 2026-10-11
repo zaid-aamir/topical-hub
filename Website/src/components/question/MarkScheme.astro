@@ -1,0 +1,33 @@
+---
+/**
+ * section.markscheme: one div.ms-part per MarkSchemePart with its head ("(b)(i)", optional note,
+ * "[n]") and its marking points. A container part with no marks and no points (T03 Q7 "(a)",
+ * whose marks sit on (a)(i) and (a)(ii)) renders as its head alone.
+ * No aria-label on the section: thirty identically named regions would fail axe's landmark-unique.
+ */
+import type { MarkSchemePart } from '../../content';
+import { mdInline } from '../../lib/markdown';
+import MarkPoints from './MarkPoints.astro';
+import { partLabel } from './labels';
+
+interface Props {
+  parts: MarkSchemePart[];
+}
+
+const { parts } = Astro.props;
+---
+<section class="markscheme">
+  <h3 class="ms-heading">Mark scheme</h3>
+  {
+    parts.map((part) => (
+      <div class="ms-part">
+        <div class="ms-head">
+          <span class="ms-label">{partLabel(part.key)}</span>
+          {part.note !== '' && <span class="ms-note" set:html={mdInline(part.note)} />}
+          {part.marks !== null && <span class="ms-marks">[{part.marks}]</span>}
+        </div>
+        {part.points.length > 0 && <MarkPoints points={part.points} />}
+      </div>
+    ))
+  }
+</section>

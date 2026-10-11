@@ -1,0 +1,55 @@
+---
+/**
+ * One question on the topic page: article.question#q<n> with the data attributes the filters,
+ * the script, the styles and the tests key on (CONTRACT.md, "DOM contract"). Everything a student
+ * can read is in the HTML at build time; the answer panel is hidden until opened.
+ *
+ * - data-answer (MCQ only) lets the script mark an option without any lookup.
+ * - The stem has id q<n>-stem so the option group can be labelled by it.
+ * - The report link carries the question id and the absolute URL of this anchor.
+ */
+import type { Question } from '../../content';
+import { SITE_URL, SUBJECT, reportErrorUrl } from '../../config';
+import { mdBlock } from '../../lib/markdown';
+import QuestionHead from './QuestionHead.astro';
+import McqOptions from './McqOptions.astro';
+import StructuredParts from './StructuredParts.astro';
+import AnswerPanel from './AnswerPanel.astro';
+
+interface Props {
+  question: Question;
+  /** Topic slug, for the absolute URL in the report link. */
+  slug: string;
+}
+
+const { question, slug } = Astro.props;
+const anchor = `q${question.number}`;
+const stemId = `${anchor}-stem`;
+const panelId = `${anchor}-answer`;
+const isMcq = question.type === 'mcq';
+const reportHref = reportErrorUrl(question.id, `${SITE_URL}/${SUBJECT.path}/${slug}/#${anchor}`);
+---
+<article
+  class="question"
+  id={anchor}
+  data-question-id={question.id}
+  data-tier={question.tier}
+  data-type={question.type}
+  data-subtopic={question.subtopicId}
+  data-number={question.number}
+  data-answer={question.type === 'mcq' ? question.answer : undefined}
+>
+  <QuestionHead question={question} />
+  <div class="question-body">
+    {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem)} />}
+    {question.type === 'mcq' ? <McqOptions question={question} stemId={stemId} /> : <StructuredParts question={question} />}
+  </div>
+  {isMcq && <p class="feedback" role="status"></p>}
+  <div class="question-actions">
+    <button class="toggle-answer" type="button" aria-expanded="false" aria-controls={panelId}>{isMcq ? 'Show answer' : 'Show mark scheme'}</button>
+    <a class="report-link" href={reportHref} target="_blank" rel="noopener noreferrer">Report an error</a>
+  </div>
+  <div class="answer" id={panelId} hidden>
+    <AnswerPanel question={question} />
+  </div>
+</article>

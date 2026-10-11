@@ -1,0 +1,21 @@
+---
+/**
+ * Card head shared by the topic page and both print pages: the question numeral (an h2 so the
+ * h3s inside the answer panel keep the heading order), the tier badge, the sub-topic name and the
+ * total marks in square brackets, as on a paper.
+ */
+import type { Question } from '../../content';
+import { tierLabel } from './labels';
+
+interface Props {
+  question: Question;
+}
+
+const { question } = Astro.props;
+---
+<div class="question-head">
+  <h2 class="question-number"><span class="visually-hidden">Question </span>{question.number}</h2>
+  <span class={`badge badge-${question.tier}`}>{tierLabel(question.tier)}</span>
+  <span class="subtopic">{question.subtopicName}</span>
+  <span class="marks">[{question.marks}]</span>
+</div>

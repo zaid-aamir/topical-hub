@@ -1256,3 +1256,36 @@ p[data-filter-count]:empty {
   gap: var(--space-2) var(--space-4);
   margin-block: var(--space-4);
 }
+
+/* ---------------------------------------------------------------------------
+   15. Added by the topic module (question components and src/scripts/topic.ts)
+   --------------------------------------------------------------------------- */
+
+/* A plain-text label line inside a mark-scheme part ("Any two from:"), kept from the source as
+   li.ms-point.ms-label: no bullet, set like a head note. */
+.ms-point.ms-label {
+  min-width: 0;
+  padding-left: 0;
+  margin-top: var(--space-2);
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.ms-point.ms-label::before {
+  display: none;
+}
+
+/* Table-shaped options: the script mirrors the chosen row as data-pressed (aria-pressed is not a
+   valid attribute on a table row) and the result as data-state, for browsers without :has(). */
+.option-row[data-pressed='true']:not([data-state]) td {
+  background: var(--accent-soft);
+}
+
+/* Once answered, rows are no longer tap targets. */
+.question[data-answered] .option-row {
+  cursor: default;
+}
+
+.question[data-answered] .option-row:not([data-state]):hover td {
+  background: transparent;
+}

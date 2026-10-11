@@ -1,0 +1,33 @@
+---
+/**
+ * One list of marking points, nested lists included (the component renders itself for children).
+ * A leading ALLOW / REJECT / IGNORE / ECF keyword becomes span.ms-keyword; data-kind carries the
+ * parser's classification for the styles. A plain-text label line such as "Any two from:" is
+ * li.ms-point.ms-label, shown without a bullet.
+ */
+import type { MarkPoint } from '../../content';
+import { mdInline } from '../../lib/markdown';
+import { splitKeyword } from './labels';
+
+interface Props {
+  points: MarkPoint[];
+}
+
+const { points } = Astro.props;
+
+const items = points.map((point) => {
+  const { keyword, rest } = splitKeyword(point.text);
+  // A space separates the keyword span from the text that follows it.
+  return { point, keyword, html: (keyword ? ' ' : '') + mdInline(rest) };
+});
+---
+<ul class="ms-points">
+  {
+    items.map(({ point, keyword, html }) => (
+      <li class:list={['ms-point', { 'ms-label': point.isLabel === true }]} data-kind={point.kind}>
+        {keyword && <span class="ms-keyword">{keyword}</span>}<Fragment set:html={html} />
+        {point.children.length > 0 && <Astro.self points={point.children} />}
+      </li>
+    ))
+  }
+</ul>
