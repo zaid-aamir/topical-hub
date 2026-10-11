@@ -1,0 +1,42 @@
+---
+/**
+ * Subject home: the 12 topic cards for the one subject in v1, with counts computed from the data.
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TopicGrid from '../../../components/TopicGrid.astro';
+import { loadAllTopics } from '../../../content';
+import { SITE_NAME, SUBJECT } from '../../../config';
+
+const topics = loadAllTopics();
+const totalQuestions = topics.reduce((sum, topic) => sum + topic.counts.total, 0);
+const topicCount = topics.length;
+const subjectPath = `/${SUBJECT.path}/`;
+
+const title = `${SUBJECT.shortName} exam-style questions by topic, with answers | ${SITE_NAME}`;
+const description =
+  `${totalQuestions} original exam-style questions for ${SUBJECT.fullName} in ${topicCount} topics, ` +
+  'each with a mark scheme and a worked solution. Free, with Core and Supplement filters.';
+---
+<BaseLayout title={title} description={description} canonicalPath={subjectPath}>
+  <div class="shell">
+    <div class="page-title">
+      <p class="page-label">{SUBJECT.fullName}, syllabus for exams in {SUBJECT.syllabusYears}</p>
+      <h1>{SUBJECT.shortName}</h1>
+      <p class="page-summary">
+        {totalQuestions} original exam-style questions across {topicCount} topics, with mark schemes and worked
+        solutions.
+      </p>
+    </div>
+
+    <TopicGrid topics={topics} />
+
+    <div class="prose">
+      <p>
+        Choose a topic to see its questions. On a topic page you can filter by Core or Supplement and by question
+        type, attempt a question, then reveal its mark scheme and worked solution. Each topic also has two print
+        pages for practice on paper: the questions with ruled answer space, and the mark scheme. The questions
+        are original and were written and checked with AI tools; <a href="/about/">more about the site</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

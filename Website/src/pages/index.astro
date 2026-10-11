@@ -1,19 +1,64 @@
 ---
-// Temporary placeholder so the scaffold builds. Replaced by the real home page.
-import { SITE_NAME, SITE_TAGLINE } from '../config';
+/**
+ * Home page: what the site is, in plain words, then the 12 topic cards.
+ * Content comes from loadAllTopics() at build time; nothing here is hard-coded from the data.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicGrid from '../components/TopicGrid.astro';
+import { loadAllTopics } from '../content';
+import { SITE_NAME, SITE_TAGLINE, SUBJECT } from '../config';
+
+const topics = loadAllTopics();
+const subjectPath = `/${SUBJECT.path}/`;
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{SITE_NAME}</title>
-    <meta name="description" content={SITE_TAGLINE} />
-  </head>
-  <body>
-    <main id="main">
+<BaseLayout
+  title={`${SITE_NAME}: free ${SUBJECT.shortName} exam-style questions with answers`}
+  description={SITE_TAGLINE}
+  canonicalPath="/"
+>
+  <div class="shell">
+    <div class="page-title home-title">
       <h1>{SITE_NAME}</h1>
-      <p>{SITE_TAGLINE}</p>
-    </main>
-  </body>
-</html>
+      <p class="page-summary lead">{SITE_TAGLINE}.</p>
+    </div>
+
+    <div class="prose">
+      <p>
+        The questions are original exam-style questions, written in the style of the {SUBJECT.fullName} papers
+        for the {SUBJECT.syllabusYears} syllabus. They were written and checked with AI tools, not by teachers or
+        examiners, so mistakes are possible: if anything looks wrong, use the Report an error link under that
+        question.
+      </p>
+      <p>
+        Every question has a mark scheme and a worked solution, hidden until you choose to look. The site is free
+        and has no accounts. <a href="/about/">More about the site</a>.
+      </p>
+    </div>
+
+    <h2 class="home-topics-heading" id="topics">Chemistry 0620 topics</h2>
+    <TopicGrid topics={topics} />
+    <p><a href={subjectPath}>All {SUBJECT.shortName} topics</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Home page only: the title page of the booklet. A larger serif title, a lead sentence,
+     and room above the topics heading. Everything else is the shared system. */
+  .home-title {
+    margin-top: var(--space-4);
+  }
+
+  .home-title h1 {
+    font-size: clamp(2.25rem, 1.75rem + 2.4vw, 3.25rem);
+  }
+
+  .lead {
+    font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  .home-topics-heading {
+    margin-top: var(--space-10);
+  }
+</style>

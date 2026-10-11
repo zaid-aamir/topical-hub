@@ -1,0 +1,41 @@
+---
+/**
+ * The grid of topic cards used on the home page and the subject page.
+ * Markup per CONTRACT.md / global.css section 6: the whole card is one link.
+ *
+ *   <TopicGrid topics={loadAllTopics()} />
+ */
+import type { Topic } from '../content';
+import { SUBJECT } from '../config';
+
+interface Props {
+  /** Topics in display order (loadAllTopics() is already sorted by topic number). */
+  topics: Topic[];
+}
+
+const { topics } = Astro.props;
+const subjectBase = `/${SUBJECT.path}/`;
+
+function plural(count: number, noun: string): string {
+  return `${count} ${noun}${count === 1 ? '' : 's'}`;
+}
+---
+<ul class="topic-grid">
+  {topics.map((topic) => (
+    <li>
+      <a class="topic-card" href={`${subjectBase}${topic.slug}/`}>
+        <span class="topic-card-number"><span class="visually-hidden">Topic </span>{topic.topicNumber}</span>
+        <span class="topic-card-name">{topic.topicName}</span>
+        <span class="topic-card-counts">{plural(topic.counts.total, 'question')}: <span class="topic-card-count">{topic.counts.mcq} multiple choice</span>, <span class="topic-card-count">{topic.counts.structured} structured</span></span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  /* Keep each count with its noun, so a narrow card breaks after "multiple choice," and never
+     leaves "structured" alone on the last line. */
+  .topic-card-count {
+    white-space: nowrap;
+  }
+</style>
