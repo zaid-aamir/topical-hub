@@ -4,14 +4,17 @@
  *
  * Every question of the topic without any answer, with ruled answer space under each structured
  * part. noindex; the layout drops the site header for body.print-page and print.css hides the
- * footer and the one button when printing.
+ * footer and the one button when printing. The print-only watermark comes from PrintWatermark.astro.
+ * `npm run pdfs` prints this page to the downloadable questions PDF.
  */
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import PrintQuestion from '../../../../components/question/PrintQuestion.astro';
 import { countsSentence } from '../../../../components/question/labels';
 import { loadAllTopics } from '../../../../content';
+import PrintWatermark from '../../../../components/PrintWatermark.astro';
 import { SITE_NAME, SUBJECT } from '../../../../config';
+import { pdfDownload } from '../../../../lib/pdfs';
 
 export const getStaticPaths = (() =>
   loadAllTopics().map((topic) => ({ params: { slug: topic.slug }, props: { topic } }))) satisfies GetStaticPaths;
@@ -21,12 +24,14 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { topic } = Astro.props;
 const topicPath = `/${SUBJECT.path}/${topic.slug}/`;
 const path = `${topicPath}print/`;
+const pdf = pdfDownload(topic.slug, 'questions');
 const title = `${topic.topicName} — printable questions | ${SITE_NAME}`;
 const description =
   `Printable sheet of the ${topic.counts.total} exam-style questions on ${topic.topicName} for ${SUBJECT.fullName}, ` +
   `with ruled answer space and without the answers. The mark scheme prints separately.`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={path} noindex bodyClass="print-page">
+  <PrintWatermark slot="overlay" />
   <div class="shell">
     <div class="measure">
       <div class="page-title">
@@ -37,6 +42,7 @@ const description =
 
       <div class="print-actions">
         <button class="button" type="button" onclick="window.print()">Print this page</button>
+        <a href={pdf.href} download>{pdf.text}</a>
         <a href={topicPath}>Back to the topic page</a>
         <a href={`${topicPath}print-answers/`}>Print the mark scheme</a>
       </div>

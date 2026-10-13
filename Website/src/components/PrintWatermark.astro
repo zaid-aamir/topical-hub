@@ -1,0 +1,18 @@
+---
+/**
+ * Print-only watermark for the printable pages, and so for the downloadable PDFs: the site name with
+ * the site host underneath, centred and rotated on every printed page, behind the content. Real
+ * text, hidden on screen and from assistive technology; the styles are in print.css.
+ *
+ * Render it into BaseLayout's "overlay" slot so it is a direct child of <body>: position: fixed
+ * then repeats it on every printed page.
+ */
+import { SITE_NAME, SITE_URL } from '../config';
+
+/** e.g. "topical-hub.pages.dev", always taken from SITE_URL. */
+const host = new URL(SITE_URL).host;
+---
+<div class="print-watermark" aria-hidden="true">
+  <span class="print-watermark-name">{SITE_NAME}</span>
+  <span class="print-watermark-host">{host}</span>
+</div>

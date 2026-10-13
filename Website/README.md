@@ -32,7 +32,8 @@ and open <http://127.0.0.1:4321/>.
 | Script | What it does |
 |---|---|
 | `npm run dev` | Start the Astro dev server with live reload. |
-| `npm run build` | Production build into `dist/`: `astro build` (which loads and validates all content, failing on any contract violation) followed by `node scripts/check-dist.mjs`, the post-build gate described below. This is the command Cloudflare Pages runs. |
+| `npm run build` | Production build into `dist/`: first `node scripts/check-pdfs.mjs`, which fails with "PDFs are out of date: run npm run pdfs and commit the PDFs." when the downloadable PDFs no longer match their inputs (no Chromium needed), then `astro build` (which loads and validates all content, failing on any contract violation) followed by `node scripts/check-dist.mjs`, the post-build gate described below. This is the command Cloudflare Pages runs. |
+| `npm run pdfs` | Make the 24 downloadable PDFs (questions and mark scheme per topic, watermarked) in `public/pdfs/` with `manifest.json`: builds the site, serves `dist/` locally and prints each topic's print pages with Playwright Chromium. Run it after changing questions, the print pages or `print.css`, then commit `public/pdfs/`. |
 | `npm run preview` | Serve the built `dist/` on <http://127.0.0.1:4321/>, exactly as it will be deployed. Used by the Playwright tests. |
 | `npm run check` | `astro check`: type-checks the `.astro` components and TypeScript. |
 | `npm test` | Run the Vitest unit tests once (parser, chemistry formatting, Markdown rendering, the post-build checker, the render audit). |
@@ -52,10 +53,13 @@ Website/
   CONTRACT.md            module ownership, URLs, DOM contract, decisions
   DESIGN.md              the visual design plan (colour, type, layout, print)
   DEPLOY.md              click-by-click Cloudflare Pages deployment
-  public/                static files copied as-is (favicon)
+  public/                static files copied as-is (favicon; pdfs/ made by `npm run pdfs`, committed)
   scripts/
     check-dist.mjs       post-build gate over dist/ (labelling, links, anchors, h1, lang, noindex, external requests, sitemap)
     audit-render.mjs     per-topic render audit: source words vs built pages
+    generate-pdfs.mjs    `npm run pdfs`: print pages -> public/pdfs/*.pdf + manifest.json
+    check-pdfs.mjs       stale-PDF guard, first step of `npm run build`
+    pdf-manifest.mjs     PDF file names, the input hash and the guard, shared by both and by the site
   src/
     config.ts            SITE_NAME, SITE_URL, disclaimer, CHEM_FORMATTING switch, "Report an error" form settings
     content/             content loader: parses questions.md and markscheme.md, validates, exposes Topic[] (types.ts is the data model)

@@ -66,7 +66,7 @@ Out of scope for v1: accounts, progress tracking, ads, payments, search, other s
 
 - **Never run `git commit`, `git push`, `git add`, `git merge`, `git rebase`, `git reset`, `git revert`, `git stash`, `git tag`, `git worktree`, or create branches.** Don't use worktrees or isolated copies of the repo. Make every change directly in this working folder and leave it uncommitted. The owner reviews and commits everything himself.
 - Read-only git is fine: `git status`, `git diff`, `git log`, `git show`.
-- These commands are also blocked in `.claude/settings.json`. Don't try to work around the block.
+- These commands are also blocked in `.claude/settings.json`, which also sets `worktree.bgIsolation` to `none` so background sessions edit this folder directly. Don't try to work around either.
 - When you finish a piece of work, end with a short list of the files you changed and a suggested commit message (one line, no `Co-Authored-By` or any other trailer). The owner decides whether to use it.
 - Line endings are normalised to LF by `.gitattributes`. Never commit `.env` files or secrets (the owner does the committing, but don't create them in tracked places either).
 

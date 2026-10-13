@@ -47,6 +47,11 @@
 .answer-lines[data-lines='19'] { --lines: 19; }
 .answer-lines[data-lines='20'] { --lines: 20; }
 
+/* The watermark (PrintWatermark.astro) exists only on paper and in the PDFs. */
+.print-watermark {
+  display: none;
+}
+
 /* On screen, the print pages are a plain booklet preview: no card chrome, one column. */
 .print-page .question {
   padding: var(--space-4) 0;
@@ -88,9 +93,24 @@
 
   html,
   body {
-    background: #fff;
     color: #000;
     min-height: 0;
+  }
+
+  /* White paper comes from the root (the canvas). On the print pages every element is transparent,
+     so the watermark (z-index -1, painted just above the canvas) shows behind all the text. The
+     ruled answer lines are a background-image and are not affected. */
+  html {
+    background: #fff;
+  }
+
+  body {
+    background: transparent;
+  }
+
+  body.print-page,
+  body.print-page * {
+    background-color: transparent !important;
   }
 
   body {
@@ -237,5 +257,37 @@
 
   th {
     background: transparent;
+  }
+
+  /* Watermark: centred on every printed page, rotated, behind all content, light grey (black at
+     10% opacity). position: fixed repeats it on each page and keeps it out of the flow, so layout
+     and page breaks do not change. */
+  .print-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4mm;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    color: #000;
+    opacity: 0.1;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .print-watermark-name {
+    font-size: 72pt;
+  }
+
+  .print-watermark-host {
+    font-size: 20pt;
+    font-weight: 600;
   }
 }
