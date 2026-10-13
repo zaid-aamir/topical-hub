@@ -62,7 +62,20 @@ Out of scope for v1: accounts, progress tracking, ads, payments, search, other s
 - Hosting: a free static host (Cloudflare Pages, Netlify or Vercel), deploying from this repo with the root directory set to `Website/`, reading content from `../igcse-chem-pipeline/`.
 - Keep dependencies few.
 
-## Git
+## Git: the owner commits, never Claude
 
-- Branch `main`. Commit in small, working steps with clear messages. Never commit `.env` files or secrets.
-- Line endings are normalised to LF by `.gitattributes`.
+- **Never run `git commit`, `git push`, `git add`, `git merge`, `git rebase`, `git reset`, `git revert`, `git stash`, `git tag`, `git worktree`, or create branches.** Don't use worktrees or isolated copies of the repo. Make every change directly in this working folder and leave it uncommitted. The owner reviews and commits everything himself.
+- Read-only git is fine: `git status`, `git diff`, `git log`, `git show`.
+- These commands are also blocked in `.claude/settings.json`. Don't try to work around the block.
+- When you finish a piece of work, end with a short list of the files you changed and a suggested commit message (one line, no `Co-Authored-By` or any other trailer). The owner decides whether to use it.
+- Line endings are normalised to LF by `.gitattributes`. Never commit `.env` files or secrets (the owner does the committing, but don't create them in tracked places either).
+
+## Verification budget: keep it small
+
+Tokens are limited. Verification must be proportionate, not exhaustive.
+
+- **Default after a change:** run `npm run build` (it includes content validation and the "past paper" check) and `npm test`, once, from `Website/`. If both pass, stop.
+- **Don't** run Playwright browser suites, screenshot sweeps, axe audits, the per-topic render audit, link crawls, or reviewer/sub-agents unless the owner explicitly asks for them.
+- **Don't** use ultracode, dynamic workflows, agent teams or parallel sub-agents for routine work.
+- Fix only what a failing check reports. Don't go looking for extra problems.
+- If something can only be checked visually, say so in one line and let the owner look at it in `npm run dev`.

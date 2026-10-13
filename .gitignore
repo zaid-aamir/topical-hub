@@ -30,3 +30,8 @@ desktop.ini
 
 # Cambridge's syllabus PDF is their copyright: keep it on this computer only, never in the public repo
 igcse-chem-pipeline/reference/*.pdf
+
+# Claude Code local files and test output
+.claude/worktrees/
+.claude/settings.local.json
+test-results/

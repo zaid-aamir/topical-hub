@@ -1,0 +1,28 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git reset *)",
+      "Bash(git revert *)",
+      "Bash(git stash *)",
+      "Bash(git tag *)",
+      "Bash(git worktree *)",
+      "Bash(git checkout -b *)",
+      "Bash(git switch -c *)",
+      "Bash(git cherry-pick *)",
+      "Bash(git -c * commit *)",
+      "Bash(git -c * push *)",
+      "Bash(gh pr *)",
+      "Bash(gh repo *)",
+      "EnterWorktree"
+    ]
+  }
+}
