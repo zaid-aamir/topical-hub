@@ -247,11 +247,13 @@ export function stripQuestionBlock(block) {
  */
 export function stripMarkschemeBlock(block) {
   const lines = block.split(/\r?\n/);
+  const hasWorkedSolution = lines.some((l) => /^\*\*Worked solution\*\*\s*$/.test(l.trim()));
   let answer = null;
-  let hasWorkedSolution = false;
   let heads = 0;
   let headsWithMarks = 0;
   let points = 0;
+  /** Which part of the block we are in: marking points / rationale, the rationale, or the worked solution. */
+  let section = 'points';
   const kept = [];
   for (const l of lines) {
     const a = l.match(ANSWER_LINE_RE);
@@ -259,15 +261,20 @@ export function stripMarkschemeBlock(block) {
       answer = a[1];
       continue;
     }
-    if (LABEL_LINE_RE.test(l.trim())) {
-      if (/Worked solution/.test(l)) hasWorkedSolution = true;
+    const label = l.trim().match(LABEL_LINE_RE);
+    if (label) {
+      section = label[1] === 'Worked solution' ? 'worked' : label[1] === 'Rationale' ? 'rationale' : section;
       continue;
     }
+    // The site shows an MCQ's worked solution INSTEAD of its rationale when both exist (BUILD_V1 §3),
+    // so the rationale's words are not expected on the page in that case.
+    if (section === 'rationale' && hasWorkedSolution) continue;
     if (MS_HEAD_RE.test(l)) {
       heads += 1;
       if (/\[\d+\]/.test(l)) headsWithMarks += 1;
     }
-    if (/^\s*- \S/.test(l)) points += 1;
+    // Bullets inside the worked solution are prose, not marking points.
+    if (section === 'points' && /^\s*- \S/.test(l)) points += 1;
     kept.push(l);
   }
   return { answer, text: kept.join('\n'), hasWorkedSolution, heads, headsWithMarks, points };
@@ -403,7 +410,10 @@ export function auditQuestion(q, pageHtml, mode) {
   const sourceTokens = new Set();
   if (mode === 'topic' || mode === 'print') for (const t of q.questionTokens) sourceTokens.add(t);
   if (mode === 'topic' || mode === 'answers') for (const t of q.markTokens) sourceTokens.add(t);
-  const missing = [...sourceTokens].filter((t) => !pageTokens.has(t) && !(/\d/.test(t) && squashed.includes(t))).sort();
+  // A formula token with a dot ("Fe2O3.xH2O") is compared with the dot removed, like the page side.
+  const missing = [...sourceTokens]
+    .filter((t) => !pageTokens.has(t) && !(/\d/.test(t) && squashed.includes(t.replace(/\./g, ''))))
+    .sort();
   if (missing.length) problems.push(`missing words: ${missing.join(' ')}`);
 
   /** @type {QuestionAudit} */

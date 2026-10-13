@@ -202,9 +202,18 @@ describe('source parsing', () => {
     expect(m1.answer).toBe('A');
     expect(m1.hasWorkedSolution).toBe(true);
     expect(m1.text).not.toMatch(/answer:|Rationale|Worked solution/);
+    // The page shows the worked solution instead of the rationale, so the rationale words are dropped.
+    expect(m1.text).not.toMatch(/low pH/);
+    expect(m1.text).toMatch(/pH 1 is acidic/);
+    const m1NoWorked = stripMarkschemeBlock((ms.get(1) ?? '').replace(/\*\*Worked solution\*\*[\s\S]*$/, ''));
+    expect(m1NoWorked.hasWorkedSolution).toBe(false);
+    expect(m1NoWorked.text).toMatch(/low pH/);
     const m3 = stripMarkschemeBlock(ms.get(3) ?? '');
     expect(m3.headsWithMarks).toBe(2);
     expect(m3.points).toBe(4);
+    // Bullets inside the worked solution are not marking points.
+    const m3Bullets = stripMarkschemeBlock(`${ms.get(3) ?? ''}\n- not a marking point\n- nor this\n`);
+    expect(m3Bullets.points).toBe(4);
   });
 
   it('reads a batch folder into tokens', () => {
