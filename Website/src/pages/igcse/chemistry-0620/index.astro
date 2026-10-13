@@ -4,6 +4,7 @@
  */
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import TopicGrid from '../../../components/TopicGrid.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { loadAllTopics } from '../../../content';
 import { SITE_NAME, SUBJECT } from '../../../config';
 
@@ -19,6 +20,7 @@ const description =
 ---
 <BaseLayout title={title} description={description} canonicalPath={subjectPath}>
   <div class="shell">
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: SUBJECT.shortName, href: subjectPath }]} />
     <div class="page-title">
       <p class="page-label">{SUBJECT.fullName}, syllabus for exams in {SUBJECT.syllabusYears}</p>
       <h1>{SUBJECT.shortName}</h1>

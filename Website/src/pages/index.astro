@@ -1,21 +1,22 @@
 ---
 /**
- * Home page: what the site is, in plain words, then the 12 topic cards.
- * Content comes from loadAllTopics() at build time; nothing here is hard-coded from the data.
+ * Home page: what the site is, in plain words, then one card per subject (SUBJECTS in config.ts).
+ * Topics are listed only on each subject's own page, so there is one route to them however many
+ * subjects there are. Counts are computed from the data at build time.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TopicGrid from '../components/TopicGrid.astro';
-import { loadAllTopics } from '../content';
-import { SITE_NAME, SITE_TAGLINE, SUBJECT } from '../config';
+import SubjectGrid from '../components/SubjectGrid.astro';
+import { SITE_NAME, SITE_TAGLINE, SOLE_SUBJECT } from '../config';
 
-const topics = loadAllTopics();
-const subjectPath = `/${SUBJECT.path}/`;
+// While there is one subject the title names it (good for search); with more it is generic.
+const title = SOLE_SUBJECT
+  ? `${SITE_NAME}: free ${SOLE_SUBJECT.shortName} exam-style questions with answers`
+  : `${SITE_NAME}: free exam-style topical questions with answers`;
+const writtenFor = SOLE_SUBJECT
+  ? `the ${SOLE_SUBJECT.fullName} papers for the ${SOLE_SUBJECT.syllabusYears} syllabus`
+  : 'the exam papers of each subject’s current syllabus';
 ---
-<BaseLayout
-  title={`${SITE_NAME}: free ${SUBJECT.shortName} exam-style questions with answers`}
-  description={SITE_TAGLINE}
-  canonicalPath="/"
->
+<BaseLayout title={title} description={SITE_TAGLINE} canonicalPath="/">
   <div class="shell">
     <div class="page-title home-title">
       <h1>{SITE_NAME}</h1>
@@ -24,10 +25,9 @@ const subjectPath = `/${SUBJECT.path}/`;
 
     <div class="prose">
       <p>
-        The questions are original exam-style questions, written in the style of the {SUBJECT.fullName} papers
-        for the {SUBJECT.syllabusYears} syllabus. They were written and checked with AI tools, not by teachers or
-        examiners, so mistakes are possible: if anything looks wrong, use the Report an error link under that
-        question.
+        The questions are original exam-style questions, written in the style of {writtenFor}. They were written
+        and checked with AI tools, not by teachers or examiners, so mistakes are possible: if anything looks
+        wrong, use the Report an error link under that question.
       </p>
       <p>
         Every question has a mark scheme and a worked solution, hidden until you choose to look. The site is free
@@ -35,15 +35,16 @@ const subjectPath = `/${SUBJECT.path}/`;
       </p>
     </div>
 
-    <h2 class="home-topics-heading" id="topics">Chemistry 0620 topics</h2>
-    <TopicGrid topics={topics} />
-    <p><a href={subjectPath}>All {SUBJECT.shortName} topics</a></p>
+    <section id="subjects" aria-labelledby="subjects-heading">
+      <h2 class="home-subjects-heading" id="subjects-heading">Subjects</h2>
+      <SubjectGrid />
+    </section>
   </div>
 </BaseLayout>
 
 <style>
   /* Home page only: the title page of the booklet. A larger serif title, a lead sentence,
-     and room above the topics heading. Everything else is the shared system. */
+     and room above the subjects heading. Everything else is the shared system. */
   .home-title {
     margin-top: var(--space-4);
   }
@@ -58,7 +59,12 @@ const subjectPath = `/${SUBJECT.path}/`;
     text-wrap: pretty;
   }
 
-  .home-topics-heading {
+  .home-subjects-heading {
     margin-top: var(--space-10);
+  }
+
+  /* The header's "Subjects" link jumps here; keep the heading clear of the top edge. */
+  #subjects {
+    scroll-margin-top: var(--space-4);
   }
 </style>

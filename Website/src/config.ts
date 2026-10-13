@@ -15,21 +15,47 @@ export const SITE_NAME = 'Topical Hub';
  */
 export const SITE_URL = 'https://topical-hub.pages.dev';
 
-/** One-line description used on the home page and as the default meta description. */
-export const SITE_TAGLINE =
-  'Free exam-style topical questions for IGCSE Chemistry 0620, with mark schemes and worked solutions';
-
-/** The one subject in v1. URLs leave room for more subjects later. */
-export const SUBJECT = {
+/** One subject: a qualification with its own topics, everything under /<path>/. */
+export interface Subject {
   /** URL path under which everything for this subject lives (no leading or trailing slash). */
-  path: 'igcse/chemistry-0620',
-  /** Short name for navigation and titles. */
-  shortName: 'IGCSE Chemistry 0620',
+  readonly path: string;
+  /** Short name for navigation, breadcrumbs and titles. */
+  readonly shortName: string;
   /** Full qualification name. Naming the qualification is fine; never imply endorsement. */
-  fullName: 'Cambridge IGCSE Chemistry 0620',
+  readonly fullName: string;
   /** Syllabus years the questions were written for. */
+  readonly syllabusYears: string;
+  /** One sentence for the subject's card on the home page. */
+  readonly description: string;
+}
+
+const CHEMISTRY_0620: Subject = {
+  path: 'igcse/chemistry-0620',
+  shortName: 'IGCSE Chemistry 0620',
+  fullName: 'Cambridge IGCSE Chemistry 0620',
   syllabusYears: '2026–2028',
-} as const;
+  description: 'Multiple-choice and structured questions on every topic of the syllabus, each tagged Core or Supplement.',
+};
+
+/**
+ * Every subject, in the order the home page lists them. A new subject also needs its content source
+ * (src/lib/subjects.ts) and its pages under src/pages/<path>/.
+ */
+export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620];
+
+/** The subject the Chemistry 0620 topic and print pages are built for. */
+export const SUBJECT: Subject = CHEMISTRY_0620;
+
+/** The subject when SUBJECTS has exactly one entry, else undefined. Home-page copy names it while it exists. */
+export const SOLE_SUBJECT: Subject | undefined = SUBJECTS.length === 1 ? SUBJECTS[0] : undefined;
+
+/**
+ * One-line description for the home page and its meta description. It names the subject while
+ * there is only one (better for search) and becomes generic once there are more.
+ */
+export const SITE_TAGLINE = SOLE_SUBJECT
+  ? `Free exam-style topical questions for ${SOLE_SUBJECT.shortName}, with mark schemes and worked solutions`
+  : 'Free exam-style topical questions with mark schemes and worked solutions';
 
 /** Footer sentence, required verbatim on every page. */
 export const DISCLAIMER =

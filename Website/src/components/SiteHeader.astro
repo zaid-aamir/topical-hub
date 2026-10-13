@@ -1,22 +1,18 @@
 ---
 /**
- * Site header: wordmark, link to the one subject, theme toggle.
- * Rendered by BaseLayout on every page except the print pages.
+ * Site header: wordmark (to the home page), a "Subjects" link to the home page's subject list,
+ * theme toggle. Rendered by BaseLayout on every page except the print pages.
  */
 import ThemeToggle from './ThemeToggle.astro';
-import { SITE_NAME, SUBJECT } from '../config';
+import { SITE_NAME } from '../config';
 
-const subjectPath = `/${SUBJECT.path}/`;
-const here = Astro.url.pathname.replace(/\/+$/, '');
-const onSubjectPage = here === subjectPath.replace(/\/+$/, '');
+const onHome = Astro.url.pathname.replace(/index\.html$/, '') === '/';
 ---
 <header class="site-header">
   <div class="shell site-header-inner">
     <a class="wordmark" href="/">{SITE_NAME}</a>
     <nav class="site-nav" aria-label="Main">
-      <a class="site-nav-link" href={subjectPath} aria-current={onSubjectPage ? 'page' : undefined}>
-        {SUBJECT.shortName}
-      </a>
+      <a class="site-nav-link" href="/#subjects" aria-current={onHome ? 'page' : undefined}>Subjects</a>
       <ThemeToggle />
     </nav>
   </div>

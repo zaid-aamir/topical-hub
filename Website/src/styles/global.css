@@ -603,6 +603,118 @@ th {
 }
 
 /* ---------------------------------------------------------------------------
+   6b. Subject grid (home page), styled like the topic cards. The whole card is one link.
+      <ul class="subject-grid"><li><a class="subject-card" href="/igcse/chemistry-0620/">
+        <span class="subject-card-name">IGCSE Chemistry 0620</span>
+        <span class="subject-card-syllabus">Syllabus for exams in 2026–2028</span>
+        <span class="subject-card-description">…</span>
+        <span class="subject-card-counts">12 topics · 360 questions</span>
+      </a></li></ul>
+   --------------------------------------------------------------------------- */
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-4);
+  padding: 0;
+  margin-block: var(--space-6);
+  list-style: none;
+}
+
+.subject-grid > li {
+  max-width: none;
+  display: flex;
+}
+
+.subject-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-5);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.subject-card:hover {
+  border-color: var(--accent);
+}
+
+.subject-card:hover .subject-card-name {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  text-decoration-color: var(--accent);
+}
+
+.subject-card-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.subject-card-syllabus,
+.subject-card-counts {
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+.subject-card-syllabus {
+  font-weight: 600;
+}
+
+.subject-card-counts {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+   6c. Breadcrumbs (subject and topic pages; never the print pages)
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+        <li><a href="/">Home</a></li>
+        <li><span class="breadcrumb-separator" aria-hidden="true">›</span><span aria-current="page">IGCSE Chemistry 0620</span></li>
+      </ol></nav>
+   --------------------------------------------------------------------------- */
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--space-2);
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  list-style: none;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: none;
+  margin: 0;
+}
+
+/* Each crumb link is a full-height tap target. */
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+}
+
+.breadcrumbs [aria-current='page'] {
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------------------------
    7. Filters (topic page). Groups are fieldsets with a legend; the legend is floated so it
       becomes an ordinary flex item instead of the browser's special legend box.
       <div class="filters" data-filters>

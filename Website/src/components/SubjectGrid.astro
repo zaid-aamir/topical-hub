@@ -1,0 +1,37 @@
+---
+/**
+ * The home page's subject cards, one per entry in SUBJECTS (src/config.ts). Counts are computed
+ * from the data. Styled like the topic cards (global.css section 6); the whole card is one link.
+ *
+ *   <ul class="subject-grid"><li><a class="subject-card" href="/igcse/chemistry-0620/">
+ *     <span class="subject-card-name">IGCSE Chemistry 0620</span>
+ *     <span class="subject-card-syllabus">Syllabus for exams in 2026–2028</span>
+ *     <span class="subject-card-description">…</span>
+ *     <span class="subject-card-counts">12 topics · 360 questions</span>
+ *   </a></li></ul>
+ */
+import { SUBJECTS } from '../config';
+import { subjectCounts } from '../lib/subjects';
+
+function plural(count: number, noun: string): string {
+  return `${count} ${noun}${count === 1 ? '' : 's'}`;
+}
+
+const cards = SUBJECTS.map((subject) => ({ subject, counts: subjectCounts(subject) }));
+---
+<ul class="subject-grid">
+  {
+    cards.map(({ subject, counts }) => (
+      <li>
+        <a class="subject-card" href={`/${subject.path}/`}>
+          <span class="subject-card-name">{subject.shortName}</span>
+          <span class="subject-card-syllabus">Syllabus for exams in {subject.syllabusYears}</span>
+          <span class="subject-card-description">{subject.description}</span>
+          <span class="subject-card-counts">
+            {plural(counts.topics, 'topic')} · {plural(counts.questions, 'question')}
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

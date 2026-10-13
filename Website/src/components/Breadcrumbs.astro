@@ -1,0 +1,47 @@
+---
+/**
+ * Breadcrumb trail for the subject and topic pages (never the print pages):
+ *
+ *   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: SUBJECT.shortName, href: '/igcse/chemistry-0620/' }]} />
+ *
+ * The last item is the current page, shown as text with aria-current="page". Also emits the same
+ * trail as schema.org BreadcrumbList JSON-LD, with absolute URLs on SITE_URL.
+ */
+import { SITE_URL } from '../config';
+
+interface Crumb {
+  name: string;
+  /** Root-relative URL, e.g. "/igcse/chemistry-0620/". */
+  href: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const last = items.length - 1;
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: new URL(item.href, SITE_URL).href,
+  })),
+}).replace(/</g, '\\u003c');
+---
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {
+      items.map((item, index) => (
+        <li>
+          {index > 0 && <span class="breadcrumb-separator" aria-hidden="true">›</span>}
+          {index === last ? <span aria-current="page">{item.name}</span> : <a href={item.href}>{item.name}</a>}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+<script type="application/ld+json" is:inline set:html={jsonLd} />

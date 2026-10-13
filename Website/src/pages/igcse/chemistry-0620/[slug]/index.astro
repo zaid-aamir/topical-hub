@@ -9,6 +9,7 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import QuestionCard from '../../../../components/question/QuestionCard.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import { countsSentence } from '../../../../components/question/labels';
 import { loadAllTopics } from '../../../../content';
 import { SITE_NAME, SUBJECT } from '../../../../config';
@@ -30,6 +31,13 @@ const description =
 ---
 <BaseLayout title={title} description={description} canonicalPath={path} ogType="article">
   <div class="shell">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', href: '/' },
+        { name: SUBJECT.shortName, href: `/${SUBJECT.path}/` },
+        { name: topic.topicName, href: path },
+      ]}
+    />
     <div class="page-title">
       <p class="page-label">Topic {topic.topicNumber}</p>
       <h1>{topic.topicName}</h1>
