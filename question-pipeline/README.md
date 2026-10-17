@@ -28,9 +28,10 @@ subjects/
 
 ### Current Biology handoff
 
-The owner's 18 October 2026 scope is Biology topics **1–10 only**, with PDFs before website
-integration. Read `subjects/0610-biology/review/README.md` for existing solve/verify provenance,
-the PDF export command, and the remaining work. Do not resume all 21 topics from an older chat.
+The owner approved **all 590 Biology questions** on 18 October 2026. All 24 batches across 21 topics
+are in `subjects/0610-biology/batches/04_approved/`. Read `subjects/0610-biology/review/README.md`
+and `owner-approval.json` in that subject folder for provenance, PDF export and website import notes.
+This supersedes previous notes that called topics 13–21 solved or drafted.
 
 1. **Map** (once): `Read agents/MAP.md and follow it exactly. Your subject is: 0625-physics.`
 2. **Owner checks** `config/syllabus_map.json` and `subject.md` against the PDF. Everything else trusts them.

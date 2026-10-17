@@ -1,6 +1,6 @@
 # Topical Hub — code contract (v1)
 
-Shared agreements between the modules so they can be built in parallel. The data model is `src/content/types.ts`; the site configuration is `src/config.ts`; the visual language is `DESIGN.md`. Read all three before writing code.
+Reference for the implemented modules. The data model is `src/content/types.ts`; the site configuration is `src/config.ts`; the visual language is `DESIGN.md`. Project rules in root `AGENTS.md` and `CLAUDE.md` take precedence. The module labels below describe responsibilities, not agent assignments or permission boundaries.
 
 ## Module ownership
 
@@ -11,9 +11,11 @@ Shared agreements between the modules so they can be built in parallel. The data
 | `src/lib/chem/` | chem/markdown | `formatChem(text: string): string` pure text to text (Unicode sub/superscripts); `applyChem(html: string): string` applies it to text nodes of an HTML string, skipping the inside of `<code>`, `<pre>`, `<a>`, `<script>`, `<style>` and never touching tags, attributes or entities. `ELEMENTS` full symbol list. |
 | `src/styles/` | design | `tokens.css` (custom properties, light and dark), `global.css` (reset, type, layout primitives, components shared across pages), `print.css` (print-page rules). |
 | `src/layouts/BaseLayout.astro` | design | Props: `title`, `description`, `canonicalPath` (e.g. `/about/`), `noindex?: boolean`, `bodyClass?: string`, `ogType?`. Renders `<html lang="en">`, the `<head>` (charset, viewport, title, description, canonical, OG, Twitter, theme-color, favicon, fonts, early theme script), skip link to `#main`, `<SiteHeader>`, `<main id="main">` slot, `<SiteFooter>` with `DISCLAIMER`. |
-| `src/components/SiteHeader.astro`, `SiteFooter.astro`, `ThemeToggle.astro` | design | Header: wordmark link to `/`, link to the subject page, theme toggle. Footer: disclaimer sentence, links to About, Privacy and the GitHub repo. |
+| `src/components/SiteHeader.astro`, `SiteFooter.astro`, `ThemeToggle.astro` | design | Header: wordmark to `/`, Subjects to `/#subjects`, About and theme toggle; current navigation link gets `aria-current="page"`. Footer: disclaimer, About, Privacy, GitHub and version from `package.json`. |
 | `src/pages/about.astro`, `privacy.astro`, `404.astro`, `robots.txt.ts` | design | Static copy per BUILD_V1 §1 and §4. robots.txt allows everything and links `${SITE_URL}/sitemap-index.xml`. |
-| `src/pages/index.astro` | home | Home page. |
+| `src/pages/index.astro` | home | Home page with `SubjectGrid`, listing `SUBJECTS` under `#subjects`; copy names the subject while `SOLE_SUBJECT` exists. |
+| `src/lib/subjects.ts`, `src/components/SubjectGrid.astro` | home | Resolve subject content and compute counts; only Chemistry is supported. Unsupported subjects throw rather than displaying zero counts. |
+| `src/lib/pdfs.ts`, `scripts/pdf-manifest.mjs`, `scripts/check-pdfs.mjs`, `scripts/generate-pdfs.mjs` | ops | Download links and sizes, input hashing, PDF freshness gate and explicit Chromium-based regeneration of 24 watermarked PDFs. |
 | `src/pages/igcse/chemistry-0620/index.astro` | home | Subject home with the 12 topic cards. |
 | `src/pages/igcse/chemistry-0620/[slug]/index.astro` | topic | Topic page. |
 | `src/pages/igcse/chemistry-0620/[slug]/print.astro`, `print-answers.astro` | topic | Print pages. |
@@ -24,7 +26,7 @@ Shared agreements between the modules so they can be built in parallel. The data
 | `tests/e2e/**` | ops | Playwright specs: behaviour checks, screenshots to `test-results/screenshots/`, axe scans. |
 | `DEPLOY.md`, `README.md` | ops | Cloudflare Pages click-by-click guide; how to run locally. |
 
-Nobody edits a file they do not own without saying so in their report. Nobody edits anything in `../igcse-chem-pipeline/`.
+Website maintenance may span these modules. Do not edit either pipeline during website work; follow the root briefs for explicitly requested question corrections. The owner commits all changes.
 
 ## URLs
 
@@ -39,7 +41,9 @@ Nobody edits a file they do not own without saying so in their report. Nobody ed
 | Privacy | `/privacy/` |
 | 404 | `/404` (`dist/404.html`) |
 
-`slug` = `slugify(topicName)`: lower-case, letters and digits kept, every other run of characters becomes one hyphen, no leading or trailing hyphen. "Acids, bases and salts" -> `acids-bases-and-salts`. Question anchors are `#q<n>` using the question number.
+`slug` = `slugify(topicName)`: lower-case, letters and digits kept, every other run of characters becomes one hyphen, no leading or trailing hyphen. "Acids, bases and salts" -> `acids-bases-and-salts`. Question anchors are `#q<n>` using the question number. The full source id remains in `data-question-id` and error reports; it is not currently the anchor requested by the original brief. Preserve existing anchors during routine maintenance.
+
+PDFs are served at `/pdfs/topical-hub-igcse-chemistry-0620-<slug>-questions.pdf` and the corresponding `-mark-scheme.pdf` path. They are generated assets in `public/pdfs/`, with a freshness and integrity manifest.
 
 Titles: `<Topic name> — IGCSE Chemistry 0620 exam-style questions with answers | Topical Hub`. Never the phrase "past paper" anywhere except one sentence on the About page.
 
@@ -78,9 +82,9 @@ Print pages
 - `set:html` is only ever fed by `mdBlock` / `mdInline` output or by `applyChem` output. Never by raw content.
 - Commit messages: short imperative, e.g. "Add content parser with validation".
 
-## Decisions made where BUILD_V1 was silent or weak
+## Implementation decisions
 
-- Tier filter: BUILD_V1 lists "All / Core only / Extended" and notes Extended means Core + Supplement, which makes Extended identical to All. We ship **All / Core only / Supplement only**, with a one-line hint "Extended candidates are examined on Core and Supplement content, so keep All." Supplement-only is what Extended students actually want to drill.
+- Tier filter: **All / Core only / Supplement only**, with a one-line hint "Extended candidates are examined on Core and Supplement content, so keep All."
 - MCQ "x / y correct" counts only questions answered by clicking an option; opening the answer without answering does not count.
 - The sub-topic filter is a native `<select>` because some topics have eight sub-topics.
 - The syllabus map JSON is not read at build time; topic and sub-topic names come from the content files themselves (they match the map).

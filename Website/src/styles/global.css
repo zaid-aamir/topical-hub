@@ -426,6 +426,8 @@ th {
 .site-nav-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: var(--tap);
   min-height: var(--tap);
   padding: 0 var(--space-2);
   color: var(--ink);
@@ -449,14 +451,20 @@ th {
   flex: none;
 }
 
-/* Narrow phones: keep the header on one row. */
+/* Narrow phones: keep wordmark, Subjects, About and the toggle on one row (about 285 px of
+   content at 360 px wide). Every link stays at least 44 x 44 px; only the gaps and the type
+   shrink a little. The row may still wrap at extreme zoom rather than scroll sideways. */
 @media (max-width: 25rem) {
+  .site-header-inner {
+    column-gap: var(--space-3);
+  }
+
   .wordmark {
-    font-size: 1.25rem;
+    font-size: 1.1875rem;
   }
 
   .site-nav {
-    gap: var(--space-1);
+    gap: 0;
   }
 
   .site-nav-link {
@@ -506,6 +514,16 @@ th {
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
+}
+
+/* Site version from package.json, after the footer links: small and muted. */
+.footer-version {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--ink-muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------------------------------------------------------------------------

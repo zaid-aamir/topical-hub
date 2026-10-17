@@ -1,8 +1,10 @@
 ---
 /**
  * Site footer: the independence disclaimer (required verbatim on every page), then links to
- * About, Privacy and the public source repository.
+ * About, Privacy and the public source repository, then the site version. The version is read
+ * from "version" in package.json at build time, so bumping that one field updates every page.
  */
+import { version } from '../../package.json';
 import { DISCLAIMER, GITHUB_REPO } from '../config';
 
 const repoUrl = `https://github.com/${GITHUB_REPO}`;
@@ -14,6 +16,7 @@ const repoUrl = `https://github.com/${GITHUB_REPO}`;
       <li><a href="/about/">About</a></li>
       <li><a href="/privacy/">Privacy</a></li>
       <li><a href={repoUrl} rel="noopener">Source code on GitHub</a></li>
+      <li class="footer-version">v{version}</li>
     </ul>
   </div>
 </footer>

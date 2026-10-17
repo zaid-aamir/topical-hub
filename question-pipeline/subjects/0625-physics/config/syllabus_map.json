@@ -1,0 +1,2924 @@
+{
+  "subject_id": "0625-physics",
+  "subject_name": "Physics",
+  "syllabus": "0625",
+  "years": "2026-2028",
+  "source_file": "subjects/0625-physics/reference/0625_syllabus_2026-2028.pdf",
+  "syllabus_version": "Version 2 (as on the cover; published December 2025, p. 60)",
+  "tier_notes": "All candidates take three papers (p. 9, p. 42). Core: candidates who have studied the Core subject content, or who are expected to achieve a grade D or below, take Paper 1, Paper 3 and either Paper 5 or Paper 6; eligible for grades C to G; questions on Papers 1 and 3 are based on the Core subject content only. Extended: candidates who have studied the Extended subject content (Core and Supplement), and who are expected to achieve a grade C or above, take Paper 2, Paper 4 and either Paper 5 or Paper 6; eligible for grades A* to G; questions on Papers 2 and 4 are based on the Core and Supplement subject content. Practical: all candidates take one practical paper from a choice of two (Paper 5 Practical Test or Paper 6 Alternative to Practical), both testing AO3 and based on the experimental skills in Section 4 (pp. 43-45). Candidates only taught the Core subject content can achieve a maximum of grade C (p. 12).",
+  "papers": [
+    {
+      "paper": "1",
+      "name": "Multiple Choice (Core)",
+      "type": "mcq",
+      "tier": "core",
+      "marks": 40,
+      "duration_minutes": 45,
+      "weighting_percent": 30
+    },
+    {
+      "paper": "2",
+      "name": "Multiple Choice (Extended)",
+      "type": "mcq",
+      "tier": "extended",
+      "marks": 40,
+      "duration_minutes": 45,
+      "weighting_percent": 30
+    },
+    {
+      "paper": "3",
+      "name": "Theory (Core)",
+      "type": "structured",
+      "tier": "core",
+      "marks": 80,
+      "duration_minutes": 75,
+      "weighting_percent": 50
+    },
+    {
+      "paper": "4",
+      "name": "Theory (Extended)",
+      "type": "structured",
+      "tier": "extended",
+      "marks": 80,
+      "duration_minutes": 75,
+      "weighting_percent": 50
+    },
+    {
+      "paper": "5",
+      "name": "Practical Test",
+      "type": "practical",
+      "tier": "all",
+      "marks": 40,
+      "duration_minutes": 75,
+      "weighting_percent": 20
+    },
+    {
+      "paper": "6",
+      "name": "Alternative to Practical",
+      "type": "alternative_to_practical",
+      "tier": "all",
+      "marks": 40,
+      "duration_minutes": 60,
+      "weighting_percent": 20
+    }
+  ],
+  "paper_notes": [
+    "Papers 1 and 2: 40 compulsory multiple-choice items of the four-choice type; test AO1 and AO2 (p. 42).",
+    "Papers 3 and 4: compulsory short-answer and structured questions; test AO1 and AO2 (p. 42).",
+    "Paper 1 and Paper 3 assess grades C to G; Paper 2 and Paper 4 assess grades A* to G (p. 42).",
+    "Papers 5 and 6: all items are compulsory; test AO3. Paper 5 candidates do experiments in a laboratory; Paper 6 candidates are not required to do experiments (p. 43).",
+    "AO weightings: AO1 50%, AO2 30%, AO3 20% of the qualification; Papers 1-4 are AO1 63% / AO2 37%; Papers 5 and 6 are AO3 100% (p. 11).",
+    "All papers are externally assessed (pp. 9, 42-43)."
+  ],
+  "command_words": {
+    "Calculate": "work out from given facts, figures or information",
+    "Comment": "give an informed opinion",
+    "Compare": "identify/comment on similarities and/or differences",
+    "Deduce": "conclude from available information",
+    "Define": "give precise meaning",
+    "Describe": "state the points of a topic / give characteristics and main features",
+    "Determine": "establish an answer using the information available",
+    "Explain": "set out purposes or reasons / make the relationships between things clear / say why and/or how and support with relevant evidence",
+    "Give": "produce an answer from a given source or recall/memory",
+    "Identify": "name/select/recognise",
+    "Justify": "support a case with evidence/argument",
+    "Predict": "suggest what may happen based on available information",
+    "Sketch": "make a simple freehand drawing showing the key features, taking care over proportions",
+    "State": "express in clear terms",
+    "Suggest": "apply knowledge and understanding to situations where there are a range of valid responses in order to make proposals / put forward considerations"
+  },
+  "data_provided": {
+    "given": [
+      "No equation list, formula sheet, data booklet or table of constants is stated anywhere in the syllabus as provided in the exam (checked pp. 9-11, 12-41, 42-55). The syllabus does not state that a value of g is provided; 1.2.8 requires candidates to state that g is approximately 9.8 m / s^2.",
+      "Calculators may be used in all parts of the examination (p. 52).",
+      "Data given within individual questions: the subject content refers to 'given data' or data supplied in the question at 1.2.5 and 1.2.10 (given data or graph shape), 1.4.3 and 1.4.4 (density data), 5.2.4.1 (information in tables or decay curves), 5.2.4.2 (data or decay curves) and 6.1.2.8 (planetary data).",
+      "Where data is supplied for use in questions, candidates are expected to use units consistent with the units supplied and should not attempt conversion to other systems of units unless the question requires it (p. 54).",
+      "Practical papers: experiments are set around the apparatus lists on pp. 46-47; the Confidential Instructions sent before the Practical Test give the detailed requirements (p. 46)."
+    ],
+    "not_given": [
+      "1.2.1 v = s / t (recall and use)",
+      "1.2.3 average speed = total distance travelled / total time taken (recall and use)",
+      "1.2.9 a = Δv / Δt (recall and use; Supplement)",
+      "1.3.3 g = W / m (recall and use)",
+      "1.4.1 ρ = m / V (recall and use)",
+      "1.5.1.9 k = F / x (recall and use; Supplement)",
+      "1.5.1.11 F = ma (recall and use; Supplement)",
+      "1.5.2.2 moment = force × perpendicular distance from the pivot (recall and use)",
+      "1.6.1 p = mv (recall and use; Supplement)",
+      "1.6.2 impulse = FΔt = Δ(mv) (recall and use; Supplement)",
+      "1.6.4 F = Δp / Δt (recall and use; Supplement)",
+      "1.7.1.4 Ek = ½mv^2 (recall and use; Supplement)",
+      "1.7.1.5 ΔEp = mgΔh (recall and use; Supplement)",
+      "1.7.2.2 W = Fd = ΔE (recall and use)",
+      "1.7.3.7 (%) efficiency = (useful energy output) / (total energy input) (× 100%) and (%) efficiency = (useful power output) / (total power input) (× 100%) (recall and use; Supplement)",
+      "1.7.4.1 P = W / t and P = ΔE / t (recall and use)",
+      "1.8.1 p = F / A (recall and use)",
+      "1.8.4 Δp = ρgΔh (recall and use; Supplement)",
+      "2.1.3.2 T (in K) = θ (in °C) + 273 (recall and use)",
+      "2.1.3.3 pV = constant for a fixed mass of gas at constant temperature (recall and use; Supplement)",
+      "2.2.2.3 c = ΔE / (mΔθ) (recall and use; Supplement)",
+      "3.1.4 v = fλ (recall and use)",
+      "3.2.1.3 angle of incidence = angle of reflection (recall and use this relationship)",
+      "3.2.2.7 n = sin i / sin r (recall and use; Supplement)",
+      "3.2.2.8 n = 1 / sin c (recall and use; Supplement)",
+      "4.2.2.5 I = Q / t (recall and use; Supplement)",
+      "4.2.3.6 E = W / Q (recall and use; Supplement)",
+      "4.2.3.7 V = W / Q (recall and use; Supplement)",
+      "4.2.4.1 R = V / I (recall and use)",
+      "4.2.4.5 resistance is directly proportional to length; resistance is inversely proportional to cross-sectional area (recall and use; Supplement)",
+      "4.2.5.2 P = IV (recall and use)",
+      "4.2.5.3 E = IVt (recall and use)",
+      "4.3.3.3 R1 / R2 = V1 / V2 for two resistors used as a potential divider (recall and use; Supplement)",
+      "4.5.6.3 Vp / Vs = Np / Ns (recall and use)",
+      "4.5.6.7 IpVp = IsVs for 100% efficiency (recall and use; Supplement)",
+      "4.5.6.8 P = I^2R (recall and use; Supplement)",
+      "5.2.4.1 definition of half-life (recall and use this definition in simple calculations)",
+      "6.1.1.4 v = 2πr / T (recall and use; Supplement)",
+      "6.2.3.9 H0 = v / d (recall and use; Supplement)",
+      "6.2.3.11 d / v = 1 / H0 as an estimate for the age of the Universe (know that the equation; Supplement)",
+      "Not required: F = mv^2 / r (1.5.1.12); an understanding of the elastic limit (1.5.1.10).",
+      "Values to be known (stated in the content, not given): g approximately 9.8 m / s^2 (1.2.8); absolute zero −273 °C (2.1.2.2); melting and boiling temperatures for water at standard atmospheric pressure (2.2.3.2); audible range 20 Hz to 20 000 Hz (3.4.3); speed of sound in air approximately 330–350 m / s (3.4.5); ultrasound above 20 kHz (3.4.9); speed of electromagnetic waves in a vacuum 3.0 × 10^8 m / s (3.3.6, Supplement); Earth rotation approximately 24 hours, orbit approximately 365 days, Moon orbit approximately one month (6.1.1.1-6.1.1.3); one light-year = 9.5 × 10^15 m (6.2.2.2, Supplement); Milky Way diameter approximately 100 000 light-years (6.2.3.1); H0 approximately 2.2 × 10^-18 per second (6.2.3.10, Supplement); relative charges of proton, neutron, electron +1, 0, –1 (5.1.2.2).",
+      "Mathematical requirements to recall (p. 52): circumference of a circle; area of a rectangle, triangle and circle; volume of a rectangular block and of a cylinder; Pythagoras' theorem; trigonometric functions (sine, cosine, tangent and their inverses) for Extended candidates only."
+    ],
+    "conventions": [
+      "Multipliers: all candidates M mega, k kilo, c centi, m milli; Extended candidates also G giga, µ micro, n nano (p. 50).",
+      "Numerical answers should be written as decimals (or percentages if appropriate) (p. 52).",
+      "Only the final answer in a calculation should be rounded; use decimal places and significant figures appropriately; use standard form (p. 52).",
+      "Use Δ (delta) to represent changes in a variable (p. 52).",
+      "The number of significant figures for measured quantities should be appropriate to the instrument; for calculated quantities it should be the same as the least number of significant figures in the raw data used in that calculation (p. 53).",
+      "A measurement or calculated quantity must be accompanied by a correct unit, where appropriate (p. 53).",
+      "Table columns and graph axes are headed with quantity name or symbol and unit separated by a solidus, e.g. time / s; units are not included with data in the body of a table (p. 53).",
+      "A ratio should be expressed as x : y (p. 53).",
+      "Readings are taken to one half of the smallest scale division; graph points plotted and read to one half of the smallest square (pp. 53-54).",
+      "Gradient calculated to two or three significant figures, using a triangle whose hypotenuse extends over at least half the best-fit line (p. 54).",
+      "Results are equal within the limits of experimental accuracy assumed to be ± 10% at this level of study (p. 44).",
+      "Decimal markers are a single dot on the line (p. 54).",
+      "Numbers from 1000 to 9999 printed without commas or spaces; numbers ≥ 10 000 printed with a space between each group of three digits and no commas, e.g. 4 256 789 (p. 54).",
+      "The cubic decimetre (dm^3) is used in place of l or litre (p. 54).",
+      "SI units, or units approved by the BIPM for use with the SI (e.g. minute), are expected; imperial/customary units such as the inch and degree Fahrenheit are not acceptable (p. 54).",
+      "Nomenclature follows ASE 'Signs, Symbols and Systematics: The ASE Companion to 16–19 Science (2000)' (p. 54).",
+      "β-particles are taken to refer to β–; β+ is not included (5.2.2.2).",
+      "Map transcription conventions (not from the syllabus): fractions printed over two lines are rebuilt in one-line form with ' / ' (e.g. ρ = m / V); superscripts are written with ^ (m / s^2, 10^8, I^2R); subscripts are written inline (Ek, ΔEp, Vp, Ns, H0, R1); nuclide notation is written ^A_Z X; sub-items (a), (b) are joined with '; '; the printed en dash '–' in '–1', 'β–' and '10^-18' denotes a minus sign."
+    ],
+    "appendices": [
+      "Practical assessment (pp. 43-45): experimental contexts candidates should be familiar with (measurement of length, volume, force; small distances and short time intervals; derived quantities such as extension per unit load, resistance, acceleration; relationships between two variables; comparing angles of reflection and densities; cooling and heating; springs and balances; timing motion or oscillations; electric circuits; optics with pins, mirrors, prisms, lenses, glass or Perspex blocks; unfamiliar procedures) and AO3 skills (safe use of techniques and apparatus, planning, observing and recording, interpreting and evaluating data, evaluating methods). These are not numbered learning points.",
+      "Language of measurement (p. 45): definitions of true value, measurement error, accuracy, precision, repeatability, reproducibility, validity of experimental design, range, anomaly, independent variable, dependent variable. Candidates will not be required to recall these specific definitions.",
+      "Apparatus (pp. 46-47): lists under General, Mechanics, Thermal physics, Optics and Electricity (e.g. 30 cm ruler graduated in mm; top-pan balance to 500 g, precision at least 0.1 g; springs approx. 0.25 N / cm; force meter 1.0 N to 3.0 N; stop-watch reading to 0.1 s or better; thermometer –10 °C to +110 °C with 1 °C graduations; converging lenses f = 10 cm and f = 15 cm, diverging lens f = –15 cm; ammeter f.s.d. 1 A or 1.5 A, precision at least 0.05 A; voltmeter f.s.d. 5 V, precision at least 0.1 V; 1.5 V cells; d.c. power supply variable to 12 V; resistors 5–50 Ω; NTC thermistors; constantan and nichrome wire 0.38 mm (28 swg) and 0.32 mm (30 swg)).",
+      "Safety in the laboratory (p. 48): responsibility rests with centres; references CLEAPSS, CLEAPSS Laboratory Handbook and Hazcards, and COSHH regulations. Eye protection at least must be provided (p. 46).",
+      "Electrical symbols (p. 49): cell; battery of cells; power supply; d.c. power supply; a.c. power supply; fixed resistor; variable resistor; thermistor; light-dependent resistor; heater; potential divider; transformer; magnetising coil; switch; earth or ground; junction of conductors; lamp; motor (M); generator (G); ammeter (A); voltmeter (V); diode; light-emitting diode; fuse; relay coil; electric bell.",
+      "Symbols and units, Core (pp. 50-51): length l, h, d, s, x (km, m, cm, mm); area A (m^2, cm^2); volume V (m^3, cm^3, dm^3); weight W (N); mass m, M (kg, g); time t (h, min, s); density ρ (g / cm^3, kg / m^3); speed u, v (km / h, m / s, cm / s); acceleration a (m / s^2); acceleration of free fall g (m / s^2); force F (N); gravitational field strength g (N / kg); moment of a force (Nm); work done W (J, kJ, MJ); energy E (J, kJ, MJ, kW h); power P (W, kW, MW); pressure p (N / m^2, N / cm^2); temperature θ, T (°C, K); frequency f (Hz, kHz); wavelength λ (m, cm); focal length f (m, cm); angle of incidence i, angle of reflection r, angle of refraction r, critical angle c (degree (°)); potential difference/voltage V (V, mV, kV); current I (A, mA); e.m.f. E (V); resistance R (Ω); count rate (counts / s, counts / min); half-life (s, min, h, days, weeks, years).",
+      "Symbols and units, Supplement additions (pp. 50-51): mass m, M (mg); time t (ms, μs); spring constant k (N / m, N / cm); momentum p (kg m / s); impulse (Ns); pressure p (Pa); specific heat capacity c (J / (g °C), J / (kg °C)); wavelength λ (nm); refractive index n; charge Q (C); Hubble constant H0 (s^-1).",
+      "Mathematical requirements (pp. 52-53): Number, Algebra, Geometry and trigonometry, Graphs, charts and statistics. Extended only: trigonometric functions; determining a gradient by drawing a tangent to a curved line.",
+      "Presentation of data (pp. 53-54): taking readings, recording readings, drawing and analysing graphs (see conventions).",
+      "Command words (p. 55): see command_words."
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "1",
+      "topic_name": "Motion, forces and energy",
+      "subtopics": [
+        {
+          "subtopic_id": "1.1",
+          "subtopic_name": "Physical quantities and measurement techniques",
+          "points": [
+            {
+              "point_id": "1.1.1",
+              "tier": "core",
+              "text": "Describe the use of rulers and measuring cylinders to find a length or a volume",
+              "diagram_dependence": "partial",
+              "diagram_note": "Questions usually show ruler or measuring cylinder scales; readings can be given in words."
+            },
+            {
+              "point_id": "1.1.2",
+              "tier": "core",
+              "text": "Describe how to measure a variety of time intervals using clocks and digital timers",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.1.3",
+              "tier": "core",
+              "text": "Determine an average value for a small distance and for a short interval of time by measuring multiples (including the period of oscillation of a pendulum)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.1.4",
+              "tier": "supplement",
+              "text": "Understand that a scalar quantity has magnitude (size) only and that a vector quantity has magnitude and direction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.1.5",
+              "tier": "supplement",
+              "text": "Know that the following quantities are scalars: distance, speed, time, mass, energy and temperature",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.1.6",
+              "tier": "supplement",
+              "text": "Know that the following quantities are vectors: force, weight, velocity, acceleration, momentum, electric field strength and gravitational field strength",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.1.7",
+              "tier": "supplement",
+              "text": "Determine, by calculation or graphically, the resultant of two vectors at right angles, limited to forces or velocities only",
+              "diagram_dependence": "partial",
+              "diagram_note": "Graphical (scale drawing) method needs a drawing; the calculation route can be tested in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.2",
+          "subtopic_name": "Motion",
+          "points": [
+            {
+              "point_id": "1.2.1",
+              "tier": "core",
+              "text": "Define speed as distance travelled per unit time; recall and use the equation v = s / t",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.2.2",
+              "tier": "core",
+              "text": "Define velocity as speed in a given direction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.2.3",
+              "tier": "core",
+              "text": "Recall and use the equation average speed = total distance travelled / total time taken",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.2.4",
+              "tier": "core",
+              "text": "Sketch, plot and interpret distance–time and speed–time graphs",
+              "diagram_dependence": "essential",
+              "diagram_note": "Sketching and plotting distance–time and speed–time graphs requires drawing a graph."
+            },
+            {
+              "point_id": "1.2.5",
+              "tier": "core",
+              "text": "Determine, qualitatively, from given data or the shape of a distance–time graph or speed–time graph when an object is: (a) at rest; (b) moving with constant speed; (c) accelerating; (d) decelerating",
+              "diagram_dependence": "partial",
+              "diagram_note": "Graph shapes can be replaced by data tables or verbal descriptions of the graph."
+            },
+            {
+              "point_id": "1.2.6",
+              "tier": "core",
+              "text": "Calculate speed from the gradient of a straight-line section of a distance–time graph",
+              "diagram_dependence": "partial",
+              "diagram_note": "Gradient can be calculated from tabulated points on the straight-line section."
+            },
+            {
+              "point_id": "1.2.7",
+              "tier": "core",
+              "text": "Calculate the area under a speed–time graph to determine the distance travelled for motion with constant speed or constant acceleration",
+              "diagram_dependence": "partial",
+              "diagram_note": "Area can be calculated from a described or tabulated speed–time graph."
+            },
+            {
+              "point_id": "1.2.8",
+              "tier": "core",
+              "text": "State that the acceleration of free fall g for an object near to the surface of the Earth is approximately constant and is approximately 9.8 m / s^2",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.2.9",
+              "tier": "supplement",
+              "text": "Define acceleration as change in velocity per unit time; recall and use the equation a = Δv / Δt",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.2.10",
+              "tier": "supplement",
+              "text": "Determine from given data or the shape of a speed–time graph when an object is moving with: (a) constant acceleration; (b) changing acceleration",
+              "diagram_dependence": "partial",
+              "diagram_note": "Graph shapes can be replaced by data tables or verbal descriptions."
+            },
+            {
+              "point_id": "1.2.11",
+              "tier": "supplement",
+              "text": "Calculate acceleration from the gradient of a speed–time graph",
+              "diagram_dependence": "partial",
+              "diagram_note": "Gradient can be calculated from tabulated points."
+            },
+            {
+              "point_id": "1.2.12",
+              "tier": "supplement",
+              "text": "Know that a deceleration is a negative acceleration and use this in calculations",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.2.13",
+              "tier": "supplement",
+              "text": "Describe the motion of objects falling in a uniform gravitational field with and without air/liquid resistance, including reference to terminal velocity",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often tested with a speed–time graph; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.3",
+          "subtopic_name": "Mass and weight",
+          "points": [
+            {
+              "point_id": "1.3.1",
+              "tier": "core",
+              "text": "State that mass is a measure of the quantity of matter in an object at rest relative to the observer",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.3.2",
+              "tier": "core",
+              "text": "State that weight is a gravitational force on an object that has mass",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.3.3",
+              "tier": "core",
+              "text": "Define gravitational field strength as force per unit mass; recall and use the equation g = W / m and know that this is equivalent to the acceleration of free fall",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.3.4",
+              "tier": "core",
+              "text": "Know that weights (and masses) may be compared using a balance",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.3.5",
+              "tier": "supplement",
+              "text": "Describe, and use the concept of, weight as the effect of a gravitational field on a mass",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.4",
+          "subtopic_name": "Density",
+          "points": [
+            {
+              "point_id": "1.4.1",
+              "tier": "core",
+              "text": "Define density as mass per unit volume; recall and use the equation ρ = m / V",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.4.2",
+              "tier": "core",
+              "text": "Describe how to determine the density of a liquid, of a regularly shaped solid and of an irregularly shaped solid which sinks in a liquid (volume by displacement), including appropriate calculations",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often shows measuring cylinder readings or apparatus; readings can be given in words."
+            },
+            {
+              "point_id": "1.4.3",
+              "tier": "core",
+              "text": "Determine whether an object floats based on density data",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.4.4",
+              "tier": "supplement",
+              "text": "Determine whether one liquid will float on another liquid based on density data given that the liquids do not mix",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.5.1",
+          "subtopic_name": "Effects of forces",
+          "parent_id": "1.5",
+          "parent_name": "Forces",
+          "points": [
+            {
+              "point_id": "1.5.1.1",
+              "tier": "core",
+              "text": "Know that forces may produce changes in the size and shape of an object",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.2",
+              "tier": "core",
+              "text": "Sketch, plot and interpret load–extension graphs for an elastic solid and describe the associated experimental procedures",
+              "diagram_dependence": "essential",
+              "diagram_note": "Sketching and plotting load–extension graphs requires drawing a graph."
+            },
+            {
+              "point_id": "1.5.1.3",
+              "tier": "core",
+              "text": "Determine the resultant of two or more forces acting along the same straight line",
+              "diagram_dependence": "partial",
+              "diagram_note": "Force diagrams are common; forces along a line can be described in words."
+            },
+            {
+              "point_id": "1.5.1.4",
+              "tier": "core",
+              "text": "Know that an object either remains at rest or continues in a straight line at constant speed unless acted on by a resultant force",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.5",
+              "tier": "core",
+              "text": "State that a resultant force may change the velocity of an object by changing its direction of motion or its speed",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.6",
+              "tier": "core",
+              "text": "Describe solid friction as the force between two surfaces that may impede motion and produce heating",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.7",
+              "tier": "core",
+              "text": "Know that friction (drag) acts on an object moving through a liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.8",
+              "tier": "core",
+              "text": "Know that friction (drag) acts on an object moving through a gas (e.g. air resistance)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.9",
+              "tier": "supplement",
+              "text": "Define the spring constant as force per unit extension; recall and use the equation k = F / x",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.10",
+              "tier": "supplement",
+              "text": "Define and use the term ‘limit of proportionality’ for a load–extension graph and identify this point on the graph (an understanding of the elastic limit is not required)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Identifying the point on a graph can be replaced by a load–extension data table."
+            },
+            {
+              "point_id": "1.5.1.11",
+              "tier": "supplement",
+              "text": "Recall and use the equation F = ma and know that the force and the acceleration are in the same direction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.1.12",
+              "tier": "supplement",
+              "text": "Describe, qualitatively, motion in a circular path due to a force perpendicular to the motion as: (a) speed increases if force increases, with mass and radius constant; (b) radius decreases if force increases, with mass and speed constant; (c) an increased mass requires an increased force to keep speed and radius constant; (F = mv^2 / r is not required)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.5.2",
+          "subtopic_name": "Turning effect of forces",
+          "parent_id": "1.5",
+          "parent_name": "Forces",
+          "points": [
+            {
+              "point_id": "1.5.2.1",
+              "tier": "core",
+              "text": "Describe the moment of a force as a measure of its turning effect and give everyday examples",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.2.2",
+              "tier": "core",
+              "text": "Define the moment of a force as moment = force × perpendicular distance from the pivot; recall and use this equation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.2.3",
+              "tier": "core",
+              "text": "Apply the principle of moments to situations with one force each side of the pivot, including balancing of a beam",
+              "diagram_dependence": "partial",
+              "diagram_note": "Beam diagrams are usual; positions of forces can be given in words."
+            },
+            {
+              "point_id": "1.5.2.4",
+              "tier": "core",
+              "text": "State that, when there is no resultant force and no resultant moment, an object is in equilibrium",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.2.5",
+              "tier": "supplement",
+              "text": "Apply the principle of moments to other situations, including those with more than one force each side of the pivot",
+              "diagram_dependence": "partial",
+              "diagram_note": "Beam diagrams are usual; positions of forces can be given in words."
+            },
+            {
+              "point_id": "1.5.2.6",
+              "tier": "supplement",
+              "text": "Describe an experiment to demonstrate that there is no resultant moment on an object in equilibrium",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus is often shown; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.5.3",
+          "subtopic_name": "Centre of gravity",
+          "parent_id": "1.5",
+          "parent_name": "Forces",
+          "points": [
+            {
+              "point_id": "1.5.3.1",
+              "tier": "core",
+              "text": "State what is meant by centre of gravity",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5.3.2",
+              "tier": "core",
+              "text": "Describe an experiment to determine the position of the centre of gravity of an irregularly shaped plane lamina",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus (plumb line, lamina) is often shown; can be described in words."
+            },
+            {
+              "point_id": "1.5.3.3",
+              "tier": "core",
+              "text": "Describe, qualitatively, the effect of the position of the centre of gravity on the stability of simple objects",
+              "diagram_dependence": "partial",
+              "diagram_note": "Objects are often drawn; shapes can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.6",
+          "subtopic_name": "Momentum",
+          "points": [
+            {
+              "point_id": "1.6.1",
+              "tier": "supplement",
+              "text": "Define momentum as mass × velocity; recall and use the equation p = mv",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.6.2",
+              "tier": "supplement",
+              "text": "Define impulse as force × time for which force acts; recall and use the equation impulse = FΔt = Δ(mv)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.6.3",
+              "tier": "supplement",
+              "text": "Apply the principle of the conservation of momentum to solve simple problems in one dimension",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.6.4",
+              "tier": "supplement",
+              "text": "Define resultant force as the change in momentum per unit time; recall and use the equation F = Δp / Δt",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.7.1",
+          "subtopic_name": "Energy",
+          "parent_id": "1.7",
+          "parent_name": "Energy, work and power",
+          "points": [
+            {
+              "point_id": "1.7.1.1",
+              "tier": "core",
+              "text": "State that energy may be stored as kinetic, gravitational potential, chemical, elastic (strain), nuclear, electrostatic and internal (thermal)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.1.2",
+              "tier": "core",
+              "text": "Describe how energy is transferred between stores during events and processes, including examples of transfer by forces (mechanical work done), electrical currents (electrical work done), heating, and by electromagnetic, sound and other waves",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.1.3",
+              "tier": "core",
+              "text": "Know the principle of the conservation of energy and apply this principle to simple examples including the interpretation of simple flow diagrams",
+              "diagram_dependence": "partial",
+              "diagram_note": "Flow diagrams can be given as text chains or tables of energy values."
+            },
+            {
+              "point_id": "1.7.1.4",
+              "tier": "supplement",
+              "text": "Recall and use the equation for kinetic energy Ek = ½mv^2",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.1.5",
+              "tier": "supplement",
+              "text": "Recall and use the equation for the change in gravitational potential energy ΔEp = mgΔh",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.1.6",
+              "tier": "supplement",
+              "text": "Know the principle of the conservation of energy and apply this principle to complex examples involving multiple stages, including the interpretation of Sankey diagrams",
+              "diagram_dependence": "partial",
+              "diagram_note": "Sankey diagrams can be replaced by tables of energy input and outputs."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.7.2",
+          "subtopic_name": "Work",
+          "parent_id": "1.7",
+          "parent_name": "Energy, work and power",
+          "points": [
+            {
+              "point_id": "1.7.2.1",
+              "tier": "core",
+              "text": "Understand that mechanical or electrical work done is equal to the energy transferred",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.2.2",
+              "tier": "core",
+              "text": "Recall and use the equation for mechanical working W = Fd = ΔE",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.7.3",
+          "subtopic_name": "Energy resources",
+          "parent_id": "1.7",
+          "parent_name": "Energy, work and power",
+          "points": [
+            {
+              "point_id": "1.7.3.1",
+              "tier": "core",
+              "text": "Describe how useful energy may be obtained, or electrical power generated, from: (a) chemical energy stored in fossil fuels; (b) chemical energy stored in biofuels; (c) water, including the energy stored in waves, in tides and in water behind hydroelectric dams; (d) geothermal resources; (e) nuclear fuel; (f) light from the Sun to generate electrical power (solar cells); (g) infrared and other electromagnetic waves from the Sun to heat water (solar panels) and be the source of wind energy; including references to a boiler, turbine and generator where they are used",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.3.2",
+              "tier": "core",
+              "text": "Describe advantages and disadvantages of each method in terms of renewability, availability, reliability, scale and environmental impact",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.3.3",
+              "tier": "core",
+              "text": "Understand, qualitatively, the concept of efficiency of energy transfer",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.3.4",
+              "tier": "supplement",
+              "text": "Know that radiation from the Sun is the main source of energy for all our energy resources except geothermal, nuclear and tidal",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.3.5",
+              "tier": "supplement",
+              "text": "Know that energy is released by nuclear fusion in the Sun",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.3.6",
+              "tier": "supplement",
+              "text": "Know that research is being carried out to investigate how energy released by nuclear fusion can be used to produce electrical energy on a large scale",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.7.3.7",
+              "tier": "supplement",
+              "text": "Define efficiency as: (a) (%) efficiency = (useful energy output) / (total energy input) (× 100%); (b) (%) efficiency = (useful power output) / (total power input) (× 100%); recall and use these equations",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.7.4",
+          "subtopic_name": "Power",
+          "parent_id": "1.7",
+          "parent_name": "Energy, work and power",
+          "points": [
+            {
+              "point_id": "1.7.4.1",
+              "tier": "core",
+              "text": "Define power as work done per unit time and also as energy transferred per unit time; recall and use the equations (a) P = W / t; (b) P = ΔE / t",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1.8",
+          "subtopic_name": "Pressure",
+          "points": [
+            {
+              "point_id": "1.8.1",
+              "tier": "core",
+              "text": "Define pressure as force per unit area; recall and use the equation p = F / A",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.8.2",
+              "tier": "core",
+              "text": "Describe how pressure varies with force and area in the context of everyday examples",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.8.3",
+              "tier": "core",
+              "text": "Describe, qualitatively, how the pressure beneath the surface of a liquid changes with depth and density of the liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.8.4",
+              "tier": "supplement",
+              "text": "Recall and use the equation for the change in pressure beneath the surface of a liquid Δp = ρgΔh",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "2",
+      "topic_name": "Thermal physics",
+      "subtopics": [
+        {
+          "subtopic_id": "2.1.1",
+          "subtopic_name": "States of matter",
+          "parent_id": "2.1",
+          "parent_name": "Kinetic particle model of matter",
+          "points": [
+            {
+              "point_id": "2.1.1.1",
+              "tier": "core",
+              "text": "Know the distinguishing properties of solids, liquids and gases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.1.2",
+              "tier": "core",
+              "text": "Know the terms for the changes in state between solids, liquids and gases (gas to solid and solid to gas transfers are not required)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.1.2",
+          "subtopic_name": "Particle model",
+          "parent_id": "2.1",
+          "parent_name": "Kinetic particle model of matter",
+          "points": [
+            {
+              "point_id": "2.1.2.1",
+              "tier": "core",
+              "text": "Describe the particle structure of solids, liquids and gases in terms of the arrangement, separation and motion of the particles and represent these states using simple particle diagrams",
+              "diagram_dependence": "partial",
+              "diagram_note": "The 'represent using simple particle diagrams' part needs drawing; the description can be tested in words."
+            },
+            {
+              "point_id": "2.1.2.2",
+              "tier": "core",
+              "text": "Describe the relationship between the motion of particles and temperature, including the idea that there is a lowest possible temperature (−273 °C), known as absolute zero, where the particles have least kinetic energy",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.2.3",
+              "tier": "core",
+              "text": "Describe the pressure and the changes in pressure of a gas in terms of the motion of its particles and their collisions with a surface",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.2.4",
+              "tier": "core",
+              "text": "Know that the random motion of microscopic particles in a suspension is evidence for the kinetic particle model of matter",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.2.5",
+              "tier": "core",
+              "text": "Describe and explain this motion (sometimes known as Brownian motion) in terms of random collisions between the microscopic particles in a suspension and the particles of the gas or liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.2.6",
+              "tier": "supplement",
+              "text": "Know that the forces and distances between particles (atoms, molecules, ions and electrons) and the motion of the particles affects the properties of solids, liquids and gases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.2.7",
+              "tier": "supplement",
+              "text": "Describe the pressure and the changes in pressure of a gas in terms of the forces exerted by particles colliding with surfaces, creating a force per unit area",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.2.8",
+              "tier": "supplement",
+              "text": "Know that microscopic particles may be moved by collisions with light fast-moving molecules and correctly use the terms atoms or molecules as distinct from microscopic particles",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.1.3",
+          "subtopic_name": "Gases and the absolute scale of temperature",
+          "parent_id": "2.1",
+          "parent_name": "Kinetic particle model of matter",
+          "points": [
+            {
+              "point_id": "2.1.3.1",
+              "tier": "core",
+              "text": "Describe qualitatively, in terms of particles, the effect on the pressure of a fixed mass of gas of: (a) a change of temperature at constant volume; (b) a change of volume at constant temperature",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.3.2",
+              "tier": "core",
+              "text": "Convert temperatures between kelvin and degrees Celsius; recall and use the equation T (in K) = θ (in °C) + 273",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.1.3.3",
+              "tier": "supplement",
+              "text": "Recall and use the equation pV = constant for a fixed mass of gas at constant temperature, including a graphical representation of this relationship",
+              "diagram_dependence": "partial",
+              "diagram_note": "The graphical representation can be replaced by a p–V data table or a verbal description of the graph."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.2.1",
+          "subtopic_name": "Thermal expansion of solids, liquids and gases",
+          "parent_id": "2.2",
+          "parent_name": "Thermal properties and temperature",
+          "points": [
+            {
+              "point_id": "2.2.1.1",
+              "tier": "core",
+              "text": "Describe, qualitatively, the thermal expansion of solids, liquids and gases at constant pressure",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.1.2",
+              "tier": "core",
+              "text": "Describe some of the everyday applications and consequences of thermal expansion",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.1.3",
+              "tier": "supplement",
+              "text": "Explain, in terms of the motion and arrangement of particles, the relative order of magnitudes of the expansion of solids, liquids and gases as their temperatures rise",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.2.2",
+          "subtopic_name": "Specific heat capacity",
+          "parent_id": "2.2",
+          "parent_name": "Thermal properties and temperature",
+          "points": [
+            {
+              "point_id": "2.2.2.1",
+              "tier": "core",
+              "text": "Know that a rise in the temperature of an object increases its internal energy",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.2.2",
+              "tier": "supplement",
+              "text": "Describe an increase in temperature of an object in terms of an increase in the average kinetic energies of all of the particles in the object",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.2.3",
+              "tier": "supplement",
+              "text": "Define specific heat capacity as the energy required per unit mass per unit temperature increase; recall and use the equation c = ΔE / (mΔθ)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.2.4",
+              "tier": "supplement",
+              "text": "Describe experiments to measure the specific heat capacity of a solid and a liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.2.3",
+          "subtopic_name": "Melting, boiling and evaporation",
+          "parent_id": "2.2",
+          "parent_name": "Thermal properties and temperature",
+          "points": [
+            {
+              "point_id": "2.2.3.1",
+              "tier": "core",
+              "text": "Describe melting and boiling in terms of energy input without a change in temperature",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often tested with a heating/cooling curve; can be given as a temperature–time table."
+            },
+            {
+              "point_id": "2.2.3.2",
+              "tier": "core",
+              "text": "Know the melting and boiling temperatures for water at standard atmospheric pressure",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.3.3",
+              "tier": "core",
+              "text": "Describe condensation and solidification in terms of particles",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.3.4",
+              "tier": "core",
+              "text": "Describe evaporation in terms of the escape of more-energetic particles from the surface of a liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.3.5",
+              "tier": "core",
+              "text": "Know that evaporation causes cooling of a liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.3.6",
+              "tier": "supplement",
+              "text": "Describe the differences between boiling and evaporation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.3.7",
+              "tier": "supplement",
+              "text": "Describe how temperature, surface area and air movement over a surface affect evaporation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2.3.8",
+              "tier": "supplement",
+              "text": "Explain the cooling of an object in contact with an evaporating liquid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.3.1",
+          "subtopic_name": "Conduction",
+          "parent_id": "2.3",
+          "parent_name": "Transfer of thermal energy",
+          "points": [
+            {
+              "point_id": "2.3.1.1",
+              "tier": "core",
+              "text": "Describe experiments to demonstrate the properties of good thermal conductors and bad thermal conductors (thermal insulators)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus is often shown; can be described in words."
+            },
+            {
+              "point_id": "2.3.1.2",
+              "tier": "supplement",
+              "text": "Describe thermal conduction in all solids in terms of atomic or molecular lattice vibrations and also in terms of the movement of free (delocalised) electrons in metallic conductors",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.1.3",
+              "tier": "supplement",
+              "text": "Describe, in terms of particles, why thermal conduction is bad in gases and most liquids",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.1.4",
+              "tier": "supplement",
+              "text": "Know that there are many solids that conduct thermal energy better than thermal insulators but do so less well than good thermal conductors",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.3.2",
+          "subtopic_name": "Convection",
+          "parent_id": "2.3",
+          "parent_name": "Transfer of thermal energy",
+          "points": [
+            {
+              "point_id": "2.3.2.1",
+              "tier": "core",
+              "text": "Know that convection is an important method of thermal energy transfer in liquids and gases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.2.2",
+              "tier": "core",
+              "text": "Explain convection in liquids and gases in terms of density changes and describe experiments to illustrate convection",
+              "diagram_dependence": "partial",
+              "diagram_note": "Convection-current apparatus is often shown; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.3.3",
+          "subtopic_name": "Radiation",
+          "parent_id": "2.3",
+          "parent_name": "Transfer of thermal energy",
+          "points": [
+            {
+              "point_id": "2.3.3.1",
+              "tier": "core",
+              "text": "Know that thermal radiation is infrared radiation and that all objects emit this radiation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.3.2",
+              "tier": "core",
+              "text": "Know that thermal energy transfer by thermal radiation does not require a medium",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.3.3",
+              "tier": "core",
+              "text": "Describe the effect of surface colour (black or white) and texture (dull or shiny) on the emission, absorption and reflection of infrared radiation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.3.4",
+              "tier": "supplement",
+              "text": "Know that for an object to be at a constant temperature it needs to transfer energy away from the object at the same rate that it receives energy",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.3.5",
+              "tier": "supplement",
+              "text": "Know what happens to an object if the rate at which it receives energy is less or more than the rate at which it transfers energy away from the object",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.3.6",
+              "tier": "supplement",
+              "text": "Know how the temperature of the Earth is affected by factors controlling the balance between incoming radiation and radiation emitted from the Earth’s surface",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.3.7",
+              "tier": "supplement",
+              "text": "Describe experiments to distinguish between good and bad emitters of infrared radiation",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus (e.g. Leslie cube) is often shown; can be described in words."
+            },
+            {
+              "point_id": "2.3.3.8",
+              "tier": "supplement",
+              "text": "Describe experiments to distinguish between good and bad absorbers of infrared radiation",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus is often shown; can be described in words."
+            },
+            {
+              "point_id": "2.3.3.9",
+              "tier": "supplement",
+              "text": "Describe how the rate of emission of radiation depends on the surface temperature and surface area of an object",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2.3.4",
+          "subtopic_name": "Consequences of thermal energy transfer",
+          "parent_id": "2.3",
+          "parent_name": "Transfer of thermal energy",
+          "points": [
+            {
+              "point_id": "2.3.4.1",
+              "tier": "core",
+              "text": "Explain some of the basic everyday applications and consequences of conduction, convection and radiation, including: (a) heating objects such as kitchen pans; (b) heating a room by convection",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3.4.2",
+              "tier": "supplement",
+              "text": "Explain some of the complex applications and consequences of conduction, convection and radiation where more than one type of thermal energy transfer is significant, including: (a) a fire burning wood or coal; (b) a radiator in a car",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "3",
+      "topic_name": "Waves",
+      "subtopics": [
+        {
+          "subtopic_id": "3.1",
+          "subtopic_name": "General properties of waves",
+          "points": [
+            {
+              "point_id": "3.1.1",
+              "tier": "core",
+              "text": "Know that waves transfer energy without transferring matter",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.1.2",
+              "tier": "core",
+              "text": "Describe what is meant by wave motion as illustrated by vibrations in ropes and springs, and by experiments using water waves",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often illustrated with ropes, springs or ripple tank diagrams; can be described in words."
+            },
+            {
+              "point_id": "3.1.3",
+              "tier": "core",
+              "text": "Describe the features of a wave in terms of wavefront, wavelength, frequency, crest (peak), trough, amplitude and wave speed",
+              "diagram_dependence": "partial",
+              "diagram_note": "Features are usually labelled on a wave diagram; can be tested with words or tabulated values."
+            },
+            {
+              "point_id": "3.1.4",
+              "tier": "core",
+              "text": "Recall and use the equation for wave speed v = fλ",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.1.5",
+              "tier": "core",
+              "text": "Know that for a transverse wave, the direction of vibration is at right angles to the direction of propagation and understand that electromagnetic radiation, water waves and seismic S-waves (secondary) can be modelled as transverse",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.1.6",
+              "tier": "core",
+              "text": "Know that for a longitudinal wave, the direction of vibration is parallel to the direction of propagation and understand that sound waves and seismic P-waves (primary) can be modelled as longitudinal",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.1.7",
+              "tier": "core",
+              "text": "Describe how waves can undergo: (a) reflection at a plane surface; (b) refraction due to a change of speed; (c) diffraction through a narrow gap",
+              "diagram_dependence": "partial",
+              "diagram_note": "Wavefront diagrams are common; behaviour can be described in words."
+            },
+            {
+              "point_id": "3.1.8",
+              "tier": "core",
+              "text": "Describe the use of a ripple tank to show: (a) reflection at a plane surface; (b) refraction due to a change in speed caused by a change in depth; (c) diffraction due to a gap; (d) diffraction due to an edge",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ripple tank wavefront diagrams are common; can be described in words."
+            },
+            {
+              "point_id": "3.1.9",
+              "tier": "supplement",
+              "text": "Describe how wavelength and gap size affects diffraction through a gap",
+              "diagram_dependence": "partial",
+              "diagram_note": "Wavefront diagrams are common; can be described in words."
+            },
+            {
+              "point_id": "3.1.10",
+              "tier": "supplement",
+              "text": "Describe how wavelength affects diffraction at an edge",
+              "diagram_dependence": "partial",
+              "diagram_note": "Wavefront diagrams are common; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3.2.1",
+          "subtopic_name": "Reflection of light",
+          "parent_id": "3.2",
+          "parent_name": "Light",
+          "points": [
+            {
+              "point_id": "3.2.1.1",
+              "tier": "core",
+              "text": "Define and use the terms normal, angle of incidence and angle of reflection",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ray diagrams are usual; angles can be described in words."
+            },
+            {
+              "point_id": "3.2.1.2",
+              "tier": "core",
+              "text": "Describe the formation of an optical image by a plane mirror and give its characteristics, i.e. same size, same distance from mirror, virtual",
+              "diagram_dependence": "partial",
+              "diagram_note": "Image formation is usually shown on a ray diagram; characteristics can be tested in words."
+            },
+            {
+              "point_id": "3.2.1.3",
+              "tier": "core",
+              "text": "State that for reflection, the angle of incidence is equal to the angle of reflection; recall and use this relationship",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2.1.4",
+              "tier": "supplement",
+              "text": "Use simple constructions, measurements and calculations for reflection by plane mirrors",
+              "diagram_dependence": "partial",
+              "diagram_note": "Constructions require drawing; measurements and calculations can be tested in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3.2.2",
+          "subtopic_name": "Refraction of light",
+          "parent_id": "3.2",
+          "parent_name": "Light",
+          "points": [
+            {
+              "point_id": "3.2.2.1",
+              "tier": "core",
+              "text": "Define and use the terms normal, angle of incidence and angle of refraction",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ray diagrams are usual; angles can be described in words."
+            },
+            {
+              "point_id": "3.2.2.2",
+              "tier": "core",
+              "text": "Describe an experiment to show refraction of light by transparent blocks of different shapes",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ray traces through blocks are usual; can be described in words."
+            },
+            {
+              "point_id": "3.2.2.3",
+              "tier": "core",
+              "text": "Describe the passage of light through a transparent material (limited to the boundaries between two mediums only)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ray diagrams are usual; can be described in words."
+            },
+            {
+              "point_id": "3.2.2.4",
+              "tier": "core",
+              "text": "State the meaning of critical angle",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2.2.5",
+              "tier": "core",
+              "text": "Describe internal reflection and total internal reflection using both experimental and everyday examples",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ray diagrams are usual; can be described in words."
+            },
+            {
+              "point_id": "3.2.2.6",
+              "tier": "supplement",
+              "text": "Define refractive index, n, as the ratio of the speeds of a wave in two different regions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2.2.7",
+              "tier": "supplement",
+              "text": "Recall and use the equation n = sin i / sin r",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2.2.8",
+              "tier": "supplement",
+              "text": "Recall and use the equation n = 1 / sin c",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2.2.9",
+              "tier": "supplement",
+              "text": "Describe the use of optical fibres, particularly in telecommunications",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3.2.3",
+          "subtopic_name": "Thin lenses",
+          "parent_id": "3.2",
+          "parent_name": "Light",
+          "points": [
+            {
+              "point_id": "3.2.3.1",
+              "tier": "core",
+              "text": "Describe the action of thin converging and thin diverging lenses on a parallel beam of light",
+              "diagram_dependence": "partial",
+              "diagram_note": "Ray diagrams are usual; can be described in words."
+            },
+            {
+              "point_id": "3.2.3.2",
+              "tier": "core",
+              "text": "Define and use the terms focal length, principal axis and principal focus (focal point)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Usually labelled on a lens diagram; definitions and values can be tested in words."
+            },
+            {
+              "point_id": "3.2.3.3",
+              "tier": "core",
+              "text": "Draw and use ray diagrams for the formation of a real image by a converging lens",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing ray diagrams for a real image cannot be done without a drawn diagram."
+            },
+            {
+              "point_id": "3.2.3.4",
+              "tier": "core",
+              "text": "Describe the characteristics of an image using the terms enlarged/same size/diminished, upright/inverted and real/virtual",
+              "diagram_dependence": "partial",
+              "diagram_note": "Image characteristics can be tested from a verbal description of object position."
+            },
+            {
+              "point_id": "3.2.3.5",
+              "tier": "core",
+              "text": "Know that a virtual image is formed when diverging rays are extrapolated backwards and does not form a visible projection on a screen",
+              "diagram_dependence": "partial",
+              "diagram_note": "Usually shown on a ray diagram; can be described in words."
+            },
+            {
+              "point_id": "3.2.3.6",
+              "tier": "supplement",
+              "text": "Draw and use ray diagrams for the formation of a virtual image by a converging lens",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing ray diagrams for a virtual image cannot be done without a drawn diagram."
+            },
+            {
+              "point_id": "3.2.3.7",
+              "tier": "supplement",
+              "text": "Describe the use of a single lens as a magnifying glass",
+              "diagram_dependence": "partial",
+              "diagram_note": "Usually shown on a ray diagram; can be described in words."
+            },
+            {
+              "point_id": "3.2.3.8",
+              "tier": "supplement",
+              "text": "Describe the use of converging and diverging lenses to correct long-sightedness and short-sightedness",
+              "diagram_dependence": "partial",
+              "diagram_note": "Eye/lens ray diagrams are usual; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3.2.4",
+          "subtopic_name": "Dispersion of light",
+          "parent_id": "3.2",
+          "parent_name": "Light",
+          "points": [
+            {
+              "point_id": "3.2.4.1",
+              "tier": "core",
+              "text": "Describe the dispersion of light as illustrated by the refraction of white light by a glass prism",
+              "diagram_dependence": "partial",
+              "diagram_note": "Prism diagrams are usual; can be described in words."
+            },
+            {
+              "point_id": "3.2.4.2",
+              "tier": "core",
+              "text": "Know the traditional seven colours of the visible spectrum in order of frequency and in order of wavelength",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2.4.3",
+              "tier": "supplement",
+              "text": "Recall that visible light of a single frequency is described as monochromatic",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3.3",
+          "subtopic_name": "Electromagnetic spectrum",
+          "points": [
+            {
+              "point_id": "3.3.1",
+              "tier": "core",
+              "text": "Know the main regions of the electromagnetic spectrum in order of frequency and in order of wavelength",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.2",
+              "tier": "core",
+              "text": "Know that all electromagnetic waves travel at the same high speed in a vacuum",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.3",
+              "tier": "core",
+              "text": "Describe typical uses of the different regions of the electromagnetic spectrum including: (a) radio waves; radio and television transmissions, astronomy, radio frequency identification (RFID); (b) microwaves; satellite television, mobile phones (cell phones), microwave ovens; (c) infrared; electric grills, short range communications such as remote controllers for televisions, intruder alarms, thermal imaging, optical fibres; (d) visible light; vision, photography, illumination; (e) ultraviolet; security marking, detecting fake bank notes, sterilising water; (f) X-rays; medical scanning, security scanners; (g) gamma rays; sterilising food and medical equipment, detection of cancer and its treatment",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.4",
+              "tier": "core",
+              "text": "Describe the harmful effects on people of excessive exposure to electromagnetic radiation, including: (a) microwaves; internal heating of body cells; (b) infrared; skin burns; (c) ultraviolet; damage to surface cells and eyes, leading to skin cancer and eye conditions; (d) X-rays and gamma rays; mutation or damage to cells in the body",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.5",
+              "tier": "core",
+              "text": "Know that communication with artificial satellites is mainly by microwaves: (a) some satellite phones use low orbit artificial satellites; (b) some satellite phones and direct broadcast satellite television use geostationary satellites",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.6",
+              "tier": "supplement",
+              "text": "Know that the speed of electromagnetic waves in a vacuum is 3.0 × 10^8 m / s and is approximately the same in air",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.7",
+              "tier": "supplement",
+              "text": "Know that many important systems of communications rely on electromagnetic radiation including: (a) mobile phones (cell phones) and wireless internet use microwaves because microwaves can penetrate some walls and only require a short aerial for transmission and reception; (b) Bluetooth uses radio waves because radio waves pass through walls but the signal is weakened on doing so; (c) optical fibres (visible light or infrared) are used for cable television and high-speed broadband because glass is transparent to visible light and some infrared; visible light and short wavelength infrared can carry high rates of data",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.8",
+              "tier": "supplement",
+              "text": "Know the difference between a digital and analogue signal",
+              "diagram_dependence": "partial",
+              "diagram_note": "Digital and analogue signals are often shown as waveforms; can be described in words."
+            },
+            {
+              "point_id": "3.3.9",
+              "tier": "supplement",
+              "text": "Know that a sound can be transmitted as a digital or analogue signal",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.3.10",
+              "tier": "supplement",
+              "text": "Explain the benefits of digital signalling including increased rate of transmission of data and increased range due to accurate signal regeneration",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3.4",
+          "subtopic_name": "Sound",
+          "points": [
+            {
+              "point_id": "3.4.1",
+              "tier": "core",
+              "text": "Describe the production of sound by vibrating sources",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.2",
+              "tier": "core",
+              "text": "Describe the longitudinal nature of sound waves",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.3",
+              "tier": "core",
+              "text": "State the approximate range of frequencies audible to humans as 20 Hz to 20 000 Hz",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.4",
+              "tier": "core",
+              "text": "Know that a medium is needed to transmit sound waves",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.5",
+              "tier": "core",
+              "text": "Know that the speed of sound in air is approximately 330–350 m / s",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.6",
+              "tier": "core",
+              "text": "Describe a method involving a measurement of distance and time for determining the speed of sound in air",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.7",
+              "tier": "core",
+              "text": "Describe how changes in amplitude and frequency affect the loudness and pitch of sound waves",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often tested with oscilloscope traces; changes can be described in words or numbers."
+            },
+            {
+              "point_id": "3.4.8",
+              "tier": "core",
+              "text": "Describe an echo as the reflection of sound waves",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.9",
+              "tier": "core",
+              "text": "Define ultrasound as sound with a frequency higher than 20 kHz",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.10",
+              "tier": "supplement",
+              "text": "Describe compression and rarefaction",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often shown on a diagram of a longitudinal wave; can be described in words."
+            },
+            {
+              "point_id": "3.4.11",
+              "tier": "supplement",
+              "text": "Know that, in general, sound travels faster in solids than in liquids and faster in liquids than in gases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4.12",
+              "tier": "supplement",
+              "text": "Describe the uses of ultrasound in non-destructive testing of materials, medical scanning of soft tissue and sonar including calculation of depth or distance from time and wave speed",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "4",
+      "topic_name": "Electricity and magnetism",
+      "subtopics": [
+        {
+          "subtopic_id": "4.1",
+          "subtopic_name": "Simple phenomena of magnetism",
+          "points": [
+            {
+              "point_id": "4.1.1",
+              "tier": "core",
+              "text": "Describe the forces between magnetic poles and between magnets and magnetic materials, including the use of the terms north pole (N pole), south pole (S pole), attraction and repulsion, magnetised and unmagnetised",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.2",
+              "tier": "core",
+              "text": "Describe induced magnetism",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.3",
+              "tier": "core",
+              "text": "State the differences between the properties of temporary magnets (made of soft iron) and the properties of permanent magnets (made of steel",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.4",
+              "tier": "core",
+              "text": "State the difference between magnetic and non-magnetic materials",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.5",
+              "tier": "core",
+              "text": "Describe a magnetic field as a region in which a magnetic pole experiences a force",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.6",
+              "tier": "core",
+              "text": "Draw the pattern and direction of magnetic field lines around a bar magnet",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing the pattern and direction of field lines requires a drawn diagram."
+            },
+            {
+              "point_id": "4.1.7",
+              "tier": "core",
+              "text": "State that the direction of a magnetic field at a point is the direction of the force on the N pole of a magnet at that point",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.8",
+              "tier": "core",
+              "text": "Describe the plotting of magnetic field lines with a compass or iron filings and the use of a compass to determine the direction of the magnetic field",
+              "diagram_dependence": "partial",
+              "diagram_note": "Plotting compass diagrams are common; the method can be described in words."
+            },
+            {
+              "point_id": "4.1.9",
+              "tier": "core",
+              "text": "Describe the uses of permanent magnets and electromagnets",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.10",
+              "tier": "supplement",
+              "text": "Explain that magnetic forces are due to interactions between magnetic fields",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.1.11",
+              "tier": "supplement",
+              "text": "Know that the relative strength of a magnetic field is represented by the spacing of the magnetic field lines",
+              "diagram_dependence": "partial",
+              "diagram_note": "Usually tested with a field-line diagram; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.2.1",
+          "subtopic_name": "Electric charge",
+          "parent_id": "4.2",
+          "parent_name": "Electrical quantities",
+          "points": [
+            {
+              "point_id": "4.2.1.1",
+              "tier": "core",
+              "text": "State that there are positive and negative charges",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.2",
+              "tier": "core",
+              "text": "State that positive charges repel other positive charges, negative charges repel other negative charges, but positive charges attract negative charges",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.3",
+              "tier": "core",
+              "text": "Describe simple experiments to show the production of electrostatic charges by friction and to show the detection of electrostatic charges",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.4",
+              "tier": "core",
+              "text": "Explain that charging of solids by friction involves only a transfer of negative charge (electrons)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.5",
+              "tier": "core",
+              "text": "Describe an experiment to distinguish between electrical conductors and insulators",
+              "diagram_dependence": "partial",
+              "diagram_note": "A test circuit is often shown; can be described in words."
+            },
+            {
+              "point_id": "4.2.1.6",
+              "tier": "core",
+              "text": "Recall and use a simple electron model to explain the difference between electrical conductors and insulators and give typical examples",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.7",
+              "tier": "supplement",
+              "text": "State that charge is measured in coulombs",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.8",
+              "tier": "supplement",
+              "text": "Describe an electric field as a region in which an electric charge experiences a force",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.9",
+              "tier": "supplement",
+              "text": "State that the direction of an electric field at a point is the direction of the force on a positive charge at that point",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.1.10",
+              "tier": "supplement",
+              "text": "Describe simple electric field patterns, including the direction of the field: (a) around a point charge; (b) around a charged conducting sphere; (c) between two oppositely charged parallel conducting plates (end effects will not be examined)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Field patterns are usually drawn; shape and direction can be described in words (radial, uniform)."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.2.2",
+          "subtopic_name": "Electric current",
+          "parent_id": "4.2",
+          "parent_name": "Electrical quantities",
+          "points": [
+            {
+              "point_id": "4.2.2.1",
+              "tier": "core",
+              "text": "Know that electric current is related to the flow of charge",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.2.2",
+              "tier": "core",
+              "text": "Describe the use of ammeters (analogue and digital) with different ranges",
+              "diagram_dependence": "partial",
+              "diagram_note": "Meter scales are often shown; readings and ranges can be given in words."
+            },
+            {
+              "point_id": "4.2.2.3",
+              "tier": "core",
+              "text": "Describe electrical conduction in metals in terms of the movement of free electrons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.2.4",
+              "tier": "core",
+              "text": "Know the difference between direct current (d.c.) and alternating current (a.c.)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.2.5",
+              "tier": "supplement",
+              "text": "Define electric current as the charge passing a point per unit time; recall and use the equation I = Q / t",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.2.6",
+              "tier": "supplement",
+              "text": "State that conventional current is from positive to negative and that the flow of free electrons is from negative to positive",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.2.3",
+          "subtopic_name": "Electromotive force and potential difference",
+          "parent_id": "4.2",
+          "parent_name": "Electrical quantities",
+          "points": [
+            {
+              "point_id": "4.2.3.1",
+              "tier": "core",
+              "text": "Define electromotive force (e.m.f.) as the electrical work done by a source in moving a unit charge around a complete circuit",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.3.2",
+              "tier": "core",
+              "text": "Know that e.m.f. is measured in volts (V)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.3.3",
+              "tier": "core",
+              "text": "Define potential difference (p.d.) as the work done by a unit charge passing through a component",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.3.4",
+              "tier": "core",
+              "text": "Know that the p.d. between two points is measured in volts (V)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.3.5",
+              "tier": "core",
+              "text": "Describe the use of voltmeters (analogue and digital) with different ranges",
+              "diagram_dependence": "partial",
+              "diagram_note": "Meter scales are often shown; readings and ranges can be given in words."
+            },
+            {
+              "point_id": "4.2.3.6",
+              "tier": "supplement",
+              "text": "Recall and use the equation for e.m.f. E = W / Q",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.3.7",
+              "tier": "supplement",
+              "text": "Recall and use the equation for p.d. V = W / Q",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.2.4",
+          "subtopic_name": "Resistance",
+          "parent_id": "4.2",
+          "parent_name": "Electrical quantities",
+          "points": [
+            {
+              "point_id": "4.2.4.1",
+              "tier": "core",
+              "text": "Recall and use the equation for resistance R = V / I",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.4.2",
+              "tier": "core",
+              "text": "Describe an experiment to determine resistance using a voltmeter and an ammeter and do the appropriate calculations",
+              "diagram_dependence": "partial",
+              "diagram_note": "A circuit diagram is usual; the circuit can be described in words."
+            },
+            {
+              "point_id": "4.2.4.3",
+              "tier": "core",
+              "text": "State, qualitatively, the relationship of the resistance of a metallic wire to its length and to its cross-sectional area",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.4.4",
+              "tier": "supplement",
+              "text": "Sketch and explain the current–voltage graphs for a resistor of constant resistance, a filament lamp and a diode",
+              "diagram_dependence": "essential",
+              "diagram_note": "Sketching current–voltage graphs requires drawing the graph shapes."
+            },
+            {
+              "point_id": "4.2.4.5",
+              "tier": "supplement",
+              "text": "Recall and use the following relationship for a metallic electrical conductor: (a) resistance is directly proportional to length; (b) resistance is inversely proportional to cross-sectional area",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.2.5",
+          "subtopic_name": "Electrical energy and electrical power",
+          "parent_id": "4.2",
+          "parent_name": "Electrical quantities",
+          "points": [
+            {
+              "point_id": "4.2.5.1",
+              "tier": "core",
+              "text": "Understand that electric circuits transfer energy from a source of electrical energy, such as an electrical cell or mains supply, to the circuit components and then into the surroundings",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.5.2",
+              "tier": "core",
+              "text": "Recall and use the equation for electrical power P = IV",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.5.3",
+              "tier": "core",
+              "text": "Recall and use the equation for electrical energy E = IVt",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2.5.4",
+              "tier": "core",
+              "text": "Define the kilowatt-hour (kW h) and calculate the cost of using electrical appliances where the energy unit is the kW h",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.3.1",
+          "subtopic_name": "Circuit diagrams and circuit components",
+          "parent_id": "4.3",
+          "parent_name": "Electric circuits",
+          "points": [
+            {
+              "point_id": "4.3.1.1",
+              "tier": "core",
+              "text": "Draw and interpret circuit diagrams containing cells, batteries, power supplies, generators, potential dividers, switches, resistors (fixed and variable), heaters, thermistors (NTC only), light-dependent resistors (LDRs), lamps, motors, bells, ammeters, voltmeters, magnetising coils, transformers, fuses and relays and know how these components behave in the circuit",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing and interpreting circuit diagrams with circuit symbols requires drawn diagrams."
+            },
+            {
+              "point_id": "4.3.1.2",
+              "tier": "supplement",
+              "text": "Draw and interpret circuit diagrams containing diodes and light-emitting diodes (LEDs) and know how these components behave in the circuit",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing and interpreting circuit diagrams with diode and LED symbols requires drawn diagrams."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.3.2",
+          "subtopic_name": "Series and parallel circuits",
+          "parent_id": "4.3",
+          "parent_name": "Electric circuits",
+          "points": [
+            {
+              "point_id": "4.3.2.1",
+              "tier": "core",
+              "text": "Know that the current at every point in a series circuit is the same",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.3.2.2",
+              "tier": "core",
+              "text": "Know how to construct and use series and parallel circuits",
+              "diagram_dependence": "partial",
+              "diagram_note": "Circuits are usually drawn; arrangements can be described in words."
+            },
+            {
+              "point_id": "4.3.2.3",
+              "tier": "core",
+              "text": "Calculate the combined e.m.f. of several sources in series",
+              "diagram_dependence": "partial",
+              "diagram_note": "Circuits are usually drawn; arrangements can be described in words."
+            },
+            {
+              "point_id": "4.3.2.4",
+              "tier": "core",
+              "text": "Calculate the combined resistance of two or more resistors in series",
+              "diagram_dependence": "partial",
+              "diagram_note": "Circuits are usually drawn; arrangements can be described in words."
+            },
+            {
+              "point_id": "4.3.2.5",
+              "tier": "core",
+              "text": "State that, for a parallel circuit, the current from the source is larger than the current in each branch",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.3.2.6",
+              "tier": "core",
+              "text": "State that the combined resistance of two resistors in parallel is less than that of either resistor by itself",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.3.2.7",
+              "tier": "core",
+              "text": "State the advantages of connecting lamps in parallel in a lighting circuit",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.3.2.8",
+              "tier": "supplement",
+              "text": "Recall and use in calculations, the fact that: (a) the sum of the currents entering a junction in a parallel circuit is equal to the sum of the currents that leave the junction; (b) the total p.d. across the components in a series circuit is equal to the sum of the individual p.d.s across each component; (c) the p.d. across an arrangement of parallel resistances is the same as the p.d. across one branch in the arrangement of the parallel resistances",
+              "diagram_dependence": "partial",
+              "diagram_note": "Circuits are usually drawn; arrangements can be described in words."
+            },
+            {
+              "point_id": "4.3.2.9",
+              "tier": "supplement",
+              "text": "Explain that the sum of the currents into a junction is the same as the sum of the currents out of the junction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.3.2.10",
+              "tier": "supplement",
+              "text": "Calculate the combined resistance of two resistors in parallel",
+              "diagram_dependence": "partial",
+              "diagram_note": "Circuits are usually drawn; arrangements can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.3.3",
+          "subtopic_name": "Action and use of circuit components",
+          "parent_id": "4.3",
+          "parent_name": "Electric circuits",
+          "points": [
+            {
+              "point_id": "4.3.3.1",
+              "tier": "core",
+              "text": "Know that the p.d. across an electrical conductor increases as its resistance increases for a constant current",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.3.3.2",
+              "tier": "supplement",
+              "text": "Describe the action of a variable potential divider",
+              "diagram_dependence": "partial",
+              "diagram_note": "Potential divider circuits are usually drawn; can be described in words."
+            },
+            {
+              "point_id": "4.3.3.3",
+              "tier": "supplement",
+              "text": "Recall and use the equation for two resistors used as a potential divider R1 / R2 = V1 / V2",
+              "diagram_dependence": "partial",
+              "diagram_note": "Potential divider circuits are usually drawn; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.4",
+          "subtopic_name": "Electrical safety",
+          "points": [
+            {
+              "point_id": "4.4.1",
+              "tier": "core",
+              "text": "State the hazards of: (a) damaged insulation; (b) overheating cables; (c) damp conditions; (d) excess current from overloading of plugs, extension leads, single and multiple sockets; when using a mains supply",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.4.2",
+              "tier": "core",
+              "text": "Know that a mains circuit consists of a live wire (line wire), a neutral wire and an earth wire and explain why a switch must be connected to the live wire for the circuit to be switched off safely",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.4.3",
+              "tier": "core",
+              "text": "Explain the use and operation of trip switches and fuses and choose appropriate fuse ratings and trip switch settings",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.4.4",
+              "tier": "core",
+              "text": "Explain why the outer casing of an electrical appliance must be either non-conducting (double-insulated) or earthed",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.4.5",
+              "tier": "core",
+              "text": "State that a fuse without an earth wire protects the circuit and the cabling for a double-insulated appliance",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.5.1",
+          "subtopic_name": "Electromagnetic induction",
+          "parent_id": "4.5",
+          "parent_name": "Electromagnetic effects",
+          "points": [
+            {
+              "point_id": "4.5.1.1",
+              "tier": "core",
+              "text": "Know that a conductor moving across a magnetic field or a changing magnetic field linking with a conductor can induce an e.m.f. in the conductor",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.1.2",
+              "tier": "core",
+              "text": "Describe an experiment to demonstrate electromagnetic induction",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus (magnet, coil, meter) is usually shown; can be described in words."
+            },
+            {
+              "point_id": "4.5.1.3",
+              "tier": "core",
+              "text": "State the factors affecting the magnitude of an induced e.m.f.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.1.4",
+              "tier": "supplement",
+              "text": "Know that the direction of an induced e.m.f. opposes the change causing it",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.1.5",
+              "tier": "supplement",
+              "text": "State and use the relative directions of force, field and induced current",
+              "diagram_dependence": "partial",
+              "diagram_note": "Directions are usually shown on a diagram; can be stated in words (e.g. into/out of the page)."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.5.2",
+          "subtopic_name": "The a.c. generator",
+          "parent_id": "4.5",
+          "parent_name": "Electromagnetic effects",
+          "points": [
+            {
+              "point_id": "4.5.2.1",
+              "tier": "supplement",
+              "text": "Describe a simple form of a.c. generator (rotating coil or rotating magnet) and the use of slip rings and brushes where needed",
+              "diagram_dependence": "partial",
+              "diagram_note": "A generator diagram is usual; the structure can be described in words."
+            },
+            {
+              "point_id": "4.5.2.2",
+              "tier": "supplement",
+              "text": "Sketch and interpret graphs of e.m.f. against time for simple a.c. generators and relate the position of the generator coil to the peaks, troughs and zeros of the e.m.f.",
+              "diagram_dependence": "essential",
+              "diagram_note": "Sketching e.m.f.–time graphs and relating coil position to the graph requires drawn graphs."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.5.3",
+          "subtopic_name": "Magnetic effect of a current",
+          "parent_id": "4.5",
+          "parent_name": "Electromagnetic effects",
+          "points": [
+            {
+              "point_id": "4.5.3.1",
+              "tier": "core",
+              "text": "Describe the pattern and direction of the magnetic field due to currents in straight wires and in solenoids",
+              "diagram_dependence": "partial",
+              "diagram_note": "Field patterns are usually drawn; shape and direction can be described in words."
+            },
+            {
+              "point_id": "4.5.3.2",
+              "tier": "core",
+              "text": "Describe an experiment to identify the pattern of the magnetic field (including direction) due to currents in straight wires and in solenoids",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus is usually shown; can be described in words."
+            },
+            {
+              "point_id": "4.5.3.3",
+              "tier": "core",
+              "text": "Describe how the magnetic effect of a current is used in relays and loudspeakers and give examples of their application",
+              "diagram_dependence": "partial",
+              "diagram_note": "Relay and loudspeaker diagrams are common; can be described in words."
+            },
+            {
+              "point_id": "4.5.3.4",
+              "tier": "supplement",
+              "text": "State the qualitative variation of the strength of the magnetic field around straight wires and solenoids",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.3.5",
+              "tier": "supplement",
+              "text": "Describe the effect on the magnetic field around straight wires and solenoids of changing the magnitude and direction of the current",
+              "diagram_dependence": "partial",
+              "diagram_note": "Field patterns are usually drawn; changes can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.5.4",
+          "subtopic_name": "Force on a current-carrying conductor",
+          "parent_id": "4.5",
+          "parent_name": "Electromagnetic effects",
+          "points": [
+            {
+              "point_id": "4.5.4.1",
+              "tier": "core",
+              "text": "Describe an experiment to show that a force acts on a current-carrying conductor in a magnetic field, including the effect of reversing: (a) the current; (b) the direction of the field",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus is usually shown; can be described in words."
+            },
+            {
+              "point_id": "4.5.4.2",
+              "tier": "supplement",
+              "text": "Recall and use the relative directions of force, magnetic field and current",
+              "diagram_dependence": "partial",
+              "diagram_note": "Directions are usually shown on a diagram; can be stated in words (e.g. into/out of the page)."
+            },
+            {
+              "point_id": "4.5.4.3",
+              "tier": "supplement",
+              "text": "Determine the direction of the force on beams of charged particles in a magnetic field",
+              "diagram_dependence": "partial",
+              "diagram_note": "Beams and fields are usually drawn; directions can be stated in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.5.5",
+          "subtopic_name": "The d.c. motor",
+          "parent_id": "4.5",
+          "parent_name": "Electromagnetic effects",
+          "points": [
+            {
+              "point_id": "4.5.5.1",
+              "tier": "core",
+              "text": "Know that a current-carrying coil in a magnetic field may experience a turning effect and that the turning effect is increased by increasing: (a) the number of turns on the coil; (b) the current; (c) the strength of the magnetic field",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.5.2",
+              "tier": "supplement",
+              "text": "Describe the operation of an electric motor, including the action of a split-ring commutator and brushes",
+              "diagram_dependence": "partial",
+              "diagram_note": "A motor diagram is usual; operation can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4.5.6",
+          "subtopic_name": "The transformer",
+          "parent_id": "4.5",
+          "parent_name": "Electromagnetic effects",
+          "points": [
+            {
+              "point_id": "4.5.6.1",
+              "tier": "core",
+              "text": "Describe the construction of a simple transformer with a soft-iron core, as used for voltage transformations",
+              "diagram_dependence": "partial",
+              "diagram_note": "A transformer diagram is usual; construction can be described in words."
+            },
+            {
+              "point_id": "4.5.6.2",
+              "tier": "core",
+              "text": "Use the terms primary, secondary, step-up and step-down",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.6.3",
+              "tier": "core",
+              "text": "Recall and use the equation Vp / Vs = Np / Ns where p and s refer to primary and secondary",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.6.4",
+              "tier": "core",
+              "text": "Describe the use of transformers in high-voltage transmission of electricity",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.6.5",
+              "tier": "core",
+              "text": "State the advantages of high-voltage transmission",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.6.6",
+              "tier": "supplement",
+              "text": "Explain the principle of operation of a simple iron-cored transformer",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.6.7",
+              "tier": "supplement",
+              "text": "Recall and use the equation for 100% efficiency in a transformer IpVp = IsVs where p and s refer to primary and secondary",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.5.6.8",
+              "tier": "supplement",
+              "text": "Recall and use the equation P = I^2R to explain why power losses in cables are smaller when the voltage is greater",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "5",
+      "topic_name": "Nuclear physics",
+      "subtopics": [
+        {
+          "subtopic_id": "5.1.1",
+          "subtopic_name": "The atom",
+          "parent_id": "5.1",
+          "parent_name": "The nuclear model of the atom",
+          "points": [
+            {
+              "point_id": "5.1.1.1",
+              "tier": "core",
+              "text": "Describe the structure of an atom in terms of a positively charged nucleus and negatively charged electrons in orbit around the nucleus",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.1.2",
+              "tier": "core",
+              "text": "Know how atoms may form positive ions by losing electrons or form negative ions by gaining electrons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.1.3",
+              "tier": "supplement",
+              "text": "Describe how the scattering of alpha (α) particles by a sheet of thin metal supports the nuclear model of the atom, by providing evidence for: (a) a very small nucleus surrounded by mostly empty space; (b) a nucleus containing most of the mass of the atom; (c) a nucleus that is positively charged",
+              "diagram_dependence": "partial",
+              "diagram_note": "Scattering paths are usually drawn; observations can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5.1.2",
+          "subtopic_name": "The nucleus",
+          "parent_id": "5.1",
+          "parent_name": "The nuclear model of the atom",
+          "points": [
+            {
+              "point_id": "5.1.2.1",
+              "tier": "core",
+              "text": "Describe the composition of the nucleus in terms of protons and neutrons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.2",
+              "tier": "core",
+              "text": "State the relative charges of protons, neutrons and electrons as +1, 0 and –1 respectively",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.3",
+              "tier": "core",
+              "text": "Define the terms proton number (atomic number) Z and nucleon number (mass number) A and be able to calculate the number of neutrons in a nucleus",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.4",
+              "tier": "core",
+              "text": "Use the nuclide notation ^A_Z X",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.5",
+              "tier": "core",
+              "text": "Explain what is meant by an isotope and state that an element may have more than one isotope",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.6",
+              "tier": "supplement",
+              "text": "Describe the processes of nuclear fission and nuclear fusion as the splitting or joining of nuclei, to include the nuclide equation and qualitative description of mass and energy changes without values",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.7",
+              "tier": "supplement",
+              "text": "Know the relationship between the proton number and the relative charge on a nucleus",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.1.2.8",
+              "tier": "supplement",
+              "text": "Know the relationship between the nucleon number and the relative mass of a nucleus",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5.2.1",
+          "subtopic_name": "Detection of radioactivity",
+          "parent_id": "5.2",
+          "parent_name": "Radioactivity",
+          "points": [
+            {
+              "point_id": "5.2.1.1",
+              "tier": "core",
+              "text": "Know what is meant by background radiation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.1.2",
+              "tier": "core",
+              "text": "Know the sources that make a significant contribution to background radiation including: (a) radon gas (in the air); (b) rocks and buildings; (c) food and drink; (d) cosmic rays",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.1.3",
+              "tier": "core",
+              "text": "Know that ionising nuclear radiation can be measured using a detector connected to a counter",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.1.4",
+              "tier": "core",
+              "text": "Use count rate measured in counts / s or counts / minute",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.1.5",
+              "tier": "supplement",
+              "text": "Use measurements of background radiation to determine a corrected count rate",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5.2.2",
+          "subtopic_name": "The three types of nuclear emission",
+          "parent_id": "5.2",
+          "parent_name": "Radioactivity",
+          "points": [
+            {
+              "point_id": "5.2.2.1",
+              "tier": "core",
+              "text": "Describe the emission of radiation from a nucleus as spontaneous and random in direction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.2.2",
+              "tier": "core",
+              "text": "Identify alpha (α), beta (β) and gamma (γ) emissions from the nucleus by recalling: (a) their nature; (b) their relative ionising effects; (c) their relative penetrating abilities (β+ are not included, β-particles will be taken to refer to β–)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.2.3",
+              "tier": "supplement",
+              "text": "Describe the deflection of α-particles, β-particles and γ-radiation in electric fields and magnetic fields",
+              "diagram_dependence": "partial",
+              "diagram_note": "Deflection paths are usually drawn; directions can be described in words."
+            },
+            {
+              "point_id": "5.2.2.4",
+              "tier": "supplement",
+              "text": "Explain their relative ionising effects with reference to: (a) kinetic energy; (b) electric charge",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5.2.3",
+          "subtopic_name": "Radioactive decay",
+          "parent_id": "5.2",
+          "parent_name": "Radioactivity",
+          "points": [
+            {
+              "point_id": "5.2.3.1",
+              "tier": "core",
+              "text": "Know that radioactive decay is a change in an unstable nucleus that can result in the emission of α-particles or β-particles and/or γ-radiation and know that these changes are spontaneous and random",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.3.2",
+              "tier": "core",
+              "text": "State that during α-decay or β-decay, the nucleus changes to that of a different element",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.3.3",
+              "tier": "supplement",
+              "text": "Know that isotopes of an element may be radioactive due to an excess of neutrons in the nucleus and/or the nucleus being too heavy",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.3.4",
+              "tier": "supplement",
+              "text": "Describe the effect of α-decay, β-decay and γ-emissions on the nucleus, including an increase in stability and a reduction in the number of excess neutrons; the following change in the nucleus occurs during β-emission neutron → proton + electron",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.3.5",
+              "tier": "supplement",
+              "text": "Use decay equations, using nuclide notation, to show the emission of α-particles, β-particles and γ-radiation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5.2.4",
+          "subtopic_name": "Half-life",
+          "parent_id": "5.2",
+          "parent_name": "Radioactivity",
+          "points": [
+            {
+              "point_id": "5.2.4.1",
+              "tier": "core",
+              "text": "Define the half-life of a particular isotope as the time taken for half the nuclei of that isotope in any sample to decay; recall and use this definition in simple calculations, which might involve information in tables or decay curves (calculations will not include background radiation)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Decay curves can be replaced by tables of count rate against time."
+            },
+            {
+              "point_id": "5.2.4.2",
+              "tier": "supplement",
+              "text": "Calculate half-life from data or decay curves from which background radiation has not been subtracted",
+              "diagram_dependence": "partial",
+              "diagram_note": "Decay curves can be replaced by tables of count rate against time."
+            },
+            {
+              "point_id": "5.2.4.3",
+              "tier": "supplement",
+              "text": "Explain how the type of radiation emitted and the half-life of an isotope determine which isotope is used for applications including: (a) household fire (smoke) alarms; (b) irradiating food to kill bacteria; (c) sterilisation of equipment using gamma rays; (d) measuring and controlling thicknesses of materials with the choice of radiations used linked to penetration and absorption; (e) diagnosis and treatment of cancer using gamma rays",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5.2.5",
+          "subtopic_name": "Safety precautions",
+          "parent_id": "5.2",
+          "parent_name": "Radioactivity",
+          "points": [
+            {
+              "point_id": "5.2.5.1",
+              "tier": "core",
+              "text": "State the effects of ionising nuclear radiations on living things, including cell death, mutations and cancer",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.5.2",
+              "tier": "core",
+              "text": "Describe how radioactive materials are moved, used and stored in a safe way",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "5.2.5.3",
+              "tier": "supplement",
+              "text": "Explain safety precautions for all ionising radiation in terms of reducing exposure time, increasing distance between source and living tissue and using shielding to absorb radiation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "6",
+      "topic_name": "Space physics",
+      "subtopics": [
+        {
+          "subtopic_id": "6.1.1",
+          "subtopic_name": "The Earth",
+          "parent_id": "6.1",
+          "parent_name": "The Earth and the Solar System",
+          "points": [
+            {
+              "point_id": "6.1.1.1",
+              "tier": "core",
+              "text": "Know that the Earth is a planet that rotates on its axis, which is tilted, once in approximately 24 hours, and use this to explain observations of the apparent daily motion of the Sun and the periodic cycle of day and night",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.1.2",
+              "tier": "core",
+              "text": "Know that the Earth orbits the Sun once in approximately 365 days and use this to explain the periodic nature of the seasons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.1.3",
+              "tier": "core",
+              "text": "Know that it takes approximately one month for the Moon to orbit the Earth and use this to explain the periodic nature of the Moon’s cycle of phases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.1.4",
+              "tier": "supplement",
+              "text": "Define average orbital speed from the equation v = 2πr / T where r is the average radius of the orbit and T is the orbital period; recall and use this equation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "6.1.2",
+          "subtopic_name": "The Solar System",
+          "parent_id": "6.1",
+          "parent_name": "The Earth and the Solar System",
+          "points": [
+            {
+              "point_id": "6.1.2.1",
+              "tier": "core",
+              "text": "Describe the Solar System as containing: (a) one star, the Sun; (b) the eight named planets and know their order from the Sun; (c) minor planets that orbit the Sun, including dwarf planets such as Pluto and asteroids in the asteroid belt; (d) moons, that orbit the planets; (e) smaller Solar System bodies, including comets and natural satellites",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.2",
+              "tier": "core",
+              "text": "Know that, in comparison to each other, the four planets nearest the Sun are rocky and small and the four planets furthest from the Sun are gaseous and large, and explain this difference by referring to an accretion model for Solar System formation, to include: (a) the model’s dependence on gravity; (b) the presence of many elements in interstellar clouds of gas and dust; (c) the rotation of material in the cloud and the formation of an accretion disc",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.3",
+              "tier": "core",
+              "text": "Know that the strength of the gravitational field (a) at the surface of a planet depends on the mass of the planet; (b) around a planet decreases as the distance from the planet increases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.4",
+              "tier": "core",
+              "text": "Calculate the time it takes light to travel a significant distance such as between objects in the Solar System",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.5",
+              "tier": "core",
+              "text": "Know that the Sun contains most of the mass of the Solar System and this explains why the planets orbit the Sun",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.6",
+              "tier": "core",
+              "text": "Know that the force that keeps an object in orbit around the Sun is the gravitational attraction of the Sun",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.7",
+              "tier": "supplement",
+              "text": "Know that planets, minor planets and comets have elliptical orbits, and recall that the Sun is not at the centre of the elliptical orbit, except when the orbit is approximately circular",
+              "diagram_dependence": "partial",
+              "diagram_note": "Elliptical orbits are often drawn; can be described in words."
+            },
+            {
+              "point_id": "6.1.2.8",
+              "tier": "supplement",
+              "text": "Analyse and interpret planetary data about orbital distance, orbital duration, density, surface temperature and uniform gravitational field strength at the planet’s surface",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.9",
+              "tier": "supplement",
+              "text": "Know that the strength of the Sun’s gravitational field decreases and that the orbital speeds of the planets decrease as the distance from the Sun increases",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.1.2.10",
+              "tier": "supplement",
+              "text": "Know that an object in an elliptical orbit travels faster when closer to the Sun and explain this using the conservation of energy",
+              "diagram_dependence": "partial",
+              "diagram_note": "Elliptical orbits are often drawn; can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "6.2.1",
+          "subtopic_name": "The Sun as a star",
+          "parent_id": "6.2",
+          "parent_name": "Stars and the Universe",
+          "points": [
+            {
+              "point_id": "6.2.1.1",
+              "tier": "core",
+              "text": "Know that the Sun is a star of medium size, consisting mostly of hydrogen and helium, and that it radiates most of its energy in the infrared, visible light and ultraviolet regions of the electromagnetic spectrum",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.1.2",
+              "tier": "supplement",
+              "text": "Know that stars are powered by nuclear reactions that release energy and that in stable stars the nuclear reactions involve the fusion of hydrogen into helium",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "6.2.2",
+          "subtopic_name": "Stars",
+          "parent_id": "6.2",
+          "parent_name": "Stars and the Universe",
+          "points": [
+            {
+              "point_id": "6.2.2.1",
+              "tier": "core",
+              "text": "State that: (a) galaxies are each made up of many billions of stars; (b) the Sun is a star in the galaxy known as the Milky Way; (c) other stars that make up the Milky Way are much further away from the Earth than the Sun is from the Earth; (d) astronomical distances can be measured in light-years, where one light-year is the distance travelled in (the vacuum of) space by light in one year",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.2.2",
+              "tier": "supplement",
+              "text": "Know that one light-year is equal to 9.5 × 10^15 m",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.2.3",
+              "tier": "supplement",
+              "text": "Describe the life cycle of a star: (a) a star is formed from interstellar clouds of gas and dust that contain hydrogen; (b) a protostar is an interstellar cloud collapsing and increasing in temperature as a result of its internal gravitational attraction; (c) a protostar becomes a stable star when the inward force of gravitational attraction is balanced by an outward force due to the high temperature in the centre of the star; (d) all stars eventually run out of hydrogen as fuel for the nuclear reaction; (e) most stars expand to form red giants and more massive stars expand to form red supergiants when most of the hydrogen in the centre of the star has been converted to helium; (f) a red giant from a less massive star forms a planetary nebula with a white dwarf star at its centre; (g) a red supergiant explodes as a supernova, forming a nebula containing hydrogen and new heavier elements, leaving behind a neutron star or a black hole at its centre; (h) the nebula from a supernova may form new stars with orbiting planets",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "6.2.3",
+          "subtopic_name": "The Universe",
+          "parent_id": "6.2",
+          "parent_name": "Stars and the Universe",
+          "points": [
+            {
+              "point_id": "6.2.3.1",
+              "tier": "core",
+              "text": "Know that the Milky Way is one of many billions of galaxies making up the Universe and that the diameter of the Milky Way is approximately 100 000 light-years",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.2",
+              "tier": "core",
+              "text": "Describe redshift as an increase in the observed wavelength of electromagnetic radiation emitted from receding stars and galaxies",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.3",
+              "tier": "core",
+              "text": "Know that the light emitted from distant galaxies appears redshifted in comparison with light emitted on the Earth",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.4",
+              "tier": "core",
+              "text": "Know that redshift in the light from distant galaxies is evidence that the Universe is expanding and supports the Big Bang Theory",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.5",
+              "tier": "supplement",
+              "text": "Know that microwave radiation of a specific frequency is observed at all points in space around us and is known as cosmic microwave background radiation (CMBR)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.6",
+              "tier": "supplement",
+              "text": "Explain that the CMBR was produced shortly after the Universe was formed and that this radiation has been expanded into the microwave region of the electromagnetic spectrum as the Universe expanded",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.7",
+              "tier": "supplement",
+              "text": "Know that the speed v at which a galaxy is moving away from the Earth can be found from the change in wavelength of the galaxy’s starlight due to redshift",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.8",
+              "tier": "supplement",
+              "text": "Know that the distance d of a far galaxy can be determined using the brightness of a supernova in that galaxy",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.9",
+              "tier": "supplement",
+              "text": "Define the Hubble constant H0 as the ratio of the speed at which the galaxy is moving away from the Earth to its distance from the Earth; recall and use the equation H0 = v / d",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.10",
+              "tier": "supplement",
+              "text": "Know that the current estimate for H0 is 2.2 × 10^-18 per second",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "6.2.3.11",
+              "tier": "supplement",
+              "text": "Know that the equation d / v = 1 / H0 represents an estimate for the age of the Universe and that this is evidence for the idea that all the matter in the Universe was present at a single point",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "subject_id": "0625-physics",
+  "batches": {
+    "T03_P2": {
+      "batch_id": "0625_T03_P2_20261013",
+      "status": "approved"
+    },
+    "T04_P1": {
+      "batch_id": "0625_T04_P1_20261013",
+      "status": "approved"
+    },
+    "T03_P3": {
+      "batch_id": "0625_T03_P3_20261013",
+      "status": "approved"
+    },
+    "T03_P1": {
+      "batch_id": "0625_T03_P1_20261013",
+      "status": "approved"
+    },
+    "T01_P1": {
+      "batch_id": "0625_T01_P1_20261013",
+      "status": "approved"
+    },
+    "T04_P2": {
+      "batch_id": "0625_T04_P2_20261013",
+      "status": "approved"
+    },
+    "T02_P1": {
+      "batch_id": "0625_T02_P1_20261013",
+      "status": "approved"
+    },
+    "T06_P1": {
+      "batch_id": "0625_T06_P1_20261013",
+      "status": "approved"
+    },
+    "T04_P3": {
+      "batch_id": "0625_T04_P3_20261013",
+      "status": "approved"
+    },
+    "T02_P2": {
+      "batch_id": "0625_T02_P2_20261013",
+      "status": "approved"
+    },
+    "T04_P4": {
+      "batch_id": "0625_T04_P4_20261013",
+      "status": "approved"
+    },
+    "T01_P2": {
+      "batch_id": "0625_T01_P2_20261013",
+      "status": "approved"
+    },
+    "T01_P3": {
+      "batch_id": "0625_T01_P3_20261013",
+      "status": "approved"
+    },
+    "T05_P1": {
+      "batch_id": "0625_T05_P1_20261013",
+      "status": "approved"
+    }
+  }
+}

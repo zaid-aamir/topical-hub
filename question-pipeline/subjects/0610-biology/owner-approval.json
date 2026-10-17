@@ -1,0 +1,357 @@
+{
+  "subject_id": "0610-biology",
+  "approved_by": "owner",
+  "approval_date": "2026-10-18",
+  "approval_evidence": "Owner explicitly stated: They are all approved.",
+  "scope": "All 24 planned batches, 21 topics, 590 questions",
+  "note": "Owner approval authorises publication. Historical independent AI checks are preserved where present; no new solver or verifier outputs were created.",
+  "batches": [
+    {
+      "key": "T01_P1",
+      "batch_id": "0610_T01_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "559b2e9a0ad716bd3241378d8cbff7ce08a7defaf2587b01764231a562c2f251",
+        "markscheme.md": "f07caa95bd02933888d1b07e036fc7a37f83ed4005dae8fbb65837c916ae549a"
+      },
+      "publication_source_sha256": {
+        "questions.md": "559b2e9a0ad716bd3241378d8cbff7ce08a7defaf2587b01764231a562c2f251",
+        "markscheme.md": "f07caa95bd02933888d1b07e036fc7a37f83ed4005dae8fbb65837c916ae549a"
+      }
+    },
+    {
+      "key": "T02_P1",
+      "batch_id": "0610_T02_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "438315e0bfd49261ad824283ecf11afdc97576986fedde8d69a91bb2231d7c4b",
+        "markscheme.md": "f08cfd01c4916def2325ba366bb73850a7cefa58b3abbd92c0c22c62e14df0ff"
+      },
+      "publication_source_sha256": {
+        "questions.md": "438315e0bfd49261ad824283ecf11afdc97576986fedde8d69a91bb2231d7c4b",
+        "markscheme.md": "f08cfd01c4916def2325ba366bb73850a7cefa58b3abbd92c0c22c62e14df0ff"
+      }
+    },
+    {
+      "key": "T03_P1",
+      "batch_id": "0610_T03_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "66afef2ad7f241ac51ea1f561add7e479264edda4a27a6a17942bc20bb72bda9",
+        "markscheme.md": "4fce1aa0da3da1abee8d9b1a9934df601e251ec6264341f063fcc6402f67cb1d"
+      },
+      "publication_source_sha256": {
+        "questions.md": "9eab9bbd6d0d1e8ce7b3a808da5b26bab9162fcf8c5c0f5db71816307ceabee9",
+        "markscheme.md": "547ac7ee152842d4467bcb630224b8a57ca6594ca9ae8f7bb36c5329bd037f46"
+      }
+    },
+    {
+      "key": "T04_P1",
+      "batch_id": "0610_T04_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "3ed29715c6e94fe99bacbdf20e0e0a155d59a08d6499ed41faddf54c28544abd",
+        "markscheme.md": "4f562a812ed429a8c206e989b5090fb63af7eac2a7efaf45c0b0bbdebff8b9e8"
+      },
+      "publication_source_sha256": {
+        "questions.md": "3ed29715c6e94fe99bacbdf20e0e0a155d59a08d6499ed41faddf54c28544abd",
+        "markscheme.md": "4f562a812ed429a8c206e989b5090fb63af7eac2a7efaf45c0b0bbdebff8b9e8"
+      }
+    },
+    {
+      "key": "T05_P1",
+      "batch_id": "0610_T05_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "dd1a475ed84c83b37238c364ae9c48db557bbe3bfc20f583682698d3551df24a",
+        "markscheme.md": "b6af6c0104aef4a22d53fa7582bc07cff99f19bb6b7d9231dbc771b0aadc8141"
+      },
+      "publication_source_sha256": {
+        "questions.md": "dd1a475ed84c83b37238c364ae9c48db557bbe3bfc20f583682698d3551df24a",
+        "markscheme.md": "b6af6c0104aef4a22d53fa7582bc07cff99f19bb6b7d9231dbc771b0aadc8141"
+      }
+    },
+    {
+      "key": "T06_P1",
+      "batch_id": "0610_T06_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "7d1bf96749f6f95e63d1c07ccfe09f16a63f955ae16f77fe46b7b17bf296c79c",
+        "markscheme.md": "8a1c5f5f7e4789a69bb5aedf8c2516cd09e0b5c4977898facb3c3a04e2e07236"
+      },
+      "publication_source_sha256": {
+        "questions.md": "7d1bf96749f6f95e63d1c07ccfe09f16a63f955ae16f77fe46b7b17bf296c79c",
+        "markscheme.md": "8a1c5f5f7e4789a69bb5aedf8c2516cd09e0b5c4977898facb3c3a04e2e07236"
+      }
+    },
+    {
+      "key": "T07_P1",
+      "batch_id": "0610_T07_P1_20261013",
+      "questions": 30,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "b1db5a4563146451c17f7a09235875926b85dd514274970cbc16a4b0b9ed6428",
+        "markscheme.md": "8e072b8f208c902a339f5035388896ca43ab6473e4e2dff09f6885ede18b1a25"
+      },
+      "publication_source_sha256": {
+        "questions.md": "b1db5a4563146451c17f7a09235875926b85dd514274970cbc16a4b0b9ed6428",
+        "markscheme.md": "8e072b8f208c902a339f5035388896ca43ab6473e4e2dff09f6885ede18b1a25"
+      }
+    },
+    {
+      "key": "T08_P1",
+      "batch_id": "0610_T08_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "f8b7776937158df291e70e647f7bd46d35fec0d99f4383b3e3acf5f623e2a5c3",
+        "markscheme.md": "86a9b8a7e5c2c53e97b3e53c84c5ddbd429123dc45899b224b0d91cc80f48807"
+      },
+      "publication_source_sha256": {
+        "questions.md": "f8b7776937158df291e70e647f7bd46d35fec0d99f4383b3e3acf5f623e2a5c3",
+        "markscheme.md": "86a9b8a7e5c2c53e97b3e53c84c5ddbd429123dc45899b224b0d91cc80f48807"
+      }
+    },
+    {
+      "key": "T09_P1",
+      "batch_id": "0610_T09_P1_20261013",
+      "questions": 30,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "f1d3c0b085cab6eaaf2e54001774f0c9edc96b36b4ab8e4b3bc96d732c7a3784",
+        "markscheme.md": "94917ff5bacdf311dc2eddcf1947d1698770e3a08e8cd459c59953ee38e20039"
+      },
+      "publication_source_sha256": {
+        "questions.md": "f1d3c0b085cab6eaaf2e54001774f0c9edc96b36b4ab8e4b3bc96d732c7a3784",
+        "markscheme.md": "94917ff5bacdf311dc2eddcf1947d1698770e3a08e8cd459c59953ee38e20039"
+      }
+    },
+    {
+      "key": "T10_P1",
+      "batch_id": "0610_T10_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "41e9bd7424daea99e966dc06a469e3def2aaafbf9a98468163900095737e2cc4",
+        "markscheme.md": "25cfba77efc83f2fe8c66ed6ea2c576f60c3151fff524b88645f915d8db86def"
+      },
+      "publication_source_sha256": {
+        "questions.md": "41e9bd7424daea99e966dc06a469e3def2aaafbf9a98468163900095737e2cc4",
+        "markscheme.md": "25cfba77efc83f2fe8c66ed6ea2c576f60c3151fff524b88645f915d8db86def"
+      }
+    },
+    {
+      "key": "T11_P1",
+      "batch_id": "0610_T11_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "929cdd8f508635ed57ac6dc6e5833acb39e634ee08b3c4c9021350b74e6a6b54",
+        "markscheme.md": "15c22d34cf2c8a02eb5aee8aa07ad5c4c1b68f2aa032a0ac220debee84cf584a"
+      },
+      "publication_source_sha256": {
+        "questions.md": "929cdd8f508635ed57ac6dc6e5833acb39e634ee08b3c4c9021350b74e6a6b54",
+        "markscheme.md": "15c22d34cf2c8a02eb5aee8aa07ad5c4c1b68f2aa032a0ac220debee84cf584a"
+      }
+    },
+    {
+      "key": "T12_P1",
+      "batch_id": "0610_T12_P1_20261013",
+      "questions": 20,
+      "previous_stage": "04_approved",
+      "source_sha256": {
+        "questions.md": "477f3fa8c7b216aa84846d78ea903c00418ca814860614286fe60b5298cecb53",
+        "markscheme.md": "d2d2dda7abb6dc384bb7fcb41b79e48798d3e8c1b5a2c3aa031ca8f4a4a8844d"
+      },
+      "publication_source_sha256": {
+        "questions.md": "477f3fa8c7b216aa84846d78ea903c00418ca814860614286fe60b5298cecb53",
+        "markscheme.md": "d2d2dda7abb6dc384bb7fcb41b79e48798d3e8c1b5a2c3aa031ca8f4a4a8844d"
+      }
+    },
+    {
+      "key": "T13_P1",
+      "batch_id": "0610_T13_P1_20261013",
+      "questions": 20,
+      "previous_stage": "02_solved",
+      "source_sha256": {
+        "questions.md": "b17c7b33f908013b68cec2b3ab99adb95df62161aeb5992c55b3124e0bca7e6d",
+        "markscheme.md": "d000eaee56da149b71fbedfa516582b9d9eae981b9b8a2e0455b0ae52cd63ba9"
+      },
+      "publication_source_sha256": {
+        "questions.md": "b17c7b33f908013b68cec2b3ab99adb95df62161aeb5992c55b3124e0bca7e6d",
+        "markscheme.md": "d000eaee56da149b71fbedfa516582b9d9eae981b9b8a2e0455b0ae52cd63ba9"
+      }
+    },
+    {
+      "key": "T14_P1",
+      "batch_id": "0610_T14_P1_20261013",
+      "questions": 30,
+      "previous_stage": "02_solved",
+      "source_sha256": {
+        "questions.md": "e6d6039b075fc3cd5a00f2b61299585d7896ac1344ebb2c1e70b12a5a60ca3d8",
+        "markscheme.md": "75a67e06e18ec8be2977c9ae755daf82c2e4b36e05917bfc3fee9b3f227c0c31"
+      },
+      "publication_source_sha256": {
+        "questions.md": "e6d6039b075fc3cd5a00f2b61299585d7896ac1344ebb2c1e70b12a5a60ca3d8",
+        "markscheme.md": "75a67e06e18ec8be2977c9ae755daf82c2e4b36e05917bfc3fee9b3f227c0c31"
+      }
+    },
+    {
+      "key": "T14_P2",
+      "batch_id": "0610_T14_P2_20261013",
+      "questions": 30,
+      "previous_stage": "02_solved",
+      "source_sha256": {
+        "questions.md": "dd2b8e24bba4455b7fe28b03efbd889135b5ed8ebda4ed504378cf8fc4a55842",
+        "markscheme.md": "a8391bc8e4cbc5e0473bced358cbcc22b77485236962307588af16804ae618f4"
+      },
+      "publication_source_sha256": {
+        "questions.md": "dd2b8e24bba4455b7fe28b03efbd889135b5ed8ebda4ed504378cf8fc4a55842",
+        "markscheme.md": "a8391bc8e4cbc5e0473bced358cbcc22b77485236962307588af16804ae618f4"
+      }
+    },
+    {
+      "key": "T15_P1",
+      "batch_id": "0610_T15_P1_20261013",
+      "questions": 20,
+      "previous_stage": "02_solved",
+      "source_sha256": {
+        "questions.md": "182b266486fb8f101a4168db448ce174f541cad2b5f073479025e28ae96c99a4",
+        "markscheme.md": "713379c67d90151451a042dd994528ef0cd3f516c41be386c230904f637d66d0"
+      },
+      "publication_source_sha256": {
+        "questions.md": "182b266486fb8f101a4168db448ce174f541cad2b5f073479025e28ae96c99a4",
+        "markscheme.md": "713379c67d90151451a042dd994528ef0cd3f516c41be386c230904f637d66d0"
+      }
+    },
+    {
+      "key": "T16_P1",
+      "batch_id": "0610_T16_P1_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "7521935116300c67c91213cfe3b6d64d0afbbb7b1d2c932903611abcf867356b",
+        "markscheme.md": "9fa8da0ce83b0f86d3c54bd0f85ad09bd3672199f9bd4230b30dfc1378cf3aa8"
+      },
+      "publication_source_sha256": {
+        "questions.md": "7521935116300c67c91213cfe3b6d64d0afbbb7b1d2c932903611abcf867356b",
+        "markscheme.md": "9fa8da0ce83b0f86d3c54bd0f85ad09bd3672199f9bd4230b30dfc1378cf3aa8"
+      }
+    },
+    {
+      "key": "T16_P2",
+      "batch_id": "0610_T16_P2_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "5f49bc9fb0755a50adcece18f75eb4204c832bd8065a18c39bf7a9dc3cdd2aed",
+        "markscheme.md": "77e9a6f889364246fa521888e744d7abc427d5d1785785a381fe6e7725a8c320"
+      },
+      "publication_source_sha256": {
+        "questions.md": "5f49bc9fb0755a50adcece18f75eb4204c832bd8065a18c39bf7a9dc3cdd2aed",
+        "markscheme.md": "77e9a6f889364246fa521888e744d7abc427d5d1785785a381fe6e7725a8c320"
+      }
+    },
+    {
+      "key": "T17_P1",
+      "batch_id": "0610_T17_P1_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "7e7d2f6739ad885f5d4ba359ebbc54eb85491c628846c5c527b0a8b71cfa9293",
+        "markscheme.md": "b8f7b8b4f9c6faae1cbe99f5e5ba4aa20027d7d3018282868bdc44d429fcbbb4"
+      },
+      "publication_source_sha256": {
+        "questions.md": "7e7d2f6739ad885f5d4ba359ebbc54eb85491c628846c5c527b0a8b71cfa9293",
+        "markscheme.md": "b8f7b8b4f9c6faae1cbe99f5e5ba4aa20027d7d3018282868bdc44d429fcbbb4"
+      }
+    },
+    {
+      "key": "T17_P2",
+      "batch_id": "0610_T17_P2_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "2d1ca9b2d04bd35bc6f7eb5d5990902773b9bd2757aa6b6f9146786d7ecb8435",
+        "markscheme.md": "28ce4d98a0b24efe27629443e452d6b47e2307eed3fdd68b4a1a7506b702d066"
+      },
+      "publication_source_sha256": {
+        "questions.md": "2d1ca9b2d04bd35bc6f7eb5d5990902773b9bd2757aa6b6f9146786d7ecb8435",
+        "markscheme.md": "28ce4d98a0b24efe27629443e452d6b47e2307eed3fdd68b4a1a7506b702d066"
+      }
+    },
+    {
+      "key": "T18_P1",
+      "batch_id": "0610_T18_P1_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "ddc0926d9fb8fd3014f262b155594ddcc44b90a891810c862ead8f3e2101f424",
+        "markscheme.md": "df54e6005c7f79a2b5b9b3fb02957b24a308b43d86620375d7545380678a82fe"
+      },
+      "publication_source_sha256": {
+        "questions.md": "ddc0926d9fb8fd3014f262b155594ddcc44b90a891810c862ead8f3e2101f424",
+        "markscheme.md": "df54e6005c7f79a2b5b9b3fb02957b24a308b43d86620375d7545380678a82fe"
+      }
+    },
+    {
+      "key": "T19_P1",
+      "batch_id": "0610_T19_P1_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "dcfac7401afb7c329a9b4c7a1d13143e073ce9385131f191f0ccbec685369d07",
+        "markscheme.md": "5760fea1c43f1bb693cacc8e29da6257d532df33e9db376060f206c381f2d870"
+      },
+      "publication_source_sha256": {
+        "questions.md": "dcfac7401afb7c329a9b4c7a1d13143e073ce9385131f191f0ccbec685369d07",
+        "markscheme.md": "5760fea1c43f1bb693cacc8e29da6257d532df33e9db376060f206c381f2d870"
+      }
+    },
+    {
+      "key": "T20_P1",
+      "batch_id": "0610_T20_P1_20261018",
+      "questions": 30,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "0842ad14fd43344398c0ab855a7593b07be95465f80b8da10fd021216b2bae51",
+        "markscheme.md": "8749bcecc789848e86af41e0861e5551a17c30b9df11c051c9feef0028e13eca"
+      },
+      "publication_source_sha256": {
+        "questions.md": "0842ad14fd43344398c0ab855a7593b07be95465f80b8da10fd021216b2bae51",
+        "markscheme.md": "8749bcecc789848e86af41e0861e5551a17c30b9df11c051c9feef0028e13eca"
+      }
+    },
+    {
+      "key": "T21_P1",
+      "batch_id": "0610_T21_P1_20261018",
+      "questions": 20,
+      "previous_stage": "01_drafts",
+      "source_sha256": {
+        "questions.md": "d90ed8c6910c30e3b2154fe5e71c287948bf5bac961c0b57dcc0cef552e2d18c",
+        "markscheme.md": "97e34e4e4969d9be4d391687ee40ad2bd5f43f17c622fef8b572228444f59b36"
+      },
+      "publication_source_sha256": {
+        "questions.md": "d90ed8c6910c30e3b2154fe5e71c287948bf5bac961c0b57dcc0cef552e2d18c",
+        "markscheme.md": "97e34e4e4969d9be4d391687ee40ad2bd5f43f17c622fef8b572228444f59b36"
+      }
+    }
+  ],
+  "format_adjustments": [
+    {
+      "date": "2026-10-18",
+      "batch_id": "0610_T03_P1_20261013",
+      "questions": [
+        "Q11",
+        "Q16"
+      ],
+      "description": "Normalised four mark-scheme subpart headings and two question continuation labels for website parsing; wording, answers and marks unchanged."
+    }
+  ]
+}

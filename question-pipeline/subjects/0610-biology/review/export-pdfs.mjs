@@ -1,4 +1,4 @@
-/** Export Biology topics 1-10 from approved source, without publishing them to the website.
+/** Export all 21 owner-approved Biology topics for website preparation.
  * Run: node question-pipeline/subjects/0610-biology/review/export-pdfs.mjs
  * Uses the website's existing marked and Playwright dependencies. No source files are changed.
  */
@@ -30,6 +30,33 @@ function digest(file) {
   return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 }
 
+const plan = JSON.parse(fs.readFileSync(path.join(subject, 'config/batch_plan.json'), 'utf8')).batches;
+const stageLabels = { '04_approved':'Approved for publication by the owner' };
+
+// Resolve exactly one approved batch per planned key. Exporting never changes approval status
+// or publishes files to Website/public.
+function loadBatch(item) {
+  const prefix = `0610_${item.key}_`;
+  const matches = [];
+  for (const stage of Object.keys(stageLabels)) {
+    const root = path.join(subject, 'batches', stage);
+    if (!fs.existsSync(root)) continue;
+    for (const batch of fs.readdirSync(root).filter((name) => name.startsWith(prefix))) matches.push({ stage, batch, dir:path.join(root,batch) });
+  }
+  if (matches.length !== 1) throw new Error(`Expected exactly one batch for ${item.key}; found ${matches.length}`);
+  const result = matches[0];
+  const qPath = path.join(result.dir, 'questions.md');
+  const msPath = path.join(result.dir, 'markscheme.md');
+  const source = fs.readFileSync(qPath, 'utf8');
+  const name = source.match(/^topic_name:\s*"?([^"\r\n]+)"?\s*$/m)?.[1];
+  if (name !== item.topic_name) throw new Error(`Unexpected topic name in ${result.batch}`);
+  const questions = blocks(source);
+  const scheme = blocks(fs.readFileSync(msPath, 'utf8'));
+  const answers = new Map(scheme.map((a) => [a.number, a]));
+  if (questions.length !== item.questions || new Set(questions.map((q) => q.number)).size !== questions.length || answers.size !== scheme.length || questions.length !== answers.size || questions.some((q) => !answers.has(q.number))) throw new Error(`Question/answer headings or count do not match plan: ${result.batch}`);
+  return { ...result, part:item.part, questions, answers, provenance:{ batch:result.batch, stage:result.stage, questionSourceSha256:digest(qPath), markschemeSourceSha256:digest(msPath) } };
+}
+
 const css = `
 @page { size: A4; margin: 18mm; }
 * { box-sizing: border-box; }
@@ -55,7 +82,7 @@ tr { break-inside:avoid; }
 ul { padding-left:6mm; }
 `;
 
-function renderQuestion(q, answer) {
+function renderQuestion(q, answer, part, multipart) {
   const [meta, body] = q.text.split('**Question**');
   if (body === undefined) throw new Error(`Missing question label: Q${q.number}`);
   const id = meta.match(/^- id:\s*(.+)$/m)?.[1];
@@ -73,7 +100,7 @@ function renderQuestion(q, answer) {
   } else if (!answer) {
     html = md.parse(text.replace(/^([A-D]) (.+)$/gm, (_, l, v) => `\n**${l}** ${v}\n`));
   } else html = md.parse(text);
-  return `<article class="question ${structured ? 'structured' : ''}"><h2>Question ${q.number}</h2><p class="meta">${esc(tier)} · ${esc(marks)} mark${marks === '1' ? '' : 's'} · ${esc(id)}</p>${html}</article>`;
+  return `<article class="question ${structured ? 'structured' : ''}"><h2>${multipart ? `Part ${part} · ` : ''}Question ${q.number}</h2><p class="meta">${esc(tier)} · ${esc(marks)} mark${marks === '1' ? '' : 's'} · ${esc(id)}</p>${html}</article>`;
 }
 
 fs.mkdirSync(out, { recursive: true });
@@ -81,32 +108,26 @@ const entries = [];
 const browser = await chromium.launch();
 try {
   const page = await browser.newPage();
-  for (let topic = 1; topic <= 10; topic++) {
-    const prefix = `0610_T${String(topic).padStart(2, '0')}_P1_`;
-    const folders = fs.readdirSync(path.join(subject, 'batches/04_approved')).filter((n) => n.startsWith(prefix));
-    if (folders.length !== 1) throw new Error(`Expected one approved batch for topic ${topic}`);
-    const dir = path.join(subject, 'batches/04_approved', folders[0]);
-    const qPath = path.join(dir, 'questions.md');
-    const msPath = path.join(dir, 'markscheme.md');
-    const source = fs.readFileSync(qPath, 'utf8');
-    const name = source.match(/^topic_name:\s*"?([^"\r\n]+)"?\s*$/m)?.[1];
-    if (!name) throw new Error('Missing topic name');
-    const questions = blocks(source);
-    const answers = new Map(blocks(fs.readFileSync(msPath, 'utf8')).map((a) => [a.number, a]));
-    if (!questions.length || questions.length !== answers.size || questions.some((q) => !answers.has(q.number))) throw new Error(`Question/answer headings do not match: ${folders[0]}`);
+  const topicIds = [...new Set(plan.map((item) => Number(item.topic_id)))].sort((a,b) => a-b);
+  for (const topic of topicIds) {
+    const planned = plan.filter((item) => Number(item.topic_id) === topic).sort((a,b) => a.part-b.part);
+    const batches = planned.map(loadBatch);
+    const name = planned[0].topic_name;
+    const questionCount = batches.reduce((n,b) => n+b.questions.length,0);
     const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     for (const kind of ['questions', 'mark-scheme']) {
       const filename = `topical-hub-igcse-biology-0610-${slug}-${kind}.pdf`;
-      const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(name)} - ${kind}</title><style>${css}</style></head><body><div class="watermark" aria-hidden="true"><strong>Topical Hub</strong><span>${esc(host)}</span></div><header class="intro"><p class="label">Topical Hub · IGCSE Biology 0610 · syllabus for exams in 2026–2028</p><h1>${esc(name)}</h1><p>${kind === 'questions' ? 'Original exam-style questions' : 'Mark scheme and worked solutions'} · ${questions.length} questions</p><p class="notice">Review export of the existing pipeline-approved batch. Final owner review pending.</p><p class="notice">Original questions written and checked with AI tools. Report anything that looks wrong. Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press &amp; Assessment.</p></header>${questions.map((q) => renderQuestion(q, kind === 'mark-scheme' ? answers.get(q.number) : null)).join('')}</body></html>`;
+      const body = batches.map((b) => `${batches.length > 1 ? `<h2>Part ${b.part}</h2><p class="notice">${esc(b.batch)}</p>` : ''}${b.questions.map((q) => renderQuestion(q,kind === 'mark-scheme' ? b.answers.get(q.number) : null,b.part,batches.length>1)).join('')}`).join('');
+      const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(name)} - ${kind}</title><style>${css}</style></head><body><div class="watermark" aria-hidden="true"><strong>Topical Hub</strong><span>${esc(host)}</span></div><header class="intro"><p class="label">Topical Hub · IGCSE Biology 0610 · syllabus for exams in 2026–2028</p><h1>${esc(name)}</h1><p>${kind === 'questions' ? 'Original exam-style questions' : 'Mark scheme and worked solutions'} · ${questionCount} questions</p><p class="notice">Original questions written with AI tools. Report anything that looks wrong. Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press &amp; Assessment.</p></header>${body}</body></html>`;
       await page.setContent(html, { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
       const file = path.join(out, filename);
       await page.pdf({ path: file, format: 'A4', printBackground: true, displayHeaderFooter: true, margin: { top:'18mm', right:'18mm', bottom:'18mm', left:'18mm' }, headerTemplate:'<span></span>', footerTemplate:'<div style="font-family:Arial;font-size:8pt;color:#555;width:100%;text-align:center">Page <span class="pageNumber"></span> of <span class="totalPages"></span></div>' });
-      entries.push({ topic, name, batch: folders[0], kind, file: filename, questions: questions.length, bytes: fs.statSync(file).size, sha256: digest(file), questionSourceSha256: digest(qPath), markschemeSourceSha256: digest(msPath) });
+      entries.push({ topic, name, sources:batches.map((b) => b.provenance), kind, file: filename, questions: questionCount, bytes: fs.statSync(file).size, sha256: digest(file) });
     }
-    console.log(`Biology topic ${topic}: ${questions.length} questions, two PDFs`);
+    console.log(`Biology topic ${topic}: ${questionCount} questions, two PDFs`);
   }
 } finally { await browser.close(); }
 const totalBytes = entries.reduce((n, p) => n + p.bytes, 0);
-fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify({ note:'Review exports only; not published to the website. Existing pipeline approval is not a fresh Codex verification.', siteUrl: origin, exporterSha256:digest(fileURLToPath(import.meta.url)), totalBytes, pdfs: entries }, null, 2) + '\n');
+fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify({ note:'All 590 questions approved for publication by the owner on 2026-10-18; see ../owner-approval.json. No new independent AI verification claimed. Website integration is separate.', siteUrl: origin, exporterSha256:digest(fileURLToPath(import.meta.url)), totalBytes, pdfs: entries }, null, 2) + '\n');
 console.log(`${entries.length} PDFs, ${(totalBytes / 1024 / 1024).toFixed(2)} MB`);

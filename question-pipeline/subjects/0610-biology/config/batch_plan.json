@@ -1,0 +1,380 @@
+{
+  "subject_id": "0610-biology",
+  "ratio_questions_per_point": 1.4,
+  "note": "Written by the managing chat. One entry per batch; generators read their entry by key.",
+  "batches": [
+    {
+      "key": "T01_P1",
+      "topic_id": "1",
+      "topic_name": "Characteristics and classification of living organisms",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "in_scope_points": 15,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T02_P1",
+      "topic_id": "2",
+      "topic_name": "Organisation of the organism",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "2.1",
+        "2.2"
+      ],
+      "in_scope_points": 9,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T03_P1",
+      "topic_id": "3",
+      "topic_name": "Movement into and out of cells",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "3.1",
+        "3.2",
+        "3.3"
+      ],
+      "in_scope_points": 17,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T04_P1",
+      "topic_id": "4",
+      "topic_name": "Biological molecules",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "4.1"
+      ],
+      "in_scope_points": 4,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T05_P1",
+      "topic_id": "5",
+      "topic_name": "Enzymes",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "5.1"
+      ],
+      "in_scope_points": 9,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T06_P1",
+      "topic_id": "6",
+      "topic_name": "Plant nutrition",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "6.1",
+        "6.2"
+      ],
+      "in_scope_points": 13,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T07_P1",
+      "topic_id": "7",
+      "topic_name": "Human nutrition",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "7.1",
+        "7.2",
+        "7.3",
+        "7.4",
+        "7.5"
+      ],
+      "in_scope_points": 23,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T08_P1",
+      "topic_id": "8",
+      "topic_name": "Transport in plants",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "8.1",
+        "8.2",
+        "8.3",
+        "8.4"
+      ],
+      "in_scope_points": 15,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T09_P1",
+      "topic_id": "9",
+      "topic_name": "Transport in animals",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "9.1",
+        "9.2",
+        "9.3",
+        "9.4"
+      ],
+      "in_scope_points": 22,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T10_P1",
+      "topic_id": "10",
+      "topic_name": "Diseases and immunity",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "10.1"
+      ],
+      "in_scope_points": 17,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T11_P1",
+      "topic_id": "11",
+      "topic_name": "Gas exchange in humans",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "11.1"
+      ],
+      "in_scope_points": 9,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T12_P1",
+      "topic_id": "12",
+      "topic_name": "Respiration",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "12.1",
+        "12.2",
+        "12.3"
+      ],
+      "in_scope_points": 12,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T13_P1",
+      "topic_id": "13",
+      "topic_name": "Excretion in humans",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "13.1"
+      ],
+      "in_scope_points": 7,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T14_P1",
+      "topic_id": "14",
+      "topic_name": "Coordination and response",
+      "part": 1,
+      "parts": 2,
+      "subtopic_ids": [
+        "14.1",
+        "14.2"
+      ],
+      "in_scope_points": 16,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T14_P2",
+      "topic_id": "14",
+      "topic_name": "Coordination and response",
+      "part": 2,
+      "parts": 2,
+      "subtopic_ids": [
+        "14.3",
+        "14.4",
+        "14.5"
+      ],
+      "in_scope_points": 17,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T15_P1",
+      "topic_id": "15",
+      "topic_name": "Drugs",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "15.1"
+      ],
+      "in_scope_points": 5,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    },
+    {
+      "key": "T16_P1",
+      "topic_id": "16",
+      "topic_name": "Reproduction",
+      "part": 1,
+      "parts": 2,
+      "subtopic_ids": [
+        "16.1",
+        "16.2",
+        "16.3"
+      ],
+      "in_scope_points": 17,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T16_P2",
+      "topic_id": "16",
+      "topic_name": "Reproduction",
+      "part": 2,
+      "parts": 2,
+      "subtopic_ids": [
+        "16.4",
+        "16.5",
+        "16.6"
+      ],
+      "in_scope_points": 16,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T17_P1",
+      "topic_id": "17",
+      "topic_name": "Inheritance",
+      "part": 1,
+      "parts": 2,
+      "subtopic_ids": [
+        "17.1"
+      ],
+      "in_scope_points": 12,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T17_P2",
+      "topic_id": "17",
+      "topic_name": "Inheritance",
+      "part": 2,
+      "parts": 2,
+      "subtopic_ids": [
+        "17.2",
+        "17.3",
+        "17.4"
+      ],
+      "in_scope_points": 24,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T18_P1",
+      "topic_id": "18",
+      "topic_name": "Variation and selection",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "18.1",
+        "18.2",
+        "18.3"
+      ],
+      "in_scope_points": 19,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T19_P1",
+      "topic_id": "19",
+      "topic_name": "Organisms and their environment",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "19.1",
+        "19.2",
+        "19.3",
+        "19.4"
+      ],
+      "in_scope_points": 27,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T20_P1",
+      "topic_id": "20",
+      "topic_name": "Human influences on ecosystems",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "20.1",
+        "20.2",
+        "20.3",
+        "20.4"
+      ],
+      "in_scope_points": 20,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T21_P1",
+      "topic_id": "21",
+      "topic_name": "Biotechnology and genetic modification",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "21.1",
+        "21.2",
+        "21.3"
+      ],
+      "in_scope_points": 13,
+      "questions": 20,
+      "mcq": 10,
+      "structured": 10
+    }
+  ]
+}

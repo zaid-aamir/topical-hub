@@ -4,11 +4,26 @@ Topical Hub is a free static website of **original, exam-style topical practice 
 
 The questions were written and checked with AI tools and are not from any examination board. Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment. Anything that looks wrong can be reported from the "Report an error" link under every question.
 
-Live site: <https://topical-hub.pages.dev> (deployment steps in `DEPLOY.md`).
+Configured production URL: <https://topical-hub.pages.dev> (deployment steps in `DEPLOY.md`). This documentation describes the local implementation; it does not confirm the latest deployment.
+
+## Current implementation
+
+- `/` lists subject cards under `#subjects`; currently only Chemistry 0620 is enabled. The twelve topics are on `/igcse/chemistry-0620/`.
+- Topic pages filter by tier, question type and subtopic. MCQs mark one attempt and reveal the explanation; the score lasts only for the current page session. Structured answers use a mark-scheme toggle.
+- Each topic has two print pages and two watermarked PDF downloads (24 PDFs total). Downloads include file sizes from the manifest.
+- Header navigation is Subjects, About and the theme toggle. The footer includes About, Privacy, source code and the version from `package.json` (currently 1.0.0).
+- Question links currently use `#q<n>` (for example `#q16`); the full source id is kept in `data-question-id` and pre-filled error reports. This differs from the original brief's request to use the full id as the anchor; preserve existing links unless a migration is explicitly requested.
+- `SUBJECTS` in `src/config.ts` prepares the home page for more subjects. Adding an entry alone is insufficient: `src/lib/subjects.ts` must support its content and subject routes must exist. The separate `question-pipeline/` is not read by the website.
+
+## Routine verification
+
+Run `npm run build` and `npm test` once after a change. The build checks PDF freshness, validates the content, generates static HTML and runs the output gate. Stop when both commands pass. `test:e2e` (including screenshots and axe), `audit:render` and broad browser reviews run only when the owner explicitly requests them. Visual layout can be reviewed locally with `npm run dev`.
+
+For PDF-affecting changes, regenerate with `npm run pdfs` before the normal checks. This requires Playwright Chromium (`npx playwright install chromium` if missing). The owner reviews and commits the generated PDFs and manifest; coding assistants never commit or push. `scripts/pdf-manifest.mjs` lists hashed inputs. Layout, token and global-style files are intentionally excluded from that hash, so regenerate manually if changes there affect printed output.
 
 ## Run it locally (Windows PowerShell)
 
-Requires Node 24 (see `.nvmrc`; Node 22.12 or later works) and npm.
+Requires Node 24 (see `.nvmrc`; package engines require Node >=22.12) and npm. If PowerShell blocks `npm.ps1`, use `npm.cmd` in place of `npm` in these commands; no execution-policy change is needed.
 
 ```powershell
 cd Website
@@ -49,7 +64,7 @@ Website/
   playwright.config.ts   Playwright: tests/e2e, preview server on 127.0.0.1:4321
   vitest.config.ts       Vitest: tests/unit/**/*.test.ts
   tsconfig.json          TypeScript strict
-  BUILD_V1.md            the build plan for v1
+  BUILD_V1.md            delivered v1 scope and maintenance workflow
   CONTRACT.md            module ownership, URLs, DOM contract, decisions
   DESIGN.md              the visual design plan (colour, type, layout, print)
   DEPLOY.md              click-by-click Cloudflare Pages deployment
@@ -61,12 +76,14 @@ Website/
     check-pdfs.mjs       stale-PDF guard, first step of `npm run build`
     pdf-manifest.mjs     PDF file names, the input hash and the guard, shared by both and by the site
   src/
-    config.ts            SITE_NAME, SITE_URL, disclaimer, CHEM_FORMATTING switch, "Report an error" form settings
+    config.ts            site identity, SUBJECTS/SUBJECT, disclaimer, chemistry switch, report form settings
     content/             content loader: parses questions.md and markscheme.md, validates, exposes Topic[] (types.ts is the data model)
+    lib/subjects.ts      subject-to-content dispatch and computed subject counts (Chemistry only)
+    lib/pdfs.ts          PDF download URLs and file-size labels from the manifest
     lib/markdown.ts      Markdown to HTML with raw HTML escaped, tables wrapped for horizontal scrolling
     lib/chem/            display-only chemistry formatting (H2SO4 -> H₂SO₄), pure and unit-tested
     layouts/             BaseLayout: head, skip link, header, footer with disclaimer
-    components/          header, footer, theme toggle, question card, options, mark scheme, answer panel
+    components/          header, footer, theme toggle, subject/topic grids, breadcrumbs, watermark, question UI
     pages/               routes: index, about, privacy, 404, robots.txt, igcse/chemistry-0620/[slug]/ (+ print, print-answers)
     styles/              tokens.css (light and dark), global.css, print.css
   tests/

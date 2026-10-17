@@ -1,18 +1,32 @@
 ---
 /**
- * Site header: wordmark (to the home page), a "Subjects" link to the home page's subject list,
- * theme toggle. Rendered by BaseLayout on every page except the print pages.
+ * Site header: wordmark (to the home page), then "Subjects" (the home page's subject list),
+ * "About" and the theme toggle. The link for the current page gets aria-current="page".
+ * Privacy stays in the footer. Rendered by BaseLayout on every page except the print pages.
+ * At narrow widths global.css keeps all of it on one row (section 4).
  */
 import ThemeToggle from './ThemeToggle.astro';
 import { SITE_NAME } from '../config';
 
-const onHome = Astro.url.pathname.replace(/index\.html$/, '') === '/';
+/** Current path without index.html and without a trailing slash: "" for the home page, "/about" for About. */
+const here = Astro.url.pathname.replace(/index\.html$/, '').replace(/\/+$/, '');
+
+const links = [
+  { href: '/#subjects', label: 'Subjects', current: here === '' },
+  { href: '/about/', label: 'About', current: here === '/about' },
+];
 ---
 <header class="site-header">
   <div class="shell site-header-inner">
     <a class="wordmark" href="/">{SITE_NAME}</a>
     <nav class="site-nav" aria-label="Main">
-      <a class="site-nav-link" href="/#subjects" aria-current={onHome ? 'page' : undefined}>Subjects</a>
+      {
+        links.map((link) => (
+          <a class="site-nav-link" href={link.href} aria-current={link.current ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
       <ThemeToggle />
     </nav>
   </div>

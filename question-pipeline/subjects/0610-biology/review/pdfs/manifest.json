@@ -1,248 +1,758 @@
 {
-  "note": "Review exports only; not published to the website. Existing pipeline approval is not a fresh Codex verification.",
+  "note": "All 590 questions approved for publication by the owner on 2026-10-18; see ../owner-approval.json. No new independent AI verification claimed. Website integration is separate.",
   "siteUrl": "https://topical-hub.pages.dev",
-  "exporterSha256": "003a3fe145527674175b42abc9311df414ff2cc6ebeb3ca71123fdb27a170cd7",
-  "totalBytes": 2179635,
+  "exporterSha256": "cf2e02c5aad2cbcb1aedc2d6073a15f06ee67abdd1e7df77aec4f43a17eac8e0",
+  "totalBytes": 4571178,
   "pdfs": [
     {
       "topic": 1,
       "name": "Characteristics and classification of living organisms",
-      "batch": "0610_T01_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T01_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "559b2e9a0ad716bd3241378d8cbff7ce08a7defaf2587b01764231a562c2f251",
+          "markschemeSourceSha256": "f07caa95bd02933888d1b07e036fc7a37f83ed4005dae8fbb65837c916ae549a"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-characteristics-and-classification-of-living-organisms-questions.pdf",
       "questions": 20,
-      "bytes": 114226,
-      "sha256": "f6a55be399ab3a57ca89aff25593b996a7773366b66284793a24ce94cd0d051f",
-      "questionSourceSha256": "559b2e9a0ad716bd3241378d8cbff7ce08a7defaf2587b01764231a562c2f251",
-      "markschemeSourceSha256": "f07caa95bd02933888d1b07e036fc7a37f83ed4005dae8fbb65837c916ae549a"
+      "bytes": 114139,
+      "sha256": "6eb4d4c51cd0da236a4869ed1725f96cbd91a5aef282dfc043cae9d7d536ea74"
     },
     {
       "topic": 1,
       "name": "Characteristics and classification of living organisms",
-      "batch": "0610_T01_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T01_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "559b2e9a0ad716bd3241378d8cbff7ce08a7defaf2587b01764231a562c2f251",
+          "markschemeSourceSha256": "f07caa95bd02933888d1b07e036fc7a37f83ed4005dae8fbb65837c916ae549a"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-characteristics-and-classification-of-living-organisms-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 122813,
-      "sha256": "5c8f7ba6d496e00a2e6484d27fa49bb2cfae5e39fc8d64e1c08b94ee93c1c7a5",
-      "questionSourceSha256": "559b2e9a0ad716bd3241378d8cbff7ce08a7defaf2587b01764231a562c2f251",
-      "markschemeSourceSha256": "f07caa95bd02933888d1b07e036fc7a37f83ed4005dae8fbb65837c916ae549a"
+      "bytes": 122741,
+      "sha256": "fe44bdf7b2c4c9bba2701d3fbd4a5a7d6865208c0e7b10f9b6acb2abc31087df"
     },
     {
       "topic": 2,
       "name": "Organisation of the organism",
-      "batch": "0610_T02_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T02_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "438315e0bfd49261ad824283ecf11afdc97576986fedde8d69a91bb2231d7c4b",
+          "markschemeSourceSha256": "f08cfd01c4916def2325ba366bb73850a7cefa58b3abbd92c0c22c62e14df0ff"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-organisation-of-the-organism-questions.pdf",
       "questions": 20,
-      "bytes": 92650,
-      "sha256": "21913e64006e72ac5daabeafa39c1d3b99c94afad7b9db07542789a60b610619",
-      "questionSourceSha256": "438315e0bfd49261ad824283ecf11afdc97576986fedde8d69a91bb2231d7c4b",
-      "markschemeSourceSha256": "f08cfd01c4916def2325ba366bb73850a7cefa58b3abbd92c0c22c62e14df0ff"
+      "bytes": 92470,
+      "sha256": "c2850d9ddc3a9191b497ef96fdd0410ea6df7e3e7e96518865c70a83410f04e5"
     },
     {
       "topic": 2,
       "name": "Organisation of the organism",
-      "batch": "0610_T02_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T02_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "438315e0bfd49261ad824283ecf11afdc97576986fedde8d69a91bb2231d7c4b",
+          "markschemeSourceSha256": "f08cfd01c4916def2325ba366bb73850a7cefa58b3abbd92c0c22c62e14df0ff"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-organisation-of-the-organism-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 109102,
-      "sha256": "ea9d188765eca7a0babce64d6628de7862cf8307043089612408fc522142bb72",
-      "questionSourceSha256": "438315e0bfd49261ad824283ecf11afdc97576986fedde8d69a91bb2231d7c4b",
-      "markschemeSourceSha256": "f08cfd01c4916def2325ba366bb73850a7cefa58b3abbd92c0c22c62e14df0ff"
+      "bytes": 109026,
+      "sha256": "4ed9aecfb18e65ec6d898448c0689b2cbd934fcfe06619dee0bb872db3cd8e72"
     },
     {
       "topic": 3,
       "name": "Movement into and out of cells",
-      "batch": "0610_T03_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T03_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "9eab9bbd6d0d1e8ce7b3a808da5b26bab9162fcf8c5c0f5db71816307ceabee9",
+          "markschemeSourceSha256": "547ac7ee152842d4467bcb630224b8a57ca6594ca9ae8f7bb36c5329bd037f46"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-movement-into-and-out-of-cells-questions.pdf",
       "questions": 20,
-      "bytes": 101860,
-      "sha256": "3fd8d6f3aaa0c2e91e21792f1e503de87a4bd660555bde73d85026e4f99cb535",
-      "questionSourceSha256": "66afef2ad7f241ac51ea1f561add7e479264edda4a27a6a17942bc20bb72bda9",
-      "markschemeSourceSha256": "4fce1aa0da3da1abee8d9b1a9934df601e251ec6264341f063fcc6402f67cb1d"
+      "bytes": 100303,
+      "sha256": "a87e831a7d9544588da51a9a62b62d7aa2f2487f107a7775e8af96eda1fe54a0"
     },
     {
       "topic": 3,
       "name": "Movement into and out of cells",
-      "batch": "0610_T03_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T03_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "9eab9bbd6d0d1e8ce7b3a808da5b26bab9162fcf8c5c0f5db71816307ceabee9",
+          "markschemeSourceSha256": "547ac7ee152842d4467bcb630224b8a57ca6594ca9ae8f7bb36c5329bd037f46"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-movement-into-and-out-of-cells-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 113373,
-      "sha256": "42667a6fdfb3133c8663d104a5232bc20d277e02ad1db93150a33d26cac61e83",
-      "questionSourceSha256": "66afef2ad7f241ac51ea1f561add7e479264edda4a27a6a17942bc20bb72bda9",
-      "markschemeSourceSha256": "4fce1aa0da3da1abee8d9b1a9934df601e251ec6264341f063fcc6402f67cb1d"
+      "bytes": 113298,
+      "sha256": "eec70b6b51e06187dfc903bb2899c759bee3ef82f11a9be6ef2c29c24e13ece5"
     },
     {
       "topic": 4,
       "name": "Biological molecules",
-      "batch": "0610_T04_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T04_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "3ed29715c6e94fe99bacbdf20e0e0a155d59a08d6499ed41faddf54c28544abd",
+          "markschemeSourceSha256": "4f562a812ed429a8c206e989b5090fb63af7eac2a7efaf45c0b0bbdebff8b9e8"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-biological-molecules-questions.pdf",
       "questions": 20,
-      "bytes": 95920,
-      "sha256": "0c5dae35ca3cbff15daf753a596a39c9f10ae47eefb756ae8bb40cdca2b1f62c",
-      "questionSourceSha256": "3ed29715c6e94fe99bacbdf20e0e0a155d59a08d6499ed41faddf54c28544abd",
-      "markschemeSourceSha256": "4f562a812ed429a8c206e989b5090fb63af7eac2a7efaf45c0b0bbdebff8b9e8"
+      "bytes": 95822,
+      "sha256": "0aed8aecfd659c19bc1a74e4d285abd83a1067024326f1c914aeab32ff5d30bf"
     },
     {
       "topic": 4,
       "name": "Biological molecules",
-      "batch": "0610_T04_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T04_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "3ed29715c6e94fe99bacbdf20e0e0a155d59a08d6499ed41faddf54c28544abd",
+          "markschemeSourceSha256": "4f562a812ed429a8c206e989b5090fb63af7eac2a7efaf45c0b0bbdebff8b9e8"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-biological-molecules-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 108368,
-      "sha256": "94d79fbbe2ca11280ec7bb5bbc00ee1962a97ed5545ccff61197f602f56b81bd",
-      "questionSourceSha256": "3ed29715c6e94fe99bacbdf20e0e0a155d59a08d6499ed41faddf54c28544abd",
-      "markschemeSourceSha256": "4f562a812ed429a8c206e989b5090fb63af7eac2a7efaf45c0b0bbdebff8b9e8"
+      "bytes": 108295,
+      "sha256": "100a2c3f4f9446020d485dfb8bfd82004c8bc5ed25c901d298b97b2f7a880599"
     },
     {
       "topic": 5,
       "name": "Enzymes",
-      "batch": "0610_T05_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T05_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "dd1a475ed84c83b37238c364ae9c48db557bbe3bfc20f583682698d3551df24a",
+          "markschemeSourceSha256": "b6af6c0104aef4a22d53fa7582bc07cff99f19bb6b7d9231dbc771b0aadc8141"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-enzymes-questions.pdf",
       "questions": 20,
-      "bytes": 97987,
-      "sha256": "fab33171945606990298f819982aff45984bdd973a0b94379d7e470be7ab1fd2",
-      "questionSourceSha256": "dd1a475ed84c83b37238c364ae9c48db557bbe3bfc20f583682698d3551df24a",
-      "markschemeSourceSha256": "b6af6c0104aef4a22d53fa7582bc07cff99f19bb6b7d9231dbc771b0aadc8141"
+      "bytes": 97887,
+      "sha256": "0ad34c08e64c808cd88d7925d1b3a3f68a6192ee20598cfd42c18cd0f6af9fde"
     },
     {
       "topic": 5,
       "name": "Enzymes",
-      "batch": "0610_T05_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T05_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "dd1a475ed84c83b37238c364ae9c48db557bbe3bfc20f583682698d3551df24a",
+          "markschemeSourceSha256": "b6af6c0104aef4a22d53fa7582bc07cff99f19bb6b7d9231dbc771b0aadc8141"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-enzymes-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 109712,
-      "sha256": "81a1594a8cfbea4eb570b843cba25f7a8a800d2a05f9211e8b30d674371645a9",
-      "questionSourceSha256": "dd1a475ed84c83b37238c364ae9c48db557bbe3bfc20f583682698d3551df24a",
-      "markschemeSourceSha256": "b6af6c0104aef4a22d53fa7582bc07cff99f19bb6b7d9231dbc771b0aadc8141"
+      "bytes": 109629,
+      "sha256": "d080d70ad7e70853a0a20731d6f8fe38b78d030a571c2e602ebbb4919a569074"
     },
     {
       "topic": 6,
       "name": "Plant nutrition",
-      "batch": "0610_T06_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T06_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "7d1bf96749f6f95e63d1c07ccfe09f16a63f955ae16f77fe46b7b17bf296c79c",
+          "markschemeSourceSha256": "8a1c5f5f7e4789a69bb5aedf8c2516cd09e0b5c4977898facb3c3a04e2e07236"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-plant-nutrition-questions.pdf",
       "questions": 20,
-      "bytes": 108579,
-      "sha256": "64856e6d2af5c7aa884d6ca7bd7ece016cbc9e36647a8b165cd96b0047ed869d",
-      "questionSourceSha256": "7d1bf96749f6f95e63d1c07ccfe09f16a63f955ae16f77fe46b7b17bf296c79c",
-      "markschemeSourceSha256": "8a1c5f5f7e4789a69bb5aedf8c2516cd09e0b5c4977898facb3c3a04e2e07236"
+      "bytes": 108492,
+      "sha256": "80c21f63a4ec752b751134cff3012c59d8973b8fe5779a312d198f7e4d1e3797"
     },
     {
       "topic": 6,
       "name": "Plant nutrition",
-      "batch": "0610_T06_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T06_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "7d1bf96749f6f95e63d1c07ccfe09f16a63f955ae16f77fe46b7b17bf296c79c",
+          "markschemeSourceSha256": "8a1c5f5f7e4789a69bb5aedf8c2516cd09e0b5c4977898facb3c3a04e2e07236"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-plant-nutrition-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 130967,
-      "sha256": "0f2250e6a6ca5d5be361793e4b8173b2bc8de99e4938b73b9b79a3046abad613",
-      "questionSourceSha256": "7d1bf96749f6f95e63d1c07ccfe09f16a63f955ae16f77fe46b7b17bf296c79c",
-      "markschemeSourceSha256": "8a1c5f5f7e4789a69bb5aedf8c2516cd09e0b5c4977898facb3c3a04e2e07236"
+      "bytes": 130812,
+      "sha256": "0941014964eef23f7dd9486a56ecf05cc52e012b6ce5e1b96e5ca197c349ab02"
     },
     {
       "topic": 7,
       "name": "Human nutrition",
-      "batch": "0610_T07_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T07_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "b1db5a4563146451c17f7a09235875926b85dd514274970cbc16a4b0b9ed6428",
+          "markschemeSourceSha256": "8e072b8f208c902a339f5035388896ca43ab6473e4e2dff09f6885ede18b1a25"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-human-nutrition-questions.pdf",
       "questions": 30,
-      "bytes": 105393,
-      "sha256": "97878fcceea5065154c3629f0aa56e4de8a416693e66d417910fe4863410ea9c",
-      "questionSourceSha256": "b1db5a4563146451c17f7a09235875926b85dd514274970cbc16a4b0b9ed6428",
-      "markschemeSourceSha256": "8e072b8f208c902a339f5035388896ca43ab6473e4e2dff09f6885ede18b1a25"
+      "bytes": 105304,
+      "sha256": "14279b2b6e539630776ae676b22cf1fbe57dfd33a212cae5a3e7fe4df8b47488"
     },
     {
       "topic": 7,
       "name": "Human nutrition",
-      "batch": "0610_T07_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T07_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "b1db5a4563146451c17f7a09235875926b85dd514274970cbc16a4b0b9ed6428",
+          "markschemeSourceSha256": "8e072b8f208c902a339f5035388896ca43ab6473e4e2dff09f6885ede18b1a25"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-human-nutrition-mark-scheme.pdf",
       "questions": 30,
-      "bytes": 127494,
-      "sha256": "97c2c0ea1f6b80b3331061bf7e820fde7d1c74d866de0e0043623677dc93ca9f",
-      "questionSourceSha256": "b1db5a4563146451c17f7a09235875926b85dd514274970cbc16a4b0b9ed6428",
-      "markschemeSourceSha256": "8e072b8f208c902a339f5035388896ca43ab6473e4e2dff09f6885ede18b1a25"
+      "bytes": 127401,
+      "sha256": "19da53df710b11a41dbd7dd282a2c744ad38c15329ad8d6120686215e1d62f00"
     },
     {
       "topic": 8,
       "name": "Transport in plants",
-      "batch": "0610_T08_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T08_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "f8b7776937158df291e70e647f7bd46d35fec0d99f4383b3e3acf5f623e2a5c3",
+          "markschemeSourceSha256": "86a9b8a7e5c2c53e97b3e53c84c5ddbd429123dc45899b224b0d91cc80f48807"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-transport-in-plants-questions.pdf",
       "questions": 20,
-      "bytes": 93376,
-      "sha256": "9db57d8ef79bbc087daf4d694d50e940877ee543ff1000c9410b01bc27d91f5a",
-      "questionSourceSha256": "f8b7776937158df291e70e647f7bd46d35fec0d99f4383b3e3acf5f623e2a5c3",
-      "markschemeSourceSha256": "86a9b8a7e5c2c53e97b3e53c84c5ddbd429123dc45899b224b0d91cc80f48807"
+      "bytes": 93287,
+      "sha256": "b36062eae59a3d554723fc089f3b07ada88cfdfa69cc7fb408b86bcb0fbf435f"
     },
     {
       "topic": 8,
       "name": "Transport in plants",
-      "batch": "0610_T08_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T08_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "f8b7776937158df291e70e647f7bd46d35fec0d99f4383b3e3acf5f623e2a5c3",
+          "markschemeSourceSha256": "86a9b8a7e5c2c53e97b3e53c84c5ddbd429123dc45899b224b0d91cc80f48807"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-transport-in-plants-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 109921,
-      "sha256": "bbf5a30b12b1c2fbf561fbb0a9f982aab9d7dc2998edb58049dea52b3f886e35",
-      "questionSourceSha256": "f8b7776937158df291e70e647f7bd46d35fec0d99f4383b3e3acf5f623e2a5c3",
-      "markschemeSourceSha256": "86a9b8a7e5c2c53e97b3e53c84c5ddbd429123dc45899b224b0d91cc80f48807"
+      "bytes": 109533,
+      "sha256": "418e5e9d9f9935bb311412f417505db73344ce4e5c254d0dc2eb80d26ecba8f5"
     },
     {
       "topic": 9,
       "name": "Transport in animals",
-      "batch": "0610_T09_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T09_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "f1d3c0b085cab6eaaf2e54001774f0c9edc96b36b4ab8e4b3bc96d732c7a3784",
+          "markschemeSourceSha256": "94917ff5bacdf311dc2eddcf1947d1698770e3a08e8cd459c59953ee38e20039"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-transport-in-animals-questions.pdf",
       "questions": 30,
-      "bytes": 101196,
-      "sha256": "aae9cefa409b06c3f445c9f7c6a0397b16a0dc81be1ce4488df7bd57c4c84aeb",
-      "questionSourceSha256": "f1d3c0b085cab6eaaf2e54001774f0c9edc96b36b4ab8e4b3bc96d732c7a3784",
-      "markschemeSourceSha256": "94917ff5bacdf311dc2eddcf1947d1698770e3a08e8cd459c59953ee38e20039"
+      "bytes": 101110,
+      "sha256": "c85c3d7981907882d7596aba4ef8bc4fa6ad3e188c1323bafe3556e684cd0143"
     },
     {
       "topic": 9,
       "name": "Transport in animals",
-      "batch": "0610_T09_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T09_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "f1d3c0b085cab6eaaf2e54001774f0c9edc96b36b4ab8e4b3bc96d732c7a3784",
+          "markschemeSourceSha256": "94917ff5bacdf311dc2eddcf1947d1698770e3a08e8cd459c59953ee38e20039"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-transport-in-animals-mark-scheme.pdf",
       "questions": 30,
-      "bytes": 132546,
-      "sha256": "090bb2f6bd89fd9c6cbb423c6ab6b9107e2a7cedf30605812a11a239b9035c51",
-      "questionSourceSha256": "f1d3c0b085cab6eaaf2e54001774f0c9edc96b36b4ab8e4b3bc96d732c7a3784",
-      "markschemeSourceSha256": "94917ff5bacdf311dc2eddcf1947d1698770e3a08e8cd459c59953ee38e20039"
+      "bytes": 132466,
+      "sha256": "b11d550cfbab198596eccdc132b0b32fe293f2a104ca424949ac7a089e25dc84"
     },
     {
       "topic": 10,
       "name": "Diseases and immunity",
-      "batch": "0610_T10_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T10_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "41e9bd7424daea99e966dc06a469e3def2aaafbf9a98468163900095737e2cc4",
+          "markschemeSourceSha256": "25cfba77efc83f2fe8c66ed6ea2c576f60c3151fff524b88645f915d8db86def"
+        }
+      ],
       "kind": "questions",
       "file": "topical-hub-igcse-biology-0610-diseases-and-immunity-questions.pdf",
       "questions": 20,
-      "bytes": 93194,
-      "sha256": "939febe03ad0a84baa0610172a4f38a8108d3745e2e41ee47d3a159d69d03a58",
-      "questionSourceSha256": "41e9bd7424daea99e966dc06a469e3def2aaafbf9a98468163900095737e2cc4",
-      "markschemeSourceSha256": "25cfba77efc83f2fe8c66ed6ea2c576f60c3151fff524b88645f915d8db86def"
+      "bytes": 93021,
+      "sha256": "0138eb19a751c9c9a10e095a121594ada4af6ade519c6befb254a82c1a8d79b2"
     },
     {
       "topic": 10,
       "name": "Diseases and immunity",
-      "batch": "0610_T10_P1_20261013",
+      "sources": [
+        {
+          "batch": "0610_T10_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "41e9bd7424daea99e966dc06a469e3def2aaafbf9a98468163900095737e2cc4",
+          "markschemeSourceSha256": "25cfba77efc83f2fe8c66ed6ea2c576f60c3151fff524b88645f915d8db86def"
+        }
+      ],
       "kind": "mark-scheme",
       "file": "topical-hub-igcse-biology-0610-diseases-and-immunity-mark-scheme.pdf",
       "questions": 20,
-      "bytes": 110958,
-      "sha256": "921b75c957cadc8bd8c36c4424939cdbc89f8586c7953d5e8936064ebbf5b2bf",
-      "questionSourceSha256": "41e9bd7424daea99e966dc06a469e3def2aaafbf9a98468163900095737e2cc4",
-      "markschemeSourceSha256": "25cfba77efc83f2fe8c66ed6ea2c576f60c3151fff524b88645f915d8db86def"
+      "bytes": 110876,
+      "sha256": "9526c20f7e75e8d78ffca141ed5ba57adc7cdd44dde164629486b7de96c349ed"
+    },
+    {
+      "topic": 11,
+      "name": "Gas exchange in humans",
+      "sources": [
+        {
+          "batch": "0610_T11_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "929cdd8f508635ed57ac6dc6e5833acb39e634ee08b3c4c9021350b74e6a6b54",
+          "markschemeSourceSha256": "15c22d34cf2c8a02eb5aee8aa07ad5c4c1b68f2aa032a0ac220debee84cf584a"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-gas-exchange-in-humans-questions.pdf",
+      "questions": 20,
+      "bytes": 94040,
+      "sha256": "51155fcd11fd9197eb0a73657173af0ec74bac5b21c67e59f599a009cf34de69"
+    },
+    {
+      "topic": 11,
+      "name": "Gas exchange in humans",
+      "sources": [
+        {
+          "batch": "0610_T11_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "929cdd8f508635ed57ac6dc6e5833acb39e634ee08b3c4c9021350b74e6a6b54",
+          "markschemeSourceSha256": "15c22d34cf2c8a02eb5aee8aa07ad5c4c1b68f2aa032a0ac220debee84cf584a"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-gas-exchange-in-humans-mark-scheme.pdf",
+      "questions": 20,
+      "bytes": 107489,
+      "sha256": "4c03bb2070bc9d6a0bdcb292f20c397c812fcf0006111fdc239c96bf400db6f6"
+    },
+    {
+      "topic": 12,
+      "name": "Respiration",
+      "sources": [
+        {
+          "batch": "0610_T12_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "477f3fa8c7b216aa84846d78ea903c00418ca814860614286fe60b5298cecb53",
+          "markschemeSourceSha256": "d2d2dda7abb6dc384bb7fcb41b79e48798d3e8c1b5a2c3aa031ca8f4a4a8844d"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-respiration-questions.pdf",
+      "questions": 20,
+      "bytes": 106941,
+      "sha256": "aacc400447cdbfc86598be854d49273936df02d1b9f3038927c308c92bed4a35"
+    },
+    {
+      "topic": 12,
+      "name": "Respiration",
+      "sources": [
+        {
+          "batch": "0610_T12_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "477f3fa8c7b216aa84846d78ea903c00418ca814860614286fe60b5298cecb53",
+          "markschemeSourceSha256": "d2d2dda7abb6dc384bb7fcb41b79e48798d3e8c1b5a2c3aa031ca8f4a4a8844d"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-respiration-mark-scheme.pdf",
+      "questions": 20,
+      "bytes": 121467,
+      "sha256": "5c84db3eb1421fae1593591035ce317fb524e0d317f3c9696112948f5e800be5"
+    },
+    {
+      "topic": 13,
+      "name": "Excretion in humans",
+      "sources": [
+        {
+          "batch": "0610_T13_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "b17c7b33f908013b68cec2b3ab99adb95df62161aeb5992c55b3124e0bca7e6d",
+          "markschemeSourceSha256": "d000eaee56da149b71fbedfa516582b9d9eae981b9b8a2e0455b0ae52cd63ba9"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-excretion-in-humans-questions.pdf",
+      "questions": 20,
+      "bytes": 91825,
+      "sha256": "f75c10769a87a2d41febcbcd073bca26710171ac4cf78e1f99f620752068a1ce"
+    },
+    {
+      "topic": 13,
+      "name": "Excretion in humans",
+      "sources": [
+        {
+          "batch": "0610_T13_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "b17c7b33f908013b68cec2b3ab99adb95df62161aeb5992c55b3124e0bca7e6d",
+          "markschemeSourceSha256": "d000eaee56da149b71fbedfa516582b9d9eae981b9b8a2e0455b0ae52cd63ba9"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-excretion-in-humans-mark-scheme.pdf",
+      "questions": 20,
+      "bytes": 122825,
+      "sha256": "8bf764b84b6fb4f4a553c1878ca4ada1627a7b24678697034c99dbb4ec815845"
+    },
+    {
+      "topic": 14,
+      "name": "Coordination and response",
+      "sources": [
+        {
+          "batch": "0610_T14_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "e6d6039b075fc3cd5a00f2b61299585d7896ac1344ebb2c1e70b12a5a60ca3d8",
+          "markschemeSourceSha256": "75a67e06e18ec8be2977c9ae755daf82c2e4b36e05917bfc3fee9b3f227c0c31"
+        },
+        {
+          "batch": "0610_T14_P2_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "dd2b8e24bba4455b7fe28b03efbd889135b5ed8ebda4ed504378cf8fc4a55842",
+          "markschemeSourceSha256": "a8391bc8e4cbc5e0473bced358cbcc22b77485236962307588af16804ae618f4"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-coordination-and-response-questions.pdf",
+      "questions": 60,
+      "bytes": 148737,
+      "sha256": "b422d4fbc0e15c093ea4a7f85a188012d01df06c1a260a468629cc34339e8e89"
+    },
+    {
+      "topic": 14,
+      "name": "Coordination and response",
+      "sources": [
+        {
+          "batch": "0610_T14_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "e6d6039b075fc3cd5a00f2b61299585d7896ac1344ebb2c1e70b12a5a60ca3d8",
+          "markschemeSourceSha256": "75a67e06e18ec8be2977c9ae755daf82c2e4b36e05917bfc3fee9b3f227c0c31"
+        },
+        {
+          "batch": "0610_T14_P2_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "dd2b8e24bba4455b7fe28b03efbd889135b5ed8ebda4ed504378cf8fc4a55842",
+          "markschemeSourceSha256": "a8391bc8e4cbc5e0473bced358cbcc22b77485236962307588af16804ae618f4"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-coordination-and-response-mark-scheme.pdf",
+      "questions": 60,
+      "bytes": 189335,
+      "sha256": "14ca919eefc5b006d50e776fdb1487d4e6520c6e01239a915ac9fed8747a977c"
+    },
+    {
+      "topic": 15,
+      "name": "Drugs",
+      "sources": [
+        {
+          "batch": "0610_T15_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "182b266486fb8f101a4168db448ce174f541cad2b5f073479025e28ae96c99a4",
+          "markschemeSourceSha256": "713379c67d90151451a042dd994528ef0cd3f516c41be386c230904f637d66d0"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-drugs-questions.pdf",
+      "questions": 20,
+      "bytes": 120899,
+      "sha256": "b58f3c691192db32e868e5c74c14dade2b7e41827199e2c574ced513ae9fc05b"
+    },
+    {
+      "topic": 15,
+      "name": "Drugs",
+      "sources": [
+        {
+          "batch": "0610_T15_P1_20261013",
+          "stage": "04_approved",
+          "questionSourceSha256": "182b266486fb8f101a4168db448ce174f541cad2b5f073479025e28ae96c99a4",
+          "markschemeSourceSha256": "713379c67d90151451a042dd994528ef0cd3f516c41be386c230904f637d66d0"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-drugs-mark-scheme.pdf",
+      "questions": 20,
+      "bytes": 105536,
+      "sha256": "897de8acaf1f98852d9834ad38e5857e116988d55f46923f474617b7f2d09f1c"
+    },
+    {
+      "topic": 16,
+      "name": "Reproduction",
+      "sources": [
+        {
+          "batch": "0610_T16_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "7521935116300c67c91213cfe3b6d64d0afbbb7b1d2c932903611abcf867356b",
+          "markschemeSourceSha256": "9fa8da0ce83b0f86d3c54bd0f85ad09bd3672199f9bd4230b30dfc1378cf3aa8"
+        },
+        {
+          "batch": "0610_T16_P2_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "5f49bc9fb0755a50adcece18f75eb4204c832bd8065a18c39bf7a9dc3cdd2aed",
+          "markschemeSourceSha256": "77e9a6f889364246fa521888e744d7abc427d5d1785785a381fe6e7725a8c320"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-reproduction-questions.pdf",
+      "questions": 60,
+      "bytes": 104943,
+      "sha256": "893c65b88414e9879a69fb50c5212d8fb065a03c586f70765a78534705af5441"
+    },
+    {
+      "topic": 16,
+      "name": "Reproduction",
+      "sources": [
+        {
+          "batch": "0610_T16_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "7521935116300c67c91213cfe3b6d64d0afbbb7b1d2c932903611abcf867356b",
+          "markschemeSourceSha256": "9fa8da0ce83b0f86d3c54bd0f85ad09bd3672199f9bd4230b30dfc1378cf3aa8"
+        },
+        {
+          "batch": "0610_T16_P2_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "5f49bc9fb0755a50adcece18f75eb4204c832bd8065a18c39bf7a9dc3cdd2aed",
+          "markschemeSourceSha256": "77e9a6f889364246fa521888e744d7abc427d5d1785785a381fe6e7725a8c320"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-reproduction-mark-scheme.pdf",
+      "questions": 60,
+      "bytes": 132106,
+      "sha256": "bcab090effbd2b22f14acca5f23957755612fccb83004a98b8ec8c64cda82f2d"
+    },
+    {
+      "topic": 17,
+      "name": "Inheritance",
+      "sources": [
+        {
+          "batch": "0610_T17_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "7e7d2f6739ad885f5d4ba359ebbc54eb85491c628846c5c527b0a8b71cfa9293",
+          "markschemeSourceSha256": "b8f7b8b4f9c6faae1cbe99f5e5ba4aa20027d7d3018282868bdc44d429fcbbb4"
+        },
+        {
+          "batch": "0610_T17_P2_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "2d1ca9b2d04bd35bc6f7eb5d5990902773b9bd2757aa6b6f9146786d7ecb8435",
+          "markschemeSourceSha256": "28ce4d98a0b24efe27629443e452d6b47e2307eed3fdd68b4a1a7506b702d066"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-inheritance-questions.pdf",
+      "questions": 60,
+      "bytes": 106004,
+      "sha256": "0a42a2dd5ee1797b39dd48a8835da9dbc8aff0b25d0b3ce979e1652c3d140bf0"
+    },
+    {
+      "topic": 17,
+      "name": "Inheritance",
+      "sources": [
+        {
+          "batch": "0610_T17_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "7e7d2f6739ad885f5d4ba359ebbc54eb85491c628846c5c527b0a8b71cfa9293",
+          "markschemeSourceSha256": "b8f7b8b4f9c6faae1cbe99f5e5ba4aa20027d7d3018282868bdc44d429fcbbb4"
+        },
+        {
+          "batch": "0610_T17_P2_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "2d1ca9b2d04bd35bc6f7eb5d5990902773b9bd2757aa6b6f9146786d7ecb8435",
+          "markschemeSourceSha256": "28ce4d98a0b24efe27629443e452d6b47e2307eed3fdd68b4a1a7506b702d066"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-inheritance-mark-scheme.pdf",
+      "questions": 60,
+      "bytes": 134155,
+      "sha256": "f432bca2257c5a7f71221a1a591bbfa0dbe20ad46a9df7e32d6dfbc774182df0"
+    },
+    {
+      "topic": 18,
+      "name": "Variation and selection",
+      "sources": [
+        {
+          "batch": "0610_T18_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "ddc0926d9fb8fd3014f262b155594ddcc44b90a891810c862ead8f3e2101f424",
+          "markschemeSourceSha256": "df54e6005c7f79a2b5b9b3fb02957b24a308b43d86620375d7545380678a82fe"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-variation-and-selection-questions.pdf",
+      "questions": 30,
+      "bytes": 83114,
+      "sha256": "36ea90c4fe89ec8eacbd574cd2cb0d796faa3f18570c5590bb2c7e19d662e376"
+    },
+    {
+      "topic": 18,
+      "name": "Variation and selection",
+      "sources": [
+        {
+          "batch": "0610_T18_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "ddc0926d9fb8fd3014f262b155594ddcc44b90a891810c862ead8f3e2101f424",
+          "markschemeSourceSha256": "df54e6005c7f79a2b5b9b3fb02957b24a308b43d86620375d7545380678a82fe"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-variation-and-selection-mark-scheme.pdf",
+      "questions": 30,
+      "bytes": 98334,
+      "sha256": "6c20ac64f1df742e60c209551ae5850a0eb713c9e6674e64ffa4ed6ee438f195"
+    },
+    {
+      "topic": 19,
+      "name": "Organisms and their environment",
+      "sources": [
+        {
+          "batch": "0610_T19_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "dcfac7401afb7c329a9b4c7a1d13143e073ce9385131f191f0ccbec685369d07",
+          "markschemeSourceSha256": "5760fea1c43f1bb693cacc8e29da6257d532df33e9db376060f206c381f2d870"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-organisms-and-their-environment-questions.pdf",
+      "questions": 30,
+      "bytes": 82404,
+      "sha256": "06687185f4d6df2d824ececeb417f62d90643b01951b497231353fef496727ae"
+    },
+    {
+      "topic": 19,
+      "name": "Organisms and their environment",
+      "sources": [
+        {
+          "batch": "0610_T19_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "dcfac7401afb7c329a9b4c7a1d13143e073ce9385131f191f0ccbec685369d07",
+          "markschemeSourceSha256": "5760fea1c43f1bb693cacc8e29da6257d532df33e9db376060f206c381f2d870"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-organisms-and-their-environment-mark-scheme.pdf",
+      "questions": 30,
+      "bytes": 98313,
+      "sha256": "b30d55a63bd4046f27bdc6b178792225589f5f8b117d86780a5382fdc7c5f0f5"
+    },
+    {
+      "topic": 20,
+      "name": "Human influences on ecosystems",
+      "sources": [
+        {
+          "batch": "0610_T20_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "0842ad14fd43344398c0ab855a7593b07be95465f80b8da10fd021216b2bae51",
+          "markschemeSourceSha256": "8749bcecc789848e86af41e0861e5551a17c30b9df11c051c9feef0028e13eca"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-human-influences-on-ecosystems-questions.pdf",
+      "questions": 30,
+      "bytes": 82933,
+      "sha256": "07078ec6c9f25996068b1c52e7e11ddf684c9f0bf862ecaa0a255e8094a9abff"
+    },
+    {
+      "topic": 20,
+      "name": "Human influences on ecosystems",
+      "sources": [
+        {
+          "batch": "0610_T20_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "0842ad14fd43344398c0ab855a7593b07be95465f80b8da10fd021216b2bae51",
+          "markschemeSourceSha256": "8749bcecc789848e86af41e0861e5551a17c30b9df11c051c9feef0028e13eca"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-human-influences-on-ecosystems-mark-scheme.pdf",
+      "questions": 30,
+      "bytes": 98555,
+      "sha256": "5955353fa454f5f832da0be7296ff6cfefff59c01561c259aaf5a2bed019647a"
+    },
+    {
+      "topic": 21,
+      "name": "Biotechnology and genetic modification",
+      "sources": [
+        {
+          "batch": "0610_T21_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "d90ed8c6910c30e3b2154fe5e71c287948bf5bac961c0b57dcc0cef552e2d18c",
+          "markschemeSourceSha256": "97e34e4e4969d9be4d391687ee40ad2bd5f43f17c622fef8b572228444f59b36"
+        }
+      ],
+      "kind": "questions",
+      "file": "topical-hub-igcse-biology-0610-biotechnology-and-genetic-modification-questions.pdf",
+      "questions": 20,
+      "bytes": 77545,
+      "sha256": "676cfc9f34b521391909ba937b03e5e83a136d1a5ee9c73339ac21184a12a019"
+    },
+    {
+      "topic": 21,
+      "name": "Biotechnology and genetic modification",
+      "sources": [
+        {
+          "batch": "0610_T21_P1_20261018",
+          "stage": "04_approved",
+          "questionSourceSha256": "d90ed8c6910c30e3b2154fe5e71c287948bf5bac961c0b57dcc0cef552e2d18c",
+          "markschemeSourceSha256": "97e34e4e4969d9be4d391687ee40ad2bd5f43f17c622fef8b572228444f59b36"
+        }
+      ],
+      "kind": "mark-scheme",
+      "file": "topical-hub-igcse-biology-0610-biotechnology-and-genetic-modification-mark-scheme.pdf",
+      "questions": 20,
+      "bytes": 87766,
+      "sha256": "2944219c945e431570fa0ba38307ff8f41cf9c1cf6f3a8ae2deb6b833dcdf9ee"
     }
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "subject_id": "0610-biology",
+  "batches": {
+    "T10_P1": {
+      "batch_id": "0610_T10_P1_20261013",
+      "status": "approved"
+    },
+    "T08_P1": {
+      "batch_id": "0610_T08_P1_20261013",
+      "status": "approved"
+    },
+    "T04_P1": {
+      "batch_id": "0610_T04_P1_20261013",
+      "status": "approved"
+    },
+    "T02_P1": {
+      "batch_id": "0610_T02_P1_20261013",
+      "status": "approved"
+    },
+    "T05_P1": {
+      "batch_id": "0610_T05_P1_20261013",
+      "status": "approved"
+    },
+    "T09_P1": {
+      "batch_id": "0610_T09_P1_20261013",
+      "status": "approved"
+    },
+    "T03_P1": {
+      "batch_id": "0610_T03_P1_20261013",
+      "status": "approved"
+    },
+    "T06_P1": {
+      "batch_id": "0610_T06_P1_20261013",
+      "status": "approved"
+    },
+    "T01_P1": {
+      "batch_id": "0610_T01_P1_20261013",
+      "status": "approved"
+    },
+    "T12_P1": {
+      "batch_id": "0610_T12_P1_20261013",
+      "status": "approved"
+    },
+    "T07_P1": {
+      "batch_id": "0610_T07_P1_20261013",
+      "status": "approved"
+    },
+    "T11_P1": {
+      "batch_id": "0610_T11_P1_20261013",
+      "status": "approved"
+    },
+    "T15_P1": {
+      "batch_id": "0610_T15_P1_20261013",
+      "status": "approved"
+    },
+    "T13_P1": {
+      "batch_id": "0610_T13_P1_20261013",
+      "status": "approved"
+    },
+    "T14_P1": {
+      "batch_id": "0610_T14_P1_20261013",
+      "status": "approved"
+    },
+    "T14_P2": {
+      "batch_id": "0610_T14_P2_20261013",
+      "status": "approved"
+    },
+    "T16_P1": {
+      "batch_id": "0610_T16_P1_20261018",
+      "status": "approved"
+    },
+    "T16_P2": {
+      "batch_id": "0610_T16_P2_20261018",
+      "status": "approved"
+    },
+    "T17_P1": {
+      "batch_id": "0610_T17_P1_20261018",
+      "status": "approved"
+    },
+    "T17_P2": {
+      "batch_id": "0610_T17_P2_20261018",
+      "status": "approved"
+    },
+    "T18_P1": {
+      "batch_id": "0610_T18_P1_20261018",
+      "status": "approved"
+    },
+    "T19_P1": {
+      "batch_id": "0610_T19_P1_20261018",
+      "status": "approved"
+    },
+    "T20_P1": {
+      "batch_id": "0610_T20_P1_20261018",
+      "status": "approved"
+    },
+    "T21_P1": {
+      "batch_id": "0610_T21_P1_20261018",
+      "status": "approved"
+    }
+  }
+}

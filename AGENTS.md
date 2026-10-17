@@ -87,11 +87,12 @@ Out of scope for v1: accounts, progress tracking, ads, payments, search, other s
 
 ### Biology handoff (18 October 2026)
 
-The latest Biology task covers topics **1–10 only**. The owner confirmed using their existing
-approved Claude solve/verify records to make review PDFs; no fresh solve or verification was done.
-Read `question-pipeline/subjects/0610-biology/review/README.md` before continuing. Twenty PDFs
-covering 220 questions are in its `pdfs/` folder, outside the published website. Topics 11–21 and
-website integration remain outside this handoff unless the owner gives a new instruction.
+The owner explicitly approved **all 590 Biology questions** on 18 October 2026. All 24 batches
+across 21 topics now reside in `question-pipeline/subjects/0610-biology/batches/04_approved/`.
+See `question-pipeline/subjects/0610-biology/owner-approval.json` for approval provenance and
+`question-pipeline/subjects/0610-biology/review/README.md` for import instructions and the 42 PDFs.
+Earlier draft/solved status notes are superseded; no new independent AI verification is claimed.
+Biology website integration remains separate from this completed content preparation.
 
 Tokens are limited. Verification must be proportionate, not exhaustive.
 

@@ -35,3 +35,8 @@ igcse-chem-pipeline/reference/*.pdf
 .claude/worktrees/
 .claude/settings.local.json
 test-results/
+
+# Cambridge syllabus PDFs for every subject: local only, never in the public repo
+question-pipeline/subjects/*/reference/*.pdf
+# Stray PDFs dropped at the repo root
+/*.pdf

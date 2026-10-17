@@ -1,0 +1,246 @@
+{
+  "subject_id": "0625-physics",
+  "ratio_questions_per_point": 1.4,
+  "note": "Written by the managing chat. One entry per batch; generators read their entry by key.",
+  "batches": [
+    {
+      "key": "T01_P1",
+      "topic_id": "1",
+      "topic_name": "Motion, forces and energy",
+      "part": 1,
+      "parts": 3,
+      "subtopic_ids": [
+        "1.1",
+        "1.2"
+      ],
+      "in_scope_points": 19,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T01_P2",
+      "topic_id": "1",
+      "topic_name": "Motion, forces and energy",
+      "part": 2,
+      "parts": 3,
+      "subtopic_ids": [
+        "1.3",
+        "1.4",
+        "1.5.1",
+        "1.5.2"
+      ],
+      "in_scope_points": 26,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T01_P3",
+      "topic_id": "1",
+      "topic_name": "Motion, forces and energy",
+      "part": 3,
+      "parts": 3,
+      "subtopic_ids": [
+        "1.5.3",
+        "1.6",
+        "1.7.1",
+        "1.7.2",
+        "1.7.3",
+        "1.7.4",
+        "1.8"
+      ],
+      "in_scope_points": 27,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T02_P1",
+      "topic_id": "2",
+      "topic_name": "Thermal physics",
+      "part": 1,
+      "parts": 2,
+      "subtopic_ids": [
+        "2.1.1",
+        "2.1.2",
+        "2.1.3",
+        "2.2.1",
+        "2.2.2",
+        "2.2.3"
+      ],
+      "in_scope_points": 28,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T02_P2",
+      "topic_id": "2",
+      "topic_name": "Thermal physics",
+      "part": 2,
+      "parts": 2,
+      "subtopic_ids": [
+        "2.3.1",
+        "2.3.2",
+        "2.3.3",
+        "2.3.4"
+      ],
+      "in_scope_points": 17,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T03_P1",
+      "topic_id": "3",
+      "topic_name": "Waves",
+      "part": 1,
+      "parts": 3,
+      "subtopic_ids": [
+        "3.1",
+        "3.2.1",
+        "3.2.2"
+      ],
+      "in_scope_points": 23,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T03_P2",
+      "topic_id": "3",
+      "topic_name": "Waves",
+      "part": 2,
+      "parts": 3,
+      "subtopic_ids": [
+        "3.2.3",
+        "3.2.4",
+        "3.3"
+      ],
+      "in_scope_points": 19,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T03_P3",
+      "topic_id": "3",
+      "topic_name": "Waves",
+      "part": 3,
+      "parts": 3,
+      "subtopic_ids": [
+        "3.4"
+      ],
+      "in_scope_points": 12,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T04_P1",
+      "topic_id": "4",
+      "topic_name": "Electricity and magnetism",
+      "part": 1,
+      "parts": 4,
+      "subtopic_ids": [
+        "4.1",
+        "4.2.1"
+      ],
+      "in_scope_points": 20,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T04_P2",
+      "topic_id": "4",
+      "topic_name": "Electricity and magnetism",
+      "part": 2,
+      "parts": 4,
+      "subtopic_ids": [
+        "4.2.2",
+        "4.2.3",
+        "4.2.4",
+        "4.2.5"
+      ],
+      "in_scope_points": 21,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T04_P3",
+      "topic_id": "4",
+      "topic_name": "Electricity and magnetism",
+      "part": 3,
+      "parts": 4,
+      "subtopic_ids": [
+        "4.3.2",
+        "4.3.3",
+        "4.4",
+        "4.5.1"
+      ],
+      "in_scope_points": 23,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T04_P4",
+      "topic_id": "4",
+      "topic_name": "Electricity and magnetism",
+      "part": 4,
+      "parts": 4,
+      "subtopic_ids": [
+        "4.5.2",
+        "4.5.3",
+        "4.5.4",
+        "4.5.5",
+        "4.5.6"
+      ],
+      "in_scope_points": 19,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T05_P1",
+      "topic_id": "5",
+      "topic_name": "Nuclear physics",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "5.1.1",
+        "5.1.2",
+        "5.2.1",
+        "5.2.2",
+        "5.2.3",
+        "5.2.4",
+        "5.2.5"
+      ],
+      "in_scope_points": 31,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    },
+    {
+      "key": "T06_P1",
+      "topic_id": "6",
+      "topic_name": "Space physics",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "6.1.1",
+        "6.1.2",
+        "6.2.1",
+        "6.2.2",
+        "6.2.3"
+      ],
+      "in_scope_points": 30,
+      "questions": 30,
+      "mcq": 15,
+      "structured": 15
+    }
+  ]
+}

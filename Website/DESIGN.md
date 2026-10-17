@@ -103,6 +103,12 @@ Single column, left-aligned, mobile first. Content measure 40rem; the page shell
 - Focus: `outline: 3px solid var(--accent); outline-offset: 2px`, always visible.
 - Motion: none on load. Panels open instantly; `prefers-reduced-motion` respected for the one 150 ms background transition on option state.
 
+## Navigation and page structure
+
+The home page lists subject cards under `#subjects`; Chemistry is the only enabled subject. Topic cards live on the Chemistry subject page. Counts come from content at build time. The home title is larger than the shared h1 scale (`clamp(2.25rem, 1.75rem + 2.4vw, 3.25rem)`).
+
+The header links to `/#subjects` and `/about/`, with `aria-current="page"` on the current link. Shared CSS keeps the navigation on one row at narrow widths. The footer has the independence disclaimer, About, Privacy, source code and `v<version>` from `package.json`. Topic pages link to both print views and both PDF downloads, including file sizes.
+
 ## Print
 
 A4, 18 mm margins. Hide header, footer, filters, buttons and report links. Topic title on the first page only. Each question `break-inside: avoid`. Under every structured part or sub-part, ruled answer lines: 2 lines per mark, minimum 2, 9 mm apart, light grey. MCQs get no lines (answer circled on the paper). The mark-scheme print page lists every question's answer, points and worked solution with the same numbering.
@@ -112,3 +118,5 @@ A4, 18 mm margins. Hide header, footer, filters, buttons and report links. Topic
 - Not cream paper with a terracotta accent; not near-black with acid green; not a hairline broadsheet; not the SaaS card kit (no shadows, no gradient washes, one radius for one purpose).
 - Structure encodes information: numerals because questions are numbered on the paper, brackets because marks are shown in brackets, badges only for Core/Supplement because that is a real distinction students filter on.
 - The risk taken is restraint: the page should look like it was set by a typesetter, not a theme.
+
+Print pages and downloadable PDFs include a repeating site-name and canonical-host watermark. The normal site footer remains on screen in print previews and is hidden on paper. Regenerate the PDFs if a layout or style change affects printed output, even when the input hash does not change.

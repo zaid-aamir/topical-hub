@@ -13,7 +13,7 @@ The build settings below are the only ones that matter. Everything else can stay
 | Production branch | `main` |
 | Environment variable | `NODE_VERSION` = `24` |
 
-`npm run build` runs `astro build` and then `node scripts/check-dist.mjs`. If the content validation or any post-build check fails, the build fails and Cloudflare keeps serving the previous deployment, so a broken build never goes live.
+`npm run build` first runs `node scripts/check-pdfs.mjs`, then `astro build`, then `node scripts/check-dist.mjs`. The PDF check uses committed assets and needs no Chromium on the host. If it reports stale PDFs, regenerate locally with `npm run pdfs`; the owner reviews and commits the PDFs and manifest before deploying. If the content validation or any post-build check fails, the build fails and Cloudflare keeps serving the previous deployment, so a broken build never goes live.
 
 ## 1. First deployment
 
@@ -64,12 +64,13 @@ All deployment-dependent values live in `Website/src/config.ts`:
 
 Open these in a browser after the first deployment and after any change to `src/config.ts`:
 
-1. `https://topical-hub.pages.dev/` loads, shows the site name, the tagline and the twelve topics, and the footer disclaimer.
+1. `https://topical-hub.pages.dev/` loads and shows the site name, tagline, Subjects section with the Chemistry card, and the footer disclaimer and version. Follow the card to `/igcse/chemistry-0620/` to see the twelve topics.
 2. A topic page, for example `https://topical-hub.pages.dev/igcse/chemistry-0620/electrochemistry/`: questions render, clicking an MCQ option marks it, "Show mark scheme" opens a structured question's answer, the filters work, and the "Report an error" link opens a new tab with the question id filled in.
 3. `https://topical-hub.pages.dev/robots.txt` allows everything and its `Sitemap:` line points at your `SITE_URL`.
 4. `https://topical-hub.pages.dev/sitemap-index.xml` lists `sitemap-0.xml`, whose URLs start with your `SITE_URL` and include no `/print/` pages.
 5. `https://topical-hub.pages.dev/this-does-not-exist/` shows the site's own 404 page (Cloudflare serves `dist/404.html`).
-6. On a phone (or a 360 px wide browser window): no horizontal scrolling on a topic page, tables scroll inside their cards.
-7. The browser tab title of a topic page reads `<Topic> — IGCSE Chemistry 0620 exam-style questions with answers | Topical Hub`.
+6. Download both PDFs from a topic page and confirm they open. Printed copies should contain the site watermark.
+7. On a phone (or a 360 px wide browser window): no horizontal scrolling on a topic page, tables scroll inside their cards.
+8. The browser tab title of a topic page reads `<Topic> — IGCSE Chemistry 0620 exam-style questions with answers | Topical Hub`.
 
 If anything is wrong, the build log under **Deployments** is the first place to look; a failed `check-dist` lists each failing file and reason.
