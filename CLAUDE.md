@@ -15,6 +15,18 @@ The owner is an IGCSE student building this as a business, and wants **speed**: 
 - Don't use Cambridge's logo or branding, and don't imply the site is endorsed by Cambridge. Naming the qualification ("Cambridge IGCSE Chemistry 0620") to describe what the questions are for is fine.
 - **This repo is public.** The syllabus PDF in `igcse-chem-pipeline/reference/` is Cambridge's copyright. It's kept on the owner's computer only and is gitignored. Never commit it, never publish it on the site, and never add any other Cambridge document.
 
+## Implemented website (documentation checked 2026-10-18)
+
+The Astro site is implemented in `Website/`. Start with `Website/README.md` for commands and `Website/CONTRACT.md` for the current routes and DOM. `Website/BUILD_V1.md` now records delivered scope, not an instruction to rebuild the site.
+
+- Home lists subjects under `/#subjects`; Chemistry is the only enabled subject. Its subject page lists all 12 topics and 360 questions.
+- Topic pages have tier/type/subtopic filters, MCQ marking, answer toggles, print pages and 24 downloadable watermarked PDFs in total.
+- Header: Subjects, About, theme toggle. Footer version comes from `Website/package.json`.
+- Existing question anchors are `#q<n>`, while the full source id is stored in `data-question-id` and error reports. This differs from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
+- Error reports currently open pre-filled GitHub issues because `REPORT_FORM_URL` is empty.
+- Only the Chemistry pipeline feeds the site. Adding a subject needs config, content dispatch and routes; `question-pipeline/` is not integrated.
+- `npm run build` checks PDF freshness before Astro content validation and the output gate. PDF-affecting changes require `npm run pdfs` (Playwright Chromium); leave generated PDFs and manifest for the owner to review and commit. See `Website/scripts/pdf-manifest.mjs` for hashed inputs.
+
 ## Repo layout
 
 ```
@@ -23,10 +35,11 @@ igcse-chem-pipeline/       the question pipeline: content source, read-only for 
   pipeline/04_approved/    THE CONTENT: 12 topic folders, 30 questions each (360 total)
   agents/FORMAT.md         the file-format spec ("Published output" section)
   config/syllabus_map.json topic/subtopic names, syllabus points, tiers
+question-pipeline/        the multi-subject pipeline (Biology 0610, Physics 0625; Chemistry moves here later): read-only for the website, owned by the managing chat
 Website/                   the website lives here
 ```
 
-**Don't modify anything in `igcse-chem-pipeline/`** unless the owner explicitly asks. A separate managing chat owns the pipeline. If the owner asks you to fix a reported error in a question, edit only that question in `pipeline/04_approved/<batch_id>/questions.md` or `markscheme.md`. Then add one line to `igcse-chem-pipeline/logs/run_log.md` (append only, never rewrite it; never write an answer into the log):
+**Don't modify anything in `igcse-chem-pipeline/` or `question-pipeline/`** unless the owner explicitly asks. A separate managing chat owns the pipeline. If the owner asks you to fix a reported error in a question, edit only that question in `pipeline/04_approved/<batch_id>/questions.md` or `markscheme.md`. Then add one line to `igcse-chem-pipeline/logs/run_log.md` (append only, never rewrite it; never write an answer into the log):
 `date | ERROR FIX | <batch_id> Q<n> | what was wrong, without stating the answer`
 
 ## The content contract
@@ -71,6 +84,14 @@ Out of scope for v1: accounts, progress tracking, ads, payments, search, other s
 - Line endings are normalised to LF by `.gitattributes`. Never commit `.env` files or secrets (the owner does the committing, but don't create them in tracked places either).
 
 ## Verification budget: keep it small
+
+### Biology handoff (18 October 2026)
+
+The latest Biology task covers topics **1–10 only**. The owner confirmed using their existing
+approved Claude solve/verify records to make review PDFs; no fresh solve or verification was done.
+Read `question-pipeline/subjects/0610-biology/review/README.md` before continuing. Twenty PDFs
+covering 220 questions are in its `pdfs/` folder, outside the published website. Topics 11–21 and
+website integration remain outside this handoff unless the owner gives a new instruction.
 
 Tokens are limited. Verification must be proportionate, not exhaustive.
 
