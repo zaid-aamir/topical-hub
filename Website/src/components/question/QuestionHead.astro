@@ -14,7 +14,7 @@ interface Props {
 const { question } = Astro.props;
 ---
 <div class="question-head">
-  <h2 class="question-number"><span class="visually-hidden">Question </span>{question.number}</h2>
+  <h2 class="question-number"><span class="visually-hidden">Question </span>{question.number}{question.part !== undefined && <span class="question-part"> ? Part {question.part}</span>}</h2>
   <span class={`badge badge-${question.tier}`}>{tierLabel(question.tier)}</span>
   <span class="subtopic">{question.subtopicName}</span>
   <span class="marks">[{question.marks}]</span>

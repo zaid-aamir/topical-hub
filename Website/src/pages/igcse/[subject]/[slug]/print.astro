@@ -11,23 +11,23 @@ import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import PrintQuestion from '../../../../components/question/PrintQuestion.astro';
 import { countsSentence } from '../../../../components/question/labels';
-import { loadAllTopics } from '../../../../content';
+import { subjectTopics } from '../../../../lib/subjects';
 import PrintWatermark from '../../../../components/PrintWatermark.astro';
-import { SITE_NAME, SUBJECT } from '../../../../config';
+import { SITE_NAME, SUBJECTS } from '../../../../config';
 import { pdfDownload } from '../../../../lib/pdfs';
 
 export const getStaticPaths = (() =>
-  loadAllTopics().map((topic) => ({ params: { slug: topic.slug }, props: { topic } }))) satisfies GetStaticPaths;
+  SUBJECTS.flatMap((subject) => subjectTopics(subject).map((topic) => ({ params: { subject: subject.path.split('/')[1], slug: topic.slug }, props: { topic, subject } })))) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { topic } = Astro.props;
-const topicPath = `/${SUBJECT.path}/${topic.slug}/`;
+const { topic, subject } = Astro.props;
+const topicPath = `/${subject.path}/${topic.slug}/`;
 const path = `${topicPath}print/`;
-const pdf = pdfDownload(topic.slug, 'questions');
+const pdf = pdfDownload(topic.slug, 'questions', subject.path);
 const title = `${topic.topicName} — printable questions | ${SITE_NAME}`;
 const description =
-  `Printable sheet of the ${topic.counts.total} exam-style questions on ${topic.topicName} for ${SUBJECT.fullName}, ` +
+  `Printable sheet of the ${topic.counts.total} exam-style questions on ${topic.topicName} for ${subject.fullName}, ` +
   `with ruled answer space and without the answers. The mark scheme prints separately.`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={path} noindex bodyClass="print-page">
@@ -35,7 +35,7 @@ const description =
   <div class="shell">
     <div class="measure">
       <div class="page-title">
-        <p class="page-label">{SITE_NAME}, {SUBJECT.shortName} exam-style questions</p>
+        <p class="page-label">{SITE_NAME}, {subject.shortName} exam-style questions</p>
         <h1>{topic.topicName}</h1>
         <p class="page-summary">{countsSentence(topic.counts)}.</p>
       </div>
@@ -48,7 +48,7 @@ const description =
       </div>
 
       <div class="question-list">
-        {topic.questions.map((question) => <PrintQuestion question={question} />)}
+        {topic.questions.map((question) => <PrintQuestion subject={subject} question={question} />)}
       </div>
     </div>
   </div>

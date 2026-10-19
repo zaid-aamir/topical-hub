@@ -21,7 +21,7 @@ import { chromium } from '@playwright/test';
 import {
   MANIFEST_NAME,
   PDF_URL_DIR,
-  SUBJECT_PATH,
+  publicationTopics,
   buildManifest,
   computeInputs,
   expectedPdfs,
@@ -80,7 +80,7 @@ function serve(root) {
 
 async function main() {
   const contentDir = findContentDir(websiteRoot);
-  const pdfs = expectedPdfs(listTopics(contentDir));
+  const pdfs = expectedPdfs(publicationTopics(websiteRoot, contentDir));
   const inputs = computeInputs(websiteRoot, contentDir);
 
   const astroBin = path.join(websiteRoot, 'node_modules', 'astro', 'bin', 'astro.mjs');
@@ -96,13 +96,14 @@ async function main() {
   const server = await serve(distDir);
   const address = server.address();
   const base = `http://127.0.0.1:${typeof address === 'object' && address ? address.port : 0}`;
-  const browser = await chromium.launch();
+  let browser;
+  try { browser = await chromium.launch(); } catch (error) { server.close(); throw error; }
   const written = [];
   try {
     const context = await browser.newContext({ colorScheme: 'light' });
     const page = await context.newPage();
     for (const pdf of pdfs) {
-      const url = `${base}/${SUBJECT_PATH}/${pdf.slug}/${pdf.page}/`;
+      const url = `${base}/${pdf.subjectPath}/${pdf.slug}/${pdf.page}/`;
       const response = await page.goto(url, { waitUntil: 'networkidle' });
       if (!response || response.status() !== 200) throw new Error(`${url} returned ${response?.status()}`);
       await page.evaluate(() => document.fonts.ready);
@@ -116,7 +117,7 @@ async function main() {
         headerTemplate: '<span></span>',
         footerTemplate: FOOTER,
       });
-      written.push({ file: pdf.file, batch: pdf.batch, slug: pdf.slug, kind: pdf.kind, ...fileDigest(file) });
+      written.push({ file: pdf.file, batch: pdf.batch, batches: pdf.batches, subjectPath: pdf.subjectPath, slug: pdf.slug, kind: pdf.kind, ...fileDigest(file) });
     }
   } finally {
     await browser.close();

@@ -12,10 +12,11 @@ import { mdBlock } from '../../lib/markdown';
 import MarkScheme from './MarkScheme.astro';
 
 interface Props {
+  chem?: boolean;
   question: Question;
 }
 
-const { question } = Astro.props;
+const { question, chem = true } = Astro.props;
 ---
 {
   question.type === 'mcq' ? (
@@ -23,15 +24,15 @@ const { question } = Astro.props;
       <p class="ms-answer">Answer: {question.answer}</p>
       <section class="worked-solution">
         <h3 class="ws-heading">{question.workedSolution !== undefined ? 'Worked solution' : 'Explanation'}</h3>
-        <Fragment set:html={mdBlock(question.workedSolution ?? question.rationale)} />
+        <Fragment set:html={mdBlock(question.workedSolution ?? question.rationale, { chem })} />
       </section>
     </>
   ) : (
     <>
-      <MarkScheme parts={question.markScheme} />
+      <MarkScheme chem={chem} parts={question.markScheme} />
       <section class="worked-solution">
         <h3 class="ws-heading">Worked solution</h3>
-        <Fragment set:html={mdBlock(question.workedSolution)} />
+        <Fragment set:html={mdBlock(question.workedSolution, { chem })} />
       </section>
     </>
   )

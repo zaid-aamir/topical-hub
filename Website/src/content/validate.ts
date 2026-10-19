@@ -40,13 +40,13 @@ export function validateTopics(topics: Topic[], options: ValidateOptions = {}): 
 
   for (const topic of topics) {
     const t = topic.batchId || '<missing batch_id>';
-    const prefix = /^T(\d{2})_\d{8}_\d{2}$/.exec(topic.batchId);
+    const prefix = /^(?:T(\d{2})_\d{8}_\d{2}|0610_T(\d{2})_P\d+_\d{8})$/.exec(topic.batchId);
     if (!prefix) problems.push(`${t}: batch_id must look like T04_20260923_01`);
     if (!Number.isInteger(topic.topicNumber) || topic.topicNumber < 1) {
       problems.push(`${t}: topic_id "${topic.topicId}" is not a positive integer`);
     } else {
-      if (prefix && Number(prefix[1]) !== topic.topicNumber) {
-        problems.push(`${t}: topic_id ${topic.topicNumber} does not match the batch prefix T${prefix[1]}`);
+      if (prefix && Number(prefix[1] ?? prefix[2]) !== topic.topicNumber) {
+        problems.push(`${t}: topic_id ${topic.topicNumber} does not match the batch prefix T${prefix[1] ?? prefix[2]}`);
       }
       const other = seenNumbers.get(topic.topicNumber);
       if (other) problems.push(`${t}: topic number ${topic.topicNumber} is also used by ${other}`);
@@ -73,7 +73,7 @@ export function validateTopics(topics: Topic[], options: ValidateOptions = {}): 
 }
 
 function validateQuestion(topic: Topic, q: Question, problems: string[], warnings: string[], seenIds: Map<string, string>): void {
-  const expectedId = `${topic.batchId}_Q${q.number}`;
+  const expectedId = `${q.batchId}_Q${q.number}`;
   const label = q.id || expectedId;
   if (q.id !== expectedId) problems.push(`${label}: id should be "${expectedId}"`);
   const seenIn = seenIds.get(q.id);
@@ -132,6 +132,16 @@ function validateStructured(q: StructuredQuestion, label: string, problems: stri
 
   const questionKeys = collectQuestionKeys(q);
   const schemeKeys = collectMarkSchemeKeys(q, label, problems);
+  // Some schemes group labelled subpart points under one marked parent heading.
+  // Keep that source layout; accept it only when every label and the mark total agree.
+  for (const part of q.parts) {
+    const aggregate = q.markScheme.find((p) => p.key === part.label);
+    if (part.marks !== null || !part.subparts.length || !aggregate || aggregate.marks !== part.totalMarks) continue;
+    if (part.subparts.some((s) => schemeKeys.has(`${part.label}.${s.label}`))) continue;
+    if (!part.subparts.every((s) => aggregate.points.some((p) => p.text.startsWith(`(${s.label})`)))) continue;
+    for (const subpart of part.subparts) questionKeys.delete(`${part.label}.${subpart.label}`);
+    questionKeys.set(part.label, part.totalMarks);
+  }
   const missing = [...questionKeys.keys()].filter((k) => !schemeKeys.has(k));
   const extra = [...schemeKeys.keys()].filter((k) => !questionKeys.has(k));
   if (missing.length) problems.push(`${label}: mark scheme has no part for ${missing.map(formatKey).join(', ')}`);

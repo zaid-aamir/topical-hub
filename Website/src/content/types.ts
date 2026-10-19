@@ -13,9 +13,10 @@ export type Difficulty = 1 | 2 | 3;
 
 /** Metadata shared by every question, taken from the `- key: value` block under `## Q<n>`. */
 export interface QuestionBase {
+  part?: number;
   /** Stable id, e.g. "T04_20260923_01_Q16". Used in error reports and data attributes. */
   id: string;
-  /** The n in `## Q<n>`. Unique within a topic; numbering may have gaps. Page anchor is `#q<n>`. */
+  /** The n in `## Q<n>`. Unique within a batch; numbering may have gaps or restart in another part. */
   number: number;
   type: QuestionType;
   tier: Tier;
@@ -155,6 +156,8 @@ export interface TopicCounts {
 }
 
 export interface Topic {
+  part?: number;
+  batchIds?: string[];
   /** e.g. "T04_20260923_01" */
   batchId: string;
   /** e.g. "4" (as written in the frontmatter) */

@@ -11,22 +11,22 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import QuestionCard from '../../../../components/question/QuestionCard.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import { countsSentence } from '../../../../components/question/labels';
-import { loadAllTopics } from '../../../../content';
-import { SITE_NAME, SUBJECT } from '../../../../config';
+import { subjectTopics } from '../../../../lib/subjects';
+import { SITE_NAME, SUBJECTS } from '../../../../config';
 import { pdfDownload } from '../../../../lib/pdfs';
 
 export const getStaticPaths = (() =>
-  loadAllTopics().map((topic) => ({ params: { slug: topic.slug }, props: { topic } }))) satisfies GetStaticPaths;
+  SUBJECTS.flatMap((subject) => subjectTopics(subject).map((topic) => ({ params: { subject: subject.path.split('/')[1], slug: topic.slug }, props: { topic, subject } })))) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { topic } = Astro.props;
-const path = `/${SUBJECT.path}/${topic.slug}/`;
-const questionsPdf = pdfDownload(topic.slug, 'questions');
-const markSchemePdf = pdfDownload(topic.slug, 'mark-scheme');
-const title = `${topic.topicName} — ${SUBJECT.shortName} exam-style questions with answers | ${SITE_NAME}`;
+const { topic, subject } = Astro.props;
+const path = `/${subject.path}/${topic.slug}/`;
+const questionsPdf = pdfDownload(topic.slug, 'questions', subject.path);
+const markSchemePdf = pdfDownload(topic.slug, 'mark-scheme', subject.path);
+const title = `${topic.topicName} — ${subject.shortName} exam-style questions with answers | ${SITE_NAME}`;
 const description =
-  `${topic.counts.total} original exam-style questions on ${topic.topicName} for ${SUBJECT.fullName} ` +
+  `${topic.counts.total} original exam-style questions on ${topic.topicName} for ${subject.fullName} ` +
   `(${topic.counts.mcq} multiple choice, ${topic.counts.structured} structured), each with a mark scheme and worked solution.`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={path} ogType="article">
@@ -34,7 +34,7 @@ const description =
     <Breadcrumbs
       items={[
         { name: 'Home', href: '/' },
-        { name: SUBJECT.shortName, href: `/${SUBJECT.path}/` },
+        { name: subject.shortName, href: `/${subject.path}/` },
         { name: topic.topicName, href: path },
       ]}
     />
@@ -79,7 +79,7 @@ const description =
 
     <div class="measure">
       <div class="question-list">
-        {topic.questions.map((question) => <QuestionCard question={question} slug={topic.slug} />)}
+        {topic.questions.map((question) => <QuestionCard subject={subject} question={question} slug={topic.slug} />)}
       </div>
     </div>
   </div>

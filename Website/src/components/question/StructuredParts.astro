@@ -11,12 +11,13 @@ import { mdBlock } from '../../lib/markdown';
 import { answerLineCount } from './labels';
 
 interface Props {
+  chem?: boolean;
   question: StructuredQuestion;
   /** Print pages: add div.answer-lines[data-lines] under every marked part and sub-part. */
   lines?: boolean;
 }
 
-const { question, lines = false } = Astro.props;
+const { question, lines = false, chem = true } = Astro.props;
 ---
 <div class="parts">
   {
@@ -24,7 +25,7 @@ const { question, lines = false } = Astro.props;
       <>
         <div class="part">
           <span class="part-label">({part.label})</span>
-          {part.text !== '' && <div class="part-text" set:html={mdBlock(part.text)} />}
+          {part.text !== '' && <div class="part-text" set:html={mdBlock(part.text, { chem })} />}
           {part.marks !== null && <span class="part-marks">[{part.marks}]</span>}
         </div>
         {lines && part.marks !== null && <div class="answer-lines" data-lines={answerLineCount(part.marks)} />}
@@ -32,7 +33,7 @@ const { question, lines = false } = Astro.props;
           <>
             <div class="part subpart">
               <span class="part-label">({subpart.label})</span>
-              <div class="part-text" set:html={mdBlock(subpart.text)} />
+              <div class="part-text" set:html={mdBlock(subpart.text, { chem })} />
               <span class="part-marks">[{subpart.marks}]</span>
             </div>
             {lines && <div class="answer-lines" data-lines={answerLineCount(subpart.marks)} />}

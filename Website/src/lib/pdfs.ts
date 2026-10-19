@@ -34,8 +34,8 @@ function manifestSizes(): Map<string, number> {
   return sizes;
 }
 
-export function pdfDownload(slug: string, kind: PdfKind): PdfDownload {
-  const file = pdfFileName(slug, kind);
+export function pdfDownload(slug: string, kind: PdfKind, subjectPath?: string): PdfDownload {
+  const file = pdfFileName(slug, kind, subjectPath);
   const bytes = manifestSizes().get(file);
   const what = kind === 'questions' ? 'questions' : 'mark scheme';
   const size = bytes === undefined ? '' : `, ${formatPdfSize(bytes)}`;

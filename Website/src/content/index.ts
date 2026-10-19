@@ -6,6 +6,8 @@
  */
 export {
   loadAllTopics,
+  loadBiologyTopics,
+  BIOLOGY_CONTENT_SUBPATH,
   getTopicBySlug,
   loadTopicsFromDir,
   resolveContentDir,

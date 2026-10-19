@@ -47,7 +47,11 @@ export function buildTopic(questionsFile: ParsedQuestionsFile, markschemeFile: P
   }
   unmatched.sort((a, b) => a.number - b.number);
 
+  const part = fm.part === undefined ? undefined : Number(fm.part);
+  for (const q of questions) q.part = part;
   const topic: Topic = {
+    part,
+    batchIds: [batchId],
     batchId,
     topicId,
     topicNumber,

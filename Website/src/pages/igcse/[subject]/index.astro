@@ -5,39 +5,43 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import TopicGrid from '../../../components/TopicGrid.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import { loadAllTopics } from '../../../content';
-import { SITE_NAME, SUBJECT } from '../../../config';
+import { subjectTopics } from '../../../lib/subjects';
+import { SITE_NAME, SUBJECTS } from '../../../config';
 
-const topics = loadAllTopics();
+export function getStaticPaths() {
+  return SUBJECTS.map((subject) => ({ params: { subject: subject.path.split('/')[1] }, props: { subject } }));
+}
+const { subject } = Astro.props;
+const topics = subjectTopics(subject);
 const totalQuestions = topics.reduce((sum, topic) => sum + topic.counts.total, 0);
 const topicCount = topics.length;
-const subjectPath = `/${SUBJECT.path}/`;
+const subjectPath = `/${subject.path}/`;
 
-const title = `${SUBJECT.shortName} exam-style questions by topic, with answers | ${SITE_NAME}`;
+const title = `${subject.shortName} exam-style questions by topic, with answers | ${SITE_NAME}`;
 const description =
-  `${totalQuestions} original exam-style questions for ${SUBJECT.fullName} in ${topicCount} topics, ` +
+  `${totalQuestions} original exam-style questions for ${subject.fullName} in ${topicCount} topics, ` +
   'each with a mark scheme and a worked solution. Free, with Core and Supplement filters.';
 ---
 <BaseLayout title={title} description={description} canonicalPath={subjectPath}>
   <div class="shell">
-    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: SUBJECT.shortName, href: subjectPath }]} />
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: subject.shortName, href: subjectPath }]} />
     <div class="page-title">
-      <p class="page-label">{SUBJECT.fullName}, syllabus for exams in {SUBJECT.syllabusYears}</p>
-      <h1>{SUBJECT.shortName}</h1>
+      <p class="page-label">{subject.fullName}, syllabus for exams in {subject.syllabusYears}</p>
+      <h1>{subject.shortName}</h1>
       <p class="page-summary">
         {totalQuestions} original exam-style questions across {topicCount} topics, with mark schemes and worked
         solutions.
       </p>
     </div>
 
-    <TopicGrid topics={topics} />
+    <TopicGrid subject={subject} topics={topics} />
 
     <div class="prose">
       <p>
         Choose a topic to see its questions. On a topic page you can filter by Core or Supplement and by question
         type, attempt a question, then reveal its mark scheme and worked solution. Each topic also has two print
         pages for practice on paper: the questions with ruled answer space, and the mark scheme. The questions
-        are original and were written and checked with AI tools; <a href="/about/">more about the site</a>.
+        are original, written with AI tools and approved by the site owner; <a href="/about/">more about the site</a>.
       </p>
     </div>
   </div>

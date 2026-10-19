@@ -11,10 +11,11 @@ import MarkPoints from './MarkPoints.astro';
 import { partLabel } from './labels';
 
 interface Props {
+  chem?: boolean;
   parts: MarkSchemePart[];
 }
 
-const { parts } = Astro.props;
+const { parts, chem = true } = Astro.props;
 ---
 <section class="markscheme">
   <h3 class="ms-heading">Mark scheme</h3>
@@ -23,10 +24,10 @@ const { parts } = Astro.props;
       <div class="ms-part">
         <div class="ms-head">
           <span class="ms-label">{partLabel(part.key)}</span>
-          {part.note !== '' && <span class="ms-note" set:html={mdInline(part.note)} />}
+          {part.note !== '' && <span class="ms-note" set:html={mdInline(part.note, { chem })} />}
           {part.marks !== null && <span class="ms-marks">[{part.marks}]</span>}
         </div>
-        {part.points.length > 0 && <MarkPoints points={part.points} />}
+        {part.points.length > 0 && <MarkPoints chem={chem} points={part.points} />}
       </div>
     ))
   }

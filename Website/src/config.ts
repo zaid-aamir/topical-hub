@@ -29,7 +29,7 @@ export interface Subject {
   readonly description: string;
 }
 
-const CHEMISTRY_0620: Subject = {
+export const CHEMISTRY_0620: Subject = {
   path: 'igcse/chemistry-0620',
   shortName: 'IGCSE Chemistry 0620',
   fullName: 'Cambridge IGCSE Chemistry 0620',
@@ -41,7 +41,14 @@ const CHEMISTRY_0620: Subject = {
  * Every subject, in the order the home page lists them. A new subject also needs its content source
  * (src/lib/subjects.ts) and its pages under src/pages/<path>/.
  */
-export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620];
+export const BIOLOGY_0610: Subject = {
+  path: 'igcse/biology-0610',
+  shortName: 'IGCSE Biology 0610',
+  fullName: 'Cambridge IGCSE Biology 0610',
+  syllabusYears: '2026?2028',
+  description: 'Original multiple-choice and structured questions across all 21 topics, tagged Core or Supplement.',
+};
+export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610];
 
 /** The subject the Chemistry 0620 topic and print pages are built for. */
 export const SUBJECT: Subject = CHEMISTRY_0620;

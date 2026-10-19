@@ -138,3 +138,21 @@ describe('checkPdfs', () => {
     expect(result.problems.join('\n')).toMatch(/questions\.pdf does not match manifest\.json/);
   });
 });
+
+describe('Biology PDF inputs', () => {
+  it('merges part batches into one PDF pair, hashes both sources and separates subjects', () => {
+    for (const part of [1, 2]) {
+      const batch = `0610_T14_P${part}_20261013`;
+      write(path.join(content, batch, 'questions.md'), `---\ntopic_name: "Coordination and response"\npart: ${part}\n---\n`);
+      write(path.join(content, batch, 'markscheme.md'), `Part ${part}`);
+    }
+    const topics = listTopics(content, 'igcse/biology-0610');
+    const topic = topics.find((t) => t.slug === 'coordination-and-response')!;
+    expect(topic.batches).toEqual(['0610_T14_P1_20261013', '0610_T14_P2_20261013']);
+    expect(expectedPdfs([topic])).toHaveLength(2);
+    expect(pdfFileName(topic.slug, 'questions', 'igcse/biology-0610')).not.toBe(pdfFileName(topic.slug, 'questions'));
+    const before = computeInputs(web, content, options()).hash;
+    write(path.join(content, topic.batches[1], 'markscheme.md'), 'Changed part 2');
+    expect(computeInputs(web, content, options()).hash).not.toBe(before);
+  });
+});

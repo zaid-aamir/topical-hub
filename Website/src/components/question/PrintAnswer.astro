@@ -8,12 +8,17 @@ import type { Question } from '../../content';
 import QuestionHead from './QuestionHead.astro';
 import AnswerPanel from './AnswerPanel.astro';
 
+import { SUBJECT, type Subject } from '../../config';
+import { questionAnchor } from '../../lib/question-anchor';
+
 interface Props {
+  subject?: Subject;
   question: Question;
 }
 
-const { question } = Astro.props;
-const anchor = `q${question.number}`;
+const { question, subject = SUBJECT } = Astro.props;
+const anchor = questionAnchor(question, subject);
+const chem = subject.path === SUBJECT.path;
 ---
 <article
   class="question"
@@ -25,6 +30,6 @@ const anchor = `q${question.number}`;
 >
   <QuestionHead question={question} />
   <div class="question-body">
-    <AnswerPanel question={question} />
+    <AnswerPanel chem={chem} question={question} />
   </div>
 </article>

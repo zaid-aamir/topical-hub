@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_NAME, SUBJECT, GITHUB_REPO, REPORT_FORM_URL } from '../config';
+import { SITE_NAME, SUBJECTS, GITHUB_REPO, REPORT_FORM_URL } from '../config';
 
-const subjectPath = `/${SUBJECT.path}/`;
+
 const repoUrl = `https://github.com/${GITHUB_REPO}`;
 const reportsGoToForm = REPORT_FORM_URL !== '';
 ---
 <BaseLayout
   title={`About ${SITE_NAME}`}
-  description={`What ${SITE_NAME} is: free, original exam-style topical questions for ${SUBJECT.fullName}, with mark schemes and worked solutions, how they were made, and how to report an error.`}
+  description={`What ${SITE_NAME} is: free, original exam-style topical questions for Cambridge IGCSE Chemistry 0620 and Biology 0610, with mark schemes and worked solutions, how they were made, and how to report an error.`}
   canonicalPath="/about/"
 >
   <div class="shell">
@@ -16,7 +16,7 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
       <h1>About {SITE_NAME}</h1>
       <p>
         {SITE_NAME} is a free collection of exam-style practice questions for
-        <a href={subjectPath}>{SUBJECT.fullName}</a> (the syllabus for exams in {SUBJECT.syllabusYears}),
+        {SUBJECTS.map((subject, index) => <Fragment>{index > 0 && ' and '}<a href={`/${subject.path}/`}>{subject.fullName}</a> (exams in {subject.syllabusYears})</Fragment>)},
         sorted by topic. Every question comes with a mark scheme and a worked solution, hidden until you
         choose to look, so you can attempt the question first and then mark your own answer.
       </p>
@@ -28,7 +28,7 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
         question papers or mark schemes.
       </p>
       <p>
-        Every question, mark scheme and worked solution was written and checked with AI tools. No teacher
+        The questions, mark schemes and worked solutions were written with AI tools and approved by the site owner. Approval does not claim independent science verification. No teacher
         or examiner has reviewed them. Mistakes are possible: if anything looks wrong, use the Report an
         error link under that question.
       </p>

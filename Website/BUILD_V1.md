@@ -6,9 +6,9 @@ This replaces the original one-run build prompt. The site is implemented; do not
 
 - Static Astro output, strict TypeScript, plain CSS and small vanilla client scripts; no UI framework, backend, accounts, database, ads or analytics.
 - Original exam-style questions for Cambridge IGCSE Chemistry 0620, syllabus 2026?2028: 12 topics, 360 questions (180 MCQ and 180 structured).
-- Home page with subject selection; Chemistry subject page with topic cards. Counts are computed at build time. Biology and Physics content in the separate pipeline is not connected.
+- Home page with subject selection; Chemistry subject page with topic cards. Counts are computed at build time. Biology is also connected: 21 topics, 24 owner-approved batches, 590 questions. Physics remains unconnected.
 - Topic pages with tier, type and subtopic filters, one-attempt MCQ marking and a session-only score, hidden answer panels, worked solutions and error-report links.
-- Separate question and mark-scheme print pages, ruled structured-answer space and 24 downloadable watermarked PDFs.
+- Separate question and mark-scheme print pages, ruled structured-answer space and 66 downloadable watermarked PDFs (24 Chemistry, 42 Biology).
 - Light/dark themes, locally bundled fonts, skip link, keyboard controls and responsive table wrappers.
 - Unique topic metadata, canonical URLs, sitemap and robots.txt; print pages are noindex and excluded from the sitemap.
 - About, Privacy and 404 pages; honest AI-authorship copy and the independence disclaimer.
@@ -17,9 +17,9 @@ See `CONTRACT.md` for routes, anchors, data model and DOM selectors; `DESIGN.md`
 
 ## Content boundaries
 
-Read only approved Chemistry `questions.md` and `markscheme.md` files at build time. Match entries by `## Q<n>`, never by position. Preserve source ids, subtopic ids, tiers and marking conventions. Raw Markdown HTML is escaped. Chemistry typography is display-only and controlled by `CHEM_FORMATTING`.
+Read only approved Chemistry and Biology `questions.md` and `markscheme.md` files at build time. Match entries by `## Q<n>`, never by position. Preserve source ids, subtopic ids, tiers and marking conventions. Raw Markdown HTML is escaped. Chemistry typography is display-only and controlled by `CHEM_FORMATTING`.
 
-The build validates all 12 topics and 360 questions, MCQ options and answers, mark-scheme pairing, structured marks, explanations and diagram exclusions. The output gate checks labelling, internal resources and links, anchors, headings, language, print noindex and sitemap consistency.
+The build validates Chemistry?s 12 topics and 360 questions plus Biology?s 21 topics and 590 questions, MCQ options and answers, mark-scheme pairing, structured marks, explanations and diagram exclusions. The output gate checks labelling, internal resources and links, anchors, headings, language, print noindex and sitemap consistency.
 
 Neither pipeline is editable as part of website maintenance. Follow the root brief for an explicitly requested question correction.
 

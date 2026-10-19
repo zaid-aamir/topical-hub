@@ -14,7 +14,8 @@ import type { ValidateOptions } from './validate';
 
 /** Where the approved content lives, relative to the repository root. */
 export const CONTENT_SUBPATH = 'igcse-chem-pipeline/pipeline/04_approved';
-const BATCH_DIR = /^T\d{2}_/;
+export const BIOLOGY_CONTENT_SUBPATH = 'question-pipeline/subjects/0610-biology/batches/04_approved';
+const BATCH_DIR = /^(?:T\d{2}_|0610_T\d{2}_)/;
 const MAX_LEVELS_UP = 4;
 
 function isDirectory(path: string): boolean {
@@ -30,8 +31,8 @@ function isDirectory(path: string): boolean {
  * `igcse-chem-pipeline/pipeline/04_approved` found in the current directory or up to four parents.
  * Works with cwd = Website/ (local dev, Cloudflare Pages root directory) or the repository root.
  */
-export function resolveContentDir(): string {
-  const fromEnv = process.env.CONTENT_DIR;
+export function resolveContentDir(subpath = CONTENT_SUBPATH): string {
+  const fromEnv = subpath === CONTENT_SUBPATH ? process.env.CONTENT_DIR : process.env.BIOLOGY_CONTENT_DIR;
   if (fromEnv) {
     const dir = isAbsolute(fromEnv) ? fromEnv : resolve(process.cwd(), fromEnv);
     if (!isDirectory(dir)) throw new ContentError(`CONTENT_DIR is set but is not a directory: ${dir}`);
@@ -39,7 +40,7 @@ export function resolveContentDir(): string {
   }
   let dir = process.cwd();
   for (let level = 0; level <= MAX_LEVELS_UP; level++) {
-    const candidate = join(dir, ...CONTENT_SUBPATH.split('/'));
+    const candidate = join(dir, ...subpath.split('/'));
     if (isDirectory(candidate)) return candidate;
     const parent = dirname(dir);
     if (parent === dir) break;
@@ -111,9 +112,24 @@ export function loadTopicsFromDir(contentDir: string, options?: ValidateOptions)
   }
 
   if (problems.length) throw new ContentError(`Content parsing failed: ${problems.length} problem(s)`, problems);
-  topics.sort((a, b) => a.topicNumber - b.topicNumber);
-  validateTopics(topics, options);
-  return topics;
+  topics.sort((a, b) => a.topicNumber - b.topicNumber || (a.part ?? 1) - (b.part ?? 1));
+  // Validate every batch before merging so no unmatched entries or source IDs are lost.
+  for (const batch of topics) validateTopics([batch], { topicCount: 1, questionCount: batch.questions.length, warn: options?.warn });
+  const merged: Topic[] = [];
+  for (const batch of topics) {
+    const existing = merged.find((t) => t.topicId === batch.topicId);
+    if (!existing) { merged.push(batch); continue; }
+    if (existing.topicName !== batch.topicName || existing.part === undefined || batch.part === undefined ||
+        existing.questions.some((q) => q.part === batch.part)) {
+      throw new ContentError(`Conflicting topic batches: ${existing.batchId}, ${batch.batchId}`);
+    }
+    existing.batchIds!.push(batch.batchId);
+    existing.questions.push(...batch.questions);
+    existing.subtopics = [...new Map([...existing.subtopics, ...batch.subtopics].map((s) => [s.id, s])).values()];
+    for (const key of ['total', 'mcq', 'structured', 'core', 'supplement'] as const) existing.counts[key] += batch.counts[key];
+  }
+  validateTopics(merged, options);
+  return merged;
 }
 
 /** The one-line build summary, e.g. "Content OK: 12 topics, 360 questions (180 MCQ, 180 structured)". */
@@ -152,4 +168,13 @@ export function getTopicBySlug(slug: string): Topic | undefined {
 /** Forget the cached topics (tests only). */
 export function clearTopicCache(): void {
   cache = undefined;
+}
+
+let biologyCache: Topic[] | undefined;
+export function loadBiologyTopics(): Topic[] {
+  if (!biologyCache) {
+    biologyCache = loadTopicsFromDir(resolveContentDir(BIOLOGY_CONTENT_SUBPATH), { topicCount: 21, questionCount: 590 });
+    console.log(`Biology ${summaryLine(biologyCache)}`);
+  }
+  return biologyCache;
 }

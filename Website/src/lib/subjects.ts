@@ -4,12 +4,13 @@
  * v1 has one content source, the Chemistry 0620 pipeline read by src/content. A subject without a
  * content source fails the build here rather than showing "0 topics" on the home page.
  */
-import { loadAllTopics } from '../content';
+import { loadAllTopics, loadBiologyTopics } from '../content';
 import type { Topic } from '../content';
-import { SUBJECT } from '../config';
+import { SUBJECT, BIOLOGY_0610 } from '../config';
 import type { Subject } from '../config';
 
 export function subjectTopics(subject: Subject): Topic[] {
+  if (subject.path === BIOLOGY_0610.path) return loadBiologyTopics();
   if (subject.path === SUBJECT.path) return loadAllTopics();
   throw new Error(`No content source for subject "${subject.path}": add one in src/lib/subjects.ts.`);
 }

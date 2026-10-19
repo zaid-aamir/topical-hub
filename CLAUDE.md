@@ -4,7 +4,7 @@
 
 **Site name: Topical Hub.** Repo: github.com/zaid-aamir/topical-hub (public).
 
-A website of **original, exam-style topical practice questions** for Cambridge IGCSE Chemistry 0620 (syllabus for exams in 2026–2028), with mark schemes and worked solutions. It's free, organised by topic, and will be funded by ads later.
+A website of **original, exam-style topical practice questions** for Cambridge IGCSE Chemistry 0620 and Biology 0610 (syllabus for exams in 2026–2028), with mark schemes and worked solutions. It's free, organised by topic, and will be funded by ads later.
 
 The owner is an IGCSE student building this as a business, and wants **speed**: ship a working site fast, then improve it. Talk to them directly, with no flattery. Push back on weak ideas, and say plainly when something is fine.
 
@@ -19,12 +19,12 @@ The owner is an IGCSE student building this as a business, and wants **speed**: 
 
 The Astro site is implemented in `Website/`. Start with `Website/README.md` for commands and `Website/CONTRACT.md` for the current routes and DOM. `Website/BUILD_V1.md` now records delivered scope, not an instruction to rebuild the site.
 
-- Home lists subjects under `/#subjects`; Chemistry is the only enabled subject. Its subject page lists all 12 topics and 360 questions.
-- Topic pages have tier/type/subtopic filters, MCQ marking, answer toggles, print pages and 24 downloadable watermarked PDFs in total.
+- Home lists Chemistry 0620 (12 topics, 360 questions) and Biology 0610 (21 topics, 590 questions) under `/#subjects`, with data-derived counts.
+- Topic pages have tier/type/subtopic filters, MCQ marking, answer toggles, print pages and 66 downloadable watermarked PDFs in total (24 Chemistry, 42 Biology).
 - Header: Subjects, About, theme toggle. Footer version comes from `Website/package.json`.
-- Existing question anchors are `#q<n>`, while the full source id is stored in `data-question-id` and error reports. This differs from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
+- Chemistry question anchors remain `#q<n>`; Biology anchors use full source IDs across all batches. In Chemistry, while the full source id is stored in `data-question-id` and error reports. This differs from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
 - Error reports currently open pre-filled GitHub issues because `REPORT_FORM_URL` is empty.
-- Only the Chemistry pipeline feeds the site. Adding a subject needs config, content dispatch and routes; `question-pipeline/` is not integrated.
+- Both subjects use shared routes under `Website/src/pages/igcse/[subject]/`. Chemistry reads its original pipeline; Biology reads only `questions.md` and `markscheme.md` from `question-pipeline/subjects/0610-biology/batches/04_approved/`. Biology topics 14, 16 and 17 merge batches in numeric part order, retaining source numbers, IDs and part labels. Chemistry formatting is disabled for Biology.
 - `npm run build` checks PDF freshness before Astro content validation and the output gate. PDF-affecting changes require `npm run pdfs` (Playwright Chromium); leave generated PDFs and manifest for the owner to review and commit. See `Website/scripts/pdf-manifest.mjs` for hashed inputs.
 
 ## Repo layout
@@ -92,7 +92,7 @@ across 21 topics now reside in `question-pipeline/subjects/0610-biology/batches/
 See `question-pipeline/subjects/0610-biology/owner-approval.json` for approval provenance and
 `question-pipeline/subjects/0610-biology/review/README.md` for import instructions and the 42 PDFs.
 Earlier draft/solved status notes are superseded; no new independent AI verification is claimed.
-Biology website integration remains separate from this completed content preparation.
+Biology is integrated into the website: all 590 owner-approved questions, 21 topics, 24 batches and 42 PDFs. Approval is not a claim of new independent science verification. Pipeline content and approval records remain read-only.
 
 Tokens are limited. Verification must be proportionate, not exhaustive.
 

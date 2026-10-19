@@ -40,6 +40,7 @@ const CLEAN: Record<string, string> = {
   'about/index.html': page(`<h1>About</h1><p>These are original exam-style questions, not ${BANNED}.</p><p>See <a href="../">home</a>.</p>`),
   'privacy/index.html': page('<h1>Privacy</h1>'),
   '404.html': page('<h1>Not found</h1><a href="/">Home</a>'),
+  'igcse/biology-0610/index.html': page('<h1>IGCSE Biology</h1>'),
   'igcse/chemistry-0620/index.html': page('<h1>IGCSE Chemistry</h1><a href="electrochemistry/">Electrochemistry</a>'),
   'igcse/chemistry-0620/electrochemistry/index.html': page(
     '<h1>Electrochemistry</h1><article class="question" id="q16"><h2>16</h2><a href="print/">Print</a> <a href="print-answers/">Answers</a></article>',
@@ -80,7 +81,7 @@ describe('check-dist', () => {
     expect(result.failures).toEqual([]);
     expect(result.ok).toBe(true);
     expect(result.warnings).toEqual([]);
-    expect(result.summary.htmlFiles).toBe(8);
+    expect(result.summary.htmlFiles).toBe(9);
     expect(result.summary.phraseMatches).toBe(1);
     expect(result.summary.anchorsChecked).toBeGreaterThanOrEqual(2);
     expect(result.summary.linksChecked).toBeGreaterThan(10);
@@ -89,7 +90,8 @@ describe('check-dist', () => {
   it('catches the banned phrase outside the About page, with a context snippet', () => {
     const dir = fakeDist('phrase', {
       ...CLEAN,
-      'igcse/chemistry-0620/index.html': page(`<h1>IGCSE Chemistry</h1><p>Browse our ${BANNED_CAPS} by topic.</p><a href="electrochemistry/">E</a>`),
+      'igcse/biology-0610/index.html': page('<h1>IGCSE Biology</h1>'),
+  'igcse/chemistry-0620/index.html': page(`<h1>IGCSE Chemistry</h1><p>Browse our ${BANNED_CAPS} by topic.</p><a href="electrochemistry/">E</a>`),
       '_astro/app.js': `const label = "${BANNED_HYPHEN} mode";`,
       'sitemap-0.xml': CLEAN['sitemap-0.xml'],
     });

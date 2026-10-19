@@ -6,15 +6,16 @@
  *   <TopicGrid topics={loadAllTopics()} />
  */
 import type { Topic } from '../content';
-import { SUBJECT } from '../config';
+import { SUBJECT, type Subject } from '../config';
 
 interface Props {
+  subject?: Subject;
   /** Topics in display order (loadAllTopics() is already sorted by topic number). */
   topics: Topic[];
 }
 
-const { topics } = Astro.props;
-const subjectBase = `/${SUBJECT.path}/`;
+const { topics, subject = SUBJECT } = Astro.props;
+const subjectBase = `/${subject.path}/`;
 
 function plural(count: number, noun: string): string {
   return `${count} ${noun}${count === 1 ? '' : 's'}`;

@@ -45,6 +45,7 @@ const EXPECTED_FILES = [
   'robots.txt',
   'sitemap-index.xml',
   'igcse/chemistry-0620/index.html',
+  'igcse/biology-0610/index.html',
 ];
 /** <link rel> values that make the browser fetch the href. */
 const FETCHING_LINK_RELS = new Set([

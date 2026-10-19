@@ -10,12 +10,17 @@ import QuestionHead from './QuestionHead.astro';
 import McqOptions from './McqOptions.astro';
 import StructuredParts from './StructuredParts.astro';
 
+import { SUBJECT, type Subject } from '../../config';
+import { questionAnchor } from '../../lib/question-anchor';
+
 interface Props {
+  subject?: Subject;
   question: Question;
 }
 
-const { question } = Astro.props;
-const anchor = `q${question.number}`;
+const { question, subject = SUBJECT } = Astro.props;
+const anchor = questionAnchor(question, subject);
+const chem = subject.path === SUBJECT.path;
 const stemId = `${anchor}-stem`;
 ---
 <article
@@ -28,12 +33,12 @@ const stemId = `${anchor}-stem`;
 >
   <QuestionHead question={question} />
   <div class="question-body">
-    {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem)} />}
+    {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem, { chem })} />}
     {
       question.type === 'mcq' ? (
-        <McqOptions question={question} stemId={stemId} interactive={false} />
+        <McqOptions chem={chem} question={question} stemId={stemId} interactive={false} />
       ) : (
-        <StructuredParts question={question} lines />
+        <StructuredParts chem={chem} question={question} lines />
       )
     }
   </div>
