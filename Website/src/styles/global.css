@@ -970,13 +970,15 @@ p[data-filter-count]:empty {
 }
 
 /* ---------------------------------------------------------------------------
-   10. MCQ options: a stack of full-width buttons. Letter in a fixed 2rem slot, text wraps.
+   10. MCQ options: a stack of full-width option cards, the letter in a circular badge on the left.
        <div class="options" role="group" aria-labelledby="q1-stem">
          <button class="option" type="button" data-letter="A" aria-pressed="false">
-           <span class="option-letter">A</span><span class="option-text">…</span>
+           <span class="option-letter">A</span><span class="option-text">…</span><span class="option-status"></span>
          </button>
        </div>
        States: [aria-pressed="true"] chosen; [data-state="correct"|"wrong"] after answering; disabled.
+       span.option-status is filled by the script ("Correct", "Not quite", "Correct answer") and
+       carries a tick or cross, so the result never rests on colour alone.
    --------------------------------------------------------------------------- */
 
 .options {
@@ -988,19 +990,20 @@ p[data-filter-count]:empty {
 .option {
   --state: var(--accent);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  gap: var(--space-2);
+  gap: var(--space-3);
   width: 100%;
-  min-height: var(--tap);
-  padding: var(--space-2) var(--space-3);
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-3);
   border: 1px solid var(--rule);
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-card);
   background: var(--surface);
   color: var(--ink);
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
+  cursor: pointer;
   transition:
     background-color var(--duration) ease-out,
     border-color var(--duration) ease-out;
@@ -1008,11 +1011,29 @@ p[data-filter-count]:empty {
 
 .option:hover:not(:disabled) {
   border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .option-letter {
-  flex: 0 0 2rem;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--paper);
   font-weight: 600;
+  line-height: 1;
+  transition:
+    background-color var(--duration) ease-out,
+    border-color var(--duration) ease-out;
+}
+
+.option:hover:not(:disabled) .option-letter {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .option-text {
@@ -1039,10 +1060,17 @@ p[data-filter-count]:empty {
   box-shadow: inset 0 0 0 1px var(--bad);
 }
 
+.option[data-state] .option-letter {
+  border-color: var(--state);
+  background: var(--state);
+  color: var(--surface);
+}
+
 /* Disabled options keep full ink contrast; the state colours carry the result. */
 .option:disabled {
   color: var(--ink);
   opacity: 1;
+  cursor: default;
 }
 
 .option:disabled:not([data-state]) {
@@ -1050,31 +1078,48 @@ p[data-filter-count]:empty {
   background: var(--surface);
 }
 
-/* Tick or cross after the text of a marked option, drawn in the state colour. */
-.option[data-state]::after {
+/* Result label with its tick or cross, drawn in the state colour. Empty until answered. */
+.option-status {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+  color: var(--state, var(--ink));
+  font-size: var(--text-small);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.option-status:empty {
+  display: none;
+}
+
+.option-status::before {
   content: '';
   flex: none;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-left: auto;
-  margin-top: 0.1em;
-  background: var(--state);
-  -webkit-mask: var(--icon) center / contain no-repeat;
-  mask: var(--icon) center / contain no-repeat;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: currentColor;
+  -webkit-mask: var(--icon, none) center / contain no-repeat;
+  mask: var(--icon, none) center / contain no-repeat;
 }
 
-.option[data-state='correct']::after {
+[data-state='correct'] .option-status {
   --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color: var(--ok);
 }
 
-.option[data-state='wrong']::after {
+[data-state='wrong'] .option-status {
   --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 5l10 10M15 5L5 15' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  color: var(--bad);
 }
 
 /* Table-shaped options: one row per option, the whole row is the tap target.
    <div class="table-scroll"><table class="options-table"><thead><tr><th>…</th>…</tr></thead>
-     <tbody><tr class="option-row" data-letter="A"><td><button class="option" data-letter="A" aria-pressed="false">A</button></td><td>yes</td>…</tr>
-   The row takes the same states as its button (set on the row, or found via :has()). */
+     <tbody><tr class="option-row" data-letter="A"><td><button class="option" data-letter="A" aria-pressed="false">A</button><span class="option-status"></span></td><td>yes</td>…</tr>
+   The row takes the same states as its button (set on the row, or found via :has()); the letter
+   button is the circular badge and the status label sits under it. */
 
 .options-table {
   width: 100%;
@@ -1082,26 +1127,46 @@ p[data-filter-count]:empty {
 }
 
 .options-table td {
+  height: 3rem;
   vertical-align: middle;
   transition: background-color var(--duration) ease-out;
+}
+
+.options-table td:first-child {
+  width: 1%;
+  white-space: nowrap;
 }
 
 .options-table .option {
   width: var(--tap);
   min-width: var(--tap);
+  min-height: var(--tap);
   justify-content: center;
   padding: 0;
   margin: 0;
+  border-radius: 50%;
+  font-weight: 600;
   transition: none;
 }
 
-.options-table .option::after {
-  display: none;
+.options-table .option:hover:not(:disabled) {
+  background: var(--surface);
+  color: var(--accent);
 }
 
 .options-table .option[data-state] {
   box-shadow: none;
-  color: var(--ink);
+  background: var(--state);
+  color: var(--surface);
+}
+
+.options-table .option-status {
+  display: flex;
+  margin: var(--space-1) 0 0;
+}
+
+.options-table .option-status:empty {
+  display: none;
 }
 
 .option-row {
@@ -1110,6 +1175,11 @@ p[data-filter-count]:empty {
 
 .option-row:hover td {
   background: var(--accent-soft);
+}
+
+.option-row:hover .option:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .option-row[aria-pressed='true'] td,
@@ -1198,37 +1268,52 @@ p[data-filter-count]:empty {
   margin-top: var(--space-4);
 }
 
-/* Outlined accent button; filled when active. .button is the same look for other pages. */
+/* Outlined accent button. .button is the same look for other pages; .button-primary is filled. */
 .toggle-answer,
+.try-again,
 .button {
   border-color: var(--accent);
   color: var(--accent);
 }
 
 .toggle-answer:hover,
+.try-again:hover,
 .button:hover {
   background: var(--accent-soft);
 }
 
-.toggle-answer[aria-expanded='true'],
 .button-primary {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--on-accent);
 }
 
-.toggle-answer[aria-expanded='true']:hover,
 .button-primary:hover {
   background: var(--accent);
+}
+
+/* The chevron points down when closed and up when open; aria-expanded drives both. */
+.toggle-answer .chevron {
+  flex: none;
+  transition: transform var(--duration) ease-out;
+}
+
+.toggle-answer[aria-expanded='true'] .chevron {
+  transform: rotate(180deg);
 }
 
 .report-link {
   display: inline-flex;
   align-items: center;
+  gap: var(--space-1);
   min-height: var(--tap);
   margin-left: auto;
   color: var(--ink-muted);
   font-size: var(--text-small);
+}
+
+.report-link svg {
+  flex: none;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1418,4 +1503,134 @@ p[data-filter-count]:empty {
 
 .question[data-answered] .option-row:not([data-state]):hover td {
   background: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   16. Topic-page question card (article.question.question-card). Print pages use the plain
+       .question styles above and are not affected by anything here.
+       <div class="question-head">
+         <h2 class="question-number">16</h2>
+         <span class="badge badge-supplement">Supplement</span>
+         <span class="badge badge-marks">7 marks</span>
+         <span class="subtopic">Electrolysis</span>
+       </div>
+       Merged topics wrap their cards in section.part-group > h2.part-heading ("Part 2", range).
+   --------------------------------------------------------------------------- */
+
+.part-group {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.part-group + .part-group {
+  margin-top: var(--space-6);
+}
+
+.part-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--rule);
+}
+
+.part-range {
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 400;
+}
+
+.question-card .question-head {
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.question-card .question-number {
+  margin: 0 var(--space-1) 0 0;
+  font-size: var(--text-h2);
+}
+
+.question-card .badge-marks {
+  margin-left: auto;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.question-card .subtopic {
+  flex-basis: 100%;
+}
+
+.question-card .question-actions {
+  gap: var(--space-2) var(--space-3);
+}
+
+/* Answer panel: a card with a left accent rule that eases in when opened. */
+.question-card .answer {
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+}
+
+.question-card .answer:not([hidden]) {
+  animation: answer-in calc(var(--duration) * 1.5) ease-out;
+}
+
+@keyframes answer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .question-card .answer:not([hidden]),
+  .toggle-answer .chevron {
+    animation: none;
+    transition: none;
+  }
+}
+
+.question-card .ms-answer {
+  font-size: var(--text-h3);
+}
+
+.question-card .ms-head {
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--rule);
+}
+
+.question-card .worked-solution > .ws-heading {
+  font-size: var(--text-h3);
+}
+
+/* ALLOW / REJECT / IGNORE / ECF as small labelled tags in front of the point. */
+.question-card .ms-point[data-kind='allow'],
+.question-card .ms-point[data-kind='reject'],
+.question-card .ms-point[data-kind='ignore'],
+.question-card .ms-point[data-kind='ecf'] {
+  padding-left: var(--space-3);
+  border-left-width: 2px;
+}
+
+.question-card .ms-keyword {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.25rem;
+  vertical-align: 0.1em;
+}
+
+.question-card .ms-point[data-kind='allow'] .ms-keyword,
+.question-card .ms-point[data-kind='ecf'] .ms-keyword {
+  background: var(--accent-soft);
+}
+
+.question-card .ms-point[data-kind='reject'] .ms-keyword {
+  background: var(--bad-soft);
 }

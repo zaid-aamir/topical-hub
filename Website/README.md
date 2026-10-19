@@ -1,6 +1,6 @@
 # Topical Hub website
 
-Free, original exam-style topical practice questions for Cambridge IGCSE Chemistry 0620 and Biology 0610 (2026?2028). Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment.
+Free, original exam-style topical practice questions for Cambridge IGCSE Chemistry 0620 and Biology 0610 (2026–2028). Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment.
 
 ## Published content
 

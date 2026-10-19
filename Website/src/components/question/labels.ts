@@ -39,3 +39,8 @@ export function splitKeyword(text: string): { keyword: string | null; rest: stri
 export function answerLineCount(marks: number): number {
   return Math.max(2, 2 * marks);
 }
+
+/** "1 mark", "4 marks". */
+export function marksLabel(marks: number): string {
+  return `${marks} ${marks === 1 ? 'mark' : 'marks'}`;
+}

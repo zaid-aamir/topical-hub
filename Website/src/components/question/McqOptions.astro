@@ -6,6 +6,9 @@
  * div.options[role=group]; table-shaped options are table.options-table whose rows are
  * tr.option-row with the button in the first cell (the script makes the whole row the tap target).
  *
+ * Interactive options carry an empty span.option-status (in the button, or after it in the row's
+ * first cell) that the script fills with "Correct", "Not quite" or "Correct answer".
+ *
  * Static (print page): ol.options-static, or the same table with a plain letter instead of a
  * button. No states, nothing to press.
  *
@@ -45,7 +48,10 @@ const table = question.optionTable;
             <tr class={interactive ? 'option-row' : undefined} data-letter={option.letter}>
               <td>
                 {interactive ? (
-                  <button class="option" type="button" data-letter={option.letter} aria-pressed="false">{option.letter}</button>
+                  <>
+                    <button class="option" type="button" data-letter={option.letter} aria-pressed="false">{option.letter}</button>
+                    <span class="option-status" />
+                  </>
                 ) : (
                   <span class="option-letter">{option.letter}</span>
                 )}
@@ -62,6 +68,7 @@ const table = question.optionTable;
         <button class="option" type="button" data-letter={option.letter} aria-pressed="false">
           <span class="option-letter">{option.letter}</span>
           <span class="option-text" set:html={mdInline(option.text, { chem })} />
+          <span class="option-status" />
         </button>
       ))}
     </div>

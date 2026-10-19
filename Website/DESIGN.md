@@ -98,10 +98,12 @@ Single column, left-aligned, mobile first. Content measure 40rem; the page shell
 
 - Cards: `--surface` background, 1px `--rule` border, 6px radius, no shadow. Padding 1rem on phones, 1.5rem from 40rem up.
 - Tables: wrapped in `.table-scroll` (`overflow-x: auto`), never wider than the card, never cause page scroll at 360 px.
-- Buttons: real `<button>`s, min-height 44px, 4px radius, 1px border; the primary ("Show mark scheme") is outlined in accent, filled accent when active.
-- MCQ options: a vertical stack of full-width buttons; letter in a fixed-width slot, text wraps. Table-shaped options render as a table whose each row is one option (the whole row is a tap target).
+- Buttons: real `<button>`s, min-height 44px, 4px radius, 1px border. "Show answer" / "Show mark scheme" is outlined in accent with a chevron that rotates when open; "Try again" uses the same outline. "Report an error" is a quiet muted link with a small flag icon.
+- MCQ options: a vertical stack of full-width option cards (min-height 48px, 6px radius), the letter in a circular badge on the left, text wraps. Hover tints the card accent-soft. After answering, the marked cards carry a status label with a tick or cross ("Correct", "Not quite", "Correct answer"). Table-shaped options render as a table whose each row is one option (the whole row is a tap target), with the letter button as the circular badge.
+- Topic-page card head: large numeral, tier badge, marks badge ("4 marks") flush right, sub-topic underneath. Merged topics get an h2 per part ("Part 2  Questions 1–30"); single-part topics have none. Print pages keep the paper-style head with "[n]".
+- Answer panel: paper-coloured card with a 4px accent left rule; ALLOW / REJECT / IGNORE / ECF as small outlined tags.
 - Focus: `outline: 3px solid var(--accent); outline-offset: 2px`, always visible.
-- Motion: none on load. Panels open instantly; `prefers-reduced-motion` respected for the one 150 ms background transition on option state.
+- Motion: none on load. Option state and hover use a 150 ms background transition, the chevron rotates in 150 ms and the answer panel fades in over about 225 ms; all of it is off under `prefers-reduced-motion`.
 
 ## Navigation and page structure
 

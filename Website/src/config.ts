@@ -45,7 +45,7 @@ export const BIOLOGY_0610: Subject = {
   path: 'igcse/biology-0610',
   shortName: 'IGCSE Biology 0610',
   fullName: 'Cambridge IGCSE Biology 0610',
-  syllabusYears: '2026?2028',
+  syllabusYears: '2026–2028',
   description: 'Original multiple-choice and structured questions across all 21 topics, tagged Core or Supplement.',
 };
 export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610];

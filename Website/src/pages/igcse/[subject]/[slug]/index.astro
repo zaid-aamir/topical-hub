@@ -25,6 +25,16 @@ const path = `/${subject.path}/${topic.slug}/`;
 const questionsPdf = pdfDownload(topic.slug, 'questions', subject.path);
 const markSchemePdf = pdfDownload(topic.slug, 'mark-scheme', subject.path);
 const title = `${topic.topicName} — ${subject.shortName} exam-style questions with answers | ${SITE_NAME}`;
+// Merged topics (more than one source part) get a section and heading per part; single-part topics
+// keep one flat list. Each group keeps file order.
+const partGroups = topic.questions.reduce<{ part: number; questions: typeof topic.questions }[]>((groups, question) => {
+  const part = question.part ?? 1;
+  const last = groups.at(-1);
+  if (last && last.part === part) last.questions.push(question);
+  else groups.push({ part, questions: [question] });
+  return groups;
+}, []);
+const merged = partGroups.length > 1;
 const description =
   `${topic.counts.total} original exam-style questions on ${topic.topicName} for ${subject.fullName} ` +
   `(${topic.counts.mcq} multiple choice, ${topic.counts.structured} structured), each with a mark scheme and worked solution.`;
@@ -79,7 +89,21 @@ const description =
 
     <div class="measure">
       <div class="question-list">
-        {topic.questions.map((question) => <QuestionCard subject={subject} question={question} slug={topic.slug} />)}
+        {
+          merged
+            ? partGroups.map((group) => (
+                <section class="part-group" data-part={group.part} aria-labelledby={`part-${group.part}`}>
+                  <h2 class="part-heading" id={`part-${group.part}`}>
+                    Part {group.part}
+                    <span class="part-range">
+                      Questions {group.questions[0]?.number}–{group.questions.at(-1)?.number}
+                    </span>
+                  </h2>
+                  {group.questions.map((question) => <QuestionCard subject={subject} question={question} slug={topic.slug} />)}
+                </section>
+              ))
+            : topic.questions.map((question) => <QuestionCard subject={subject} question={question} slug={topic.slug} />)
+        }
       </div>
     </div>
   </div>
@@ -91,6 +115,7 @@ const description =
         display: block !important;
       }
       .toggle-answer,
+      .try-again,
       .feedback,
       .filters {
         display: none !important;

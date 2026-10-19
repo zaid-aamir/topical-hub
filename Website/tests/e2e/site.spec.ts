@@ -257,6 +257,16 @@ test.describe('topic page', () => {
     const score = page.locator('p[data-score][role="status"]');
     await expect(score).toHaveCount(1);
     await expect(score).toHaveText(/\b[01]\s*\/\s*1\b/);
+    const first = await score.textContent();
+
+    const retry = card.locator('button.try-again');
+    await expect(retry).toBeVisible();
+    await retry.click();
+    await expect(card).not.toHaveAttribute('data-answered', /.*/);
+    await expect(card.locator('button.option[disabled]')).toHaveCount(0);
+    await expect(panel).toBeHidden();
+    await card.locator('button.option').last().click();
+    await expect(score).toHaveText(first ?? '');
   });
 
   test('a table-shaped MCQ row is one tap target', async ({ page }) => {

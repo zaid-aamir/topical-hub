@@ -203,7 +203,7 @@
     color: #000;
   }
 
-  .option::after,
+  .option-status,
   .feedback::before {
     display: none;
   }
