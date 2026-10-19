@@ -116,6 +116,7 @@ The percentage of resistant samples rose from 4% to 41%, and resistance reduces 
 **(c)** [1]
 - the new infection is caused by bacteria, which antibiotics can kill (1)
 - ALLOW: antibiotics are used to treat bacterial infections
+- ALLOW: HIV has weakened the immune system so the body cannot fight the bacterial infection without an antibiotic
 - REJECT: the antibiotic will treat HIV
 
 **Worked solution**
@@ -215,10 +216,8 @@ The percentage of resistant samples rose from 4% to 41%, and resistance reduces 
 
 **(a)** [3]
 - the antibiotic kills the non-resistant bacteria (1)
-- the resistant bacteria survive and reproduce / multiply (1)
-- the gene for resistance is passed on to their offspring (1)
-- the population becomes mostly resistant / the proportion of resistant bacteria increases (1)
-- max 3
+- the resistant bacteria survive and reproduce / multiply, passing on the gene for resistance to their offspring (1)
+- the population becomes mostly resistant / the proportion of resistant bacteria increases (each time the antibiotic is used) (1)
 - REJECT: the antibiotic causes the bacteria to become resistant
 
 **(b)** [2]
@@ -248,6 +247,7 @@ The percentage of resistant samples rose from 4% to 41%, and resistance reduces 
 
 **(c)** [1]
 - any one of: more hand washing by staff and visitors / cleaning surfaces and equipment more often / keeping patients with MRSA away from other patients (isolation) / testing patients for MRSA on arrival (1)
+- ALLOW: any other sensible measure that reduces the spread of bacteria between patients, e.g. sterilising equipment, wearing gloves or aprons
 
 **(d)** [1]
 - antibiotics are still needed to treat serious / essential bacterial infections (1)

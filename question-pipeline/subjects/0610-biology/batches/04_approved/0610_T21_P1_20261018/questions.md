@@ -25,10 +25,10 @@ generator_model: "GPT-6 (Codex)"
 
 Why are bacteria useful for producing large quantities of a useful protein?
 
-A They contain no genetic information.
+A They have a nucleus containing many chromosomes.
 B They can reproduce rapidly and make complex molecules.
-C They never need nutrients.
-D Every bacterium is a human body cell.
+C They can only make simple molecules such as glucose.
+D They reproduce slowly, so cultures are easy to control.
 
 ## Q2
 - id: 0610_T21_P1_20261018_Q2
@@ -127,8 +127,8 @@ Which enzyme is used to make lactose-free milk?
 
 A pectinase
 B lactase
-C lipase only
-D amylase only
+C lipase
+D amylase
 
 ## Q7
 - id: 0610_T21_P1_20261018_Q7
@@ -145,10 +145,10 @@ D amylase only
 
 Why is cooling often needed in an aerobic industrial fermenter?
 
-A Microorganisms always absorb all surrounding heat.
-B Cooling removes all nutrients.
+A Microorganisms absorb heat from the surroundings as they grow.
+B Cooling removes waste products from the culture.
 C Respiration by microorganisms releases energy that can raise temperature.
-D Every enzyme works best at boiling temperature.
+D Enzymes in the microorganisms work best at low temperatures.
 
 ## Q8
 - id: 0610_T21_P1_20261018_Q8
@@ -166,7 +166,7 @@ D Every enzyme works best at boiling temperature.
 Which action is genetic modification?
 
 A inserting an individual gene into an organism's genetic material
-B choosing two high-yield parents to breed without changing individual genes directly
+B selecting two high-yield parents and breeding them together
 C feeding an animal a more nutritious diet
 D training an animal to respond to a signal
 
@@ -185,10 +185,10 @@ D training an animal to respond to a signal
 
 A crop receives a gene that makes it resistant to an insect pest. What is the intended advantage?
 
-A a guarantee that every insect species becomes extinct
+A the crop no longer needs fertiliser
 B less crop damage from that pest
-C no further need for water
-D automatic resistance to every disease
+C the crop can be grown without irrigation
+D the crop becomes resistant to all plant diseases
 
 ## Q10
 - id: 0610_T21_P1_20261018_Q10
@@ -225,7 +225,7 @@ D protease
 
 A company uses bacteria to produce a medically useful protein.
 
-(a) Explain two biological features that make bacteria suitable. [2]
+(a) State two biological features of bacteria that make them suitable. [2]
 
 (b) Explain how these features help production on a large scale. [2]
 

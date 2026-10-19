@@ -33,7 +33,7 @@ Sexual reproduction involves fusion of gamete nuclei. Growth, cell multiplicatio
 Fertilisation is nuclear fusion. Landing on the stigma is pollination, while tube growth enables the nuclei to meet but is not itself fertilisation.
 
 ## Q6
-- answer: B
+- answer: C
 
 **Rationale**
 Two haploid sets of 12 combine, giving 12 + 12 = 24 chromosomes. Fertilisation adds sets rather than halving or doubling each set separately.
@@ -48,7 +48,7 @@ The anther produces pollen. The stigma receives it, the ovary contains ovules, a
 - answer: A
 
 **Rationale**
-A spiky surface helps pollen attach to an insect. Light, smooth grains are more characteristic of wind dispersal; preventing contact would hinder insect pollination.
+A spiky (or sticky) surface helps pollen attach to an insect's body. Smooth, small and light grains are characteristic of wind-pollinated flowers and are less likely to be carried by insects.
 
 ## Q9
 - answer: B
@@ -110,6 +110,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(a)** [2]
 - Only one parent is required, so no mate is needed. (1)
 - Offspring can be produced without the delay of finding another reproductive individual. (1)
+- ALLOW: no pollinator, gametes or fertilisation needed; many offspring produced in a short time
 
 **(b)** [2]
 - The offspring are genetically identical apart from mutation. (1)
@@ -180,6 +181,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(a)** [2]
 - The stigma receives pollen grains. (1)
 - The ovary contains ovules. (1)
+- ALLOW: stigma has a sticky surface that traps pollen; ovary protects the ovules / develops into the fruit
 
 **(b)** [2]
 - The damaged stigma may receive less pollen, reducing successful fertilisation. (1)
@@ -198,6 +200,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(b)** [2]
 - A is likely to have stickier or spikier pollen than B. (1)
 - B is likely to produce smaller, lighter pollen grains than A. (1)
+- ALLOW: B produces larger numbers of pollen grains; A has larger pollen grains; B pollen is smooth
 
 **Worked solution**
 (a) A is insect-pollinated because its nectar or colour attracts insects. B is wind-pollinated because exposed hanging anthers release pollen into air.
@@ -212,6 +215,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(b)** [2]
 - The pollen may be incompatible with the receiving flower. (1)
 - The pollen grain may fail to germinate or form a functioning pollen tube. (1)
+- ALLOW: pollen from a different species; pollen not viable; stigma not receptive or not mature; pollen tube fails to reach the ovule
 
 **Worked solution**
 (a) Pollination is transfer of pollen grains from anther to stigma. Fertilisation is fusion of a pollen nucleus with a nucleus in an ovule.
@@ -226,6 +230,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(b)** [2]
 - The temperature must be the same. (1)
 - The availability of oxygen must be the same. (1)
+- ALLOW: same number, species or age of seeds; same light conditions; same length of time
 
 **Worked solution**
 (a) The condition being tested is water availability. More seeds are expected to germinate in A than in B.
@@ -240,6 +245,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(b)** [2]
 - Use seeds of the same species and similar viability. (1)
 - Provide the same water availability in both containers. (1)
+- ALLOW: same number of seeds; same light conditions; same length of time; same volume of container or gas
 
 **Worked solution**
 (a) Seeds in air germinate while those without oxygen do not. Oxygen is required for germination under these conditions.
@@ -278,6 +284,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(a)** [2]
 - A pollen tube grows through the style towards an ovule. (1)
 - The male nucleus travels along the pollen tube into the ovule. (1)
+- ALLOW: pollen tube grows from the stigma, through the style, into the ovary and enters the ovule
 
 **(b)** [2]
 - The male nucleus fuses with a nucleus in the ovule. (1)
@@ -292,6 +299,7 @@ The tube grows from the stigma through the style towards an ovule, carrying the 
 **(a)** [2]
 - Exposed anthers allow pollen to be released into the wind. (1)
 - Large feathery stigmas increase the chance of trapping airborne pollen. (1)
+- ALLOW: anthers or stigmas hang outside the flower on long filaments or styles; production of large numbers of small, light pollen grains that are easily carried by wind
 
 **(b)** [2]
 - Oxygen must be available. (1)

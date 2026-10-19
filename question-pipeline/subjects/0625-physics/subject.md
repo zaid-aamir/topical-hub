@@ -71,6 +71,13 @@ Values and facts stated in the content (candidates know them):
 
 Explicitly NOT required: F = mv^2 / r (1.5.1.12); an understanding of the elastic limit (1.5.1.10); β+ (5.2.2.2); end effects of parallel-plate fields (4.2.1.10c); gas to solid and solid to gas changes of state (2.1.1.2); background radiation in Core half-life calculations (5.2.4.1); values of mass and energy changes in fission/fusion (5.1.2.6).
 
+Also never given, because the syllabus asks candidates to *calculate* with them (added 2026-10-19 after a map check against the PDF):
+
+| Point | Relationship | Tier |
+|---|---|---|
+| 4.3.2.4 | combined resistance in series: R = R1 + R2 + … | Core |
+| 4.3.2.10 | two resistors in parallel: 1 / R = 1 / R1 + 1 / R2 | Supplement |
+
 ## 3. Notation and units
 
 - Use the symbols and units in the syllabus lists (pp. 50–51). Core: length l, h, d, s, x (km, m, cm, mm); area A (m^2, cm^2); volume V (m^3, cm^3, dm^3); weight W (N); mass m, M (kg, g); time t (h, min, s); density ρ (g / cm^3, kg / m^3); speed u, v (km / h, m / s, cm / s); acceleration a (m / s^2); acceleration of free fall g (m / s^2); force F (N); gravitational field strength g (N / kg); moment of a force (Nm); work done W (J, kJ, MJ); energy E (J, kJ, MJ, kW h); power P (W, kW, MW); pressure p (N / m^2, N / cm^2); temperature θ, T (°C, K); frequency f (Hz, kHz); wavelength λ (m, cm); focal length f (m, cm); angles i, r, c (degree (°)); potential difference/voltage V (V, mV, kV); current I (A, mA); e.m.f. E (V); resistance R (Ω); count rate (counts / s, counts / min); half-life (s, min, h, days, weeks, years).

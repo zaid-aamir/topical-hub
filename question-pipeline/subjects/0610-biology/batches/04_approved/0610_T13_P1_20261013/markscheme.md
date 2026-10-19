@@ -155,9 +155,8 @@ Urea is toxic, so if it were not excreted it would build up in the blood and har
 - REJECT: diffusion; osmosis; reabsorption
 
 **(b)** [2]
-- water, glucose, urea, ions
-- all four correct (2)
-- two or three correct (1)
+- water, glucose, urea, ions: all four correct (2)
+- two or three of these correct (1)
 - ALLOW: salts / named ions (e.g. sodium ions) for ions
 - REJECT: red blood cells; protein (deduct one mark for each wrong substance given, minimum 0)
 
@@ -192,7 +191,7 @@ Urea is toxic, so if it were not excreted it would build up in the blood and har
 - 99 (%) scores 1 mark only (the question asks for three significant figures)
 
 **Worked solution**
-(a) Plasma entering the glomerulus and filtrate just after it both contain urea at 0.3 g per dm³, so urea has passed out of the blood into the nephron: it has been filtered. (b) 18.0 ÷ 0.3 = 60, so urea is 60 times more concentrated in urine than in filtrate. Check: 0.3 × 60 = 18.0. (c) As the filtrate flows along the nephron, most of the water is reabsorbed into the blood, but the urea stays in the nephron. The same urea is dissolved in much less water, so it becomes more concentrated. (d) The water that is not reabsorbed leaves as urine, so the volume reabsorbed is 180 − 1.5 = 178.5 dm³. Percentage reabsorbed = 178.5 ÷ 180 × 100 = 99.166…% = 99.2% to three significant figures. Check another way: 1.5 ÷ 180 × 100 = 0.833% leaves as urine, and 100 − 0.833 = 99.2%.
+(a) Plasma entering the glomerulus and filtrate just after it both contain urea at 0.3 g per dm³, so urea has passed out of the blood into the nephron: it has been filtered. (b) 18.0 ÷ 0.3 = 60, so urea is 60 times more concentrated in urine than in filtrate. Check: 0.3 × 60 = 18.0. (c) As the filtrate flows along the nephron, most of the water is reabsorbed into the blood, but very little of the urea is reabsorbed, so almost all of it stays in the nephron. The same urea is dissolved in much less water, so it becomes more concentrated. (d) The water that is not reabsorbed leaves as urine, so the volume reabsorbed is 180 − 1.5 = 178.5 dm³. Percentage reabsorbed = 178.5 ÷ 180 × 100 = 99.166…% = 99.2% to three significant figures. Check another way: 1.5 ÷ 180 × 100 = 0.833% leaves as urine, and 100 − 0.833 = 99.2%.
 
 ## Q17
 
@@ -263,7 +262,7 @@ Check each statement against what you know. Statement 1 is correct: carbon dioxi
 
 **(b)** [1]
 - 7.5 × 0.9 = 6.75 g (1)
-- ALLOW: 6.8 g
+- ALLOW: 6.8 g; 7 g
 - ECF: answer to (a) in dm³ × 0.9, with unit g
 
 **(c)** [2]

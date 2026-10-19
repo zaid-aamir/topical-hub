@@ -28,7 +28,7 @@ Which comparison is an example of variation within a species?
 A the difference between a fish and a flowering plant
 B different body lengths among adult individuals of one fish species
 C the difference between an animal cell and a bacterial cell
-D the difference between water and soil
+D the difference between a young fish and the adult it grows into
 
 ## Q2
 - id: 0610_T18_P1_20261018_Q2
@@ -88,7 +88,7 @@ Identical plant genotypes grown with different nutrient supplies reach different
 A All variation must be caused by mutation.
 B Height can never be inherited.
 C The environment can contribute to continuous variation.
-D Each plant must have a different blood group.
+D Height is an example of discontinuous variation.
 
 ## Q5
 - id: 0610_T18_P1_20261018_Q5
@@ -105,9 +105,9 @@ D Each plant must have a different blood group.
 
 What is the original source of a new allele?
 
-A training a muscle
-B learning a behaviour
-C normal feeding alone
+A meiosis
+B random fertilisation
+C selective breeding
 D mutation
 
 ## Q6
@@ -125,10 +125,10 @@ D mutation
 
 Which exposure can increase mutation rate?
 
-A a lower sound volume
+A a lower temperature
 B ionising radiation
-C a different photoperiod in every case
-D a reduction in visible colour contrast
+C a higher oxygen concentration
+D a diet high in protein
 
 ## Q7
 - id: 0610_T18_P1_20261018_Q7
@@ -145,10 +145,10 @@ D a reduction in visible colour contrast
 
 Which event is a gene mutation?
 
-A movement of an unchanged enzyme through cytoplasm
-B the normal use of glucose in respiration
+A the separation of chromosomes during meiosis
+B the random fusion of gametes at fertilisation
 C a random change in a DNA base sequence
-D a temporary increase in leaf temperature alone
+D the crossing of two selected parents by a breeder
 
 ## Q8
 - id: 0610_T18_P1_20261018_Q8
@@ -166,9 +166,9 @@ D a temporary increase in leaf temperature alone
 Which set contains only sources of genetic variation?
 
 A mutation, meiosis and random fertilisation
-B exercise, memory and training
-C diet, injury and sunlight warming the skin
-D respiration, digestion and sweating
+B mutation, diet and exercise
+C meiosis, nutrition and climate
+D random fertilisation, temperature and light intensity
 
 ## Q9
 - id: 0610_T18_P1_20261018_Q9
@@ -185,10 +185,10 @@ D respiration, digestion and sweating
 
 Which feature best fits the definition of an adaptive feature?
 
-A any injury acquired during life
+A an injury acquired during life
 B an inherited feature increasing survival and reproduction in an environment
-C any feature that makes an organism larger
-D a change that always prevents reproduction
+C a feature learned during an organism's life
+D any inherited feature, whether or not it is useful
 
 ## Q10
 - id: 0610_T18_P1_20261018_Q10
@@ -203,12 +203,12 @@ D a change that always prevents reproduction
 
 **Question**
 
-A nocturnal desert mammal avoids daytime heat. What is the most reasonable benefit of this behaviour?
+A nocturnal desert mammal avoids daytime heat. What is the most likely benefit of this behaviour?
 
-A elimination of all need for food
-B conversion of the mammal into a producer
-C reduced exposure to high temperatures and water loss
-D prevention of all genetic variation
+A it no longer needs to drink water
+B it avoids competition with every other species
+C it is less exposed to high temperatures and loses less water
+D it obtains more energy from each meal
 
 ## Q11
 - id: 0610_T18_P1_20261018_Q11
@@ -225,9 +225,9 @@ D prevention of all genetic variation
 
 Which feature is most useful for reducing transpiration in a xerophyte?
 
-A a very thin cuticle on every surface
-B permanently wide-open stomata
-C absence of any water storage in all conditions
+A a thin cuticle
+B a large number of stomata on the upper leaf surface
+C large, flat leaves with a large surface area
 D a thick waxy cuticle
 
 ## Q12
@@ -247,8 +247,8 @@ During natural selection, which individuals are most likely to contribute allele
 
 A those that survive and reproduce more successfully in that environment
 B those that need a new feature most urgently
-C those that always have the largest body
-D those selected only by a farmer
+C those with the largest body size
+D those chosen by humans for breeding
 
 ## Q13
 - id: 0610_T18_P1_20261018_Q13
@@ -266,7 +266,7 @@ D those selected only by a farmer
 Which action is selective breeding?
 
 A allowing every animal to mate without selection
-B giving all animals antibiotics to create useful mutations
+B treating all animals with growth hormones to increase yield
 C crossing animals chosen for high milk yield and selecting high-yielding offspring
 D changing an animal's genes by inserting a bacterial gene
 
@@ -287,7 +287,7 @@ A bacterial population becomes resistant after repeated antibiotic treatment. Wh
 
 A resistant variants survive treatment and reproduce
 B each bacterium chooses to become resistant
-C the antibiotic is a nutrient that all bacteria need
+C the antibiotic causes all bacteria to mutate and become resistant
 D all susceptible bacteria survive better than resistant ones
 
 ## Q15
@@ -307,7 +307,7 @@ What distinguishes artificial selection from natural selection?
 
 A Artificial selection produces no inherited changes.
 B Humans choose which individuals reproduce in artificial selection.
-C Natural selection always requires human choice.
+C Natural selection acts on acquired features rather than inherited ones.
 D Only artificial selection involves variation.
 
 ## Q16
@@ -346,7 +346,7 @@ A survey assigns people to blood groups A, B, AB and O.
 
 (a) Explain why these results show discontinuous variation. [2]
 
-(b) Describe the usual cause of discontinuous variation and contrast it with continuous variation. [2]
+(b) Describe the usual cause of discontinuous variation and compare this with the cause of continuous variation. [2]
 
 ## Q18
 - id: 0610_T18_P1_20261018_Q18
@@ -365,7 +365,7 @@ A student measures 40 leaves. Lengths range from 18 mm to 61 mm.
 
 (a) Calculate the range and identify the type of variation. [2]
 
-(b) State two steps that improve the reliability of comparisons between plants. [2]
+(b) The student wants to compare leaf length between two plants. State two steps that make this comparison fair and reliable. [2]
 
 ## Q19
 - id: 0610_T18_P1_20261018_Q19
@@ -441,7 +441,7 @@ Researchers record body length and seed shape in a pea population. Seed shape is
 
 (a) Describe how the two sets of phenotypes differ. [2]
 
-(b) Explain how each set should be recorded accurately. [2]
+(b) Describe how each type of data should be collected and recorded. [2]
 
 ## Q23
 - id: 0610_T18_P1_20261018_Q23
@@ -574,7 +574,7 @@ A wild grass population survives repeated droughts. A farmer separately breeds g
 
 (a) Explain how the wild population can become adapted to drought. [2]
 
-(b) Contrast how reproductive success is determined in the two populations. [2]
+(b) Compare how reproductive success is determined in the two populations. [2]
 
 ## Q30
 - id: 0610_T18_P1_20261018_Q30
@@ -593,4 +593,4 @@ A fish species produces many more young than can survive in a pond.
 
 (a) Explain why this can lead to a struggle for survival. [2]
 
-(b) Explain why this struggle does not make evolution a process of individual choice. [2]
+(b) Explain why survival in this struggle depends on inherited variation rather than on choices made by individual fish. [2]

@@ -6,13 +6,13 @@ batch_id: 0610_T19_P1_20261018
 - answer: B
 
 **Rationale**
-Sunlight supplies the principal energy input, captured by producers. Minerals and carbon dioxide supply materials rather than the main energy input.
+Sunlight supplies the principal energy input, captured by producers in photosynthesis. Mineral ions and carbon dioxide supply raw materials, not energy, and heat released by decomposers is energy leaving the system, not entering it.
 
 ## Q2
 - answer: D
 
 **Rationale**
-A producer makes organic nutrients, usually through photosynthesis. Rabbits and hawks consume organisms; the fungus is a decomposer.
+A producer makes its own organic nutrients, usually by photosynthesis, so grass is the producer. Rabbits and hawks are consumers; the fungus is a decomposer.
 
 ## Q3
 - answer: A
@@ -24,7 +24,7 @@ The grasshopper is a primary consumer feeding on the producer. The lizard eats t
 - answer: C
 
 **Rationale**
-Decomposers obtain energy from dead or waste organic material. Photosynthesis identifies producers and grazing identifies herbivores.
+Decomposers obtain energy from dead or waste organic material. Photosynthesis identifies producers, grazing identifies herbivores, and absorbing mineral ions does not supply energy.
 
 ## Q5
 - answer: D
@@ -42,19 +42,19 @@ A food web links several chains and can show multiple food sources. It includes 
 - answer: C
 
 **Rationale**
-Removing predators reduces mortality of their small-fish prey, allowing those fish to increase. The other outcomes do not follow from the given relationships.
+Removing predators reduces mortality of their small-fish prey, allowing those fish to increase. Predation on small fish falls rather than rises, and more small fish would eat more water fleas, so water fleas would decrease, not increase.
 
 ## Q8
 - answer: A
 
 **Rationale**
-Biomass takes the amount of living material into account. Counts treat a tree and a small herbivore as one each; biomass is not itself an energy-flow rate.
+A pyramid of biomass takes the amount of living material at each level into account, so it is not inverted. A pyramid of numbers counts a tree and a small herbivore as one each; biomass does not assume equal mass, is not an energy-flow rate per year and does include the producer level.
 
 ## Q9
 - answer: B
 
 **Rationale**
-Consumers respire and energy is eventually transferred as heat. Animal muscle cells do not photosynthesise, and energy is not all returned to producers.
+Respiration releases energy from food and much of it is eventually transferred to the environment as heat. Digestion breaks food into small molecules without transferring energy out of the body, growth stores chemical energy in new tissue, and consumers do not photosynthesise.
 
 ## Q10
 - answer: C
@@ -66,13 +66,13 @@ Energy transfer is inefficient, leaving less available at higher levels. This li
 - answer: D
 
 **Rationale**
-Cattle use energy in respiration and do not convert all crop material into edible tissue. Direct consumption avoids an additional transfer step.
+Cattle use energy in respiration and lose energy in faeces and urine, so they store only a small fraction of the crop energy. Direct consumption avoids this additional transfer step. Humans digest plant material less well than cattle, and plants do respire.
 
 ## Q12
 - answer: A
 
 **Rationale**
-Nitrogen fixation converts atmospheric nitrogen into compounds. Denitrification releases nitrogen gas, while evaporation and carbohydrate combustion do not fix it.
+Nitrogen fixation converts nitrogen gas into nitrogen compounds such as ammonium ions. Denitrification does the reverse, releasing nitrogen gas; nitrification converts ammonium ions to nitrate ions, and decomposition converts protein to ammonium ions. Neither of the last two starts from nitrogen gas.
 
 ## Q13
 - answer: C
@@ -90,7 +90,7 @@ A community includes all the populations of different species. One species is a 
 - answer: B
 
 **Rationale**
-Disease can increase mortality or reduce reproduction and therefore limit population growth. It does not create resources or make animals producers.
+Disease increases mortality or reduces reproduction and therefore limits population growth. It does not make survivors reproduce faster, it is not restricted to old deer, and a disease of deer does not kill their predators.
 
 ## Q16
 **(a)** [2]
@@ -108,15 +108,16 @@ Disease can increase mortality or reduce reproduction and therefore limit popula
 
 ## Q17
 **(a)** [2]
-- Pondweed → snail. (1)
-- Snail → fish → heron, completing the chain in this order. (1)
+- pondweed → snail → fish → heron, with all four organisms in the correct order (1)
+- arrows pointing from the organism eaten to the organism that eats it (1)
+- REJECT: arrows pointing towards the producer
 
 **(b)** [2]
 - Pondweed is the producer. (1)
 - The heron is the tertiary consumer. (1)
 
 **Worked solution**
-(a) Pondweed → snail. Snail → fish → heron, completing the chain in this order.
+(a) pondweed → snail → fish → heron. The chain starts with the producer and each arrow points from the organism being eaten to the organism that eats it, showing the direction of energy transfer.
 
 (b) Pondweed is the producer. The heron is the tertiary consumer.
 
@@ -166,6 +167,7 @@ Disease can increase mortality or reduce reproduction and therefore limit popula
 **(a)** [2]
 - Counting gives each tree and each insect equal weight. (1)
 - It ignores the much greater amount of living material in one tree. (1)
+- ALLOW: a pyramid of numbers would be inverted / top-heavy, suggesting too few producers
 
 **(b)** [2]
 - Biomass accounts for differences in organism size. (1)
@@ -192,8 +194,9 @@ Disease can increase mortality or reduce reproduction and therefore limit popula
 
 ## Q23
 **(a)** [2]
-- 2700 divided by 18 000 gives 0.15. (1)
-- Multiplying by 100 gives 15%. (1)
+- 2700 ÷ 18 000 (× 100) (1)
+- = 15% (1)
+- ALLOW: 2 marks for correct answer with no working
 
 **(b)** [2]
 - Not all plant material is eaten or digested. (1)
@@ -240,6 +243,7 @@ Disease can increase mortality or reduce reproduction and therefore limit popula
 **(b)** [2]
 - Respiration by plants, animals or decomposers. (1)
 - Combustion of wood or fossil fuels. (1)
+- ALLOW: decomposition (by decomposers) as one of the two processes
 
 **Worked solution**
 (a) Plants absorb carbon dioxide during photosynthesis. Herbivores obtain carbon compounds by feeding on plants.

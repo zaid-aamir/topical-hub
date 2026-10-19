@@ -25,10 +25,10 @@ generator_model: "GPT-6 (Codex)"
 
 What is the principal source of energy entering most biological systems?
 
-A soil minerals
+A mineral ions in the soil
 B the Sun
-C decomposers creating new energy
-D carbon dioxide alone
+C heat released by decomposers
+D carbon dioxide in the air
 
 ## Q2
 - id: 0610_T19_P1_20261018_Q2
@@ -45,10 +45,10 @@ D carbon dioxide alone
 
 Which organism is a producer in a grassland?
 
-A a rabbit eating grass
-B a hawk eating a rabbit
-C a fungus decomposing dead grass
-D grass making organic nutrients by photosynthesis
+A a rabbit
+B a hawk
+C a fungus growing on dead grass
+D grass
 
 ## Q3
 - id: 0610_T19_P1_20261018_Q3
@@ -88,7 +88,7 @@ Which feeding description identifies a decomposer?
 A making glucose directly from sunlight
 B eating only living green leaves
 C obtaining energy from dead or waste organic material
-D absorbing sunlight without using organic material
+D absorbing mineral ions from the soil
 
 ## Q5
 - id: 0610_T19_P1_20261018_Q5
@@ -103,7 +103,7 @@ D absorbing sunlight without using organic material
 
 **Question**
 
-A mammal eats only other animals. How is it described?
+One species of mammal eats only other animals. How is this mammal described?
 
 A herbivore
 B producer
@@ -146,9 +146,9 @@ D It shows that energy cycles endlessly.
 Humans remove most predatory fish from a lake. Their main prey are small fish that eat water fleas. What immediate change is most likely, all else unchanged?
 
 A a decrease in small fish caused by more predation
-B the extinction of all producers within a day
+B an increase in water fleas
 C an increase in small fish
-D conversion of water fleas into producers
+D no change in the number of small fish
 
 ## Q8
 - id: 0610_T19_P1_20261018_Q8
@@ -163,7 +163,7 @@ D conversion of water fleas into producers
 
 **Question**
 
-A single large tree supports thousands of small herbivores. Why can biomass represent this chain better than organism counts?
+A single large tree supports thousands of small herbivores. Why does a pyramid of biomass represent this food chain better than a pyramid of numbers?
 
 A It accounts for the large differences in organism size.
 B It assumes every organism has the same mass.
@@ -183,12 +183,12 @@ D It ignores producer material.
 
 **Question**
 
-Which process transfers energy from a consumer to the environment during life?
+Which process in a living consumer transfers energy from the consumer to the environment?
 
-A photosynthesis in its muscle cells
-B respiration releasing energy that is ultimately transferred as heat
-C creation of new sunlight
-D return of all its energy directly to the producer
+A digestion
+B respiration
+C growth
+D photosynthesis
 
 ## Q10
 - id: 0610_T19_P1_20261018_Q10
@@ -225,9 +225,9 @@ D All organisms are the same size.
 
 Why can feeding crop plants directly to humans be more energy efficient than feeding them first to cattle?
 
-A Cattle produce extra energy from nothing.
-B Humans cannot digest any crop plants.
-C Crops have no chemical energy until cattle eat them.
+A Cattle store all of the energy in the crops they eat.
+B Humans digest plant material more efficiently than cattle do.
+C Crop plants do not respire, so they lose no energy.
 D It avoids energy losses at the cattle trophic level.
 
 ## Q12
@@ -247,8 +247,8 @@ Which process converts nitrogen gas into nitrogen compounds that can enter livin
 
 A nitrogen fixation
 B denitrification
-C evaporation
-D combustion of all carbohydrates
+C nitrification
+D decomposition
 
 ## Q13
 - id: 0610_T19_P1_20261018_Q13
@@ -305,10 +305,10 @@ D all water molecules in a lake
 
 A new disease spreads in a crowded deer population. What is its likely direct effect on population growth?
 
-A an increase because all deer become producers
-B a reduction because more deer die or reproduce less successfully
-C no possible effect on survival
-D an unlimited increase in food supply
+A an increase, because the survivors reproduce faster
+B a reduction, because more deer die or reproduce less successfully
+C no effect, because disease only affects old deer
+D an increase, because the disease kills the deer's predators
 
 ## Q16
 - id: 0610_T19_P1_20261018_Q16
@@ -327,7 +327,7 @@ Sunlight enters a grassland food chain.
 
 (a) Describe how the energy first enters living organisms. [2]
 
-(b) Describe its movement through animals and its eventual destination. [2]
+(b) Describe how this energy moves through the animals in the food chain and where it is eventually transferred. [2]
 
 ## Q17
 - id: 0610_T19_P1_20261018_Q17
@@ -344,7 +344,7 @@ Sunlight enters a grassland food chain.
 
 Pondweed is eaten by snails. Snails are eaten by fish, which are eaten by herons.
 
-(a) State the food chain in the direction of energy transfer. [2]
+(a) Write out the food chain, using arrows to show the direction of energy transfer. [2]
 
 (b) Identify the producer and tertiary consumer. [2]
 
@@ -384,7 +384,7 @@ A hare eats leaves and a wildcat eats hares.
 
 (a) Explain why the hare is both a consumer and a herbivore. [2]
 
-(b) Explain why the wildcat is a carnivore and state its trophic role in this chain. [2]
+(b) Explain why the wildcat is a carnivore and state its trophic level in this chain. [2]
 
 ## Q20
 - id: 0610_T19_P1_20261018_Q20
@@ -456,11 +456,11 @@ An ecologist measures annual energy transfer at each trophic level.
 
 **Question**
 
-Plants contain 18 000 kJ of energy available in a measured interval. Herbivore production contains 2700 kJ from that input.
+In one year, the plants in a field contain 18 000 kJ of energy. The herbivores that feed on these plants store 2700 kJ of this energy in new tissue.
 
-(a) Calculate the percentage transferred into herbivore production. [2]
+(a) Calculate the percentage of the energy in the plants that is transferred to new herbivore tissue. [2]
 
-(b) Explain two reasons why the rest is not stored in herbivore production. [2]
+(b) Explain two reasons why the rest of the energy is not stored in new herbivore tissue. [2]
 
 ## Q24
 - id: 0610_T19_P1_20261018_Q24

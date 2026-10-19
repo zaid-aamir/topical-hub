@@ -131,7 +131,7 @@ Any hormone is a chemical substance made by a gland. It is carried by the blood 
 **(b)** [2]
 - hormone has to be secreted into / carried by the blood to the target organ (1)
 - nervous response uses (electrical) impulses that travel (quickly) along neurones (1)
-- ALLOW: blood travels more slowly than impulses along neurones (1)
+- ALLOW: blood travels more slowly than impulses along neurones, for either mark
 
 **(c)** [2]
 - X: less damage to the hand / skin is burned less / less time in contact with the hot tray (1)
@@ -178,7 +178,7 @@ Nervous responses start very quickly and are short-lived, while hormonal respons
 **(c)** [2]
 - more oxygen taken into the lungs / absorbed into the blood (1)
 - more (aerobic) respiration in the muscles / more energy released for muscle contraction (1)
-- ALLOW: more carbon dioxide removed (1)
+- more carbon dioxide removed (from the blood / muscles) (1)
 - max 2
 
 **(d)** [1]
@@ -256,7 +256,7 @@ As time without food increased, the insulin concentration fell from 14 to 5 arbi
 - regular measuring / monitoring of the blood glucose concentration (1)
 - control of diet, e.g. limiting carbohydrate / sugar intake or eating regular meals (1)
 - ALLOW: insulin pump for insulin injections
-- ALLOW: adjusting insulin dose or food intake when exercising (1)
+- adjusting insulin dose or food intake when exercising (1)
 - max 3
 
 **(b)** [2]
@@ -340,7 +340,7 @@ Gravitropism is a growth response towards or away from gravity, and phototropism
 - gravitropism (1)
 
 **(d)** [2]
-- any two from: type / species of seedling; temperature; volume of water given / moisture of compost; time / number of days; light intensity (for P and Q); number of seedlings; type of compost or growing medium; size of box (2)
+- any two from: type / species of seedling; temperature; volume of water given / moisture of compost; time / number of days; number of seedlings; type of compost or growing medium; size of box (2)
 - ALLOW: age of seedlings
 - 1 mark for each correct variable
 

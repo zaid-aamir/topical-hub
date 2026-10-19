@@ -72,7 +72,7 @@ The cornea refracts (bends) light as it enters the eye. The iris controls how mu
 - answer: C
 
 **Rationale**
-In bright light the pupil reflex makes the pupil smaller (its diameter decreases), so less light enters the eye and the retina is protected. Options A and B wrongly have the pupil getting wider, which happens in dim light. Option D is impossible because a smaller pupil lets in less light, not more.
+In bright light the pupil reflex makes the pupil smaller (its diameter decreases), and the effect of this change is that less light enters the eye than would otherwise, so the retina is protected. Options A and B wrongly have the pupil getting wider, which happens in dim light. Option D is impossible because a smaller pupil lets in less light, not more.
 
 ## Q12
 - answer: B
@@ -124,7 +124,7 @@ Cones are packed most densely at the centre of the retina (the fovea), and rods 
 
 **(a)** [1]
 - (in the) skin (of the foot / sole) (1)
-- IGNORE: "the foot" on its own
+- ALLOW: (sole of the) foot
 - REJECT: in the spinal cord / brain
 
 **(b)** [1]

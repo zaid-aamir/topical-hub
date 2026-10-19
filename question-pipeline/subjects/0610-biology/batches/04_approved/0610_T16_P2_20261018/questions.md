@@ -27,8 +27,8 @@ Which sperm structure releases substances that help it pass through the covering
 
 A flagellum
 B acrosome
-C nucleus alone
-D cell membrane alone
+C nucleus
+D cell membrane
 
 ## Q2
 - id: 0610_T16_P2_20261018_Q2
@@ -146,7 +146,7 @@ D It converts fetal blood into maternal blood.
 Which hormone is mainly responsible for development of male secondary sexual characteristics at puberty?
 
 A oestrogen
-B FSH alone
+B FSH
 C testosterone
 D progesterone
 
@@ -166,9 +166,9 @@ D progesterone
 What happens to the uterus lining during menstruation?
 
 A It breaks down and is shed.
-B It becomes a pollen tube.
-C It releases the egg from an ovary.
-D It is converted into sperm cells.
+B It thickens and develops more blood vessels.
+C It releases an egg into the oviduct.
+D It is maintained by a rising concentration of progesterone.
 
 ## Q9
 - id: 0610_T16_P2_20261018_Q9
@@ -305,10 +305,10 @@ D washing hands instead of using protection
 
 Which transmission route can infect an infant with HIV?
 
-A inheritance of an HIV allele from an uninfected parent
+A being hugged by an infected adult
 B transfer from an infected mother during breastfeeding
 C breathing the same air as an infected adult
-D receiving a clean blanket
+D sharing a drinking cup with an infected adult
 
 ## Q16
 - id: 0610_T16_P2_20261018_Q16
@@ -418,11 +418,11 @@ A pregnant woman is exposed to a toxin that can pass through the placenta.
 
 **Question**
 
-Some sperm have a damaged acrosome, while an egg has normal stored nutrients.
+In a sample of semen, some sperm have a damaged acrosome.
 
 (a) Explain why the damaged sperm may be less successful at fertilisation. [2]
 
-(b) Explain two functions of adaptations of the egg. [2]
+(b) Explain how two adaptive features of an egg cell help successful reproduction. [2]
 
 ## Q22
 - id: 0610_T16_P2_20261018_Q22
@@ -437,7 +437,7 @@ Some sperm have a damaged acrosome, while an egg has normal stored nutrients.
 
 **Question**
 
-A researcher compares sperm and egg cells without using pictures.
+A student compares human sperm and egg cells.
 
 (a) Describe two structural differences. [2]
 

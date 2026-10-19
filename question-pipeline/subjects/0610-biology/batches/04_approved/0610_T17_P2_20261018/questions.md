@@ -77,7 +77,7 @@ D a cell that can form only pollen grains
 - subtopic_id: "17.3"
 - subtopic_name: "Meiosis"
 - syllabus_points: ["17.3.1"]
-- difficulty: 3
+- difficulty: 1
 - marks: 1
 - needs_diagram: false
 
@@ -143,12 +143,12 @@ D gamete
 
 **Question**
 
-Which genotype is heterozygous?
+Which description applies to a heterozygous individual?
 
-A TT
-B tt
-C Tt
-D XX in a notation where only T and t are alleles of the stated gene
+A It has two identical dominant alleles of a gene.
+B It has two identical recessive alleles of a gene.
+C It has two different alleles of a gene.
+D It has only one allele of a gene.
 
 ## Q8
 - id: 0610_T17_P2_20261018_Q8
@@ -168,7 +168,7 @@ Allele B is dominant to b. Which genotype expresses the recessive feature?
 A bb
 B BB
 C Bb
-D B alone in a normal diploid body cell
+D both Bb and bb
 
 ## Q9
 - id: 0610_T17_P2_20261018_Q9
@@ -589,7 +589,7 @@ A person with blood group AB has children with a person with blood group O.
 
 **Question**
 
-In a monohybrid cross, two heterozygous parents produce 200 offspring. The dominant phenotype is complete and all genotypes survive equally.
+In a monohybrid cross, two heterozygous parents produce 200 offspring. Dominance is complete and all genotypes survive equally.
 
 (a) Calculate the expected numbers with dominant and recessive phenotypes. [2]
 

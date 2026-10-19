@@ -6,7 +6,7 @@ batch_id: 0610_T20_P1_20261018
 - answer: B
 
 **Rationale**
-Herbicides kill weeds and reduce competition for light, water and minerals. Fertilisers supply mineral ions; herbicides are not nutrients.
+Herbicides kill weeds, so the crop plants face less competition for light, water and mineral ions. A describes the effect of fertiliser, C the effect of insecticide and D the effect of irrigation; a herbicide does none of these.
 
 ## Q2
 - answer: D
@@ -24,7 +24,7 @@ High stocking density can facilitate disease spread. Intensive systems still req
 - answer: C
 
 **Rationale**
-Biodiversity here means the number of different species. Abundance of one species and environmental measurements are different quantities.
+Biodiversity is the number of different species that live in an area. A counts individuals rather than species, B is the population size of one species, and D counts habitats rather than species.
 
 ## Q5
 - answer: D
@@ -36,13 +36,13 @@ Clearing woodland removes habitat. Counting, seed banking and protection can sup
 - answer: B
 
 **Rationale**
-Removing trees reduces binding by roots and exposes soil to erosion. The alternatives do not describe a mechanism of soil loss.
+Tree roots hold soil particles together; once the trees are removed the loose soil is easily washed away by rain. A, C and D do not describe a mechanism that makes soil easier to wash away; in fact less evaporation from leaves leaves the soil wetter, not drier.
 
 ## Q7
 - answer: C
 
 **Rationale**
-Decomposers respire aerobically while breaking down organic material, using dissolved oxygen. Fish do not photosynthesise and oxygen is not converted into sunlight.
+Bacteria feeding on the sewage multiply and respire aerobically, using up the dissolved oxygen. Photosynthesis by algae adds oxygen rather than removing it, anaerobic respiration by fish is a consequence of low oxygen rather than its cause, and oxygen is not lost from a river by evaporation in this way.
 
 ## Q8
 - answer: A
@@ -95,11 +95,15 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 ## Q16
 **(a)** [2]
 - Machinery allows larger areas to be cultivated or harvested efficiently. (1)
+- ALLOW: ploughing, sowing or harvesting done faster / with fewer workers
 - Fertiliser supplies mineral ions needed for plant growth. (1)
+- ALLOW: named ions such as nitrate, phosphate, potassium / makes plants grow larger so greater yield
 
 **(b)** [2]
 - Insecticide reduces damage by insect pests. (1)
+- ALLOW: kills insects that eat the crop / improves quality as well as yield
 - Herbicide reduces competition with weeds for resources. (1)
+- ALLOW: competition for light, water, mineral ions or space
 
 **Worked solution**
 (a) Machinery allows larger areas to be cultivated or harvested efficiently. Fertiliser supplies mineral ions needed for plant growth.
@@ -109,11 +113,15 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 ## Q17
 **(a)** [2]
 - A single crop can be managed and harvested efficiently with machinery. (1)
+- ALLOW any one advantage: all plants have the same requirements / higher yield per area / lower cost / easier to apply fertiliser or pesticide
 - A pest or disease of that crop can spread through many plants. (1)
+- ALLOW any one disadvantage: reduced biodiversity / loss of habitats / soil mineral ions depleted / more fertiliser or pesticide needed
 
 **(b)** [2]
 - Controlled conditions and reduced movement can increase production efficiency. (1)
+- ALLOW any one advantage: more animals kept in a small area / animals grow faster because less energy is lost in movement or keeping warm / easier to control feeding and disease / cheaper meat, milk or eggs
 - Crowding can increase disease spread or cause welfare problems. (1)
+- ALLOW any one disadvantage: large amounts of waste can pollute water / antibiotics used routinely / high cost of feed and housing / land used to grow animal feed
 
 **Worked solution**
 (a) A single crop can be managed and harvested efficiently with machinery. A pest or disease of that crop can spread through many plants.
@@ -124,10 +132,13 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 **(a)** [2]
 - There are fewer suitable breeding sites. (1)
 - Reduced reproduction can cause the population to decline. (1)
+- ALLOW: the species may become endangered or extinct locally
 
 **(b)** [2]
 - Predators of the fish may lose an important food source. (1)
+- ALLOW: predator numbers fall or predators switch to other prey
 - Organisms eaten by the fish may increase when predation is reduced. (1)
+- ALLOW: competitors of the fish increase / effects pass further along the food chain
 
 **Worked solution**
 (a) There are fewer suitable breeding sites. Reduced reproduction can cause the population to decline.
@@ -155,7 +166,9 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 
 **(b)** [2]
 - A species may exist only in that habitat. (1)
+- ALLOW: endemic species / species with a very small range
 - If all its individuals lose the conditions needed to survive and reproduce, none may remain anywhere. (1)
+- ALLOW: no other populations exist elsewhere to replace it
 
 **Worked solution**
 (a) The decrease is 48 − 18 = 30 species. Biodiversity has decreased because fewer different species remain.
@@ -180,6 +193,7 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 **(a)** [2]
 - Animals may become entangled, restricting movement or causing injury. (1)
 - Ingested plastic may block the gut or reduce feeding. (1)
+- ALLOW any two: suffocation / toxic chemicals released from plastic / microplastics passed along food chains / habitat smothered by plastic
 
 **(b)** [2]
 - Decomposers do not readily break it down. (1)
@@ -211,7 +225,9 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 
 **(b)** [2]
 - Replant or regenerate harvested forest. (1)
+- ALLOW: felling quotas / protected areas of forest / education
 - Limit fish catches or protect breeding periods. (1)
+- ALLOW: catch quotas / closed seasons / controlled net type or larger mesh size / protected areas / monitoring
 
 **Worked solution**
 (a) They are replenished by growth or reproduction. Their removal must not exceed their replenishment over time.
@@ -226,6 +242,7 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 **(b)** [2]
 - Control the introduced predator and protect the bird's habitat. (1)
 - Use monitored captive breeding or protected breeding sites to increase survival and reproduction. (1)
+- ALLOW any two of: monitoring the population / protecting nesting sites / removing the predator / captive breeding and release / educating local people
 
 **Worked solution**
 (a) The predator increases mortality of birds or their young. If deaths exceed successful reproduction, the population decreases.
@@ -264,10 +281,12 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 **(a)** [2]
 - It reduces the risk of species becoming extinct. (1)
 - It retains genetic resources that may provide useful food, drugs or other products. (1)
+- ALLOW any two of: maintains or increases biodiversity / protects a vulnerable ecosystem / maintains ecosystem functions such as nutrient cycling
 
 **(b)** [2]
 - It helps maintain nutrient cycling by interacting organisms. (1)
 - It protects resource provision and the relationships supporting the community. (1)
+- ALLOW: named resources such as food, drugs, fuel or genes / habitat for many species / food webs kept intact
 
 **Worked solution**
 (a) It reduces the risk of species becoming extinct. It retains genetic resources that may provide useful food, drugs or other products.
@@ -292,6 +311,7 @@ Low variation can leave few resistant or tolerant variants when conditions chang
 **(a)** [2]
 - There may be few alleles conferring resistance to a new disease. (1)
 - There may be few variants suited to a changed climate or habitat. (1)
+- ALLOW: inbreeding makes harmful recessive alleles more likely to be expressed / population less able to adapt by natural selection
 
 **(b)** [2]
 - It preserves a wider range of inherited features. (1)

@@ -77,7 +77,7 @@ D enzymes
 - subtopic_id: "17.1"
 - subtopic_name: "Chromosomes, genes and proteins"
 - syllabus_points: ["17.1.4"]
-- difficulty: 3
+- difficulty: 1
 - marks: 1
 - needs_diagram: false
 
@@ -534,7 +534,7 @@ In a family, the first two children have normal XX sex chromosomes.
 
 A protein used as a membrane carrier has a different amino-acid order in two individuals.
 
-(a) State the genetic feature that specifies this order. [2]
+(a) State the genetic feature that specifies this order and suggest why it differs between the two individuals. [2]
 
 (b) Explain why the carrier might not work equally well in both individuals. [2]
 

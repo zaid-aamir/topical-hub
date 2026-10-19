@@ -83,7 +83,9 @@
     },
     "T18_P1": {
       "batch_id": "0610_T18_P1_20261018",
-      "status": "approved"
+      "status": "approved",
+      "verified": "2026-10-19",
+      "verifier_model": "Claude Fable 5.1"
     },
     "T19_P1": {
       "batch_id": "0610_T19_P1_20261018",

@@ -48,7 +48,7 @@ Testosterone promotes male secondary sexual characteristics. Oestrogen promotes 
 - answer: A
 
 **Rationale**
-Menstruation involves shedding the uterine lining. Release of an egg is ovulation, a separate event in an ovary.
+Menstruation is the breakdown and shedding of the uterus lining when no embryo implants. Thickening of the lining happens after menstruation, in the first half of the cycle; release of an egg is ovulation, which happens in an ovary; and during menstruation progesterone is falling, not rising, which is why the lining is not maintained.
 
 ## Q9
 - answer: B
@@ -90,7 +90,7 @@ A condom provides a barrier to infected body fluids. Antibiotics do not prevent 
 - answer: B
 
 **Rationale**
-HIV can be transmitted in breast milk. It is an infectious virus rather than an allele, and airborne contact and clean objects are not usual routes.
+HIV can be transmitted from an infected mother to her infant in breast milk (and also across the placenta or during birth). Hugging, breathing the same air and sharing cups or cutlery do not transmit HIV because the virus is carried in body fluids such as blood, semen and breast milk, not in air, saliva or skin contact.
 
 ## Q16
 **(a)** [2]
@@ -138,6 +138,8 @@ HIV can be transmitted in breast milk. It is an infectious virus rather than an 
 **(a)** [2]
 - Glucose is transferred. (1)
 - Amino acids are transferred. (1)
+- ALLOW: any other named dissolved nutrient, e.g. mineral ions, vitamins, fatty acids
+- REJECT: oxygen (a gas, not a nutrient)
 
 **(b)** [2]
 - Carbon dioxide moves towards the mother. (1)
@@ -180,6 +182,7 @@ HIV can be transmitted in breast milk. It is an infectious virus rather than an 
 **(a)** [2]
 - Sperm have a flagellum whereas eggs do not. (1)
 - Eggs have much larger nutrient stores and cytoplasm than sperm. (1)
+- ALLOW: sperm have an acrosome / many mitochondria whereas eggs do not; eggs have a jelly coat; eggs are much larger than sperm
 
 **(b)** [2]
 - Many sperm are produced compared with relatively few eggs. (1)
@@ -208,6 +211,7 @@ HIV can be transmitted in breast milk. It is an infectious virus rather than an 
 **(a)** [2]
 - An egg matures in a follicle. (1)
 - Ovulation releases the egg around the middle of the cycle. (1)
+- ALLOW: the empty follicle becomes a corpus luteum after ovulation
 
 **(b)** [2]
 - The lining thickens during the cycle. (1)
@@ -268,6 +272,7 @@ HIV can be transmitted in breast milk. It is an infectious virus rather than an 
 **(b)** [2]
 - HIV may pass during birth. (1)
 - HIV may pass through breast milk. (1)
+- ALLOW: HIV may pass across the placenta before birth
 
 **Worked solution**
 (a) Screening reduces the chance of transfusing blood containing HIV. Single-use needles prevent transfer of infected blood between patients.

@@ -100,6 +100,7 @@ The mRNA base sequence specifies the amino-acid sequence. Oxygen availability ca
 **(b)** [2]
 - An allele is an alternative form of a gene. (1)
 - Different alleles have differences in their DNA sequence. (1)
+- ALLOW: alleles are different versions / forms of the same gene; alleles have different DNA
 
 **Worked solution**
 (a) Chromosomes are made of DNA. A gene is a length of DNA that codes for a protein.
@@ -114,11 +115,19 @@ The mRNA base sequence specifies the amino-acid sequence. Oxygen availability ca
 **(b)** [2]
 - Eggs each contain an X chromosome. (1)
 - Sperm contain either X or Y, giving XX or XY after fertilisation. (1)
+- ALLOW: equal chance / 1 : 1 ratio of XX to XY
 
 **Worked solution**
-(a) The mother has XX. The father has XY.
+(a) Body cells are diploid, so each parent has a pair of sex chromosomes: the mother has XX and the father has XY.
 
-(b) Eggs each contain an X chromosome. Sperm contain either X or Y, giving XX or XY after fertilisation.
+(b) Gametes are haploid and carry only one sex chromosome. Every egg carries an X, because the mother has only X chromosomes to give. Half of the sperm carry an X and half carry a Y. The sex of the child therefore depends only on which sperm fertilises the egg.
+
+| | X (egg) |
+|---|---|
+| X (sperm) | XX (female) |
+| Y (sperm) | XY (male) |
+
+The two outcomes XX and XY are produced in a 1 : 1 ratio, so each pregnancy has an equal chance of a female or a male child.
 
 ## Q18
 **(a)** [2]
@@ -240,11 +249,19 @@ The mRNA base sequence specifies the amino-acid sequence. Oxygen availability ca
 **(b)** [2]
 - Fertilisation by an X-bearing or Y-bearing sperm is a new event. (1)
 - Each outcome remains approximately equally likely regardless of earlier children. (1)
+- ALLOW: 50% / 1 in 2 / 1 : 1 chance of XY for every child
 
 **Worked solution**
-(a) Some sperm contain X. Other sperm contain Y.
+(a) The father is XY, so when his gametes are made each sperm receives either the X or the Y chromosome. Half of the sperm carry X and half carry Y.
 
-(b) Fertilisation by an X-bearing or Y-bearing sperm is a new event. Each outcome remains approximately equally likely regardless of earlier children.
+(b) Every egg carries an X. Whether a child is XX or XY depends only on which type of sperm fertilises that egg:
+
+| | X (egg) |
+|---|---|
+| X (sperm) | XX |
+| Y (sperm) | XY |
+
+For every fertilisation the chance of XY is 1 in 2 (50%). Each fertilisation is a separate random event; the sperm "do not remember" the earlier children, so two XX children do not change the odds for the next one. An XY child is as likely as before, but it is never certain.
 
 ## Q27
 **(a)** [2]

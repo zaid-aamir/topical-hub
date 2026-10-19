@@ -126,8 +126,8 @@ D the joining of the two nuclei
 In a species, each gamete nucleus has 12 chromosomes. How many chromosomes does the zygote nucleus have immediately after normal fertilisation?
 
 A 6
-B 24
-C 12
+B 12
+C 24
 D 48
 
 ## Q7
@@ -166,9 +166,9 @@ D petal
 Which pollen feature is most likely to help attachment to an insect's body?
 
 A a spiky outer surface
-B a very smooth surface that prevents attachment
+B a smooth outer surface
 C a low mass that allows prolonged wind transport
-D a shape that prevents contact with insects
+D a very small size
 
 ## Q9
 - id: 0610_T16_P1_20261018_Q9
@@ -403,7 +403,7 @@ A crop breeder uses sexual reproduction to produce plants for a region with a ch
 
 (a) Explain one potential advantage of this method. [2]
 
-(b) Explain two disadvantages for producing a uniform crop rapidly. [2]
+(b) State two disadvantages of this method for a breeder who wants to produce a uniform crop rapidly. [2]
 
 ## Q21
 - id: 0610_T16_P1_20261018_Q21
@@ -515,7 +515,7 @@ A student compares equal numbers of viable seeds from the same species. Set A is
 
 A student places moist seeds in two containers at the same suitable temperature. One contains air; the other contains an oxygen-free gas.
 
-(a) State the expected result and the conclusion if only seeds supplied with air germinate. [2]
+(a) Predict the result of this investigation and state the conclusion that can be drawn. [2]
 
 (b) Suggest two further controls needed for a fair comparison. [2]
 
@@ -536,7 +536,7 @@ Pollen is transferred from flower X to flower Y on the same plant, and from flow
 
 (a) Classify each transfer and justify the classification. [2]
 
-(b) Describe the starting and receiving structures in both transfers. [2]
+(b) State the structure from which the pollen is transferred and the structure that receives it in these transfers. [2]
 
 ## Q28
 - id: 0610_T16_P1_20261018_Q28

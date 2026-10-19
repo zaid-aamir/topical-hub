@@ -42,13 +42,13 @@ Phenotype means observable features. Rr is the genotype; R and r are alleles, an
 - answer: C
 
 **Rationale**
-Heterozygous means two different alleles of one gene, here T and t. TT and tt are homozygous; the unrelated notation is not a genotype for this gene.
+Heterozygous means having two different alleles of a particular gene. Two identical alleles (dominant or recessive) describe homozygous genotypes, and a diploid individual carries two alleles of each gene, not one.
 
 ## Q8
 - answer: A
 
 **Rationale**
-The recessive feature is expressed when no dominant allele is present, as in bb. BB and Bb contain B; one allele alone is not the stated diploid genotype.
+The recessive feature is expressed only when no dominant allele is present, as in bb. BB and Bb both contain the dominant B, which is expressed whenever present, so Bb cannot show the recessive feature and option D is wrong.
 
 ## Q9
 - answer: B
@@ -96,10 +96,13 @@ Two aa parents produce only a gametes, so all offspring are aa. Crosses containi
 **(a)** [2]
 - Each daughter nucleus has 24 chromosomes. (1)
 - Copies of each replicated chromosome separate so each nucleus receives a complete set. (1)
+- ALLOW: chromosomes are exactly replicated / copied before mitosis
 
 **(b)** [2]
-- Growth by increasing cell number. (1)
-- Asexual reproduction or replacement of worn-out cells. (1)
+- growth (1)
+- replacement of cells / asexual reproduction (1)
+- ALLOW: any two of growth, replacement of cells, asexual reproduction
+- REJECT: repair of damaged tissue (given in the question)
 
 **Worked solution**
 (a) Each daughter nucleus has 24 chromosomes. Copies of each replicated chromosome separate so each nucleus receives a complete set.
@@ -124,6 +127,7 @@ Two aa parents produce only a gametes, so all offspring are aa. Crosses containi
 **(a)** [2]
 - Stem cells are unspecialised cells. (1)
 - They divide by mitosis to produce daughter cells. (1)
+- ALLOW: their daughter cells can become specialised for specific functions
 
 **(b)** [2]
 - The daughter cells become specialised. (1)
@@ -141,6 +145,7 @@ Two aa parents produce only a gametes, so all offspring are aa. Crosses containi
 
 **(b)** [2]
 - It halves the number of chromosome sets. (1)
+- ALLOW: 12 chromosomes reduced to 6
 - It changes a diploid nucleus to haploid nuclei. (1)
 
 **Worked solution**
@@ -225,6 +230,7 @@ Two aa parents produce only a gametes, so all offspring are aa. Crosses containi
 
 **(b)** [2]
 - The ratio is 1 red : 2 mixed red-and-white : 1 white. (1)
+- ALLOW: roan for mixed red-and-white
 - Both alleles contribute to the heterozygote's phenotype because they are codominant. (1)
 
 **Worked solution**
@@ -268,6 +274,7 @@ Two aa parents produce only a gametes, so all offspring are aa. Crosses containi
 **(b)** [2]
 - Both parents can pass on p. (1)
 - Some offspring will be pp and have white flowers. (1)
+- ALLOW: one quarter / 3 : 1 purple : white
 
 **Worked solution**
 (a) PP is consistent with the line. Two PP parents pass on P only, so all offspring are PP and purple.

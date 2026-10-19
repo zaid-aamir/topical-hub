@@ -700,7 +700,7 @@ They measured the mean angle by which the shoots bent away from the vertical.
 
 **Question**
 
-The clinostat is a piece of apparatus: a disc that turns slowly and continuously. Seedlings can be fixed to the disc.
+A clinostat is a piece of apparatus with a disc that turns slowly and continuously. Seedlings can be fixed to the disc.
 
 Two young bean seedlings, X and Y, each with a short straight root and shoot, were fixed so that the root and shoot were horizontal.
 

@@ -25,10 +25,10 @@ generator_model: "GPT-6 (Codex)"
 
 How can a herbicide increase crop yield?
 
-A by supplying every mineral ion directly
+A by supplying mineral ions to the crop plants
 B by reducing competition between weeds and crop plants
-C by increasing insect damage
-D by stopping all photosynthesis in the crop
+C by killing insect pests that damage the crop
+D by supplying extra water to the crop plants
 
 ## Q2
 - id: 0610_T20_P1_20261018_Q2
@@ -83,12 +83,12 @@ D guaranteed elimination of all welfare concerns
 
 **Question**
 
-Which measurement is the syllabus definition of biodiversity in an area?
+Which describes the biodiversity of an area?
 
-A the mass of the largest animal
-B the total number of individuals of one species
-C the number of different species
-D the amount of rainfall alone
+A the total number of organisms living in the area
+B the number of individuals of one species in the area
+C the number of different species living in the area
+D the number of different habitats in the area
 
 ## Q5
 - id: 0610_T20_P1_20261018_Q5
@@ -125,10 +125,10 @@ D clearing woodland to build houses
 
 Why can deforestation increase soil loss after rain?
 
-A There are always more roots after clearing.
+A The soil contains more mineral ions after clearing.
 B Roots no longer bind the soil effectively.
-C All rainwater is immediately converted to wood.
-D The soil becomes impossible to move.
+C Less water evaporates from leaves, so the soil becomes drier.
+D Decomposers break down the soil more quickly.
 
 ## Q7
 - id: 0610_T20_P1_20261018_Q7
@@ -145,10 +145,10 @@ D The soil becomes impossible to move.
 
 Untreated sewage enters a river and fish die after dissolved oxygen falls. Which process contributes most directly to oxygen loss?
 
-A photosynthesis by every fish
-B oxygen production by bacteria in all conditions
+A photosynthesis by algae in the river
+B anaerobic respiration by the fish
 C aerobic respiration by decomposers
-D conversion of oxygen into sunlight
+D evaporation of oxygen from the river surface
 
 ## Q8
 - id: 0610_T20_P1_20261018_Q8
@@ -323,7 +323,7 @@ D Disease can no longer spread.
 
 **Question**
 
-A farmer uses machinery, fertiliser and insecticide to increase production.
+A farmer uses machinery, fertiliser, insecticide and herbicide to increase production.
 
 (a) Describe how machinery and fertiliser can improve yield. [2]
 
@@ -465,10 +465,10 @@ A region burns more fossil fuel and expands cattle farming.
 ## Q24
 - id: 0610_T20_P1_20261018_Q24
 - type: structured
-- tier: core
+- tier: supplement
 - subtopic_id: "20.4"
 - subtopic_name: "Conservation"
-- syllabus_points: ["20.4.1", "20.4.2"]
+- syllabus_points: ["20.4.1", "20.4.2", "20.4.5", "20.4.6"]
 - difficulty: 3
 - marks: 4
 - needs_diagram: false

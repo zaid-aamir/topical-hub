@@ -242,14 +242,14 @@ Which row correctly matches a part of the eye with its function?
 
 Someone walks out of a dark room into bright sunlight.
 
-Which row shows what happens to the diameter of their pupils and to the amount of light entering each eye?
+Which row shows the change in the diameter of their pupils and the effect of this change on the amount of light entering each eye?
 
-|   | pupil diameter | amount of light entering the eye |
+|   | change in pupil diameter | effect of this change on the amount of light entering the eye |
 |---|---|---|
-| A | increases | more |
-| B | increases | less |
-| C | decreases | less |
-| D | decreases | more |
+| A | increases | more light enters |
+| B | increases | less light enters |
+| C | decreases | less light enters |
+| D | decreases | more light enters |
 
 ## Q12
 - id: 0610_T14_P1_20261013_Q12
@@ -460,7 +460,7 @@ receptor in the skin → sensory neurone → relay neurone → motor neurone →
 
 (b) State what is meant by a synapse. [1]
 
-(c) Determine the number of synapses in this pathway. [1]
+(c) Determine the number of synapses between neurones in this pathway. [1]
 
 (d) State the part of the central nervous system where the relay neurone in this pathway is found. [1]
 

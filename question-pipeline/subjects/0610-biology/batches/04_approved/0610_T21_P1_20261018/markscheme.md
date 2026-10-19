@@ -6,7 +6,7 @@ batch_id: 0610_T21_P1_20261018
 - answer: B
 
 **Rationale**
-Rapid reproduction increases the number of producing cells, and bacteria can synthesise complex molecules. They have genetic material and require nutrients.
+Rapid reproduction increases the number of producing cells, and bacteria can synthesise complex molecules. Bacteria have no nucleus, can make complex molecules such as proteins, and reproduce quickly, not slowly.
 
 ## Q2
 - answer: D
@@ -42,7 +42,7 @@ Lactase breaks down lactose into simpler sugars. The other enzymes act on differ
 - answer: C
 
 **Rationale**
-Respiration releases energy and can heat the culture. Cooling maintains conditions suited to growth and enzyme activity.
+Respiration releases energy and can heat the culture. Cooling keeps the temperature near the optimum for the enzymes; microorganisms release heat rather than absorbing it, cooling does not remove waste products, and enzymes do not work best at low temperatures.
 
 ## Q8
 - answer: A
@@ -54,7 +54,7 @@ Genetic modification directly removes, changes or inserts genes. Conventional se
 - answer: B
 
 **Rationale**
-The intended advantage is reduced damage from a particular pest. It does not remove water requirements or provide universal resistance.
+The intended advantage is reduced damage from a particular pest. It does not remove the need for fertiliser or water, and resistance to one pest does not give resistance to all diseases.
 
 ## Q10
 - answer: C
@@ -69,12 +69,13 @@ DNA ligase joins DNA fragments. Pectinase, lactase and proteases act on pectin, 
 
 **(b)** [2]
 - Many cells can be grown in a relatively short time. (1)
-- Each producing cell can contribute to the total amount of useful product. (1)
+- Because they can make complex molecules, the bacteria can make the protein once the gene is inserted, so the product builds up quickly. (1)
+- ALLOW: each producing cell contributes to the total amount of product
 
 **Worked solution**
 (a) Bacteria reproduce rapidly, increasing the number of producing cells. They can make complex molecules such as proteins.
 
-(b) Many cells can be grown in a relatively short time. Each producing cell can contribute to the total amount of useful product.
+(b) Because they reproduce rapidly, many cells can be grown in a relatively short time. Because they can make complex molecules such as proteins, each of these cells can make the useful protein once the gene is inserted, so a large amount of product builds up quickly.
 
 ## Q12
 **(a)** [2]
@@ -107,25 +108,29 @@ DNA ligase joins DNA fragments. Pectinase, lactase and proteases act on pectin, 
 ## Q14
 **(a)** [2]
 - The treated fruit is expected to release more juice. (1)
+- ALLOW: clearer / less cloudy juice
 - Pectinase breaks down pectin in the fruit tissue. (1)
+- ALLOW: pectin holds cell walls / cells together, so breaking it down releases the cell contents
 
 **(b)** [2]
-- The temperature and treatment duration. (1)
-- The mass and type of fruit, with the same crushing method. (1)
+- Any two of: temperature; time allowed for treatment; pH; volume of liquid (enzyme solution or water) added; method and extent of crushing; ripeness of the fruit. (1 each, max 2)
+- REJECT: mass of fruit or type of fruit, as these are stated as equal in the question
 
 **Worked solution**
 (a) The treated fruit is expected to release more juice. Pectinase breaks down pectin in the fruit tissue.
 
-(b) The temperature and treatment duration. The mass and type of fruit, with the same crushing method.
+(b) Only the presence of pectinase should differ between the two samples. Everything else that could affect the volume of juice must be kept the same, for example temperature, the time the fruit is left, the pH, the volume of liquid added, and how the fruit is crushed. The mass and type of fruit are already stated to be the same, so they do not count as extra variables here.
 
 ## Q15
 **(a)** [2]
 - Use equal amounts of each powder with the same water volume. (1)
 - Use the same washing temperature and duration on identical stained fabric. (1)
+- ALLOW: same pH; same amount of stirring or agitation; enzyme-free powder used as the comparison
 
 **(b)** [2]
 - Protease breaks large protein molecules into smaller products. (1)
 - These smaller products can be removed more easily during washing. (1)
+- ALLOW: amino acids / soluble products dissolve in the water and are washed away
 
 **Worked solution**
 (a) Use equal amounts of each powder with the same water volume. Use the same washing temperature and duration on identical stained fabric.
@@ -138,13 +143,14 @@ DNA ligase joins DNA fragments. Pectinase, lactase and proteases act on pectin, 
 - The products are the simpler sugars glucose and galactose. (1)
 
 **(b)** [2]
-- It reduces the lactose that would otherwise remain undigested. (1)
-- It allows people with lactose intolerance to consume the treated milk more comfortably. (1)
+- People with lactose intolerance can drink the milk without symptoms, because the lactose has already been broken down and does not pass undigested into the large intestine. (1)
+- They can still obtain the nutrients in milk, such as calcium and protein. (1)
+- ALLOW: the milk tastes sweeter, so less sugar needs to be added to milk products
 
 **Worked solution**
 (a) Lactase breaks down lactose. The products are the simpler sugars glucose and galactose.
 
-(b) It reduces the lactose that would otherwise remain undigested. It allows people with lactose intolerance to consume the treated milk more comfortably.
+(b) People who are lactose intolerant do not make enough lactase, so undigested lactose passes into the large intestine where bacteria ferment it, causing bloating and diarrhoea. Treating the milk with lactase first removes the lactose, so they can drink it without symptoms and still gain the calcium and protein that milk provides. The glucose and galactose also taste sweeter than lactose.
 
 ## Q17
 **(a)** [2]
@@ -182,6 +188,7 @@ DNA ligase joins DNA fragments. Pectinase, lactase and proteases act on pectin, 
 **(b)** [2]
 - The resistance gene might spread to related wild plants by cross-pollination. (1)
 - Repeated use of the same herbicide can select resistant weeds, reducing long-term effectiveness. (1)
+- ALLOW: reduced biodiversity because more weeds are killed; increased herbicide use; higher cost of seed or dependence on the seed company; concerns about long-term effects on health; max 2
 
 **Worked solution**
 (a) Herbicide can kill weeds while the resistant crop survives. Reduced weed competition can increase crop yield.
@@ -196,6 +203,7 @@ DNA ligase joins DNA fragments. Pectinase, lactase and proteases act on pectin, 
 **(b)** [2]
 - The effects on other organisms and gene transfer to related plants should be considered. (1)
 - Seed cost or dependence on a seed supplier may disadvantage some farmers. (1)
+- ALLOW: safety testing for allergens or toxicity; public acceptance and labelling; max 2
 
 **Worked solution**
 (a) Consumers may obtain more of a needed nutrient from their staple food. Farmers may obtain a more valuable crop if demand for the improved variety is higher.
