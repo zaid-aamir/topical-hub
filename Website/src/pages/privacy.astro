@@ -6,7 +6,7 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
 ---
 <BaseLayout
   title={`Privacy | ${SITE_NAME}`}
-  description={`${SITE_NAME} has no accounts, no cookies, no analytics and no ads. The only thing stored is your light or dark theme choice, in your own browser.`}
+  description={`${SITE_NAME} has no accounts, no cookies and no ads; privacy-friendly visit counting only. The only thing stored is your light or dark theme choice, in your own browser.`}
   canonicalPath="/privacy/"
 >
   <div class="shell">
@@ -18,9 +18,28 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
       <ul>
         <li>No accounts. There is nothing to sign up for or log in to.</li>
         <li>No cookies.</li>
-        <li>No analytics or tracking scripts of any kind.</li>
         <li>No ads in this version of the site.</li>
         <li>No record of which questions you open or how you answer them. A page's "correct" count lives in memory and is gone when you leave the page.</li>
+      </ul>
+
+      <h2>Analytics</h2>
+      <p>
+        The site uses Cloudflare Web Analytics to count visits and see which pages are used and how fast they
+        load.
+      </p>
+      <ul>
+        <li>
+          It does not use cookies and stores nothing in your browser. Cloudflare says it does not fingerprint
+          visitors by IP address, browser or any other data.
+        </li>
+        <li>
+          The site owner sees only totals, such as page views, which pages are popular, referring sites,
+          countries and device types, never who you are.
+        </li>
+        <li>
+          The script loads from <code>static.cloudflareinsights.com</code>. Cloudflare handles the data under
+          its <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>.
+        </li>
       </ul>
 
       <h2>The one thing stored</h2>

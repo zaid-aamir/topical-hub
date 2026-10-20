@@ -81,7 +81,7 @@ Print pages
 ## Conventions
 
 - TypeScript strict. No `any` without a comment.
-- No external requests at runtime: fonts are bundled, no analytics, no CDN scripts.
+- No external requests from site code: fonts are bundled, no CDN scripts, no analytics code in the repo. The only third-party script is Cloudflare Web Analytics' cookieless beacon (`static.cloudflareinsights.com`), which Cloudflare injects when analytics is enabled for the Pages project; the privacy page describes it.
 - All client JavaScript lives in `<script>` tags inside the owning `.astro` component (Astro bundles them) or in `src/scripts/*.ts` imported from one. Target under 10 KB per page.
 - `set:html` is only ever fed by `mdBlock` / `mdInline` output or by `applyChem` / `applyPowers` output. Never by raw content.
 - Commit messages: short imperative, e.g. "Add content parser with validation".

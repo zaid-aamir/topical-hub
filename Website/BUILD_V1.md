@@ -4,7 +4,7 @@ This replaces the original one-run build prompt. The site is implemented; do not
 
 ## Delivered scope
 
-- Static Astro output, strict TypeScript, plain CSS and small vanilla client scripts; no UI framework, backend, accounts, database, ads or analytics.
+- Static Astro output, strict TypeScript, plain CSS and small vanilla client scripts; no UI framework, backend, accounts, database or ads. Cloudflare Web Analytics (cookieless) is enabled at the host, not in the code.
 - Original exam-style questions for Cambridge IGCSE Chemistry 0620, syllabus 2026–2028: 12 topics, 360 questions (180 MCQ and 180 structured).
 - Home page with subject selection; Chemistry subject page with topic cards. Counts are computed at build time. Biology is also connected: 21 topics, 24 owner-approved batches, 590 questions. Physics remains unconnected.
 - Topic pages with tier, type and subtopic filters, one-attempt MCQ marking and a session-only score, hidden answer panels, worked solutions and error-report links.
