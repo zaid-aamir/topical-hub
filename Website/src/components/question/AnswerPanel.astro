@@ -8,15 +8,17 @@
  * worked solution.
  */
 import type { Question } from '../../content';
+import type { MarkdownOptions } from '../../lib/markdown';
 import { mdBlock } from '../../lib/markdown';
 import MarkScheme from './MarkScheme.astro';
 
 interface Props {
-  chem?: boolean;
+  /** Display formatting of the subject (subjectFormat in src/lib/markdown.ts). */
+  format?: MarkdownOptions;
   question: Question;
 }
 
-const { question, chem = true } = Astro.props;
+const { question, format = {} } = Astro.props;
 ---
 {
   question.type === 'mcq' ? (
@@ -24,15 +26,15 @@ const { question, chem = true } = Astro.props;
       <p class="ms-answer">Answer: {question.answer}</p>
       <section class="worked-solution">
         <h3 class="ws-heading">{question.workedSolution !== undefined ? 'Worked solution' : 'Explanation'}</h3>
-        <Fragment set:html={mdBlock(question.workedSolution ?? question.rationale, { chem })} />
+        <Fragment set:html={mdBlock(question.workedSolution ?? question.rationale, format)} />
       </section>
     </>
   ) : (
     <>
-      <MarkScheme chem={chem} parts={question.markScheme} />
+      <MarkScheme format={format} parts={question.markScheme} />
       <section class="worked-solution">
         <h3 class="ws-heading">Worked solution</h3>
-        <Fragment set:html={mdBlock(question.workedSolution, { chem })} />
+        <Fragment set:html={mdBlock(question.workedSolution, format)} />
       </section>
     </>
   )

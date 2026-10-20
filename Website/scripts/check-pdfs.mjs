@@ -3,8 +3,8 @@
  * check-pdfs.mjs: the stale-PDF guard, run first by `npm run build`.
  *
  * Recomputes the hash of every input that affects the downloadable PDFs (see pdf-manifest.mjs) and
- * compares it with public/pdfs/manifest.json; also checks that all 24 PDFs exist and match the
- * manifest. Fails the build with "PDFs are out of date: run npm run pdfs and commit the PDFs." when
+ * compares it with public/pdfs/manifest.json; also checks that every topic PDF of every subject
+ * exists and matches the manifest. Fails the build with "PDFs are out of date: run npm run pdfs and commit the PDFs." when
  * they do not. Plain Node, no Chromium, so it runs on the Cloudflare Pages build machine.
  */
 import path from 'node:path';

@@ -5,22 +5,22 @@
  * so the render audit can locate each question.
  */
 import type { Question } from '../../content';
-import { mdBlock } from '../../lib/markdown';
+import { mdBlock, subjectFormat } from '../../lib/markdown';
 import QuestionHead from './QuestionHead.astro';
 import McqOptions from './McqOptions.astro';
 import StructuredParts from './StructuredParts.astro';
 
-import { SUBJECT, type Subject } from '../../config';
+import type { Subject } from '../../config';
 import { questionAnchor } from '../../lib/question-anchor';
 
 interface Props {
-  subject?: Subject;
+  subject: Subject;
   question: Question;
 }
 
-const { question, subject = SUBJECT } = Astro.props;
+const { question, subject } = Astro.props;
 const anchor = questionAnchor(question, subject);
-const chem = subject.path === SUBJECT.path;
+const format = subjectFormat(subject);
 const stemId = `${anchor}-stem`;
 ---
 <article
@@ -33,12 +33,12 @@ const stemId = `${anchor}-stem`;
 >
   <QuestionHead question={question} />
   <div class="question-body">
-    {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem, { chem })} />}
+    {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem, format)} />}
     {
       question.type === 'mcq' ? (
-        <McqOptions chem={chem} question={question} stemId={stemId} interactive={false} />
+        <McqOptions format={format} question={question} stemId={stemId} interactive={false} />
       ) : (
-        <StructuredParts chem={chem} question={question} lines />
+        <StructuredParts format={format} question={question} lines />
       )
     }
   </div>

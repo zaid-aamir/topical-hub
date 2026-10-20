@@ -8,17 +8,18 @@ import type { Question } from '../../content';
 import QuestionHead from './QuestionHead.astro';
 import AnswerPanel from './AnswerPanel.astro';
 
-import { SUBJECT, type Subject } from '../../config';
+import type { Subject } from '../../config';
 import { questionAnchor } from '../../lib/question-anchor';
+import { subjectFormat } from '../../lib/markdown';
 
 interface Props {
-  subject?: Subject;
+  subject: Subject;
   question: Question;
 }
 
-const { question, subject = SUBJECT } = Astro.props;
+const { question, subject } = Astro.props;
 const anchor = questionAnchor(question, subject);
-const chem = subject.path === SUBJECT.path;
+const format = subjectFormat(subject);
 ---
 <article
   class="question"
@@ -30,6 +31,6 @@ const chem = subject.path === SUBJECT.path;
 >
   <QuestionHead question={question} />
   <div class="question-body">
-    <AnswerPanel chem={chem} question={question} />
+    <AnswerPanel format={format} question={question} />
   </div>
 </article>

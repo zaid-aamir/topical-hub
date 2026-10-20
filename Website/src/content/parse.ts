@@ -584,8 +584,11 @@ export interface ParsedMarkschemeFile {
 const ANSWER_LINE = /^- answer:(?:\s+(.*))?$/;
 const RATIONALE_MARKER = '**Rationale**';
 const WORKED_MARKER = '**Worked solution**';
-/** `**(a)** [2]`, `**(b)(i)** [1]`, `**(a)**`, `**(i)** [1]`, `**(c)** [2] any two from:` */
-const PART_HEAD = /^\*\*\(([a-z]+)\)(?:\(([ivx]+)\))?\*\*\s*(?:\[(\d+)\])?\s*(.*)$/;
+/**
+ * `**(a)** [2]`, `**(b)(i)** [1]`, `**(a)**`, `**(i)** [1]`, `**(c)** [2] any two from:`, and
+ * `**(c)** **(i)** [1]` (one Physics batch bolds the two labels separately; same as `**(c)(i)**`).
+ */
+const PART_HEAD = /^\*\*\(([a-z]+)\)(?:\(([ivx]+)\)|\*\*\s+\*\*\(([ivx]+)\))?\*\*\s*(?:\[(\d+)\])?\s*(.*)$/;
 const BULLET = /^(\s*)- (.*)$/;
 const KEYWORD = /^(ALLOW|REJECT|IGNORE|ECF)\b/;
 
@@ -647,7 +650,8 @@ function parseStructuredEntry(number: number, lines: string[]): ParsedStructured
     }
     const head = PART_HEAD.exec(line);
     if (head) {
-      const [, first, second, marks, note] = head;
+      const [, first, joined, split, marks, note] = head;
+      const second = joined ?? split;
       let key: string;
       if (second) {
         key = `${first}.${second}`;

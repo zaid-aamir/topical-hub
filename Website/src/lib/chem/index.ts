@@ -9,5 +9,5 @@
  * src/lib/markdown.ts. These functions themselves never look at the switch.
  */
 export { formatChem } from './formatChem';
-export { applyChem } from './applyChem';
+export { applyChem, mapTextNodes } from './applyChem';
 export { ELEMENTS, ELEMENT_SET, isElement } from './elements';

@@ -1,19 +1,17 @@
-/** Shared PDF planning and integrity guard for Chemistry and Biology.
- * Both source trees (questions.md / markscheme.md only), shared print templates,
+/** Shared PDF planning and integrity guard for every subject in SUBJECTS (src/config.ts).
+ * Every subject's source tree (questions.md / markscheme.md only), the shared print templates,
  * rendering code, layout/styles and config are hashed with normalised newlines.
  * The guard runs in plain Node; only explicit generation requires Chromium.
+ * src/config.ts is imported directly: it has no imports and only erasable TypeScript, which
+ * Node (>= 22.18) runs without a build step.
  */
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { SUBJECTS } from '../src/config.ts';
 
-/** Where the approved content lives, relative to the repository root (same as src/content/load.ts). */
-export const CONTENT_SUBPATH = 'igcse-chem-pipeline/pipeline/04_approved';
-/** URL path of the subject, as in src/config.ts SUBJECT.path. */
-export const SUBJECT_PATH = 'igcse/chemistry-0620';
-export const BIOLOGY_CONTENT_SUBPATH = 'question-pipeline/subjects/0610-biology/batches/04_approved';
-export const BIOLOGY_SUBJECT_PATH = 'igcse/biology-0610';
+export { SUBJECTS };
 /** Folder under public/ (and URL path) of the PDFs. */
 export const PDF_URL_DIR = 'pdfs';
 export const MANIFEST_NAME = 'manifest.json';
@@ -41,6 +39,8 @@ export const WEBSITE_INPUT_FILES = [
   'src/components/question/labels.ts',
   'src/lib/markdown.ts',
   'src/lib/question-anchor.ts',
+  'src/lib/power.ts',
+  'src/lib/subjects.ts',
   'src/config.ts',
   'src/layouts/BaseLayout.astro',
   'src/styles/tokens.css',
@@ -52,7 +52,6 @@ export const WEBSITE_INPUT_FILES = [
 /** Website folders (relative to Website/) whose source files all shape the PDFs: parser and chemistry formatting. */
 export const WEBSITE_INPUT_DIRS = ['src/content', 'src/lib/chem'];
 const SOURCE_EXTENSIONS = new Set(['.ts', '.mts', '.js', '.mjs', '.astro', '.css', '.json']);
-const BATCH_DIR_RE = /^(?:T\d{2}_|0610_T\d{2}_)/;
 const MAX_LEVELS_UP = 4;
 
 /** Same rule as src/content/slug.ts: lower-case, letters and digits kept, every other run becomes one hyphen. */
@@ -63,11 +62,17 @@ export function slugify(name) {
     .replace(/^-+|-+$/g, '');
 }
 
+/** @param {string} prefix batch-folder prefix, e.g. "0625_" */
+function batchDirPattern(prefix) {
+  return new RegExp(`^${prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}T\\d{2}_`);
+}
+
 /**
  * @param {string} slug topic slug, e.g. "electrochemistry"
  * @param {string} kind "questions" or "mark-scheme"
+ * @param {string} subjectPath subject URL path, e.g. "igcse/chemistry-0620"
  */
-export function pdfFileName(slug, kind, subjectPath = SUBJECT_PATH) {
+export function pdfFileName(slug, kind, subjectPath) {
   return `topical-hub-${subjectPath.replace(/\//g, '-')}-${slug}-${kind}.pdf`;
 }
 
@@ -90,39 +95,45 @@ function isDirectory(p) {
 }
 
 /**
- * CONTENT_DIR if set, else the first igcse-chem-pipeline/pipeline/04_approved at or above startDir.
+ * The subject's content folder: process.env[subject.contentDirEnv] if set, else the first
+ * subject.contentSubpath at or above startDir (same rule as src/content/load.ts).
  * @param {string} startDir
+ * @param {{ contentSubpath: string, contentDirEnv: string }} subject
  */
-export function findContentDir(startDir, subpath = CONTENT_SUBPATH) {
-  const env = subpath === CONTENT_SUBPATH ? process.env.CONTENT_DIR : process.env.BIOLOGY_CONTENT_DIR;
+export function findContentDir(startDir, subject) {
+  const env = process.env[subject.contentDirEnv];
   if (env) return path.resolve(env);
   let dir = path.resolve(startDir);
   for (let level = 0; level <= MAX_LEVELS_UP; level += 1) {
-    const candidate = path.join(dir, ...subpath.split('/'));
+    const candidate = path.join(dir, ...subject.contentSubpath.split('/'));
     if (isDirectory(candidate)) return candidate;
     const parent = path.dirname(dir);
     if (parent === dir) break;
     dir = parent;
   }
-  throw new Error(`Could not find ${CONTENT_SUBPATH} at or above ${startDir}. Set CONTENT_DIR.`);
+  throw new Error(`Could not find ${subject.contentSubpath} at or above ${startDir}. Set ${subject.contentDirEnv}.`);
 }
 
 /**
- * The topics, from the batch folders' questions.md frontmatter, sorted by folder name.
+ * A subject's topics, from the batch folders' questions.md frontmatter; a topic's parts merge in
+ * numeric part order.
  * @param {string} contentDir
- * @returns {{ batch: string, topicName: string, slug: string }[]}
+ * @param {{ path: string, batchPrefix: string }} subject
+ * @returns {{ batch: string, batches: string[], topicName: string, slug: string, part: number, subjectPath: string }[]}
  */
-export function listTopics(contentDir, subjectPath = SUBJECT_PATH) {
+export function listTopics(contentDir, subject) {
+  const pattern = batchDirPattern(subject.batchPrefix);
   const batches = fs.readdirSync(contentDir, { withFileTypes: true })
-    .filter((e) => e.isDirectory() && BATCH_DIR_RE.test(e.name))
+    .filter((e) => e.isDirectory() && pattern.test(e.name))
     .map((e) => e.name).sort().map((batch) => {
       const front = readText(path.join(contentDir, batch, 'questions.md')).match(/^---\n([\s\S]*?)\n---/);
       const line = front?.[1].match(/^topic_name:\s*(.+)$/m);
-      if (!line) throw new Error(`${batch}/questions.md has no topic_name in its frontmatter`);
+      if (!front || !line) throw new Error(`${batch}/questions.md has no topic_name in its frontmatter`);
       const topicName = line[1].trim().replace(/^("|')(.*)\1$/, '$2');
       const part = Number(front[1].match(/^part:\s*(\d+)/m)?.[1] ?? 1);
-      return { batch, topicName, slug: slugify(topicName), part, subjectPath };
+      return { batch, topicName, slug: slugify(topicName), part, subjectPath: subject.path };
     }).sort((a, b) => a.slug.localeCompare(b.slug) || a.part - b.part);
+  /** @type {Map<string, any>} */
   const topics = new Map();
   for (const batch of batches) {
     const existing = topics.get(batch.slug);
@@ -132,18 +143,24 @@ export function listTopics(contentDir, subjectPath = SUBJECT_PATH) {
   return [...topics.values()];
 }
 
-/** Explicit contentDir overrides keep fixture callers scoped to their supplied source. */
-export function publicationSources(websiteRoot, contentDir, options = {}) {
-  const sources = [{ dir: contentDir, subpath: CONTENT_SUBPATH, subjectPath: SUBJECT_PATH }];
-  if (!options.contentDir && !options.websiteFiles) sources.push({
-    dir: findContentDir(websiteRoot, BIOLOGY_CONTENT_SUBPATH),
-    subpath: BIOLOGY_CONTENT_SUBPATH, subjectPath: BIOLOGY_SUBJECT_PATH,
-  });
-  return sources;
+/**
+ * One source per subject in SUBJECTS. `options.sources` replaces the list (tests point it at
+ * fixture folders).
+ * @param {string} websiteRoot
+ * @param {{ sources?: { subject: any, dir: string }[] }} [options]
+ * @returns {{ subject: any, dir: string }[]}
+ */
+export function publicationSources(websiteRoot, options = {}) {
+  return options.sources ?? SUBJECTS.map((subject) => ({ subject, dir: findContentDir(websiteRoot, subject) }));
 }
 
-export function publicationTopics(websiteRoot, contentDir, options = {}) {
-  return publicationSources(websiteRoot, contentDir, options).flatMap((s) => listTopics(s.dir, s.subjectPath));
+/**
+ * Every subject's topics, in SUBJECTS order.
+ * @param {string} websiteRoot
+ * @param {{ sources?: { subject: any, dir: string }[] }} [options]
+ */
+export function publicationTopics(websiteRoot, options = {}) {
+  return publicationSources(websiteRoot, options).flatMap((s) => listTopics(s.dir, s.subject));
 }
 
 /**
@@ -197,23 +214,22 @@ export function readConfigValue(websiteRoot, name) {
 /**
  * Hash every input that affects the PDFs.
  * @param {string} websiteRoot absolute path of Website/
- * @param {string} contentDir absolute path of 04_approved
- * @param {{ websiteFiles?: string[], websiteDirs?: string[] }} [options] override the lists (tests)
+ * @param {{ sources?: { subject: any, dir: string }[], websiteFiles?: string[], websiteDirs?: string[] }} [options] override the lists (tests)
  * @returns {{ hash: string, values: Record<string, string>, files: Record<string, string> }}
  */
-export function computeInputs(websiteRoot, contentDir, options = {}) {
+export function computeInputs(websiteRoot, options = {}) {
   const websiteFiles = options.websiteFiles ?? WEBSITE_INPUT_FILES;
   const websiteDirs = options.websiteDirs ?? WEBSITE_INPUT_DIRS;
   /** @type {Record<string, string>} */
   const files = {};
 
-  for (const source of publicationSources(websiteRoot, contentDir, options)) {
-    for (const topic of listTopics(source.dir, source.subjectPath)) {
+  for (const source of publicationSources(websiteRoot, options)) {
+    for (const topic of listTopics(source.dir, source.subject)) {
       for (const batch of topic.batches) {
         for (const name of ['questions.md', 'markscheme.md']) {
           const file = path.join(source.dir, batch, name);
           if (!fs.existsSync(file)) throw new Error(`Missing PDF input: ${file}`);
-          files[`${source.subpath}/${batch}/${name}`] = sha256(readText(file));
+          files[`${source.subject.contentSubpath}/${batch}/${name}`] = sha256(readText(file));
         }
       }
     }
@@ -275,13 +291,12 @@ export function fileDigest(file) {
  * The stale-PDF guard: every expected PDF exists and matches the manifest, and the manifest's
  * inputsHash matches the inputs as they are now.
  * @param {string} websiteRoot
- * @param {{ contentDir?: string, pdfDir?: string, websiteFiles?: string[], websiteDirs?: string[] }} [options]
+ * @param {{ sources?: { subject: any, dir: string }[], pdfDir?: string, websiteFiles?: string[], websiteDirs?: string[] }} [options]
  * @returns {{ ok: boolean, problems: string[], count: number }}
  */
 export function checkPdfs(websiteRoot, options = {}) {
-  const contentDir = options.contentDir ?? findContentDir(websiteRoot);
   const pdfDir = options.pdfDir ?? path.join(websiteRoot, 'public', PDF_URL_DIR);
-  const expected = expectedPdfs(publicationTopics(websiteRoot, contentDir, options));
+  const expected = expectedPdfs(publicationTopics(websiteRoot, options));
   /** @type {string[]} */
   const problems = [];
 
@@ -289,7 +304,7 @@ export function checkPdfs(websiteRoot, options = {}) {
   if (!manifest) {
     problems.push(`public/${PDF_URL_DIR}/${MANIFEST_NAME} is missing`);
   } else {
-    const inputs = computeInputs(websiteRoot, contentDir, options);
+    const inputs = computeInputs(websiteRoot, options);
     if (manifest.inputsHash !== inputs.hash) {
       const before = manifest.inputs?.files ?? {};
       const changed = [

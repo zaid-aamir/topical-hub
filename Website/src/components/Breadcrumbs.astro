@@ -2,7 +2,7 @@
 /**
  * Breadcrumb trail for the subject and topic pages (never the print pages):
  *
- *   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: SUBJECT.shortName, href: '/igcse/chemistry-0620/' }]} />
+ *   <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: subject.shortName, href: `/${subject.path}/` }]} />
  *
  * The last item is the current page, shown as text with aria-current="page". Also emits the same
  * trail as schema.org BreadcrumbList JSON-LD, with absolute URLs on SITE_URL.

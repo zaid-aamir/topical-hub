@@ -1,11 +1,11 @@
 {
   "name": "topical-hub",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
-  "description": "Topical Hub: free, original exam-style topical practice questions for Cambridge IGCSE Chemistry 0620, with mark schemes and worked solutions.",
+  "description": "Topical Hub: free, original exam-style topical practice questions for Cambridge IGCSE Chemistry 0620, Biology 0610 and Physics 0625, with mark schemes and worked solutions.",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "dev": "astro dev",

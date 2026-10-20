@@ -15,7 +15,11 @@ export const SITE_NAME = 'Topical Hub';
  */
 export const SITE_URL = 'https://topical-hub.pages.dev';
 
-/** One subject: a qualification with its own topics, everything under /<path>/. */
+/**
+ * One subject: a qualification with its own topics, everything under /<path>/, and its content
+ * source. Adding a subject is one entry in SUBJECTS below: the loader, the pages, the PDFs and
+ * the build checks all loop over that list.
+ */
 export interface Subject {
   /** URL path under which everything for this subject lives (no leading or trailing slash). */
   readonly path: string;
@@ -27,6 +31,18 @@ export interface Subject {
   readonly syllabusYears: string;
   /** One sentence for the subject's card on the home page. */
   readonly description: string;
+  /** Approved content folder, relative to the repository root. Only questions.md and markscheme.md are read. */
+  readonly contentSubpath: string;
+  /** Environment variable that overrides the content folder (absolute, or relative to the current directory). */
+  readonly contentDirEnv: string;
+  /** What comes before "T<NN>_" in a batch folder name and batch_id ('' for Chemistry, '0625_' for Physics). */
+  readonly batchPrefix: string;
+  /** Question anchors: 'number' gives #q<n> (Chemistry, kept for existing links), 'id' the full source id. */
+  readonly anchor: 'number' | 'id';
+  /** Display-only chemistry formatting (H2SO4 -> H₂SO₄). Also gated by CHEM_FORMATTING. */
+  readonly chemFormatting: boolean;
+  /** Display-only power notation: "^" + optional minus + digits becomes a superscript (m^3 -> m³). */
+  readonly powerFormatting: boolean;
 }
 
 export const CHEMISTRY_0620: Subject = {
@@ -35,23 +51,44 @@ export const CHEMISTRY_0620: Subject = {
   fullName: 'Cambridge IGCSE Chemistry 0620',
   syllabusYears: '2026–2028',
   description: 'Multiple-choice and structured questions on every topic of the syllabus, each tagged Core or Supplement.',
+  contentSubpath: 'igcse-chem-pipeline/pipeline/04_approved',
+  contentDirEnv: 'CONTENT_DIR',
+  batchPrefix: '',
+  anchor: 'number',
+  chemFormatting: true,
+  powerFormatting: false,
 };
 
-/**
- * Every subject, in the order the home page lists them. A new subject also needs its content source
- * (src/lib/subjects.ts) and its pages under src/pages/<path>/.
- */
 export const BIOLOGY_0610: Subject = {
   path: 'igcse/biology-0610',
   shortName: 'IGCSE Biology 0610',
   fullName: 'Cambridge IGCSE Biology 0610',
   syllabusYears: '2026–2028',
   description: 'Original multiple-choice and structured questions across all 21 topics, tagged Core or Supplement.',
+  contentSubpath: 'question-pipeline/subjects/0610-biology/batches/04_approved',
+  contentDirEnv: 'BIOLOGY_CONTENT_DIR',
+  batchPrefix: '0610_',
+  anchor: 'id',
+  chemFormatting: false,
+  powerFormatting: true,
 };
-export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610];
 
-/** The subject the Chemistry 0620 topic and print pages are built for. */
-export const SUBJECT: Subject = CHEMISTRY_0620;
+export const PHYSICS_0625: Subject = {
+  path: 'igcse/physics-0625',
+  shortName: 'IGCSE Physics 0625',
+  fullName: 'Cambridge IGCSE Physics 0625',
+  syllabusYears: '2026–2028',
+  description: 'Original multiple-choice and structured questions on every topic of the syllabus, tagged Core or Supplement.',
+  contentSubpath: 'question-pipeline/subjects/0625-physics/batches/04_approved',
+  contentDirEnv: 'PHYSICS_CONTENT_DIR',
+  batchPrefix: '0625_',
+  anchor: 'id',
+  chemFormatting: false,
+  powerFormatting: true,
+};
+
+/** Every subject, in the order the home page lists them. */
+export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610, PHYSICS_0625];
 
 /** The subject when SUBJECTS has exactly one entry, else undefined. Home-page copy names it while it exists. */
 export const SOLE_SUBJECT: Subject | undefined = SUBJECTS.length === 1 ? SUBJECTS[0] : undefined;
@@ -69,8 +106,9 @@ export const DISCLAIMER =
   'Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment.';
 
 /**
- * Kill switch for the display-only chemistry formatting (H2SO4 -> H₂SO₄, Cu2+ -> Cu²⁺, cm3 -> cm³).
- * Set to false to serve every formula exactly as the plain text in the source files.
+ * Kill switch for the display-only chemistry formatting (H2SO4 -> H₂SO₄, Cu2+ -> Cu²⁺, cm3 -> cm³)
+ * of every subject with chemFormatting. Set to false to serve every formula exactly as the plain
+ * text in the source files.
  */
 export const CHEM_FORMATTING = true;
 

@@ -32,6 +32,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SUBJECTS } from '../src/config.ts';
 
 const PHRASE_RE = /past[\s-]*papers?/gi;
 const TEXT_EXTENSIONS = new Set(['.html', '.xml', '.txt', '.json', '.js', '.css']);
@@ -44,8 +45,7 @@ const EXPECTED_FILES = [
   '404.html',
   'robots.txt',
   'sitemap-index.xml',
-  'igcse/chemistry-0620/index.html',
-  'igcse/biology-0610/index.html',
+  ...SUBJECTS.map((subject) => `${subject.path}/index.html`),
 ];
 /** <link rel> values that make the browser fetch the href. */
 const FETCHING_LINK_RELS = new Set([

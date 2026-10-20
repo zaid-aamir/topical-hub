@@ -4,11 +4,14 @@ import { SITE_NAME, SUBJECTS, GITHUB_REPO, REPORT_FORM_URL } from '../config';
 
 
 const repoUrl = `https://github.com/${GITHUB_REPO}`;
+/** ", " between subjects and " and " before the last. */
+const joiner = (index: number) => (index === 0 ? '' : index === SUBJECTS.length - 1 ? ' and ' : ', ');
+const subjectList = SUBJECTS.map((subject, index) => joiner(index) + subject.fullName).join('');
 const reportsGoToForm = REPORT_FORM_URL !== '';
 ---
 <BaseLayout
   title={`About ${SITE_NAME}`}
-  description={`What ${SITE_NAME} is: free, original exam-style topical questions for Cambridge IGCSE Chemistry 0620 and Biology 0610, with mark schemes and worked solutions, how they were made, and how to report an error.`}
+  description={`What ${SITE_NAME} is: free, original exam-style topical questions for ${subjectList}, with mark schemes and worked solutions, how they were made, and how to report an error.`}
   canonicalPath="/about/"
 >
   <div class="shell">
@@ -16,7 +19,7 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
       <h1>About {SITE_NAME}</h1>
       <p>
         {SITE_NAME} is a free collection of exam-style practice questions for
-        {SUBJECTS.map((subject, index) => <Fragment>{index > 0 && ' and '}<a href={`/${subject.path}/`}>{subject.fullName}</a> (exams in {subject.syllabusYears})</Fragment>)},
+        {SUBJECTS.map((subject, index) => <Fragment>{joiner(index)}<a href={`/${subject.path}/`}>{subject.fullName}</a> (exams in {subject.syllabusYears})</Fragment>)},
         sorted by topic. Every question comes with a mark scheme and a worked solution, hidden until you
         choose to look, so you can attempt the question first and then mark your own answer.
       </p>

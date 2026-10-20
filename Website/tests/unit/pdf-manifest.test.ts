@@ -16,6 +16,8 @@ import {
   listTopics,
   pdfFileName,
 } from '../../scripts/pdf-manifest.mjs';
+import { BIOLOGY_0610, CHEMISTRY_0620 } from '../../src/config';
+import type { Subject } from '../../src/config';
 
 let root = '';
 let web = '';
@@ -27,14 +29,22 @@ function write(file: string, text: string): void {
   fs.writeFileSync(file, text, 'utf8');
 }
 
-function options() {
-  return { contentDir: content, pdfDir, websiteFiles: ['src/styles/print.css'], websiteDirs: [] as string[] };
+/** The fixture content folder as the only source (or as the source of each given subject). */
+function options(subjects: Subject[] = [CHEMISTRY_0620]) {
+  return {
+    sources: subjects.map((subject) => ({ subject, dir: content })),
+    pdfDir,
+    websiteFiles: ['src/styles/print.css'],
+    websiteDirs: [] as string[],
+  };
 }
+
+const CHEM = CHEMISTRY_0620.path;
 
 /** What `npm run pdfs` leaves behind: one fake PDF per topic and kind, and the manifest. */
 function generate(): void {
-  const inputs = computeInputs(web, content, options());
-  const pdfs = expectedPdfs(listTopics(content)).map((pdf) => {
+  const inputs = computeInputs(web, options());
+  const pdfs = expectedPdfs(listTopics(content, CHEMISTRY_0620)).map((pdf) => {
     const file = path.join(pdfDir, pdf.file);
     write(file, `%PDF-1.7 fake ${pdf.slug} ${pdf.kind}`);
     return { file: pdf.file, batch: pdf.batch, slug: pdf.slug, kind: pdf.kind, ...fileDigest(file) };
@@ -62,9 +72,9 @@ afterEach(() => {
 
 describe('PDF names and sizes', () => {
   it('names the two PDFs of a topic', () => {
-    expect(pdfFileName('electrochemistry', 'questions')).toBe('topical-hub-igcse-chemistry-0620-electrochemistry-questions.pdf');
-    expect(pdfFileName('electrochemistry', 'mark-scheme')).toBe('topical-hub-igcse-chemistry-0620-electrochemistry-mark-scheme.pdf');
-    expect(expectedPdfs(listTopics(content)).map((p) => p.file)).toEqual([
+    expect(pdfFileName('electrochemistry', 'questions', CHEM)).toBe('topical-hub-igcse-chemistry-0620-electrochemistry-questions.pdf');
+    expect(pdfFileName('electrochemistry', 'mark-scheme', CHEM)).toBe('topical-hub-igcse-chemistry-0620-electrochemistry-mark-scheme.pdf');
+    expect(expectedPdfs(listTopics(content, CHEMISTRY_0620)).map((p) => p.file)).toEqual([
       'topical-hub-igcse-chemistry-0620-acids-bases-and-salts-questions.pdf',
       'topical-hub-igcse-chemistry-0620-acids-bases-and-salts-mark-scheme.pdf',
     ]);
@@ -79,26 +89,26 @@ describe('PDF names and sizes', () => {
 
 describe('computeInputs', () => {
   it('gives the same hash for CRLF and LF files', () => {
-    const lf = computeInputs(web, content, options()).hash;
+    const lf = computeInputs(web, options()).hash;
     const file = path.join(content, 'T07_20260101_01', 'questions.md');
     fs.writeFileSync(file, fs.readFileSync(file, 'utf8').replace(/\n/g, '\r\n'));
-    expect(computeInputs(web, content, options()).hash).toBe(lf);
+    expect(computeInputs(web, options()).hash).toBe(lf);
   });
 
   it('changes when content, a website input or SITE_URL changes', () => {
-    const start = computeInputs(web, content, options()).hash;
+    const start = computeInputs(web, options()).hash;
     write(path.join(content, 'T07_20260101_01', 'markscheme.md'), '---\nbatch_id: T07_20260101_01\n---\n\n## Q1\n- answer: B\n');
-    const afterContent = computeInputs(web, content, options()).hash;
+    const afterContent = computeInputs(web, options()).hash;
     expect(afterContent).not.toBe(start);
     write(path.join(web, 'src', 'styles', 'print.css'), '.question { color: #111; }\n');
-    const afterCss = computeInputs(web, content, options()).hash;
+    const afterCss = computeInputs(web, options()).hash;
     expect(afterCss).not.toBe(afterContent);
     write(path.join(web, 'src', 'config.ts'), "export const SITE_URL = 'https://topicalhub.test';\nexport const CHEM_FORMATTING = true;\n");
-    expect(computeInputs(web, content, options()).hash).not.toBe(afterCss);
+    expect(computeInputs(web, options()).hash).not.toBe(afterCss);
   });
 
   it('fails loudly when a listed input is missing', () => {
-    expect(() => computeInputs(web, content, { websiteFiles: ['src/components/Nope.astro'], websiteDirs: [] })).toThrow(/Missing PDF input/);
+    expect(() => computeInputs(web, { ...options(), websiteFiles: ['src/components/Nope.astro'], websiteDirs: [] })).toThrow(/Missing PDF input/);
   });
 });
 
@@ -116,7 +126,7 @@ describe('checkPdfs', () => {
 
   it('fails when a PDF is missing', () => {
     generate();
-    fs.rmSync(path.join(pdfDir, pdfFileName('acids-bases-and-salts', 'mark-scheme')));
+    fs.rmSync(path.join(pdfDir, pdfFileName('acids-bases-and-salts', 'mark-scheme', CHEM)));
     const result = checkPdfs(web, options());
     expect(result.ok).toBe(false);
     expect(result.problems.join('\n')).toMatch(/mark-scheme\.pdf is missing/);
@@ -132,27 +142,29 @@ describe('checkPdfs', () => {
 
   it('fails when a PDF no longer matches the manifest', () => {
     generate();
-    write(path.join(pdfDir, pdfFileName('acids-bases-and-salts', 'questions')), '%PDF-1.7 something else');
+    write(path.join(pdfDir, pdfFileName('acids-bases-and-salts', 'questions', CHEM)), '%PDF-1.7 something else');
     const result = checkPdfs(web, options());
     expect(result.ok).toBe(false);
     expect(result.problems.join('\n')).toMatch(/questions\.pdf does not match manifest\.json/);
   });
 });
 
-describe('Biology PDF inputs', () => {
+describe('multi-part subject PDF inputs', () => {
   it('merges part batches into one PDF pair, hashes both sources and separates subjects', () => {
     for (const part of [1, 2]) {
       const batch = `0610_T14_P${part}_20261013`;
       write(path.join(content, batch, 'questions.md'), `---\ntopic_name: "Coordination and response"\npart: ${part}\n---\n`);
       write(path.join(content, batch, 'markscheme.md'), `Part ${part}`);
     }
-    const topics = listTopics(content, 'igcse/biology-0610');
+    const topics = listTopics(content, BIOLOGY_0610);
+    expect(listTopics(content, CHEMISTRY_0620).map((t) => t.slug)).toEqual(['acids-bases-and-salts']);
     const topic = topics.find((t) => t.slug === 'coordination-and-response')!;
     expect(topic.batches).toEqual(['0610_T14_P1_20261013', '0610_T14_P2_20261013']);
     expect(expectedPdfs([topic])).toHaveLength(2);
-    expect(pdfFileName(topic.slug, 'questions', 'igcse/biology-0610')).not.toBe(pdfFileName(topic.slug, 'questions'));
-    const before = computeInputs(web, content, options()).hash;
+    expect(pdfFileName(topic.slug, 'questions', BIOLOGY_0610.path)).not.toBe(pdfFileName(topic.slug, 'questions', CHEM));
+    const both = options([CHEMISTRY_0620, BIOLOGY_0610]);
+    const before = computeInputs(web, both).hash;
     write(path.join(content, topic.batches[1], 'markscheme.md'), 'Changed part 2');
-    expect(computeInputs(web, content, options()).hash).not.toBe(before);
+    expect(computeInputs(web, both).hash).not.toBe(before);
   });
 });

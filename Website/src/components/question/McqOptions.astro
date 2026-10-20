@@ -15,10 +15,12 @@
  * Option text is Markdown inline source and is rendered with mdInline (escaped, chem formatted).
  */
 import type { McqQuestion } from '../../content';
+import type { MarkdownOptions } from '../../lib/markdown';
 import { mdInline } from '../../lib/markdown';
 
 interface Props {
-  chem?: boolean;
+  /** Display formatting of the subject (subjectFormat in src/lib/markdown.ts). */
+  format?: MarkdownOptions;
   question: McqQuestion;
   /** id of the stem element that labels the option group. */
   stemId: string;
@@ -26,7 +28,7 @@ interface Props {
   interactive?: boolean;
 }
 
-const { question, stemId, interactive = true, chem = true } = Astro.props;
+const { question, stemId, interactive = true, format = {} } = Astro.props;
 const table = question.optionTable;
 ---
 {
@@ -36,11 +38,11 @@ const table = question.optionTable;
         <thead>
           <tr>
             {table.letterHeader ? (
-              <th set:html={mdInline(table.letterHeader, { chem })} />
+              <th set:html={mdInline(table.letterHeader, format)} />
             ) : (
               <th><span class="visually-hidden">Option</span></th>
             )}
-            {table.headers.map((header) => <th set:html={mdInline(header, { chem })} />)}
+            {table.headers.map((header) => <th set:html={mdInline(header, format)} />)}
           </tr>
         </thead>
         <tbody>
@@ -56,7 +58,7 @@ const table = question.optionTable;
                   <span class="option-letter">{option.letter}</span>
                 )}
               </td>
-              {(option.cells ?? [option.text]).map((cell) => <td set:html={mdInline(cell, { chem })} />)}
+              {(option.cells ?? [option.text]).map((cell) => <td set:html={mdInline(cell, format)} />)}
             </tr>
           ))}
         </tbody>
@@ -67,7 +69,7 @@ const table = question.optionTable;
       {question.options.map((option) => (
         <button class="option" type="button" data-letter={option.letter} aria-pressed="false">
           <span class="option-letter">{option.letter}</span>
-          <span class="option-text" set:html={mdInline(option.text, { chem })} />
+          <span class="option-text" set:html={mdInline(option.text, format)} />
           <span class="option-status" />
         </button>
       ))}
@@ -77,7 +79,7 @@ const table = question.optionTable;
       {question.options.map((option) => (
         <li class="option-static">
           <span class="option-letter">{option.letter}</span>
-          <span class="option-text" set:html={mdInline(option.text, { chem })} />
+          <span class="option-text" set:html={mdInline(option.text, format)} />
         </li>
       ))}
     </ol>

@@ -122,6 +122,15 @@ function formatText(text: string): string {
  * nothing in it is a formula.
  */
 export function applyChem(html: string): string {
+  return mapTextNodes(html, formatText);
+}
+
+/**
+ * Run `format` over every text node of `html` outside <code>, <pre>, <a>, <script> and <style>,
+ * copying tags, attributes and comments through untouched. `format` receives raw HTML text
+ * (entities included) and returns HTML. Shared with the power formatting in src/lib/power.ts.
+ */
+export function mapTextNodes(html: string, format: (text: string) => string): string {
   let out = '';
   let i = 0;
   const skipStack: string[] = [];
@@ -131,7 +140,7 @@ export function applyChem(html: string): string {
     const textEnd = lt === -1 ? n : lt;
     if (textEnd > i) {
       const text = html.slice(i, textEnd);
-      out += skipStack.length ? text : formatText(text);
+      out += skipStack.length ? text : format(text);
     }
     if (lt === -1) break;
     const tag = readTag(html, lt);

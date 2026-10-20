@@ -6,20 +6,22 @@
  * li.ms-point.ms-label, shown without a bullet.
  */
 import type { MarkPoint } from '../../content';
+import type { MarkdownOptions } from '../../lib/markdown';
 import { mdInline } from '../../lib/markdown';
 import { splitKeyword } from './labels';
 
 interface Props {
-  chem?: boolean;
+  /** Display formatting of the subject (subjectFormat in src/lib/markdown.ts). */
+  format?: MarkdownOptions;
   points: MarkPoint[];
 }
 
-const { points, chem = true } = Astro.props;
+const { points, format = {} } = Astro.props;
 
 const items = points.map((point) => {
   const { keyword, rest } = splitKeyword(point.text);
   // A space separates the keyword span from the text that follows it.
-  return { point, keyword, html: (keyword ? ' ' : '') + mdInline(rest, { chem }) };
+  return { point, keyword, html: (keyword ? ' ' : '') + mdInline(rest, format) };
 });
 ---
 <ul class="ms-points">
@@ -27,7 +29,7 @@ const items = points.map((point) => {
     items.map(({ point, keyword, html }) => (
       <li class:list={['ms-point', { 'ms-label': point.isLabel === true }]} data-kind={point.kind}>
         {keyword && <span class="ms-keyword">{keyword}</span>}<Fragment set:html={html} />
-        {point.children.length > 0 && <Astro.self chem={chem} points={point.children} />}
+        {point.children.length > 0 && <Astro.self format={format} points={point.children} />}
       </li>
     ))
   }

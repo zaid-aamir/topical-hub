@@ -15,17 +15,19 @@ The owner is an IGCSE student building this as a business, and wants **speed**: 
 - Don't use Cambridge's logo or branding, and don't imply the site is endorsed by Cambridge. Naming the qualification ("Cambridge IGCSE Chemistry 0620") to describe what the questions are for is fine.
 - **This repo is public.** The syllabus PDF in `igcse-chem-pipeline/reference/` is Cambridge's copyright. It's kept on the owner's computer only and is gitignored. Never commit it, never publish it on the site, and never add any other Cambridge document.
 
-## Implemented website (documentation checked 2026-10-18)
+## Implemented website (documentation checked 2026-10-19, v1.1.0)
 
 The Astro site is implemented in `Website/`. Start with `Website/README.md` for commands and `Website/CONTRACT.md` for the current routes and DOM. `Website/BUILD_V1.md` now records delivered scope, not an instruction to rebuild the site.
 
-- Home lists Chemistry 0620 (12 topics, 360 questions) and Biology 0610 (21 topics, 590 questions) under `/#subjects`, with data-derived counts.
-- Topic pages have tier/type/subtopic filters, MCQ marking, answer toggles, print pages and 66 downloadable watermarked PDFs in total (24 Chemistry, 42 Biology).
+- Three subjects, listed under `/#subjects` with counts computed from the data. On 2026-10-19 that was Chemistry 0620 (12 topics, 360 questions), Biology 0610 (21 topics, 590 questions) and Physics 0625 (6 topics, 420 questions). The build never requires a fixed total, because the pipeline may withhold questions.
+- Subjects are data-driven: each entry in `SUBJECTS` (`Website/src/config.ts`) carries its URL path, names, content folder (`contentSubpath`), override variable (`contentDirEnv`), batch-folder prefix (`batchPrefix`), anchor style and the `chemFormatting` / `powerFormatting` flags. The loader, pages, PDFs and build checks all loop over `SUBJECTS`, so a fourth subject is one new entry plus its approved content.
+- Topic pages have tier/type/subtopic filters, MCQ marking with Try again, answer toggles and print pages. There are 78 downloadable watermarked PDFs in total (24 Chemistry, 42 Biology, 12 Physics), two per topic.
 - Header: Subjects, About, theme toggle. Footer version comes from `Website/package.json`.
-- Chemistry question anchors remain `#q<n>`; Biology anchors use full source IDs across all batches. In Chemistry, while the full source id is stored in `data-question-id` and error reports. This differs from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
+- Chemistry question anchors remain `#q<n>`; Biology and Physics anchors use full source IDs. Every subject keeps the full source id in `data-question-id` and error reports. Chemistry's anchors differ from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
 - Error reports currently open pre-filled GitHub issues because `REPORT_FORM_URL` is empty.
-- Both subjects use shared routes under `Website/src/pages/igcse/[subject]/`. Chemistry reads its original pipeline; Biology reads only `questions.md` and `markscheme.md` from `question-pipeline/subjects/0610-biology/batches/04_approved/`. Biology topics 14, 16 and 17 merge batches in numeric part order, retaining source numbers, IDs and part labels. Chemistry formatting is disabled for Biology.
-- `npm run build` checks PDF freshness before Astro content validation and the output gate. PDF-affecting changes require `npm run pdfs` (Playwright Chromium); leave generated PDFs and manifest for the owner to review and commit. See `Website/scripts/pdf-manifest.mjs` for hashed inputs.
+- All subjects use shared routes under `Website/src/pages/igcse/[subject]/`. Chemistry reads `igcse-chem-pipeline/pipeline/04_approved/`; Biology and Physics read only `questions.md` and `markscheme.md` from `question-pipeline/subjects/<code>-<name>/batches/04_approved/`. Multi-part topics (Biology 14, 16, 17; Physics 1–4) merge batches in numeric part order, keeping source numbers and IDs, with a part heading per part on the topic page.
+- Display formatting: chemistry formulae (H2SO4 → H₂SO₄) only for Chemistry; caret powers (m^3 → m³, 10^-7 → 10⁻⁷) for Biology and Physics.
+- `npm run build` checks PDF freshness before Astro content validation and the output gate. PDF-affecting changes require `npm run pdfs` (Playwright Chromium); leave generated PDFs and manifest for the owner to review and commit. See `Website/scripts/pdf-manifest.mjs` for hashed inputs. The Node scripts import `src/config.ts` directly, so Node >= 22.18 is required (Cloudflare uses 24).
 
 ## Repo layout
 
@@ -35,7 +37,7 @@ igcse-chem-pipeline/       the question pipeline: content source, read-only for 
   pipeline/04_approved/    THE CONTENT: 12 topic folders, 30 questions each (360 total)
   agents/FORMAT.md         the file-format spec ("Published output" section)
   config/syllabus_map.json topic/subtopic names, syllabus points, tiers
-question-pipeline/        the multi-subject pipeline (Biology 0610, Physics 0625; Chemistry moves here later): read-only for the website, owned by the managing chat
+question-pipeline/        the multi-subject pipeline (Biology 0610 and Physics 0625, both published; Chemistry moves here later): read-only for the website, owned by the managing chat
 Website/                   the website lives here
 ```
 
@@ -79,7 +81,7 @@ Out of scope for v1: accounts, progress tracking, ads, payments, search, other s
 
 - **Never run `git commit`, `git push`, `git add`, `git merge`, `git rebase`, `git reset`, `git revert`, `git stash`, `git tag`, `git worktree`, or create branches.** Don't use worktrees or isolated copies of the repo. Make every change directly in this working folder and leave it uncommitted. The owner reviews and commits everything himself.
 - Read-only git is fine: `git status`, `git diff`, `git log`, `git show`.
-- These commands are also blocked in `.Codex/settings.json`, which also sets `worktree.bgIsolation` to `none` so background sessions edit this folder directly. Don't try to work around either.
+- Codex has no settings file that blocks these commands; follow this rule by instruction.
 - When you finish a piece of work, end with a short list of the files you changed and a suggested commit message (one line, no `Co-Authored-By` or any other trailer). The owner decides whether to use it.
 - Line endings are normalised to LF by `.gitattributes`. Never commit `.env` files or secrets (the owner does the committing, but don't create them in tracked places either).
 

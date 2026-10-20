@@ -3,18 +3,18 @@
  * The grid of topic cards on the subject page (the home page lists subjects, not topics).
  * Markup per CONTRACT.md / global.css section 6: the whole card is one link.
  *
- *   <TopicGrid topics={loadAllTopics()} />
+ *   <TopicGrid topics={subjectTopics(subject)} subject={subject} />
  */
 import type { Topic } from '../content';
-import { SUBJECT, type Subject } from '../config';
+import type { Subject } from '../config';
 
 interface Props {
-  subject?: Subject;
-  /** Topics in display order (loadAllTopics() is already sorted by topic number). */
+  subject: Subject;
+  /** Topics in display order (subjectTopics() is already sorted by topic number). */
   topics: Topic[];
 }
 
-const { topics, subject = SUBJECT } = Astro.props;
+const { topics, subject } = Astro.props;
 const subjectBase = `/${subject.path}/`;
 
 function plural(count: number, noun: string): string {

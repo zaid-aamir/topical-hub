@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * generate-pdfs.mjs: `npm run pdfs`. Makes the 24 downloadable PDFs (questions and mark scheme for
- * each topic) and public/pdfs/manifest.json.
+ * generate-pdfs.mjs: `npm run pdfs`. Makes the downloadable PDFs (questions and mark scheme for
+ * each topic of every subject in SUBJECTS) and public/pdfs/manifest.json.
  *
  *  1. Hashes the inputs (pdf-manifest.mjs), then runs `astro build` (not `npm run build`, whose
  *     stale-PDF guard would stop it).
@@ -26,9 +26,7 @@ import {
   computeInputs,
   expectedPdfs,
   fileDigest,
-  findContentDir,
   formatPdfSize,
-  listTopics,
 } from './pdf-manifest.mjs';
 
 const websiteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -79,9 +77,8 @@ function serve(root) {
 }
 
 async function main() {
-  const contentDir = findContentDir(websiteRoot);
-  const pdfs = expectedPdfs(publicationTopics(websiteRoot, contentDir));
-  const inputs = computeInputs(websiteRoot, contentDir);
+  const pdfs = expectedPdfs(publicationTopics(websiteRoot));
+  const inputs = computeInputs(websiteRoot);
 
   const astroBin = path.join(websiteRoot, 'node_modules', 'astro', 'bin', 'astro.mjs');
   const build = spawnSync(process.execPath, [astroBin, 'build'], { cwd: websiteRoot, stdio: 'inherit' });
@@ -124,7 +121,7 @@ async function main() {
     server.close();
   }
 
-  const after = computeInputs(websiteRoot, contentDir);
+  const after = computeInputs(websiteRoot);
   if (after.hash !== inputs.hash) throw new Error('Inputs changed while the PDFs were being made. Run npm run pdfs again.');
 
   const manifest = buildManifest(inputs, written);

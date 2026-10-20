@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildTopic, parseMarkschemeFile, parseQuestionsFile } from '../../../src/content';
-import type { McqQuestion, Question, StructuredQuestion, Topic } from '../../../src/content';
+import { buildTopic, listBatchDirs, parseMarkschemeFile, parseQuestionsFile, resolveContentDir } from '../../../src/content';
+import type { ContentSource, McqQuestion, Question, StructuredQuestion, Topic } from '../../../src/content';
 
 /** Absolute path of tests/fixtures/content/. */
 export const FIXTURES = fileURLToPath(new URL('../../fixtures/content/', import.meta.url));
@@ -73,4 +73,30 @@ export function meta(number: number, type: 'mcq' | 'structured', overrides: Reco
   return Object.entries(fields)
     .map(([key, value]) => `- ${key}: ${value}`)
     .join('\n');
+}
+
+/**
+ * What a subject's approved files contain, counted straight from the text (not through the
+ * parser), so tests can compare the loader against the files without pinning any total: the
+ * pipeline may withhold questions at any time.
+ */
+export function sourceCounts(source: ContentSource) {
+  const dir = resolveContentDir(source);
+  const batches = listBatchDirs(dir, source.batchPrefix);
+  let questions = 0;
+  let mcq = 0;
+  const topicIds = new Set<string>();
+  const perBatch = new Map<string, { questions: number[]; markscheme: number[] }>();
+  for (const batch of batches) {
+    const q = readFileSync(join(batch, 'questions.md'), 'utf8').replace(/\r\n?/g, '\n');
+    const ms = readFileSync(join(batch, 'markscheme.md'), 'utf8').replace(/\r\n?/g, '\n');
+    const headings = (text: string) => [...text.matchAll(/^## Q(\d+)\s*$/gm)].map((m) => Number(m[1]));
+    const numbers = headings(q);
+    questions += numbers.length;
+    mcq += (q.match(/^- type: mcq\s*$/gm) ?? []).length;
+    const topicId = /^topic_id:\s*"?(\d+)"?\s*$/m.exec(q)?.[1];
+    if (topicId) topicIds.add(topicId);
+    perBatch.set(basename(batch), { questions: numbers, markscheme: headings(ms) });
+  }
+  return { batches: batches.length, topics: topicIds.size, questions, mcq, structured: questions - mcq, perBatch };
 }

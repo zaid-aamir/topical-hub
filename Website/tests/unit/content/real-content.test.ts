@@ -1,11 +1,18 @@
 /**
- * The one test that reads the real pipeline content (../igcse-chem-pipeline/pipeline/04_approved).
- * It pins the facts the site relies on: 12 topics, 360 questions, every question paired with its
- * mark scheme, and the specific tricky shapes found in a survey of all 12 batches.
+ * Reads the real Chemistry content (../igcse-chem-pipeline/pipeline/04_approved). Totals are taken
+ * from the files themselves (the pipeline may withhold questions), then the test checks that
+ * every question loads, pairs with its mark scheme, and keeps the specific tricky shapes found in
+ * a survey of the batches.
  */
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
-import { getTopicBySlug, loadAllTopics, loadTopicsFromDir, resolveContentDir } from '../../../src/content';
+import { loadSubjectTopics, loadTopicsFromDir, resolveContentDir, summaryLine } from '../../../src/content';
 import type { McqQuestion, StructuredQuestion, Topic } from '../../../src/content';
+import { CHEMISTRY_0620 } from '../../../src/config';
+import { sourceCounts } from './helpers';
+
+const source = sourceCounts(CHEMISTRY_0620);
+const loadAllTopics = () => loadSubjectTopics(CHEMISTRY_0620);
+const getTopicBySlug = (slug: string) => loadAllTopics().find((t) => t.slug === slug);
 
 let topics: Topic[] = [];
 /** Everything console.log printed while loading twice. */
@@ -68,26 +75,28 @@ const TABLE_MCQS = [
 ];
 
 describe('real content', () => {
-  it('has 12 topics with 30 questions each: 360 in total, 180 MCQ and 180 structured', () => {
-    expect(topics).toHaveLength(12);
-    expect(topics.map((t) => t.topicNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  it('loads every question in the files, each with its mark scheme', () => {
+    expect(topics).toHaveLength(source.topics);
+    expect(topics.map((t) => t.topicNumber)).toEqual([...topics.map((t) => t.topicNumber)].sort((a, b) => a - b));
     for (const t of topics) {
-      expect(t.questions, t.batchId).toHaveLength(30);
-      expect(t.counts.total).toBe(30);
-      expect(t.counts.mcq + t.counts.structured).toBe(30);
-      expect(t.counts.core + t.counts.supplement).toBe(30);
+      expect(t.counts.total).toBe(t.questions.length);
+      expect(t.counts.mcq + t.counts.structured).toBe(t.questions.length);
+      expect(t.counts.core + t.counts.supplement).toBe(t.questions.length);
       expect(t.unmatched).toBeUndefined();
       expect(t.topicId).toBe(String(t.topicNumber));
+      const files = source.perBatch.get(t.batchId)!;
+      expect(t.questions.map((q) => q.number), t.batchId).toEqual(files.questions);
+      expect([...files.markscheme].sort((a, b) => a - b), t.batchId).toEqual([...files.questions].sort((a, b) => a - b));
     }
     const all = topics.flatMap((t) => t.questions);
-    expect(all).toHaveLength(360);
-    expect(all.filter((q) => q.type === 'mcq')).toHaveLength(180);
-    expect(all.filter((q) => q.type === 'structured')).toHaveLength(180);
-    expect(new Set(all.map((q) => q.id)).size).toBe(360);
+    expect(all).toHaveLength(source.questions);
+    expect(all.filter((q) => q.type === 'mcq')).toHaveLength(source.mcq);
+    expect(all.filter((q) => q.type === 'structured')).toHaveLength(source.structured);
+    expect(new Set(all.map((q) => q.id)).size).toBe(source.questions);
   });
 
   it('prints the summary line exactly once per process and caches the result', () => {
-    expect(logged).toEqual(['Content OK: 12 topics, 360 questions (180 MCQ, 180 structured)']);
+    expect(logged).toEqual([summaryLine(topics, CHEMISTRY_0620.shortName)]);
     expect(loadAllTopics()).toBe(topics);
   });
 
@@ -285,9 +294,9 @@ describe('real content', () => {
 
   it('produces no validation warnings for the real content', () => {
     const warnings: string[] = [];
-    const again = loadTopicsFromDir(resolveContentDir(), { warn: (w) => warnings.push(w) });
+    const again = loadTopicsFromDir(resolveContentDir(CHEMISTRY_0620), { warn: (w) => warnings.push(w) });
     expect(warnings).toEqual([]);
-    expect(again).toHaveLength(12);
+    expect(again).toHaveLength(topics.length);
   });
 
   it('slugs match the URL list and getTopicBySlug finds them', () => {

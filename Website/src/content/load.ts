@@ -1,7 +1,9 @@
 /**
- * Build-time loader: finds the content directory, reads only `questions.md` and `markscheme.md`
- * from every `T<NN>_...` batch folder, parses, merges and validates, and caches the result for the
- * rest of the process. The only module in src/content/ that touches the file system.
+ * Build-time loader: finds a subject's content directory, reads only `questions.md` and
+ * `markscheme.md` from every `<prefix>T<NN>_...` batch folder, parses, validates each batch,
+ * merges a topic's parts in numeric part order, validates the merged topics, and caches the result
+ * per subject for the rest of the process. The only module in src/content/ that touches the file
+ * system. Subjects and their content settings come from SUBJECTS in src/config.ts.
  */
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { basename, dirname, isAbsolute, join, resolve } from 'node:path';
@@ -12,10 +14,16 @@ import { buildTopic } from './topic';
 import { validateTopics } from './validate';
 import type { ValidateOptions } from './validate';
 
-/** Where the approved content lives, relative to the repository root. */
-export const CONTENT_SUBPATH = 'igcse-chem-pipeline/pipeline/04_approved';
-export const BIOLOGY_CONTENT_SUBPATH = 'question-pipeline/subjects/0610-biology/batches/04_approved';
-const BATCH_DIR = /^(?:T\d{2}_|0610_T\d{2}_)/;
+/** The content settings of a subject (a Subject from src/config.ts satisfies this). */
+export interface ContentSource {
+  /** Approved content folder, relative to the repository root. */
+  readonly contentSubpath: string;
+  /** Environment variable that overrides the folder. */
+  readonly contentDirEnv: string;
+  /** What comes before "T<NN>_" in batch folder names and batch ids. */
+  readonly batchPrefix: string;
+}
+
 const MAX_LEVELS_UP = 4;
 
 function isDirectory(path: string): boolean {
@@ -26,36 +34,47 @@ function isDirectory(path: string): boolean {
   }
 }
 
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Batch folder names of a source: "<prefix>T<NN>_...". */
+export function batchDirPattern(batchPrefix: string): RegExp {
+  return new RegExp(`^${escapeRegExp(batchPrefix)}T\\d{2}_`);
+}
+
 /**
- * `CONTENT_DIR` if set (absolute, or relative to the current directory), otherwise the first
- * `igcse-chem-pipeline/pipeline/04_approved` found in the current directory or up to four parents.
- * Works with cwd = Website/ (local dev, Cloudflare Pages root directory) or the repository root.
+ * `process.env[source.contentDirEnv]` if set (absolute, or relative to the current directory),
+ * otherwise the first `source.contentSubpath` found in the current directory or up to four
+ * parents. Works with cwd = Website/ (local dev, Cloudflare Pages root directory) or the
+ * repository root.
  */
-export function resolveContentDir(subpath = CONTENT_SUBPATH): string {
-  const fromEnv = subpath === CONTENT_SUBPATH ? process.env.CONTENT_DIR : process.env.BIOLOGY_CONTENT_DIR;
+export function resolveContentDir(source: ContentSource): string {
+  const fromEnv = process.env[source.contentDirEnv];
   if (fromEnv) {
     const dir = isAbsolute(fromEnv) ? fromEnv : resolve(process.cwd(), fromEnv);
-    if (!isDirectory(dir)) throw new ContentError(`CONTENT_DIR is set but is not a directory: ${dir}`);
+    if (!isDirectory(dir)) throw new ContentError(`${source.contentDirEnv} is set but is not a directory: ${dir}`);
     return dir;
   }
   let dir = process.cwd();
   for (let level = 0; level <= MAX_LEVELS_UP; level++) {
-    const candidate = join(dir, ...subpath.split('/'));
+    const candidate = join(dir, ...source.contentSubpath.split('/'));
     if (isDirectory(candidate)) return candidate;
     const parent = dirname(dir);
     if (parent === dir) break;
     dir = parent;
   }
   throw new ContentError(
-    `Could not find ${CONTENT_SUBPATH} starting from ${process.cwd()} (looked up to ${MAX_LEVELS_UP} levels up). ` +
-      'Set the CONTENT_DIR environment variable to the 04_approved directory.',
+    `Could not find ${source.contentSubpath} starting from ${process.cwd()} (looked up to ${MAX_LEVELS_UP} levels up). ` +
+      `Set the ${source.contentDirEnv} environment variable to the 04_approved directory.`,
   );
 }
 
-/** Absolute paths of the batch directories (`T<NN>_...`, directories only), sorted by name. */
-export function listBatchDirs(contentDir: string): string[] {
+/** Absolute paths of the batch directories (`<prefix>T<NN>_...`, directories only), sorted by name. */
+export function listBatchDirs(contentDir: string, batchPrefix = ''): string[] {
+  const pattern = batchDirPattern(batchPrefix);
   return readdirSync(contentDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory() && BATCH_DIR.test(entry.name))
+    .filter((entry) => entry.isDirectory() && pattern.test(entry.name))
     .map((entry) => entry.name)
     .sort()
     .map((name) => join(contentDir, name));
@@ -78,7 +97,7 @@ export function loadTopicsFromDir(contentDir: string, options?: ValidateOptions)
     problems.push(...details.map((d) => `${prefix}: ${d}`));
   };
 
-  for (const dir of listBatchDirs(contentDir)) {
+  for (const dir of listBatchDirs(contentDir, options?.batchPrefix)) {
     const name = basename(dir);
     const questionsPath = join(dir, 'questions.md');
     const markschemePath = join(dir, 'markscheme.md');
@@ -114,7 +133,7 @@ export function loadTopicsFromDir(contentDir: string, options?: ValidateOptions)
   if (problems.length) throw new ContentError(`Content parsing failed: ${problems.length} problem(s)`, problems);
   topics.sort((a, b) => a.topicNumber - b.topicNumber || (a.part ?? 1) - (b.part ?? 1));
   // Validate every batch before merging so no unmatched entries or source IDs are lost.
-  for (const batch of topics) validateTopics([batch], { topicCount: 1, questionCount: batch.questions.length, warn: options?.warn });
+  for (const batch of topics) validateTopics([batch], options);
   const merged: Topic[] = [];
   for (const batch of topics) {
     const existing = merged.find((t) => t.topicId === batch.topicId);
@@ -133,48 +152,33 @@ export function loadTopicsFromDir(contentDir: string, options?: ValidateOptions)
 }
 
 /** The one-line build summary, e.g. "Content OK: 12 topics, 360 questions (180 MCQ, 180 structured)". */
-export function summaryLine(topics: Topic[]): string {
+export function summaryLine(topics: Topic[], label = 'Content'): string {
   let mcq = 0;
   let structured = 0;
   for (const topic of topics) {
     mcq += topic.counts.mcq;
     structured += topic.counts.structured;
   }
-  return `Content OK: ${topics.length} topics, ${mcq + structured} questions (${mcq} MCQ, ${structured} structured)`;
+  return `${label} OK: ${topics.length} topics, ${mcq + structured} questions (${mcq} MCQ, ${structured} structured)`;
 }
 
-let cache: Topic[] | undefined;
-let printed = false;
+const cache = new Map<string, Topic[]>();
 
 /**
- * All topics sorted by topic number, validated, cached for the process. Prints the summary line
- * once. Throws ContentError (failing the build) on any contract violation.
+ * One subject's topics sorted by topic number, validated, cached for the process (keyed by the
+ * content folder). Prints "<label> OK: ..." once per subject. Throws ContentError (failing the
+ * build) on any contract violation.
  */
-export function loadAllTopics(): Topic[] {
-  if (cache) return cache;
-  const topics = loadTopicsFromDir(resolveContentDir());
-  cache = topics;
-  if (!printed) {
-    printed = true;
-    console.log(summaryLine(topics));
-  }
+export function loadSubjectTopics(source: ContentSource & { readonly shortName?: string }): Topic[] {
+  const cached = cache.get(source.contentSubpath);
+  if (cached) return cached;
+  const topics = loadTopicsFromDir(resolveContentDir(source), { batchPrefix: source.batchPrefix });
+  cache.set(source.contentSubpath, topics);
+  console.log(summaryLine(topics, source.shortName ?? 'Content'));
   return topics;
-}
-
-export function getTopicBySlug(slug: string): Topic | undefined {
-  return loadAllTopics().find((topic) => topic.slug === slug);
 }
 
 /** Forget the cached topics (tests only). */
 export function clearTopicCache(): void {
-  cache = undefined;
-}
-
-let biologyCache: Topic[] | undefined;
-export function loadBiologyTopics(): Topic[] {
-  if (!biologyCache) {
-    biologyCache = loadTopicsFromDir(resolveContentDir(BIOLOGY_CONTENT_SUBPATH), { topicCount: 21, questionCount: 590 });
-    console.log(`Biology ${summaryLine(biologyCache)}`);
-  }
-  return biologyCache;
+  cache.clear();
 }

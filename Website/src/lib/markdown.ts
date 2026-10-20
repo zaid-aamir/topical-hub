@@ -14,6 +14,10 @@
  * - When CHEM_FORMATTING (src/config.ts) is true, applyChem() rewrites formulae in the text
  *   nodes of the result: H2SO4 -> H<sub>2</sub>SO<sub>4</sub>. Pass `{ chem: false }` or use
  *   mdBlockRaw / mdInlineRaw to skip it.
+ * - With `{ power: true }`, applyPowers() sets caret powers as superscripts in the text nodes:
+ *   m^3 -> m<sup>3</sup>, 10^-7 -> 10<sup>−7</sup> (src/lib/power.ts).
+ * - subjectFormat(subject) gives the options for a subject from its chemFormatting and
+ *   powerFormatting flags (src/config.ts); components pass that object down unchanged.
  * - The content writes one paragraph per line (worked solutions put "(a) ...", "(b) ..." on
  *   consecutive lines, and some follow a list with a plain sentence). mdBlock therefore
  *   treats a single newline before a prose line as a paragraph break; see paragraphize().
@@ -22,7 +26,9 @@
  */
 import { Marked, type Tokens } from 'marked';
 import { CHEM_FORMATTING } from '../config';
+import type { Subject } from '../config';
 import { applyChem } from './chem';
+import { applyPowers } from './power';
 
 const ESCAPE_RE = /[&<>"']/g;
 const ESCAPE_MAP: Readonly<Record<string, string>> = {
@@ -68,6 +74,13 @@ const marked = new Marked({
 export interface MarkdownOptions {
   /** Apply chemistry formatting to the text nodes. Defaults to CHEM_FORMATTING from src/config.ts. */
   chem?: boolean;
+  /** Set caret powers (m^3, 10^-7) as superscripts. Default false. */
+  power?: boolean;
+}
+
+/** The display formatting of a subject's content text. */
+export function subjectFormat(subject: Subject): MarkdownOptions {
+  return { chem: CHEM_FORMATTING && subject.chemFormatting, power: subject.powerFormatting };
 }
 
 function wrapTables(html: string): string {
@@ -79,7 +92,8 @@ function wrapTables(html: string): string {
 }
 
 function finish(html: string, options: MarkdownOptions): string {
-  return (options.chem ?? CHEM_FORMATTING) ? applyChem(html) : html;
+  const chem = (options.chem ?? CHEM_FORMATTING) ? applyChem(html) : html;
+  return options.power ? applyPowers(chem) : chem;
 }
 
 const LIST_ITEM = /^\s*(?:[-*+]|\d+[.)])\s/;

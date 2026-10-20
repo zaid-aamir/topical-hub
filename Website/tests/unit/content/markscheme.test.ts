@@ -63,6 +63,27 @@ describe('parseMarkschemeFile (good fixture)', () => {
     expect(a.points[0].text).toBe('exothermic (1)');
   });
 
+  it('reads "**(c)** **(i)** [1]" as the same head as "**(c)(i)** [1]"', () => {
+    const text = `${MARKSCHEME_FRONTMATTER}
+## Q1
+
+**(c)** **(i)** [1]
+
+- violet (1)
+
+**(c)(ii)** [1]
+
+- red (1)
+
+**Worked solution**
+
+Violet bends more; red is longer.
+`;
+    const entry = parseMarkschemeFile(text).entries.get(1);
+    if (entry?.kind !== 'structured') throw new Error('expected a structured entry');
+    expect(entry.parts.map((p) => [p.key, p.marks])).toEqual([['c.i', 1], ['c.ii', 1]]);
+  });
+
   it('keeps a note after the marks on a head and nests indented bullets under their parent', () => {
     const q = structured(topic, 4);
     const b = q.markScheme[1];

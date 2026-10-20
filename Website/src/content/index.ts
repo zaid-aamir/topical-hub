@@ -1,21 +1,19 @@
 /**
  * Public API of the content module. Pages and components import from 'src/content' (this file).
  *
- *   import { loadAllTopics, getTopicBySlug } from '../content';
+ *   import { loadSubjectTopics } from '../content';
  *   import type { Topic, Question, McqQuestion, StructuredQuestion } from '../content';
  */
 export {
-  loadAllTopics,
-  loadBiologyTopics,
-  BIOLOGY_CONTENT_SUBPATH,
-  getTopicBySlug,
+  loadSubjectTopics,
   loadTopicsFromDir,
   resolveContentDir,
   listBatchDirs,
   summaryLine,
   clearTopicCache,
-  CONTENT_SUBPATH,
+  batchDirPattern,
 } from './load';
+export type { ContentSource } from './load';
 export {
   parseFrontmatter,
   splitQuestionBlocks,
@@ -46,7 +44,7 @@ export type {
   ParsedMarkschemeFile,
 } from './parse';
 export { buildTopic } from './topic';
-export { validateTopics, EXPECTED_TOPICS, EXPECTED_QUESTIONS } from './validate';
+export { validateTopics } from './validate';
 export type { ValidateOptions } from './validate';
 export { slugify } from './slug';
 export { ContentError } from './types';

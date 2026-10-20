@@ -41,6 +41,7 @@ const CLEAN: Record<string, string> = {
   'privacy/index.html': page('<h1>Privacy</h1>'),
   '404.html': page('<h1>Not found</h1><a href="/">Home</a>'),
   'igcse/biology-0610/index.html': page('<h1>IGCSE Biology</h1>'),
+  'igcse/physics-0625/index.html': page('<h1>IGCSE Physics</h1>'),
   'igcse/chemistry-0620/index.html': page('<h1>IGCSE Chemistry</h1><a href="electrochemistry/">Electrochemistry</a>'),
   'igcse/chemistry-0620/electrochemistry/index.html': page(
     '<h1>Electrochemistry</h1><article class="question" id="q16"><h2>16</h2><a href="print/">Print</a> <a href="print-answers/">Answers</a></article>',
@@ -81,7 +82,7 @@ describe('check-dist', () => {
     expect(result.failures).toEqual([]);
     expect(result.ok).toBe(true);
     expect(result.warnings).toEqual([]);
-    expect(result.summary.htmlFiles).toBe(9);
+    expect(result.summary.htmlFiles).toBe(Object.keys(CLEAN).filter((file) => file.endsWith('.html')).length);
     expect(result.summary.phraseMatches).toBe(1);
     expect(result.summary.anchorsChecked).toBeGreaterThanOrEqual(2);
     expect(result.summary.linksChecked).toBeGreaterThan(10);

@@ -1,6 +1,6 @@
 import type { Question } from '../content';
-import { SUBJECT, type Subject } from '../config';
-/** Preserve published Chemistry links; Biology uses the complete source ID across batches. */
-export function questionAnchor(question: Question, subject: Subject = SUBJECT): string {
-  return subject.path === SUBJECT.path ? `q${question.number}` : question.id;
+import type { Subject } from '../config';
+/** Subject.anchor: 'number' keeps published Chemistry links (#q<n>); 'id' uses the complete source id across batches. */
+export function questionAnchor(question: Question, subject: Subject): string {
+  return subject.anchor === 'number' ? `q${question.number}` : question.id;
 }

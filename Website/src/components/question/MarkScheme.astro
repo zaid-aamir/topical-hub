@@ -6,16 +6,18 @@
  * No aria-label on the section: thirty identically named regions would fail axe's landmark-unique.
  */
 import type { MarkSchemePart } from '../../content';
+import type { MarkdownOptions } from '../../lib/markdown';
 import { mdInline } from '../../lib/markdown';
 import MarkPoints from './MarkPoints.astro';
 import { partLabel } from './labels';
 
 interface Props {
-  chem?: boolean;
+  /** Display formatting of the subject (subjectFormat in src/lib/markdown.ts). */
+  format?: MarkdownOptions;
   parts: MarkSchemePart[];
 }
 
-const { parts, chem = true } = Astro.props;
+const { parts, format = {} } = Astro.props;
 ---
 <section class="markscheme">
   <h3 class="ms-heading">Mark scheme</h3>
@@ -24,10 +26,10 @@ const { parts, chem = true } = Astro.props;
       <div class="ms-part">
         <div class="ms-head">
           <span class="ms-label">{partLabel(part.key)}</span>
-          {part.note !== '' && <span class="ms-note" set:html={mdInline(part.note, { chem })} />}
+          {part.note !== '' && <span class="ms-note" set:html={mdInline(part.note, format)} />}
           {part.marks !== null && <span class="ms-marks">[{part.marks}]</span>}
         </div>
-        {part.points.length > 0 && <MarkPoints chem={chem} points={part.points} />}
+        {part.points.length > 0 && <MarkPoints format={format} points={part.points} />}
       </div>
     ))
   }

@@ -24,13 +24,19 @@ describe('validateTopics', () => {
     ]);
     expect(topic.slug).toBe('fixture-topic-with-punctuation-symbols');
     expect(topic.topicNumber).toBe(90);
-    expect(() => validateTopics([topic], { topicCount: 1, questionCount: 8 })).not.toThrow();
+    expect(() => validateTopics([topic])).not.toThrow();
   });
 
-  it('insists on 12 topics and 360 questions by default', () => {
+  it('never requires a fixed number of topics or questions (the pipeline may withhold questions)', () => {
     const { topic } = loadFixtureBatch('good', 'T90_20260101_01');
-    const problems = problemsOf(() => validateTopics([topic]));
-    expect(problems).toEqual(['expected 12 topics, found 1', 'expected 360 questions in total, found 8']);
+    const withheld = { ...topic, questions: topic.questions.slice(1) };
+    expect(() => validateTopics([withheld])).not.toThrow();
+    expect(problemsOf(() => validateTopics([]))).toEqual(['no topics found']);
+  });
+
+  it('checks batch ids against the subject prefix', () => {
+    const { topic } = loadFixtureBatch('good', 'T90_20260101_01');
+    expect(problemsOf(() => validateTopics([topic], { batchPrefix: '0625_' }))[0]).toMatch(/batch_id must look like 0625_T04/);
   });
 
   it('lists every violation of the invalid fixture batch in one error', () => {
@@ -43,7 +49,7 @@ describe('validateTopics', () => {
     expect(topic.questions.map((q) => q.number)).toEqual([1, 2, 3, 4, 5, 6, 7, 11, 13, 14]);
 
     const warnings: string[] = [];
-    const problems = problemsOf(() => validateTopics([topic], { topicCount: 1, questionCount: 10, warn: (w) => warnings.push(w) }));
+    const problems = problemsOf(() => validateTopics([topic], { warn: (w) => warnings.push(w) }));
     const expectOne = (pattern: RegExp) => {
       const hits = problems.filter((p) => pattern.test(p));
       expect(hits, `expected one problem matching ${pattern}, got ${JSON.stringify(problems)}`).toHaveLength(1);
@@ -76,7 +82,7 @@ describe('validateTopics', () => {
     if (q?.type !== 'structured') throw new Error('Q6 should be structured');
     q.markScheme[2].points = [];
     const warnings: string[] = [];
-    validateTopics([topic], { topicCount: 1, questionCount: 8, warn: (w) => warnings.push(w) });
+    validateTopics([topic], { warn: (w) => warnings.push(w) });
     expect(warnings).toEqual(['T90_20260101_01_Q6: mark scheme part (b) has no marking points']);
   });
 
@@ -84,7 +90,7 @@ describe('validateTopics', () => {
     const a = loadFixtureBatch('good', 'T90_20260101_01').topic;
     const b = loadFixtureBatch('good', 'T90_20260101_01').topic;
     b.topicNumber = 91;
-    const problems = problemsOf(() => validateTopics([a, b], { topicCount: 2, questionCount: 16 }));
+    const problems = problemsOf(() => validateTopics([a, b]));
     expect(problems).toContain('T90_20260101_01: topic_id 91 does not match the batch prefix T90');
     expect(problems).toContain('T90_20260101_01: slug "fixture-topic-with-punctuation-symbols" is also used by T90_20260101_01');
     expect(problems.filter((p) => /duplicate id/.test(p))).toHaveLength(8);

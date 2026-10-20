@@ -1,12 +1,13 @@
 /**
  * Build-time validation of the loaded content. Every check that fails is collected, and one
  * ContentError listing all of them is thrown at the end, so a failed build shows the whole picture.
+ *
+ * The checks are structural only: the pipeline may withhold questions, so no exact topic or
+ * question total is ever required. Every ## Q<n> needs a mark-scheme entry and vice versa, ids are
+ * unique, part marks sum to the question's marks, and MCQs have options A-D and an answer.
  */
 import { ContentError } from './types';
 import type { McqQuestion, Question, StructuredQuestion, Topic } from './types';
-
-export const EXPECTED_TOPICS = 12;
-export const EXPECTED_QUESTIONS = 360;
 
 const TYPES: ReadonlySet<string> = new Set(['mcq', 'structured']);
 const TIERS: ReadonlySet<string> = new Set(['core', 'supplement']);
@@ -14,25 +15,22 @@ const DIFFICULTIES: ReadonlySet<number> = new Set([1, 2, 3]);
 const LETTERS = 'ABCD';
 
 export interface ValidateOptions {
-  /** Expected number of topics. Default 12. */
-  topicCount?: number;
-  /** Expected total number of questions. Default 360. */
-  questionCount?: number;
+  /** What comes before "T<NN>_" in the subject's batch ids ('' for Chemistry, '0625_' for Physics). Default ''. */
+  batchPrefix?: string;
   /** Receives non-fatal warnings, one call per line. Default console.warn. */
   warn?: (message: string) => void;
 }
 
 /** Throws ContentError (listing every violation) when the content breaks the contract. */
 export function validateTopics(topics: Topic[], options: ValidateOptions = {}): void {
-  const expectedTopics = options.topicCount ?? EXPECTED_TOPICS;
-  const expectedQuestions = options.questionCount ?? EXPECTED_QUESTIONS;
+  const batchPrefix = options.batchPrefix ?? '';
+  const escapedPrefix = batchPrefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const batchIdPattern = new RegExp(`^${escapedPrefix}T(\\d{2})_(?:\\d{8}_\\d{2}|P\\d+_\\d{8})$`);
   const warn = options.warn ?? ((message: string) => console.warn(message));
   const problems: string[] = [];
   const warnings: string[] = [];
 
-  if (topics.length !== expectedTopics) problems.push(`expected ${expectedTopics} topics, found ${topics.length}`);
-  const total = topics.reduce((n, t) => n + t.questions.length, 0);
-  if (total !== expectedQuestions) problems.push(`expected ${expectedQuestions} questions in total, found ${total}`);
+  if (topics.length === 0) problems.push('no topics found');
 
   const seenNumbers = new Map<number, string>();
   const seenSlugs = new Map<string, string>();
@@ -40,13 +38,13 @@ export function validateTopics(topics: Topic[], options: ValidateOptions = {}): 
 
   for (const topic of topics) {
     const t = topic.batchId || '<missing batch_id>';
-    const prefix = /^(?:T(\d{2})_\d{8}_\d{2}|0610_T(\d{2})_P\d+_\d{8})$/.exec(topic.batchId);
-    if (!prefix) problems.push(`${t}: batch_id must look like T04_20260923_01`);
+    const prefix = batchIdPattern.exec(topic.batchId);
+    if (!prefix) problems.push(`${t}: batch_id must look like ${batchPrefix}T04_20260923_01 or ${batchPrefix}T04_P1_20261013`);
     if (!Number.isInteger(topic.topicNumber) || topic.topicNumber < 1) {
       problems.push(`${t}: topic_id "${topic.topicId}" is not a positive integer`);
     } else {
-      if (prefix && Number(prefix[1] ?? prefix[2]) !== topic.topicNumber) {
-        problems.push(`${t}: topic_id ${topic.topicNumber} does not match the batch prefix T${prefix[1] ?? prefix[2]}`);
+      if (prefix && Number(prefix[1]) !== topic.topicNumber) {
+        problems.push(`${t}: topic_id ${topic.topicNumber} does not match the batch prefix T${prefix[1]}`);
       }
       const other = seenNumbers.get(topic.topicNumber);
       if (other) problems.push(`${t}: topic number ${topic.topicNumber} is also used by ${other}`);
