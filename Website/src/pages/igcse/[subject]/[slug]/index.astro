@@ -57,9 +57,9 @@ const description =
     <div class="filters" data-filters>
       <fieldset data-filter-group="tier">
         <legend>Tier</legend>
-        <button type="button" data-filter="tier" data-value="all" aria-pressed="true">All</button>
-        <button type="button" data-filter="tier" data-value="core" aria-pressed="false">Core only</button>
-        <button type="button" data-filter="tier" data-value="supplement" aria-pressed="false">Supplement only</button>
+        <button type="button" data-filter="tier" data-value="all" aria-pressed="true">Extended</button>
+        <button type="button" data-filter="tier" data-value="core" aria-pressed="false">Core</button>
+        <button type="button" data-filter="tier" data-value="supplement" aria-pressed="false">Extended content only</button>
       </fieldset>
       <fieldset data-filter-group="type">
         <legend>Type</legend>
@@ -75,7 +75,7 @@ const description =
           {topic.subtopics.map((subtopic) => <option value={subtopic.id}>{subtopic.id} {subtopic.name}</option>)}
         </select>
       </fieldset>
-      <p class="filter-hint">Extended candidates are examined on Core and Supplement content, so keep All.</p>
+      <p class="filter-hint">Core questions are for everyone. Extended questions use Supplement content and are only for students taking the Extended papers (Papers 2 and 4).</p>
       <p data-filter-count role="status"></p>
       <p data-score role="status"></p>
     </div>

@@ -26,7 +26,7 @@ Neither pipeline is editable as part of website maintenance. Follow the root bri
 ## Current implementation details and limits
 
 - Question URLs use `#q<n>`; the source id is a data attribute and part of the pre-filled report. Full-id anchors from the original brief have not been implemented. Keep existing links working during any future migration.
-- Tier buttons are All, Core only and Supplement only. Extended candidates need both tiers.
+- Tier buttons are Extended (all questions, default), Core and Extended content only (Supplement questions). Badges read Core or Extended; the data keeps core | supplement.
 - Without JavaScript, questions and answers remain visible and inactive filters/toggles are hidden.
 - `REPORT_FORM_URL` is empty, so reporting opens a pre-filled GitHub issue. The owner can configure a Google Form in `src/config.ts`.
 - `SUBJECTS` supports the home-page structure, but new subjects also need content dispatch and routes. Chemistry migration is separate work.

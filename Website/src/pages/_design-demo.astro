@@ -24,9 +24,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="filters" data-filters>
       <fieldset data-filter-group="tier">
         <legend>Tier</legend>
-        <button type="button" data-filter="tier" data-value="all" aria-pressed="true">All</button>
-        <button type="button" data-filter="tier" data-value="core" aria-pressed="false">Core only</button>
-        <button type="button" data-filter="tier" data-value="supplement" aria-pressed="false">Supplement only</button>
+        <button type="button" data-filter="tier" data-value="all" aria-pressed="true">Extended</button>
+        <button type="button" data-filter="tier" data-value="core" aria-pressed="false">Core</button>
+        <button type="button" data-filter="tier" data-value="supplement" aria-pressed="false">Extended content only</button>
       </fieldset>
       <fieldset data-filter-group="type">
         <legend>Type</legend>
@@ -43,7 +43,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <option value="4.2">4.2 Hydrogen–oxygen fuel cells</option>
         </select>
       </fieldset>
-      <p class="filter-hint">Extended candidates are examined on Core and Supplement content, so keep All.</p>
+      <p class="filter-hint">Core questions are for everyone. Extended questions use Supplement content and are only for students taking the Extended papers (Papers 2 and 4).</p>
     </div>
     <ul class="link-row">
       <li><a href="#">Print the questions</a></li>
@@ -152,7 +152,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <article class="question" id="q16" data-question-id="T04_20260923_01_Q16" data-tier="supplement" data-type="structured" data-subtopic="4.1" data-number="16">
           <div class="question-head">
             <h2 class="question-number"><span class="visually-hidden">Question </span>16</h2>
-            <span class="badge badge-supplement">Supplement</span>
+            <span class="badge badge-supplement" title="Supplement content: Extended tier only">Extended</span>
             <span class="subtopic">Electrolysis</span>
             <span class="marks">[7]</span>
           </div>
@@ -292,7 +292,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <button type="button">Plain button</button>
         <button type="button" disabled>Disabled</button>
         <span class="badge badge-core">Core</span>
-        <span class="badge badge-supplement">Supplement</span>
+        <span class="badge badge-supplement" title="Supplement content: Extended tier only">Extended</span>
       </div>
       <p>Unicode formulae for glyph checks: H₂SO₄, Cu²⁺, SO₄²⁻, 2H₂O, 25 cm³, 0.1 mol/dm³.</p>
       <div class="part"><span class="part-label">(a)</span><div class="part-text"><p>Print pages add ruled answer lines under each part, two per mark.</p></div><span class="part-marks">[2]</span></div>

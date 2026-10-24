@@ -740,7 +740,7 @@ th {
           <button type="button" data-filter="tier" data-value="all" aria-pressed="true">All</button> …
         </fieldset>
         <fieldset data-filter-group="subtopic"><legend>Subtopic</legend><select data-filter="subtopic">…</select></fieldset>
-        <p class="filter-hint">Extended candidates are examined on Core and Supplement content, so keep All.</p>
+        <p class="filter-hint">Core questions are for everyone. Extended questions use Supplement content and are only for students taking the Extended papers (Papers 2 and 4).</p>
       </div>
       <p data-filter-count role="status">Showing 30 of 30 questions</p>
       <p data-score role="status">3 / 5 correct</p>
@@ -830,7 +830,7 @@ p[data-filter-count]:empty {
       <article class="question" id="q16" data-question-id="…" data-tier="supplement" data-type="structured" …>
         <div class="question-head">
           <span class="question-number">16</span>
-          <span class="badge badge-supplement">Supplement</span>
+          <span class="badge badge-supplement">Extended</span>
           <span class="subtopic">Electrolysis</span>
           <span class="marks">[7]</span>          (brackets are in the text)
         </div>
@@ -1510,7 +1510,7 @@ p[data-filter-count]:empty {
        .question styles above and are not affected by anything here.
        <div class="question-head">
          <h2 class="question-number">16</h2>
-         <span class="badge badge-supplement">Supplement</span>
+         <span class="badge badge-supplement">Extended</span>
          <span class="badge badge-marks">7 marks</span>
          <span class="subtopic">Electrolysis</span>
        </div>

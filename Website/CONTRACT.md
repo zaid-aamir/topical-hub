@@ -65,7 +65,7 @@ Topic page
   - subtopic `select[data-filter="subtopic"]` with `<option value="all">` plus one option per subtopic id
   - a live count `p[data-filter-count][role="status"]` such as "Showing 12 of 30 questions"
 - Each question is `article.question.question-card#<anchor>` (Chemistry `q<n>`, Biology and Physics full source ID) with `data-question-id`, `data-tier`, `data-type`, `data-subtopic`, `data-number`. Filtering sets or removes the `hidden` attribute. With JavaScript off, nothing is hidden.
-- Card head `div.question-head`: `h2.question-number` (visually hidden "Question " + number, no part label), `span.badge.badge-core|badge-supplement`, `span.badge.badge-marks` ("1 mark", "4 marks"), `span.subtopic`.
+- Card head `div.question-head`: `h2.question-number` (visually hidden "Question " + number, no part label), `span.badge.badge-core|badge-supplement` (text "Core" or "Extended"; the Extended badge has `title` and visually hidden text "Supplement content: Extended tier only"), `span.badge.badge-marks` ("1 mark", "4 marks"), `span.subtopic`.
 - Merged topics (questions from more than one source part): each part's cards sit in `section.part-group[data-part][aria-labelledby="part-<n>"]` headed by `h2.part-heading#part-<n>` ("Part 2" plus `span.part-range` "Questions 1–30"). A part section whose questions are all filtered out gets `hidden`. Single-part topics have no part sections.
 - Score line (MCQ only) `p[data-score][role="status"]` near the filters, e.g. "3 / 5 correct", kept in memory only. It counts each question's first attempt only (`data-first="correct"|"wrong"` on the card, kept across "Try again").
 - MCQ options: container `div.options[role="group"][aria-labelledby]`; each option is `button.option[data-letter="A".."D"][aria-pressed="false"]` containing `span.option-letter`, `span.option-text` and an empty `span.option-status`. For table-shaped options the container is a `table.options-table` and each `tr.option-row[data-letter]` contains the `button.option` and its `span.option-status` in its first cell; clicking anywhere in the row activates the button. After answering: the card gets `data-answered="correct"|"wrong"`, the chosen option gets `data-state="correct"|"wrong"`, the right option gets `data-state="correct"` (rows mirror `data-state` and `data-pressed`), all options get `disabled`, the status labels read "Correct" (right choice), "Not quite" (wrong choice) and "Correct answer" (the right option after a wrong choice), and `p.feedback[role="status"][aria-live="polite"]` is filled with "Correct" or "Not quite. The answer is C".
@@ -88,7 +88,7 @@ Print pages
 
 ## Implementation decisions
 
-- Tier filter: **All / Core only / Supplement only**, with a one-line hint "Extended candidates are examined on Core and Supplement content, so keep All."
+- Tier filter: **Extended** (`all`, default: every question) / **Core** (`core`) / **Extended content only** (`supplement`), with the hint "Core questions are for everyone. Extended questions use Supplement content and are only for students taking the Extended papers (Papers 2 and 4)."
 - MCQ "x / y correct" counts only questions answered by clicking an option; opening the answer without answering does not count.
 - The sub-topic filter is a native `<select>` because some topics have eight sub-topics.
 - The syllabus map JSON is not read at build time; topic and sub-topic names come from the content files themselves (they match the map).

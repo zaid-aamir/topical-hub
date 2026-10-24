@@ -319,6 +319,11 @@ test.describe('topic page', () => {
     const core = page.locator('fieldset[data-filter-group="tier"] button[data-filter="tier"][data-value="core"]');
     const all = page.locator('fieldset[data-filter-group="tier"] button[data-filter="tier"][data-value="all"]');
     await expect(all).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('fieldset[data-filter-group="tier"] button')).toHaveText([
+      'Extended',
+      'Core',
+      'Extended content only',
+    ]);
     await core.click();
     await expect(core).toHaveAttribute('aria-pressed', 'true');
     await expect(all).toHaveAttribute('aria-pressed', 'false');

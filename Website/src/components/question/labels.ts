@@ -12,9 +12,14 @@ export function partLabel(key: string): string {
     .join('');
 }
 
-/** Badge text for a tier. */
+/** Badge text for a tier: students think in Cambridge tiers, so Supplement content shows as Extended. */
 export function tierLabel(tier: Tier): string {
-  return tier === 'core' ? 'Core' : 'Supplement';
+  return tier === 'core' ? 'Core' : 'Extended';
+}
+
+/** Tooltip and screen-reader text for the Extended badge; Core needs none. */
+export function tierTitle(tier: Tier): string | undefined {
+  return tier === 'supplement' ? 'Supplement content: Extended tier only' : undefined;
 }
 
 /** "30 questions: 15 multiple choice, 15 structured" (no full stop, so pages can end it as they like). */

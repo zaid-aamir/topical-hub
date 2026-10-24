@@ -1,0 +1,15 @@
+---
+/**
+ * Tier badge for the topic and print pages. The data keeps core | supplement; students see the
+ * Cambridge tiers, so Supplement questions are labelled Extended.
+ */
+import type { Tier } from '../../content';
+import { tierLabel, tierTitle } from './labels';
+
+interface Props {
+  tier: Tier;
+}
+
+const { tier } = Astro.props;
+---
+<span class={`badge badge-${tier}`} title={tierTitle(tier)}>{tierLabel(tier)}{tier === 'supplement' && <span class="visually-hidden"> ({tierTitle(tier)})</span>}</span>

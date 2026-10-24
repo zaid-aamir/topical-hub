@@ -21,6 +21,7 @@ The Astro site is implemented in `Website/`. Start with `Website/README.md` for 
 
 - Three subjects, listed under `/#subjects` with counts computed from the data. On 2026-10-19 that was Chemistry 0620 (12 topics, 360 questions), Biology 0610 (21 topics, 590 questions) and Physics 0625 (6 topics, 420 questions). The build never requires a fixed total, because the pipeline may withhold questions.
 - Subjects are data-driven: each entry in `SUBJECTS` (`Website/src/config.ts`) carries its URL path, names, content folder (`contentSubpath`), override variable (`contentDirEnv`), batch-folder prefix (`batchPrefix`), anchor style and the `chemFormatting` / `powerFormatting` flags. The loader, pages, PDFs and build checks all loop over `SUBJECTS`, so a fourth subject is one new entry plus its approved content.
+- Tier labels: the data stays `tier: core | supplement`, but students see Cambridge tiers. Badges read Core / Extended, and the tier filter is Extended (all, default) / Core / Extended content only (supplement).
 - Topic pages have tier/type/subtopic filters, MCQ marking with Try again, answer toggles and print pages. There are 78 downloadable watermarked PDFs in total (24 Chemistry, 42 Biology, 12 Physics), two per topic.
 - Header: Subjects, About, theme toggle. Footer version comes from `Website/package.json`.
 - Chemistry question anchors remain `#q<n>`; Biology and Physics anchors use full source IDs. Every subject keeps the full source id in `data-question-id` and error reports. Chemistry's anchors differ from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
@@ -61,7 +62,7 @@ Read only `igcse-chem-pipeline/pipeline/04_approved/*/questions.md` and `marksch
 ## v1 scope (ship this, nothing more)
 
 1. Home page: what the site is (honest labelling), links to the 12 topics.
-2. One page per topic: its questions, filterable by Core/Supplement if cheap. Each question gets a "Show answer" toggle revealing the mark scheme and worked solution, so the student attempts it first.
+2. One page per topic: its questions, filterable by Core/Extended tier if cheap. Each question gets a "Show answer" toggle revealing the mark scheme and worked solution, so the student attempts it first.
 3. A stable URL and anchor for every question (use its `id`), so error reports and links can point at one question.
 4. A "Report an error" link on every question, which opens a form with the question id pre-filled. The owner will supply the form link; until then use a placeholder constant in one place.
 5. A print-friendly layout: questions without answers, and optionally a separate answers print.

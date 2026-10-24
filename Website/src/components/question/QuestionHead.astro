@@ -5,7 +5,7 @@
  * total marks in square brackets, as on a paper.
  */
 import type { Question } from '../../content';
-import { tierLabel } from './labels';
+import TierBadge from './TierBadge.astro';
 
 interface Props {
   question: Question;
@@ -15,7 +15,7 @@ const { question } = Astro.props;
 ---
 <div class="question-head">
   <h2 class="question-number"><span class="visually-hidden">Question </span>{question.number}{question.part !== undefined && <span class="question-part"> · Part {question.part}</span>}</h2>
-  <span class={`badge badge-${question.tier}`}>{tierLabel(question.tier)}</span>
+  <TierBadge tier={question.tier} />
   <span class="subtopic">{question.subtopicName}</span>
   <span class="marks">[{question.marks}]</span>
 </div>

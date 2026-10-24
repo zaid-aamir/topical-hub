@@ -20,7 +20,7 @@ const subjectPath = `/${subject.path}/`;
 const title = `${subject.shortName} exam-style questions by topic, with answers | ${SITE_NAME}`;
 const description =
   `${totalQuestions} original exam-style questions for ${subject.fullName} in ${topicCount} topics, ` +
-  'each with a mark scheme and a worked solution. Free, with Core and Supplement filters.';
+  'each with a mark scheme and a worked solution. Free, with Core and Extended filters.';
 ---
 <BaseLayout title={title} description={description} canonicalPath={subjectPath}>
   <div class="shell">
@@ -38,7 +38,7 @@ const description =
 
     <div class="prose">
       <p>
-        Choose a topic to see its questions. On a topic page you can filter by Core or Supplement and by question
+        Choose a topic to see its questions. On a topic page you can filter by Core or Extended tier and by question
         type, attempt a question, then reveal its mark scheme and worked solution. Each topic also has two print
         pages for practice on paper: the questions with ruled answer space, and the mark scheme. The questions
         are original, written with AI tools and approved by the site owner; <a href="/about/">more about the site</a>.
