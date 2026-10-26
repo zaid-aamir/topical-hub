@@ -35,18 +35,18 @@ Dark theme (follows `prefers-color-scheme`, overridable by the toggle via `html[
 
 | token | value |
 |---|---|
-| `--paper` | `#0F161D` |
-| `--surface` | `#16202A` |
+| `--paper` | `#1C242C` |
+| `--surface` | `#26303A` |
 | `--ink` | `#E7ECF0` |
 | `--ink-muted` | `#A7B3BD` |
-| `--rule` | `#2C3944` |
-| `--accent` | `#7CB9E3` (7.8:1 on surface) |
-| `--on-accent` | `#0F161D` |
-| `--accent-soft` | `#1D3447` |
+| `--rule` | `#3B4753` |
+| `--accent` | `#7CB9E3` (6.3:1 on surface) |
+| `--on-accent` | `#1C242C` |
+| `--accent-soft` | `#273D52` |
 | `--ok` | `#5BC98A` |
-| `--ok-soft` | `#173426` |
+| `--ok-soft` | `#1F3B2D` |
 | `--bad` | `#F08A80` |
-| `--bad-soft` | `#3D1F1D` |
+| `--bad-soft` | `#45282A` |
 
 Correct and wrong states never rely on colour alone: a text label ("Correct", "Not quite. The answer is C") and an inline SVG tick or cross accompany the colour.
 

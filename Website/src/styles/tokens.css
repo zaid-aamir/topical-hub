@@ -82,18 +82,18 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --paper: #0f161d;
-    --surface: #16202a;
+    --paper: #1c242c;
+    --surface: #26303a;
     --ink: #e7ecf0;
     --ink-muted: #a7b3bd;
-    --rule: #2c3944;
+    --rule: #3b4753;
     --accent: #7cb9e3;
-    --on-accent: #0f161d;
-    --accent-soft: #1d3447;
+    --on-accent: #1c242c;
+    --accent-soft: #273d52;
     --ok: #5bc98a;
-    --ok-soft: #173426;
+    --ok-soft: #1f3b2d;
     --bad: #f08a80;
-    --bad-soft: #3d1f1d;
+    --bad-soft: #45282a;
     --show-moon: none;
     --show-sun: block;
   }
@@ -101,18 +101,18 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #0f161d;
-  --surface: #16202a;
+  --paper: #1c242c;
+  --surface: #26303a;
   --ink: #e7ecf0;
   --ink-muted: #a7b3bd;
-  --rule: #2c3944;
+  --rule: #3b4753;
   --accent: #7cb9e3;
-  --on-accent: #0f161d;
-  --accent-soft: #1d3447;
+  --on-accent: #1c242c;
+  --accent-soft: #273d52;
   --ok: #5bc98a;
-  --ok-soft: #173426;
+  --ok-soft: #1f3b2d;
   --bad: #f08a80;
-  --bad-soft: #3d1f1d;
+  --bad-soft: #45282a;
   --show-moon: none;
   --show-sun: block;
 }

@@ -1,6 +1,6 @@
 ---
 /**
- * Home page: what the site is, in plain words, then one card per subject (SUBJECTS in config.ts).
+ * Home page: one card per subject (SUBJECTS in config.ts), then what the site is, in plain words.
  * Topics are listed only on each subject's own page, so there is one route to them however many
  * subjects there are. Counts are computed from the data at build time.
  */
@@ -23,7 +23,12 @@ const writtenFor = SOLE_SUBJECT
       <p class="page-summary lead">{SITE_TAGLINE}.</p>
     </div>
 
-    <div class="prose">
+    <section id="subjects" aria-labelledby="subjects-heading">
+      <h2 class="home-subjects-heading" id="subjects-heading">Subjects</h2>
+      <SubjectGrid />
+    </section>
+
+    <div class="prose home-about">
       <p>
         The questions are original exam-style questions, written in the style of {writtenFor}. They were written
         with AI tools and approved by the site owner. They have not been reviewed by teachers or examiners, so mistakes are possible: if anything looks
@@ -34,17 +39,12 @@ const writtenFor = SOLE_SUBJECT
         and has no accounts. <a href="/about/">More about the site</a>.
       </p>
     </div>
-
-    <section id="subjects" aria-labelledby="subjects-heading">
-      <h2 class="home-subjects-heading" id="subjects-heading">Subjects</h2>
-      <SubjectGrid />
-    </section>
   </div>
 </BaseLayout>
 
 <style>
-  /* Home page only: the title page of the booklet. A larger serif title, a lead sentence,
-     and room above the subjects heading. Everything else is the shared system. */
+  /* Home page only: the title page of the booklet. A larger serif title, a lead sentence, the
+     subject cards, then the description as a separate section. Everything else is the shared system. */
   .home-title {
     margin-top: var(--space-4);
   }
@@ -60,7 +60,11 @@ const writtenFor = SOLE_SUBJECT
   }
 
   .home-subjects-heading {
-    margin-top: var(--space-10);
+    margin-top: var(--space-6);
+  }
+
+  .home-about {
+    margin-top: var(--space-8);
   }
 
   /* The header's "Subjects" link jumps here; keep the heading clear of the top edge. */
