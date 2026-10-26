@@ -31,22 +31,22 @@ Light theme
 | `--bad` | `#B42318` | wrong (6.6:1 on white) |
 | `--bad-soft` | `#FBE9E7` | wrong background |
 
-Dark theme (follows `prefers-color-scheme`, overridable by the toggle via `html[data-theme]`)
+Dark theme (follows `prefers-color-scheme`, overridable by the toggle via `html[data-theme]`; neutral charcoal backgrounds with no blue tint, the copper(II) sulfate blue kept for the accent)
 
 | token | value |
 |---|---|
-| `--paper` | `#1C242C` |
-| `--surface` | `#26303A` |
-| `--ink` | `#E7ECF0` |
-| `--ink-muted` | `#A7B3BD` |
-| `--rule` | `#3B4753` |
-| `--accent` | `#7CB9E3` (6.3:1 on surface) |
-| `--on-accent` | `#1C242C` |
-| `--accent-soft` | `#273D52` |
+| `--paper` | `#1E1F22` |
+| `--surface` | `#2B2D31` |
+| `--ink` | `#ECECEE` |
+| `--ink-muted` | `#B5B7BD` |
+| `--rule` | `#3F4147` |
+| `--accent` | `#7CB9E3` (6.5:1 on surface) |
+| `--on-accent` | `#1E1F22` |
+| `--accent-soft` | `#263746` |
 | `--ok` | `#5BC98A` |
-| `--ok-soft` | `#1F3B2D` |
+| `--ok-soft` | `#1F3A2B` |
 | `--bad` | `#F08A80` |
-| `--bad-soft` | `#45282A` |
+| `--bad-soft` | `#44292A` |
 
 Correct and wrong states never rely on colour alone: a text label ("Correct", "Not quite. The answer is C") and an inline SVG tick or cross accompany the colour.
 
