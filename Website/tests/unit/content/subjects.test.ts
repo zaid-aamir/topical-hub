@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { validateTopics } from '../../../src/content';
-import { BIOLOGY_0610, CHEMISTRY_0620, PHYSICS_0625, SUBJECTS, reportErrorUrl, SITE_URL } from '../../../src/config';
+import { BIOLOGY_0610, CHEMISTRY_0620, PHYSICS_0625, SUBJECTS, REPORT_FORM_FIELDS, REPORT_FORM_URL, reportErrorUrl, SITE_URL } from '../../../src/config';
 import { subjectCounts, subjectTopics } from '../../../src/lib/subjects';
 import { questionAnchor } from '../../../src/lib/question-anchor';
 import { mdBlock, mdInline, subjectFormat } from '../../../src/lib/markdown';
@@ -75,13 +75,20 @@ describe('subject publication', () => {
     expect(pdfFileName('waves', 'questions', PHYSICS_0625.path)).toBe('topical-hub-igcse-physics-0625-waves-questions.pdf');
   });
 
-  it('builds report links with the question id and its anchor', () => {
+  it('builds pre-filled report form links with the question id and its anchor, or none without a form', () => {
     const topic = biology.find((t) => (t.batchIds ?? []).length > 1)!;
     for (const q of topic.questions) {
       const page = `${SITE_URL}/${BIOLOGY_0610.path}/${topic.slug}/#${questionAnchor(q, BIOLOGY_0610)}`;
-      const report = new URL(reportErrorUrl(q.id, page));
-      expect(report.searchParams.get('body')).toContain(page);
-      expect(report.searchParams.get('title')).toContain(q.id);
+      const href = reportErrorUrl(q.id, page);
+      if (!REPORT_FORM_URL) {
+        expect(href).toBeNull();
+        continue;
+      }
+      const report = new URL(href!);
+      expect(`${report.origin}${report.pathname}`).toBe(REPORT_FORM_URL);
+      expect(report.hostname).not.toContain('github');
+      expect(report.searchParams.get(REPORT_FORM_FIELDS.questionId)).toBe(q.id);
+      expect(report.searchParams.get(REPORT_FORM_FIELDS.pageUrl)).toBe(page);
     }
   });
 

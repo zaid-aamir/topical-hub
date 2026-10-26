@@ -33,7 +33,7 @@ const CLEAN: Record<string, string> = {
   'index.html': page(
     `<h1>Topical Hub</h1><a href="/about/">About</a> <a href="/igcse/chemistry-0620/">Subject</a> <a href="${SITE_URL}/privacy/">Privacy</a>
      <a href="/igcse/chemistry-0620/electrochemistry/#q16">Q16</a> <a href="/404">404</a> <a href="#main">top</a>
-     <a href="https://github.com/zaid-aamir/topical-hub/issues/new?title=x" target="_blank" rel="noopener noreferrer">report</a>
+     <a href="https://docs.google.com/forms/d/e/x/viewform?usp=pp_url" target="_blank" rel="noopener noreferrer">report</a>
      <a href="mailto:someone@example.test">mail</a> <img src="/favicon.svg" alt="">`,
     { head: '<link rel="stylesheet" href="/_astro/site.css"><link rel="canonical" href="https://example.test/"><script type="module" src="/_astro/app.js"></script>' },
   ),

@@ -1,13 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_NAME, SUBJECTS, GITHUB_REPO, REPORT_FORM_URL, syllabusPhrase } from '../config';
+import { SITE_NAME, SUBJECTS, syllabusPhrase } from '../config';
 
-
-const repoUrl = `https://github.com/${GITHUB_REPO}`;
 /** ", " between subjects and " and " before the last. */
 const joiner = (index: number) => (index === 0 ? '' : index === SUBJECTS.length - 1 ? ' and ' : ', ');
 const subjectList = SUBJECTS.map((subject, index) => joiner(index) + subject.fullName).join('');
-const reportsGoToForm = REPORT_FORM_URL !== '';
 ---
 <BaseLayout
   title={`About ${SITE_NAME}`}
@@ -56,16 +53,11 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
 
       <h2>Reporting an error</h2>
       <p>
-        Each question has a Report an error link. It opens a short report with the question's id and web
-        address already filled in, so you only need to say what looks wrong.
-        {reportsGoToForm
-          ? ' The report goes to a form, and nothing on the form identifies you unless you choose to add your details.'
-          : ' Until the report form is ready, the link opens a new issue on the public GitHub repository, which needs a GitHub account.'}
+        Errors are reported through the Report an error form under each question. It opens with the
+        question's id and web address already filled in, so you only need to say what looks wrong. Nothing
+        on the form identifies you unless you choose to add your details.
       </p>
-      <p>
-        Reports are read, and corrections are published to the site. The site is built in a public
-        repository <a href={repoUrl} rel="noopener">on GitHub</a>, so every change to a question is visible.
-      </p>
+      <p>Reports are read, and corrections are published to the site.</p>
 
       <h2>Independence</h2>
       <p>

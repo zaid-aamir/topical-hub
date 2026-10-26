@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_NAME, REPORT_FORM_URL } from '../config';
-
-const reportsGoToForm = REPORT_FORM_URL !== '';
+import { SITE_NAME } from '../config';
 ---
 <BaseLayout
   title={`Privacy | ${SITE_NAME}`}
@@ -51,9 +49,10 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
 
       <h2>Error reports</h2>
       <p>
-        The Report an error link under each question takes you
-        {reportsGoToForm ? ' to a report form run by its provider' : ' to GitHub'}. Anything you write
-        there is handled by that service under its own privacy policy, not by {SITE_NAME}.
+        The Report an error link under each question opens a Google Form, with the question's id and web
+        address filled in. Anything you type into the form is collected by Google and handled under
+        <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>. {SITE_NAME}
+        sees only the answers you submit, and uses them to fix the question.
       </p>
 
       <h2>Hosting</h2>

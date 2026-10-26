@@ -48,7 +48,7 @@ Each folder can be overridden with its subject's `contentDirEnv` variable (`CONT
 
 Display formatting is per subject: `chemFormatting` (H2SO4 → H₂SO₄, Chemistry only) and `powerFormatting` (a caret followed by an optional minus and digits becomes a superscript: m^3 → m³, 10^-7 → 10⁻⁷; Biology and Physics). A caret followed by anything else, such as nuclide notation `^A_Z X`, stays as written.
 
-Chemistry links retain `/igcse/chemistry-0620/<slug>/#q<n>`. Biology and Physics use `/igcse/<subject>/<slug>/#<full-source-id>`, consistently for question articles, stem/answer IDs and error reports. Print pages use the same question anchor rule and are noindex, excluded from sitemaps. Error reports use prefilled GitHub issues while `REPORT_FORM_URL` is empty.
+Chemistry links retain `/igcse/chemistry-0620/<slug>/#q<n>`. Biology and Physics use `/igcse/<subject>/<slug>/#<full-source-id>`, consistently for question articles, stem/answer IDs and error reports. Print pages use the same question anchor rule and are noindex, excluded from sitemaps. Error reports open a pre-filled Google Form (`REPORT_FORM_URL`); with no form set, the link is not rendered.
 
 ## Code map
 

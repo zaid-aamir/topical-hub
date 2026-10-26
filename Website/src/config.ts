@@ -207,14 +207,11 @@ export const DISCLAIMER =
  */
 export const CHEM_FORMATTING = true;
 
-/** Public GitHub repository, used for the "Report an error" fallback link. */
-export const GITHUB_REPO = 'zaid-aamir/topical-hub';
-
 /**
  * "Report an error" form.
  *
- * Leave REPORT_FORM_URL empty until the owner has created a Google Form. While it is empty,
- * reportErrorUrl() links to a pre-filled new GitHub issue on the public repo instead.
+ * While REPORT_FORM_URL is empty, reportErrorUrl() returns null and no Report an error link is
+ * rendered.
  *
  * To wire up a Google Form:
  *  1. Create the form with two short-answer questions, "Question id" and "Page URL"
@@ -225,26 +222,22 @@ export const GITHUB_REPO = 'zaid-aamir/topical-hub';
  *  3. Set REPORT_FORM_URL to the part before the "?", i.e. ".../viewform".
  *  4. Set REPORT_FORM_FIELDS to the two entry.<number> keys from that URL, in the right roles.
  */
-export const REPORT_FORM_URL = '';
+export const REPORT_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeTEt18tIlRSwIizd27aB8DwPJey_roqdKdbAVHeZEpPMsqLA/viewform';
 export const REPORT_FORM_FIELDS = {
-  questionId: 'entry.0000000',
-  pageUrl: 'entry.0000000',
+  questionId: 'entry.472826419',
+  pageUrl: 'entry.1645860244',
 } as const;
 
 /**
- * Build the "Report an error" link for one question.
+ * Build the pre-filled "Report an error" form link for one question, or null when no form is set.
  * @param questionId stable question id, e.g. "T04_20260923_01_Q16"
  * @param pageUrl absolute URL of the question, including its #q<n> anchor
  */
-export function reportErrorUrl(questionId: string, pageUrl: string): string {
-  if (REPORT_FORM_URL) {
-    const params = new URLSearchParams();
-    params.set('usp', 'pp_url');
-    params.set(REPORT_FORM_FIELDS.questionId, questionId);
-    params.set(REPORT_FORM_FIELDS.pageUrl, pageUrl);
-    return `${REPORT_FORM_URL}?${params.toString()}`;
-  }
-  const title = `Error in ${questionId}`;
-  const body = `${pageUrl}\n\nWhat's wrong:\n`;
-  return `https://github.com/${GITHUB_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+export function reportErrorUrl(questionId: string, pageUrl: string): string | null {
+  if (!REPORT_FORM_URL) return null;
+  const params = new URLSearchParams();
+  params.set('usp', 'pp_url');
+  params.set(REPORT_FORM_FIELDS.questionId, questionId);
+  params.set(REPORT_FORM_FIELDS.pageUrl, pageUrl);
+  return `${REPORT_FORM_URL}?${params.toString()}`;
 }

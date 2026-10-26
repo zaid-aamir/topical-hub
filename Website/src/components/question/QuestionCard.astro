@@ -9,7 +9,7 @@
  *   label: merged topics get a part heading on the topic page instead.
  * - data-answer (MCQ only) lets the script mark an option without any lookup.
  * - The stem has id <anchor>-stem so the option group can be labelled by it.
- * - The report link carries the question id and the absolute URL of this anchor.
+ * - The report link (only when REPORT_FORM_URL is set) carries the question id and the absolute URL of this anchor.
  */
 import type { Question } from '../../content';
 import { SITE_URL, reportErrorUrl } from '../../config';
@@ -65,10 +65,14 @@ const reportHref = reportErrorUrl(question.id, `${SITE_URL}/${subject.path}/${sl
       <span class="toggle-label">{isMcq ? 'Show answer' : 'Show mark scheme'}</span>
       <svg class="chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
     </button>
-    <a class="report-link" href={reportHref} target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.5 14.5v-12M3.5 2.5h8l-2 3 2 3h-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
-      Report an error
-    </a>
+    {
+      reportHref !== null && (
+        <a class="report-link" href={reportHref} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M3.5 14.5v-12M3.5 2.5h8l-2 3 2 3h-8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          Report an error
+        </a>
+      )
+    }
   </div>
   <div class="answer" id={panelId} hidden>
     <AnswerPanel format={format} question={question} />
