@@ -630,6 +630,18 @@ th {
       </a></li></ul>
    --------------------------------------------------------------------------- */
 
+/* Exam-board label above each group of subject cards on the home page. */
+.subject-board {
+  margin-top: var(--space-6);
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+
+.subject-board + .subject-grid {
+  margin-top: var(--space-3);
+}
+
 .subject-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));

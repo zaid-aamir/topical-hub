@@ -29,7 +29,7 @@ const format = subjectFormat(subject);
   data-type={question.type}
   data-number={question.number}
 >
-  <QuestionHead question={question} />
+  <QuestionHead question={question} tiers={subject.tiers} />
   <div class="question-body">
     <AnswerPanel format={format} question={question} />
   </div>

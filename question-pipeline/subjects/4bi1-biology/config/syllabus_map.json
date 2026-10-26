@@ -1,0 +1,1758 @@
+{
+  "subject_id": "4bi1-biology",
+  "subject_name": "Biology",
+  "syllabus": "4BI1",
+  "years": "current (first exam 2019)",
+  "source_file": "subjects/4bi1-biology/reference/4BI1_specification.pdf",
+  "syllabus_version": "Issue 3 (as on the cover; footer: Specification – Issue 3 – September 2024). First teaching September 2017, first examination June 2019. Pearson Edexcel International GCSE in Biology (4BI1).",
+  "page_reference_note": "All page references in this map are PDF page numbers. The printed page number on content pages is the PDF page minus 6 (e.g. PDF p. 17 = printed p. 11).",
+  "tier_notes": "Untiered (PDF p. 7). Every student sits both papers in the same series (PDF p. 7). Paper 1 (4BI1/1B) assesses the content that is not in bold and does not have a 'B' reference; Paper 2 (4BI1/2B) assesses all the content, including content that is in bold and has a 'B' reference; bold statements cover some sub-topics in greater depth; on both papers questions may come from any topic area across the specification (PDF pp. 13-14, 33). In this map tier 'core' = statement with no B suffix (Paper 1 and Paper 2 content); tier 'supplement' = statement with a B suffix (Paper 2 only). The website labels these 'Paper 1 & 2' and 'Paper 2 only'. The specification states that bold 'B' statements are content only in the International GCSE in Biology and not in the International GCSE in Science (Double Award) (PDF p. 7). Paper 1 code is shared with Science (Double Award) as 4SD0/1B (PDF pp. 13, 43).",
+  "papers": [
+    {
+      "paper": "1",
+      "name": "Biology Paper 1 (4BI1/1B)",
+      "type": "structured",
+      "tier": "all",
+      "marks": 110,
+      "duration_minutes": 120,
+      "weighting_percent": 61.1
+    },
+    {
+      "paper": "2",
+      "name": "Biology Paper 2 (4BI1/2B)",
+      "type": "structured",
+      "tier": "all",
+      "marks": 70,
+      "duration_minutes": 75,
+      "weighting_percent": 38.9
+    }
+  ],
+  "paper_notes": "Both papers: externally assessed written examinations set and marked by Pearson, availability November and June, first assessment June 2019; a mixture of different question styles, including multiple-choice questions, short-answer questions, calculations and extended open-response questions; a calculator may be used (PDF pp. 13-14, 33). Total 180 marks (110 + 70), marks not scaled; grades 9 to 1 (PDF p. 33). AO weightings for the qualification: AO1 Knowledge and understanding of biology 38-42%; AO2 Application of knowledge and understanding, analysis and evaluation of biology 38-42%; AO3 Experimental skills, analysis and evaluation of data and methods in biology 19-21%. Paper 1: AO1 23.2-25.7%, AO2 23.2-25.7%, AO3 11.6-12.8%; Paper 2: AO1 14.8-16.3%, AO2 14.8-16.3%, AO3 7.4-8.2% (PDF p. 35). Experimental skills are assessed through the written examinations (PDF pp. 7, 34).",
+  "command_words": {
+    "Add/Label": "Requires the addition or labelling of a stimulus material given in the question, for example labelling a diagram or adding units to a table.",
+    "Calculate": "Obtain a numerical answer, showing relevant working.",
+    "Comment on": "Requires the synthesis of a number of variables from data/information to form a judgement.",
+    "Complete": "Requires the completion of a table/diagram.",
+    "Deduce": "Draw/reach conclusion(s) from the information provided.",
+    "Describe": "To give an account of something. Statements in the response need to be developed, as they are often linked but do not need to include a justification or reason.",
+    "Determine": "The answer must have an element that is quantitative from the stimulus provided, or must show how the answer can be reached quantitatively. To gain maximum marks, there must be a quantitative element to the answer.",
+    "Design": "Plan or invent a procedure from existing principles/ideas.",
+    "Discuss": "Identify the issue/situation/problem/argument that is being assessed within the question; Explore all aspects of an issue/situation/problem/argument; Investigate the issue/situation etc. by reasoning or argument.",
+    "Draw": "Produce a diagram either using a ruler or freehand.",
+    "Estimate": "Find an approximate value, number or quantity from a diagram/given data or through a calculation.",
+    "Evaluate": "Review information (e.g. data, methods) then bring it together to form a conclusion, drawing on evidence including strengths, weaknesses, alternative actions, relevant data or information. Come to a supported judgement of a subject’s quality and relate it to its context.",
+    "Explain": "An explanation requires a justification/exemplification of a point. The answer must contain some element of reasoning/justification – this can include mathematical explanations.",
+    "Give/State/Name": "All of these command words are really synonyms. They generally all require recall of one or more pieces of information.",
+    "Give a reason/reasons": "When a statement has been made and the requirement is only to give the reason(s) why.",
+    "Identify": "Usually requires some key information to be selected from a given stimulus/resource.",
+    "Justify": "Give evidence to support (either the statement given in the question or an earlier answer).",
+    "Plot": "Produce a graph by marking points accurately on a grid from data that is provided and then draw a line of best fit through these points. A suitable scale and appropriately labelled axes must be included if these are not provided in the question.",
+    "Predict": "Give an expected result.",
+    "Show that": "Verify the statement given in the question.",
+    "Sketch": "Produce a freehand drawing. For a graph, this would need a line and labelled axes with important features indicated. The axes are not scaled.",
+    "State what is meant by": "When the meaning of a term is expected but there are different ways for how these can be described.",
+    "Suggest": "Use your knowledge to propose a solution to a problem in a novel context.",
+    "Analyse the data/graph to explain": "Verb preceding a command word: Examine the data/graph in detail to provide an explanation.",
+    "What, Why, Which": "Direct command words used for multiple-choice questions."
+  },
+  "data_provided": {
+    "given": [
+      "None stated: the specification does not list any data sheet, formula sheet, equation list or periodic table for either paper (checked PDF pp. 7-8, 13-14, 33-35, 43-55).",
+      "Students will be expected to have access to a suitable electronic calculator for all examination papers; calculators that allow the retrieval of text or formulae, or with QWERTY keyboards, are not allowed (PDF p. 34; also pp. 13-14).",
+      "Any numerical data, organism-specific information or unfamiliar context needed for a question must therefore be supplied in the question itself (inference from the absence of any data sheet; not stated in the specification)."
+    ],
+    "not_given": [
+      "Word equation and balanced chemical symbol equation for photosynthesis: 'know' (2.18-2.19). The specification does not print the equations; standard forms: carbon dioxide + water → glucose + oxygen (light energy, chlorophyll); 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
+      "Word equation and balanced chemical symbol equation for aerobic respiration in living organisms: 'know' (2.37). Not printed; standard forms: glucose + oxygen → carbon dioxide + water; C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O.",
+      "Word equation for anaerobic respiration in plants and in animals: 'know' (2.38). Not printed; standard forms: animals glucose → lactic acid; plants (and yeast, 5.5-5.6) glucose → ethanol + carbon dioxide. No balanced symbol equation is required for anaerobic respiration.",
+      "ATP provides energy for cells (2.34-2.35).",
+      "Human diploid chromosome number 46 and haploid number 23 (3.32).",
+      "Sex chromosomes XX in a female and XY in a male (3.26).",
+      "DNA base pairing: adenine (A) with thymine (T), cytosine (C) with guanine (G); RNA contains uracil (U) instead of thymine (3.16B, 3.17B, Paper 2 only).",
+      "About 10% of energy is transferred from one trophic level to the next (4.9).",
+      "Magnesium ions needed for chlorophyll, nitrate ions for amino acids (2.22).",
+      "Meanings of the terms in 3.20 (dominant, recessive, homozygous, heterozygous, phenotype, genotype), 3.21B (codominance), 3.14 (genome, gene), 4.1 (population, community, habitat, ecosystem), 4.3B (biodiversity), 2.56B (transpiration), 2.81 (homeostasis), 3.34 (mutation), 5.16 (transgenic).",
+      "Greenhouse gases named in 4.13: water vapour, carbon dioxide, nitrous oxide, methane and CFCs.",
+      "Mathematical skills in Appendix 4 ticked for Biology are 'developed and assessed' and not given (PDF pp. 49-50), including calculating areas of triangles and rectangles, surface areas and volumes of cubes (5C).",
+      "No magnification equation and no other quantitative biology formula appears in the 4BI1 content; any formula needed for a calculation is not on the specification's recall list, so it should be supplied in the question (inference)."
+    ],
+    "conventions": [
+      "Paper 2-only statements are printed in bold with a 'B' suffix on the statement number (PDF pp. 7, 13-14, 33).",
+      "Practical investigations are specification points in italics, beginning 'practical:' (PDF pp. 7, 34).",
+      "The word 'including' in the content helps specify the detail of what must be covered (PDF p. 7).",
+      "Examples in the content are for illustrative purposes only; centres can use other examples (PDF p. 7).",
+      "Generic and species names are printed in italics in the content: Mucor, Amoeba, Chlorella, Plasmodium (1.2), Lactobacillus bulgaricus, Pneumococcus (1.3), Lactobacillus (5.7); 'in vitro' is italicised (5.17B). The specification states no rule on binomial naming.",
+      "Specific names of bacteria in the nitrogen cycle are not required (4.11B).",
+      "British spelling and the specification's terms, e.g. haemoglobin, oesophagus, oestrogen, fertilisation, specialised, organisation, co-ordination, micro-organisms, sulfur dioxide, hydrogen-carbonate indicator, geotropic, phototropic, vasoconstriction, vasodilation, glomerular filtrate, Bowman’s capsule, loop of Henle, proximal convoluted tubule, nitrogen fixing bacteria, pyramids of number, pyramids of energy transfer.",
+      "Assessment is in English only (PDF p. 37).",
+      "The specification states no rules on units, significant figures or number formatting beyond Appendix 4 skill 2A 'Use an appropriate number of significant figures' (PDF p. 49)."
+    ],
+    "appendices": [
+      "Appendix 1 Codes (PDF p. 43): subject code 4BI1; paper codes 4BI1/1B (also 4SD0/1B) and 4BI1/2B.",
+      "Appendix 4 Mathematical skills (PDF pp. 49-50), skills ticked for Biology (B column): 1A decimal form; 1B standard form; 1C ratios, fractions, percentages, powers and roots; 1D estimates without a calculator; 2A appropriate number of significant figures; 2B arithmetic mean; 2C bar charts; 2D frequency tables, diagrams and histograms; 2E principles of sampling; 2F simple probability; 2G mode and median; 2H scatter diagram pattern or trend; 2I order of magnitude calculations; 3B change the subject of an equation; 3C substitute numerical values into algebraic equations using appropriate units; 3D solve simple algebraic equations; 4A translate between graphical and numerical form; 4C plot two variables from experimental or other data; 4D slope and intercept of a linear graph; 5C areas of triangles and rectangles, surface areas and volumes of cubes. NOT ticked for Biology: 1E sin x; 3A symbols <, >, ∝, ~; 4B y = mx + c; 4E tangent slope as rate of change; 4F area under a curve; 5A angular measures; 5B 2D/3D representation.",
+      "Appendix 5 Command word taxonomy (PDF pp. 51-52): see command_words; 'What, Why, Which' are the direct command words for multiple-choice questions.",
+      "Appendix 6 Suggested practical investigations (PDF p. 53): additional, non-numbered suggestions (e.g. reaction times, effect of exercise on heart rate, enzymes in washing powders, glucose in simulated urine, sampling with pooters, sweep nets, pitfall traps); not specification statements and not mapped.",
+      "Appendix 7 Glossary (PDF p. 55): administrative terms only (assessment objectives, external assessment, JCQ, linear).",
+      "Experimental skills that may be tested in the written papers (PDF p. 34): solve problems in a practical context; apply knowledge in practical contexts; devise and plan investigations; demonstrate or describe methods including safe practical techniques; observations and measurements with appropriate precision, recorded methodically and presented appropriately; identify independent, dependent and control variables; analyse and interpret data to draw conclusions consistent with the evidence; communicate findings with technical language, calculations and graphs; assess reliability; evaluate data and methods taking into account accuracy and validity."
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "1",
+      "topic_name": "The nature and variety of living organisms",
+      "subtopics": [
+        {
+          "subtopic_id": "1a",
+          "subtopic_name": "Characteristics of living organisms",
+          "points": [
+            {
+              "point_id": "1.1",
+              "tier": "core",
+              "text": "understand how living organisms share the following characteristics:; they require nutrition; they respire; they excrete their waste; they respond to their surroundings; they move; they control their internal conditions; they reproduce; they grow and develop.",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 17
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1b",
+          "subtopic_name": "Variety of living organisms",
+          "points": [
+            {
+              "point_id": "1.2",
+              "tier": "core",
+              "text": "describe the common features shown by eukaryotic organisms: plants, animals, fungi and protoctists; Plants: these are multicellular organisms; their cells contain chloroplasts and are able to carry out photosynthesis; their cells have cellulose cell walls; they store carbohydrates as starch or sucrose. Examples include flowering plants, such as a cereal (for example, maize), and a herbaceous legume (for example, peas or beans). Animals: these are multicellular organisms; their cells do not contain chloroplasts and are not able to carry out photosynthesis; they have no cell walls; they usually have nervous co-ordination and are able to move from one place to another; they often store carbohydrate as glycogen. Examples include mammals (for example, humans) and insects (for example, housefly and mosquito). Fungi: these are organisms that are not able to carry out photosynthesis; their body is usually organised into a mycelium made from thread-like structures called hyphae, which contain many nuclei; some examples are single-celled; their cells have walls made of chitin; they feed by extracellular secretion of digestive enzymes onto food material and absorption of the organic products; this is known as saprotrophic nutrition; they may store carbohydrate as glycogen. Examples include Mucor, which has the typical fungal hyphal structure, and yeast, which is single-celled. Protoctists: these are microscopic single-celled organisms. Some, like Amoeba, that live in pond water, have features like an animal cell, while others, like Chlorella, have chloroplasts and are more like plants. A pathogenic example is Plasmodium, responsible for causing malaria.",
+              "diagram_dependence": "partial",
+              "diagram_note": "organism features are often shown as drawings or photographs; can be given as text descriptions",
+              "page": 17
+            },
+            {
+              "point_id": "1.3",
+              "tier": "core",
+              "text": "describe the common features shown by prokaryotic organisms such as bacteria; Bacteria: these are microscopic single-celled organisms; they have a cell wall, cell membrane, cytoplasm and plasmids; they lack a nucleus but contain a circular chromosome of DNA; some bacteria can carry out photosynthesis but most feed off other living or dead organisms. Examples include Lactobacillus bulgaricus, a rod-shaped bacterium used in the production of yoghurt from milk, and Pneumococcus, a spherical bacterium that acts as the pathogen causing pneumonia.",
+              "diagram_dependence": "partial",
+              "diagram_note": "bacterial cell structure often shown as a drawing; can be described in words",
+              "page": 18
+            },
+            {
+              "point_id": "1.4",
+              "tier": "core",
+              "text": "understand the term pathogen and know that pathogens may include fungi, bacteria, protoctists or viruses; Viruses: these are not living organisms. They are small particles, smaller than bacteria; they are parasitic and can reproduce only inside living cells; they infect every type of living organism. They have a wide variety of shapes and sizes; they have no cellular structure but have a protein coat and contain one type of nucleic acid, either DNA or RNA. Examples include the tobacco mosaic virus that causes discolouring of the leaves of tobacco plants by preventing the formation of chloroplasts, the influenza virus that causes ‘flu’ and the HIV virus that causes AIDS.",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "subtopics": [
+        {
+          "subtopic_id": "2a",
+          "subtopic_name": "Level of organisation",
+          "points": [
+            {
+              "point_id": "2.1",
+              "tier": "core",
+              "text": "describe the levels of organisation in organisms: organelles, cells, tissues, organs and systems",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2b",
+          "subtopic_name": "Cell structure",
+          "points": [
+            {
+              "point_id": "2.2",
+              "tier": "core",
+              "text": "describe cell structures, including the nucleus, cytoplasm, cell membrane, cell wall, mitochondria, chloroplasts, ribosomes and vacuole",
+              "diagram_dependence": "partial",
+              "diagram_note": "cell structures are often shown on labelled cell drawings or micrographs; can be named and described in words",
+              "page": 19
+            },
+            {
+              "point_id": "2.3",
+              "tier": "core",
+              "text": "describe the functions of the nucleus, cytoplasm, cell membrane, cell wall, mitochondria, chloroplasts, ribosomes and vacuole",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 19
+            },
+            {
+              "point_id": "2.4",
+              "tier": "core",
+              "text": "know the similarities and differences in the structure of plant and animal cells",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 19
+            },
+            {
+              "point_id": "2.5B",
+              "tier": "supplement",
+              "text": "explain the importance of cell differentiation in the development of specialised cells",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 19
+            },
+            {
+              "point_id": "2.6B",
+              "tier": "supplement",
+              "text": "understand the advantages and disadvantages of using stem cells in medicine",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 19
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2c",
+          "subtopic_name": "Biological molecules",
+          "points": [
+            {
+              "point_id": "2.7",
+              "tier": "core",
+              "text": "identify the chemical elements present in carbohydrates, proteins and lipids (fats and oils)",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 20
+            },
+            {
+              "point_id": "2.8",
+              "tier": "core",
+              "text": "describe the structure of carbohydrates, proteins and lipids as large molecules made up from smaller basic units: starch and glycogen from simple sugars, protein from amino acids, and lipid from fatty acids and glycerol",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 20
+            },
+            {
+              "point_id": "2.9",
+              "tier": "core",
+              "text": "practical: investigate food samples for the presence of glucose, starch, protein and fat",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: method, results and observations can be given as text and tables",
+              "page": 20
+            },
+            {
+              "point_id": "2.10",
+              "tier": "core",
+              "text": "understand the role of enzymes as biological catalysts in metabolic reactions",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 20
+            },
+            {
+              "point_id": "2.11",
+              "tier": "core",
+              "text": "understand how temperature changes can affect enzyme function, including changes to the shape of active site",
+              "diagram_dependence": "partial",
+              "diagram_note": "enzyme activity against temperature is usually a graph; give values as a data table",
+              "page": 20
+            },
+            {
+              "point_id": "2.12",
+              "tier": "core",
+              "text": "practical: investigate how enzyme activity can be affected by changes in temperature",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "page": 20
+            },
+            {
+              "point_id": "2.13",
+              "tier": "core",
+              "text": "understand how enzyme function can be affected by changes in pH altering the active site",
+              "diagram_dependence": "partial",
+              "diagram_note": "enzyme activity against pH is usually a graph; give values as a data table",
+              "page": 20
+            },
+            {
+              "point_id": "2.14B",
+              "tier": "supplement",
+              "text": "practical: investigate how enzyme activity can be affected by changes in pH",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2d",
+          "subtopic_name": "Movement of substances into and out of cells",
+          "points": [
+            {
+              "point_id": "2.15",
+              "tier": "core",
+              "text": "understand the processes of diffusion, osmosis and active transport by which substances move into and out of cells",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 20
+            },
+            {
+              "point_id": "2.16",
+              "tier": "core",
+              "text": "understand how factors affect the rate of movement of substances into and out of cells, including the effects of surface area to volume ratio, distance, temperature and concentration gradient",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 20
+            },
+            {
+              "point_id": "2.17",
+              "tier": "core",
+              "text": "practical: investigate diffusion and osmosis using living and non-living systems",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "page": 20
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2e",
+          "subtopic_name": "Nutrition",
+          "points": [
+            {
+              "point_id": "2.18",
+              "tier": "core",
+              "text": "understand the process of photosynthesis and its importance in the conversion of light energy to chemical energy",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 21
+            },
+            {
+              "point_id": "2.19",
+              "tier": "core",
+              "text": "know the word equation and the balanced chemical symbol equation for photosynthesis",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 21
+            },
+            {
+              "point_id": "2.20",
+              "tier": "core",
+              "text": "understand how varying carbon dioxide concentration, light intensity and temperature affect the rate of photosynthesis",
+              "diagram_dependence": "partial",
+              "diagram_note": "rate of photosynthesis is usually shown on graphs; give values as a data table",
+              "group": "Flowering plants",
+              "page": 21
+            },
+            {
+              "point_id": "2.21",
+              "tier": "core",
+              "text": "describe the structure of the leaf and explain how it is adapted for photosynthesis",
+              "diagram_dependence": "partial",
+              "diagram_note": "leaf structure is usually a labelled section drawing; describe layers in words",
+              "group": "Flowering plants",
+              "page": 21
+            },
+            {
+              "point_id": "2.22",
+              "tier": "core",
+              "text": "understand that plants require mineral ions for growth, and that magnesium ions are needed for chlorophyll and nitrate ions are needed for amino acids",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 21
+            },
+            {
+              "point_id": "2.23",
+              "tier": "core",
+              "text": "practical: investigate photosynthesis, showing the evolution of oxygen from a water plant, the production of starch and the requirements of light, carbon dioxide and chlorophyll",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "group": "Flowering plants",
+              "page": 21
+            },
+            {
+              "point_id": "2.24",
+              "tier": "core",
+              "text": "understand that a balanced diet should include appropriate proportions of carbohydrate, protein, lipid, vitamins, minerals, water and dietary fibre",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.25",
+              "tier": "core",
+              "text": "identify the sources and describe the functions of carbohydrate, protein, lipid (fats and oils), vitamins A, C and D, the mineral ions calcium and iron, water and dietary fibre as components of the diet",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.26",
+              "tier": "core",
+              "text": "understand how energy requirements vary with activity levels, age and pregnancy",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.27",
+              "tier": "core",
+              "text": "describe the structure and function of the human alimentary canal, including the mouth, oesophagus, stomach, small intestine (duodenum and ileum), large intestine (colon and rectum) and pancreas",
+              "diagram_dependence": "partial",
+              "diagram_note": "alimentary canal is usually a labelled drawing; name and describe parts in words",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.28",
+              "tier": "core",
+              "text": "understand how food is moved through the gut by peristalsis",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.29",
+              "tier": "core",
+              "text": "understand the role of digestive enzymes, including the digestion of starch to glucose by amylase and maltase, the digestion of proteins to amino acids by proteases and the digestion of lipids to fatty acids and glycerol by lipases",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.30",
+              "tier": "core",
+              "text": "understand that bile is produced by the liver and stored in the gall bladder",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.31",
+              "tier": "core",
+              "text": "understand the role of bile in neutralising stomach acid and emulsifying lipids",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.32",
+              "tier": "core",
+              "text": "understand how the small intestine is adapted for absorption, including the structure of a villus",
+              "diagram_dependence": "partial",
+              "diagram_note": "villus structure is usually a drawing; describe features in words",
+              "group": "Humans",
+              "page": 21
+            },
+            {
+              "point_id": "2.33B",
+              "tier": "supplement",
+              "text": "practical: investigate the energy content in a food sample",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "group": "Humans",
+              "page": 21
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2f",
+          "subtopic_name": "Respiration",
+          "points": [
+            {
+              "point_id": "2.34",
+              "tier": "core",
+              "text": "understand how the process of respiration produces ATP in living organisms",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 22
+            },
+            {
+              "point_id": "2.35",
+              "tier": "core",
+              "text": "know that ATP provides energy for cells",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 22
+            },
+            {
+              "point_id": "2.36",
+              "tier": "core",
+              "text": "describe the differences between aerobic and anaerobic respiration",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 22
+            },
+            {
+              "point_id": "2.37",
+              "tier": "core",
+              "text": "know the word equation and the balanced chemical symbol equation for aerobic respiration in living organisms",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 22
+            },
+            {
+              "point_id": "2.38",
+              "tier": "core",
+              "text": "know the word equation for anaerobic respiration in plants and in animals",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 22
+            },
+            {
+              "point_id": "2.39",
+              "tier": "core",
+              "text": "practical: investigate the evolution of carbon dioxide and heat from respiring seeds or other suitable living organisms",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "page": 22
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2g",
+          "subtopic_name": "Gas exchange",
+          "points": [
+            {
+              "point_id": "2.40B",
+              "tier": "supplement",
+              "text": "understand the role of diffusion in gas exchange",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 22
+            },
+            {
+              "point_id": "2.41B",
+              "tier": "supplement",
+              "text": "understand gas exchange (of carbon dioxide and oxygen) in relation to respiration and photosynthesis",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 22
+            },
+            {
+              "point_id": "2.42B",
+              "tier": "supplement",
+              "text": "understand how the structure of the leaf is adapted for gas exchange",
+              "diagram_dependence": "partial",
+              "diagram_note": "leaf structure is usually a labelled section drawing; describe in words",
+              "group": "Flowering plants",
+              "page": 22
+            },
+            {
+              "point_id": "2.43B",
+              "tier": "supplement",
+              "text": "describe the role of stomata in gas exchange",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 22
+            },
+            {
+              "point_id": "2.44B",
+              "tier": "supplement",
+              "text": "understand how respiration continues during the day and night, but that the net exchange of carbon dioxide and oxygen depends on the intensity of light",
+              "diagram_dependence": "partial",
+              "diagram_note": "net gas exchange against light intensity often a graph; give values as a data table",
+              "group": "Flowering plants",
+              "page": 22
+            },
+            {
+              "point_id": "2.45B",
+              "tier": "supplement",
+              "text": "practical: investigate the effect of light on net gas exchange from a leaf, using hydrogen-carbonate indicator",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: indicator colours and set-up described in words, results as a table",
+              "group": "Flowering plants",
+              "page": 22
+            },
+            {
+              "point_id": "2.46",
+              "tier": "core",
+              "text": "describe the structure of the thorax, including the ribs, intercostal muscles, diaphragm, trachea, bronchi, bronchioles, alveoli and pleural membranes",
+              "diagram_dependence": "partial",
+              "diagram_note": "thorax structure is usually a labelled drawing; name and describe parts in words",
+              "group": "Humans",
+              "page": 22
+            },
+            {
+              "point_id": "2.47",
+              "tier": "core",
+              "text": "understand the role of the intercostal muscles and the diaphragm in ventilation",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 22
+            },
+            {
+              "point_id": "2.48",
+              "tier": "core",
+              "text": "explain how alveoli are adapted for gas exchange by diffusion between air in the lungs and blood in capillaries",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 22
+            },
+            {
+              "point_id": "2.49",
+              "tier": "core",
+              "text": "understand the biological consequences of smoking in relation to the lungs and the circulatory system, including coronary heart disease",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 22
+            },
+            {
+              "point_id": "2.50",
+              "tier": "core",
+              "text": "practical: investigate breathing in humans, including the release of carbon dioxide and the effect of exercise",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: method described in words, results as a data table",
+              "group": "Humans",
+              "page": 22
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2h",
+          "subtopic_name": "Transport",
+          "points": [
+            {
+              "point_id": "2.51",
+              "tier": "core",
+              "text": "understand why simple, unicellular organisms can rely on diffusion for movement of substances in and out of the cell",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 23
+            },
+            {
+              "point_id": "2.52",
+              "tier": "core",
+              "text": "understand the need for a transport system in multicellular organisms",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 23
+            },
+            {
+              "point_id": "2.53",
+              "tier": "core",
+              "text": "describe the role of phloem in transporting sucrose and amino acids between the leaves and other parts of the plant",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 23
+            },
+            {
+              "point_id": "2.54",
+              "tier": "core",
+              "text": "describe the role of xylem in transporting water and mineral ions from the roots to other parts of the plant",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 23
+            },
+            {
+              "point_id": "2.55B",
+              "tier": "supplement",
+              "text": "understand how water is absorbed by root hair cells",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 23
+            },
+            {
+              "point_id": "2.56B",
+              "tier": "supplement",
+              "text": "understand that transpiration is the evaporation of water from the surface of a plant",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 23
+            },
+            {
+              "point_id": "2.57B",
+              "tier": "supplement",
+              "text": "understand how the rate of transpiration is affected by changes in humidity, wind speed, temperature and light intensity",
+              "diagram_dependence": "partial",
+              "diagram_note": "transpiration rate data often shown as graphs; give values as a data table",
+              "group": "Flowering plants",
+              "page": 23
+            },
+            {
+              "point_id": "2.58B",
+              "tier": "supplement",
+              "text": "practical: investigate the role of environmental factors in determining the rate of transpiration from a leafy shoot",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: potometer described in words, results as a data table",
+              "group": "Flowering plants",
+              "page": 23
+            },
+            {
+              "point_id": "2.59",
+              "tier": "core",
+              "text": "describe the composition of the blood: red blood cells, white blood cells, platelets and plasma",
+              "diagram_dependence": "partial",
+              "diagram_note": "blood components often shown in micrographs; describe in words",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.60",
+              "tier": "core",
+              "text": "understand the role of plasma in the transport of carbon dioxide, digested food, urea, hormones and heat energy",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.61",
+              "tier": "core",
+              "text": "understand how adaptations of red blood cells make them suitable for the transport of oxygen, including shape, the absence of a nucleus and the presence of haemoglobin",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.62",
+              "tier": "core",
+              "text": "understand how the immune system responds to disease using white blood cells, illustrated by phagocytes ingesting pathogens and lymphocytes releasing antibodies specific to the pathogen",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.63B",
+              "tier": "supplement",
+              "text": "understand how vaccination results in the manufacture of memory cells, which enable future antibody production to the pathogen to occur sooner, faster and in greater quantity",
+              "diagram_dependence": "partial",
+              "diagram_note": "antibody response is often a graph; give values as a data table",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.64B",
+              "tier": "supplement",
+              "text": "understand how platelets are involved in blood clotting, which prevents blood loss and the entry of micro-organisms",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.65",
+              "tier": "core",
+              "text": "describe the structure of the heart and how it functions",
+              "diagram_dependence": "partial",
+              "diagram_note": "heart structure is usually a labelled drawing; name chambers, valves and vessels in words",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.66",
+              "tier": "core",
+              "text": "explain how the heart rate changes during exercise and under the influence of adrenaline",
+              "diagram_dependence": "partial",
+              "diagram_note": "heart rate data often a graph; give values as a data table",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.67",
+              "tier": "core",
+              "text": "understand how factors may increase the risk of developing coronary heart disease",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.68",
+              "tier": "core",
+              "text": "understand how the structure of arteries, veins and capillaries relate to their function",
+              "diagram_dependence": "partial",
+              "diagram_note": "vessel cross-sections often drawn; describe wall and lumen features in words",
+              "group": "Humans",
+              "page": 23
+            },
+            {
+              "point_id": "2.69",
+              "tier": "core",
+              "text": "understand the general structure of the circulation system, including the blood vessels to and from the heart and lungs, liver and kidneys",
+              "diagram_dependence": "partial",
+              "diagram_note": "circulation system is usually a diagram; name vessels and organs in words",
+              "group": "Humans",
+              "page": 23
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2i",
+          "subtopic_name": "Excretion",
+          "points": [
+            {
+              "point_id": "2.70",
+              "tier": "core",
+              "text": "understand the origin of carbon dioxide and oxygen as waste products of metabolism and their loss from the stomata of a leaf",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 24
+            },
+            {
+              "point_id": "2.71",
+              "tier": "core",
+              "text": "know the excretory products of the lungs, kidneys and skin (organs of excretion)",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.72B",
+              "tier": "supplement",
+              "text": "understand how the kidney carries out its roles of excretion and osmoregulation",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.73B",
+              "tier": "supplement",
+              "text": "describe the structure of the urinary system, including the kidneys, ureters, bladder and urethra",
+              "diagram_dependence": "partial",
+              "diagram_note": "urinary system is usually a labelled drawing; name and describe parts in words",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.74B",
+              "tier": "supplement",
+              "text": "describe the structure of a nephron, including the Bowman’s capsule and glomerulus, convoluted tubules, loop of Henle and collecting duct",
+              "diagram_dependence": "partial",
+              "diagram_note": "nephron is usually a labelled drawing; name and describe regions in words",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.75B",
+              "tier": "supplement",
+              "text": "describe ultrafiltration in the Bowman’s capsule and the composition of the glomerular filtrate",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.76B",
+              "tier": "supplement",
+              "text": "understand how water is reabsorbed into the blood from the collecting duct",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.77B",
+              "tier": "supplement",
+              "text": "understand why selective reabsorption of glucose occurs at the proximal convoluted tubule",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.78B",
+              "tier": "supplement",
+              "text": "describe the role of ADH in regulating the water content of the blood",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            },
+            {
+              "point_id": "2.79B",
+              "tier": "supplement",
+              "text": "understand that urine contains water, urea and ions",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 24
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2j",
+          "subtopic_name": "Co-ordination and response",
+          "points": [
+            {
+              "point_id": "2.80",
+              "tier": "core",
+              "text": "understand how organisms are able to respond to changes in their environment",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 24
+            },
+            {
+              "point_id": "2.81",
+              "tier": "core",
+              "text": "understand that homeostasis is the maintenance of a constant internal environment, and that body water content and body temperature are both examples of homeostasis",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 24
+            },
+            {
+              "point_id": "2.82",
+              "tier": "core",
+              "text": "understand that a co-ordinated response requires a stimulus, a receptor and an effector",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 24
+            },
+            {
+              "point_id": "2.83",
+              "tier": "core",
+              "text": "understand that plants respond to stimuli",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 24
+            },
+            {
+              "point_id": "2.84",
+              "tier": "core",
+              "text": "describe the geotropic and phototropic responses of roots and stems",
+              "diagram_dependence": "partial",
+              "diagram_note": "tropic responses often shown as drawings of seedlings; describe set-up and growth in words",
+              "group": "Flowering plants",
+              "page": 24
+            },
+            {
+              "point_id": "2.85",
+              "tier": "core",
+              "text": "understand the role of auxin in the phototropic response of stems",
+              "diagram_dependence": "partial",
+              "diagram_note": "auxin experiments often drawn; describe shoot treatments and results in words",
+              "group": "Flowering plants",
+              "page": 24
+            },
+            {
+              "point_id": "2.86",
+              "tier": "core",
+              "text": "describe how nervous and hormonal communication control responses and understand the differences between the two systems",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.87",
+              "tier": "core",
+              "text": "understand that the central nervous system consists of the brain and spinal cord and is linked to sense organs by nerves",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.88",
+              "tier": "core",
+              "text": "understand that stimulation of receptors in the sense organs sends electrical impulses along nerves into and out of the central nervous system, resulting in rapid responses",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.89",
+              "tier": "core",
+              "text": "understand the role of neurotransmitters at synapses",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.90",
+              "tier": "core",
+              "text": "describe the structure and functioning of a simple reflex arc illustrated by the withdrawal of a finger from a hot object",
+              "diagram_dependence": "partial",
+              "diagram_note": "reflex arc is usually a drawing; name the neurones and pathway in words",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.91",
+              "tier": "core",
+              "text": "describe the structure and function of the eye as a receptor",
+              "diagram_dependence": "partial",
+              "diagram_note": "eye structure is usually a labelled drawing; name and describe parts in words",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.92",
+              "tier": "core",
+              "text": "understand the function of the eye in focusing on near and distant objects, and in responding to changes in light intensity",
+              "diagram_dependence": "partial",
+              "diagram_note": "focusing is often shown with ray drawings; describe lens and ciliary muscle changes in words",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.93",
+              "tier": "core",
+              "text": "describe the role of the skin in temperature regulation, with reference to sweating, vasoconstriction and vasodilation",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.94",
+              "tier": "core",
+              "text": "understand the sources, roles and effects of the following hormones: adrenaline, insulin, testosterone, progesterone and oestrogen",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            },
+            {
+              "point_id": "2.95B",
+              "tier": "supplement",
+              "text": "understand the sources, roles and effects of the following hormones: ADH, FSH and LH",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "3",
+      "topic_name": "Reproduction and inheritance",
+      "subtopics": [
+        {
+          "subtopic_id": "3a",
+          "subtopic_name": "Reproduction",
+          "points": [
+            {
+              "point_id": "3.1",
+              "tier": "core",
+              "text": "understand the differences between sexual and asexual reproduction",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 26
+            },
+            {
+              "point_id": "3.2",
+              "tier": "core",
+              "text": "understand that fertilisation involves the fusion of a male and female gamete to produce a zygote that undergoes cell division and develops into an embryo",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 26
+            },
+            {
+              "point_id": "3.3",
+              "tier": "core",
+              "text": "describe the structures of an insect-pollinated and a wind-pollinated flower and explain how each is adapted for pollination",
+              "diagram_dependence": "partial",
+              "diagram_note": "flower structures are usually labelled drawings; name and describe parts in words",
+              "group": "Flowering plants",
+              "page": 26
+            },
+            {
+              "point_id": "3.4",
+              "tier": "core",
+              "text": "understand that the growth of the pollen tube followed by fertilisation leads to seed and fruit formation",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 26
+            },
+            {
+              "point_id": "3.5",
+              "tier": "core",
+              "text": "practical: investigate the conditions needed for seed germination",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: tube set-ups described in words, results as a table",
+              "group": "Flowering plants",
+              "page": 26
+            },
+            {
+              "point_id": "3.6",
+              "tier": "core",
+              "text": "understand how germinating seeds utilise food reserves until the seedling can carry out photosynthesis",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 26
+            },
+            {
+              "point_id": "3.7",
+              "tier": "core",
+              "text": "understand that plants can reproduce asexually by natural methods (illustrated by runners) and by artificial methods (illustrated by cuttings)",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Flowering plants",
+              "page": 26
+            },
+            {
+              "point_id": "3.8",
+              "tier": "core",
+              "text": "understand how the structure of the male and female reproductive systems are adapted for their functions",
+              "diagram_dependence": "partial",
+              "diagram_note": "reproductive systems are usually labelled drawings; name and describe parts in words",
+              "group": "Humans",
+              "page": 26
+            },
+            {
+              "point_id": "3.9",
+              "tier": "core",
+              "text": "understand the roles of oestrogen and progesterone in the menstrual cycle",
+              "diagram_dependence": "partial",
+              "diagram_note": "hormone levels in the cycle are usually graphs; give values as a data table or describe in words",
+              "group": "Humans",
+              "page": 26
+            },
+            {
+              "point_id": "3.10B",
+              "tier": "supplement",
+              "text": "understand the roles of FSH and LH in the menstrual cycle",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 26
+            },
+            {
+              "point_id": "3.11",
+              "tier": "core",
+              "text": "describe the role of the placenta in the nutrition of the developing embryo",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 26
+            },
+            {
+              "point_id": "3.12",
+              "tier": "core",
+              "text": "understand how the developing embryo is protected by amniotic fluid",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 26
+            },
+            {
+              "point_id": "3.13",
+              "tier": "core",
+              "text": "understand the roles of oestrogen and testosterone in the development of secondary sexual characteristics",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Humans",
+              "page": 26
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3b",
+          "subtopic_name": "Inheritance",
+          "points": [
+            {
+              "point_id": "3.14",
+              "tier": "core",
+              "text": "understand that the genome is the entire DNA of an organism and that a gene is a section of a molecule of DNA that codes for a specific protein",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.15",
+              "tier": "core",
+              "text": "understand that the nucleus of a cell contains chromosomes on which genes are located",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.16B",
+              "tier": "supplement",
+              "text": "describe a DNA molecule as two strands coiled to form a double helix, the strands being linked by a series of paired bases: adenine (A) with thymine (T), and cytosine (C) with guanine (G)",
+              "diagram_dependence": "partial",
+              "diagram_note": "DNA structure often drawn; base sequences can be given as text",
+              "page": 27
+            },
+            {
+              "point_id": "3.17B",
+              "tier": "supplement",
+              "text": "understand that an RNA molecule is single stranded and contains uracil (U) instead of thymine (T)",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.18B",
+              "tier": "supplement",
+              "text": "describe the stages of protein synthesis including transcription and translation, including the role of mRNA, ribosomes, tRNA, codons and anticodons",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.19",
+              "tier": "core",
+              "text": "understand how genes exist in alternative forms called alleles which give rise to differences in inherited characteristics",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.20",
+              "tier": "core",
+              "text": "understand the meaning of the terms: dominant, recessive, homozygous, heterozygous, phenotype, and genotype",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.21B",
+              "tier": "supplement",
+              "text": "understand the meaning of the term codominance",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.22",
+              "tier": "core",
+              "text": "understand that most phenotypic features are the result of polygenic inheritance rather than single genes",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.23",
+              "tier": "core",
+              "text": "describe patterns of monohybrid inheritance using a genetic diagram",
+              "diagram_dependence": "partial",
+              "diagram_note": "genetic diagrams and Punnett squares can be given as Markdown tables",
+              "page": 27
+            },
+            {
+              "point_id": "3.24",
+              "tier": "core",
+              "text": "understand how to interpret family pedigrees",
+              "diagram_dependence": "essential",
+              "diagram_note": "interpreting family pedigrees needs the drawn pedigree chart (symbols for sex and phenotype, lines for relationships)",
+              "page": 27
+            },
+            {
+              "point_id": "3.25",
+              "tier": "core",
+              "text": "predict probabilities of outcomes from monohybrid crosses",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.26",
+              "tier": "core",
+              "text": "understand how the sex of a person is controlled by one pair of chromosomes, XX in a female and XY in a male",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.27",
+              "tier": "core",
+              "text": "describe the determination of the sex of offspring at fertilisation, using a genetic diagram",
+              "diagram_dependence": "partial",
+              "diagram_note": "sex determination genetic diagram can be given as a Markdown table",
+              "page": 27
+            },
+            {
+              "point_id": "3.28",
+              "tier": "core",
+              "text": "understand how division of a diploid cell by mitosis produces two cells that contain identical sets of chromosomes",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.29",
+              "tier": "core",
+              "text": "understand that mitosis occurs during growth, repair, cloning and asexual reproduction",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.30",
+              "tier": "core",
+              "text": "understand how division of a cell by meiosis produces four cells, each with half the number of chromosomes, and that this results in the formation of genetically different haploid gametes",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.31",
+              "tier": "core",
+              "text": "understand how random fertilisation produces genetic variation of offspring",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.32",
+              "tier": "core",
+              "text": "know that in human cells the diploid number of chromosomes is 46 and the haploid number is 23",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.33",
+              "tier": "core",
+              "text": "understand that variation within a species can be genetic, environmental, or a combination of both",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.34",
+              "tier": "core",
+              "text": "understand that mutation is a rare, random change in genetic material that can be inherited",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 27
+            },
+            {
+              "point_id": "3.35B",
+              "tier": "supplement",
+              "text": "understand how a change in DNA can affect the phenotype by altering the sequence of amino acids in a protein",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 28
+            },
+            {
+              "point_id": "3.36B",
+              "tier": "supplement",
+              "text": "understand how most genetic mutations have no effect on the phenotype, some have a small effect and rarely do they have a significant effect",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 28
+            },
+            {
+              "point_id": "3.37B",
+              "tier": "supplement",
+              "text": "understand that the incidence of mutations can be increased by exposure to ionising radiation (for example, gamma rays, x-rays and ultraviolet rays) and some chemical mutagens (for example, chemicals in tobacco)",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 28
+            },
+            {
+              "point_id": "3.38",
+              "tier": "core",
+              "text": "explain Darwin’s theory of evolution by natural selection",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 28
+            },
+            {
+              "point_id": "3.39",
+              "tier": "core",
+              "text": "understand how resistance to antibiotics can increase in bacterial populations, and appreciate how such an increase can lead to infections being difficult to control",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "4",
+      "topic_name": "Ecology and the environment",
+      "subtopics": [
+        {
+          "subtopic_id": "4a",
+          "subtopic_name": "The organism in the environment",
+          "points": [
+            {
+              "point_id": "4.1",
+              "tier": "core",
+              "text": "understand the terms population, community, habitat and ecosystem",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 29
+            },
+            {
+              "point_id": "4.2",
+              "tier": "core",
+              "text": "practical: investigate the population size of an organism in two different areas using quadrats",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: quadrat method described in words, counts as a data table",
+              "page": 29
+            },
+            {
+              "point_id": "4.3B",
+              "tier": "supplement",
+              "text": "understand the term biodiversity",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 29
+            },
+            {
+              "point_id": "4.4B",
+              "tier": "supplement",
+              "text": "practical: investigate the distribution of organisms in their habitats and measure biodiversity using quadrats",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: transect/quadrat set-up described in words, data as a table",
+              "page": 29
+            },
+            {
+              "point_id": "4.5",
+              "tier": "core",
+              "text": "understand how abiotic and biotic factors affect the population size and distribution of organisms",
+              "diagram_dependence": "partial",
+              "diagram_note": "population and distribution data often graphs; give values as a data table",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4b",
+          "subtopic_name": "Feeding relationships",
+          "points": [
+            {
+              "point_id": "4.6",
+              "tier": "core",
+              "text": "understand the names given to different trophic levels, including producers, primary, secondary and tertiary consumers and decomposers",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 29
+            },
+            {
+              "point_id": "4.7",
+              "tier": "core",
+              "text": "understand the concepts of food chains, food webs, pyramids of number, pyramids of biomass and pyramids of energy transfer",
+              "diagram_dependence": "partial",
+              "diagram_note": "food webs and pyramids are usually drawn; give chains as text with arrows, webs as lists of feeding relationships and pyramid values as a data table",
+              "page": 29
+            },
+            {
+              "point_id": "4.8",
+              "tier": "core",
+              "text": "understand the transfer of substances and energy along a food chain",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 29
+            },
+            {
+              "point_id": "4.9",
+              "tier": "core",
+              "text": "understand why only about 10% of energy is transferred from one trophic level to the next",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4c",
+          "subtopic_name": "Cycles within ecosystems",
+          "points": [
+            {
+              "point_id": "4.10",
+              "tier": "core",
+              "text": "describe the stages in the carbon cycle, including respiration, photosynthesis, decomposition and combustion",
+              "diagram_dependence": "partial",
+              "diagram_note": "carbon cycle is usually a diagram; describe stages and processes in words",
+              "page": 29
+            },
+            {
+              "point_id": "4.11B",
+              "tier": "supplement",
+              "text": "describe the stages in the nitrogen cycle, including the roles of nitrogen fixing bacteria, decomposers, nitrifying bacteria and denitrifying bacteria (specific names of bacteria are not required)",
+              "diagram_dependence": "partial",
+              "diagram_note": "nitrogen cycle is usually a diagram; describe stages and processes in words",
+              "page": 29
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4d",
+          "subtopic_name": "Human influences on the environment",
+          "points": [
+            {
+              "point_id": "4.12",
+              "tier": "core",
+              "text": "understand the biological consequences of pollution of air by sulfur dioxide and carbon monoxide",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            },
+            {
+              "point_id": "4.13",
+              "tier": "core",
+              "text": "understand that water vapour, carbon dioxide, nitrous oxide, methane and CFCs are greenhouse gases",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            },
+            {
+              "point_id": "4.14",
+              "tier": "core",
+              "text": "understand how human activities contribute to greenhouse gases",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            },
+            {
+              "point_id": "4.15",
+              "tier": "core",
+              "text": "understand how an increase in greenhouse gases results in an enhanced greenhouse effect and that this may lead to global warming and its consequences",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            },
+            {
+              "point_id": "4.16",
+              "tier": "core",
+              "text": "understand the biological consequences of pollution of water by sewage",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            },
+            {
+              "point_id": "4.17",
+              "tier": "core",
+              "text": "understand the biological consequences of eutrophication caused by leached minerals from fertiliser",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            },
+            {
+              "point_id": "4.18B",
+              "tier": "supplement",
+              "text": "understand the effects of deforestation, including leaching, soil erosion, disturbance of evapotranspiration and the carbon cycle, and the balance of atmospheric gases",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "5",
+      "topic_name": "Use of biological resources",
+      "subtopics": [
+        {
+          "subtopic_id": "5a",
+          "subtopic_name": "Food production",
+          "points": [
+            {
+              "point_id": "5.1",
+              "tier": "core",
+              "text": "describe how glasshouses and polythene tunnels can be used to increase the yield of certain crops",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Crop plants",
+              "page": 31
+            },
+            {
+              "point_id": "5.2",
+              "tier": "core",
+              "text": "understand the effects on crop yield of increased carbon dioxide and increased temperature in glasshouses",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Crop plants",
+              "page": 31
+            },
+            {
+              "point_id": "5.3",
+              "tier": "core",
+              "text": "understand how the use of fertiliser can increase crop yield",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Crop plants",
+              "page": 31
+            },
+            {
+              "point_id": "5.4",
+              "tier": "core",
+              "text": "understand the reasons for pest control and the advantages and disadvantages of using pesticides and biological control with crop plants",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Crop plants",
+              "page": 31
+            },
+            {
+              "point_id": "5.5",
+              "tier": "core",
+              "text": "understand the role of yeast in the production of food including bread",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Micro-organisms",
+              "page": 31
+            },
+            {
+              "point_id": "5.6",
+              "tier": "core",
+              "text": "practical: investigate the role of anaerobic respiration by yeast in different conditions",
+              "diagram_dependence": "partial",
+              "diagram_note": "practical: apparatus described in words, results as a data table",
+              "group": "Micro-organisms",
+              "page": 31
+            },
+            {
+              "point_id": "5.7",
+              "tier": "core",
+              "text": "understand the role of bacteria (Lactobacillus) in the production of yoghurt",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Micro-organisms",
+              "page": 31
+            },
+            {
+              "point_id": "5.8",
+              "tier": "core",
+              "text": "understand the use of an industrial fermenter and explain the need to provide suitable conditions in the fermenter, including aseptic precautions, nutrients, optimum temperature and pH, oxygenation and agitation, for the growth of micro-organisms",
+              "diagram_dependence": "partial",
+              "diagram_note": "industrial fermenter is usually a labelled drawing; name and describe parts in words",
+              "group": "Micro-organisms",
+              "page": 31
+            },
+            {
+              "point_id": "5.9B",
+              "tier": "supplement",
+              "text": "understand the methods used to farm large numbers of fish to provide a source of protein, including maintaining water quality, controlling intraspecific and interspecific predation, controlling disease, removing waste products, controlling the quality and frequency of feeding, and selective breeding",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "group": "Fish farming",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5b",
+          "subtopic_name": "Selective breeding",
+          "points": [
+            {
+              "point_id": "5.10",
+              "tier": "core",
+              "text": "understand how selective breeding can develop plants with desired characteristics",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 31
+            },
+            {
+              "point_id": "5.11",
+              "tier": "core",
+              "text": "understand how selective breeding can develop animals with desired characteristics",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5c",
+          "subtopic_name": "Genetic modification (genetic engineering)",
+          "points": [
+            {
+              "point_id": "5.12",
+              "tier": "core",
+              "text": "understand how restriction enzymes are used to cut DNA at specific sites and ligase enzymes are used to join pieces of DNA together",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.13",
+              "tier": "core",
+              "text": "understand how plasmids and viruses can act as vectors, which take up pieces of DNA, and then insert this recombinant DNA into other cells",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.14",
+              "tier": "core",
+              "text": "understand how large amounts of human insulin can be manufactured from genetically modified bacteria that are grown in a fermenter",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.15",
+              "tier": "core",
+              "text": "understand how genetically modified plants can be used to improve food production",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.16",
+              "tier": "core",
+              "text": "understand that the term transgenic means the transfer of genetic material from one species to a different species",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            }
+          ]
+        },
+        {
+          "subtopic_id": "5d",
+          "subtopic_name": "Cloning",
+          "points": [
+            {
+              "point_id": "5.17B",
+              "tier": "supplement",
+              "text": "describe the process of micropropagation (tissue culture) in which explants are grown in vitro",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.18B",
+              "tier": "supplement",
+              "text": "understand how micropropagation can be used to produce commercial quantities of genetically identical plants with desirable characteristics",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.19B",
+              "tier": "supplement",
+              "text": "describe the stages in the production of cloned mammals involving the introduction of a diploid nucleus from a mature cell into an enucleated egg cell, illustrated by Dolly the sheep",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            },
+            {
+              "point_id": "5.20B",
+              "tier": "supplement",
+              "text": "understand how cloned transgenic animals can be used to produce human proteins",
+              "diagram_dependence": "none",
+              "diagram_note": "",
+              "page": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

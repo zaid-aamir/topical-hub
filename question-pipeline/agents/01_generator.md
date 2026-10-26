@@ -30,7 +30,7 @@ If a batch with this subject, topic and part already exists anywhere under `subj
 - **Original only**: don't reproduce or lightly reword any real Cambridge past-paper question. Invent your own contexts, values and phrasing.
 - **Clear wording**: short sentences, no trick questions.
 - **Command words**: use only the command words listed in `command_words` in the syllabus map (e.g. use "State", never "Write down" or "Name" if they aren't listed).
-- **No false option lines**: never start a line of question text with `A `, `B `, `C ` or `D ` followed by a word (e.g. "A student…"); a parser reads such lines as MCQ options. Reword ("The student…", "One student…").
+- **No false option lines**: never start a line of question text with `A `, `B `, `C ` or `D ` followed by a word (e.g. "A student…"); a parser reads such lines as MCQ options. Reword naturally: use a name ("Priya has a trolley…"), a context first ("In an experiment, a trolley…") or "The …"; avoid stilted fillers like "The trolley in this question…" or repeated "One student…".
 - **Mark-scheme alternatives**: write alternatives as "OR" or as ALLOW lines, never with ` / ` between alternatives (` / ` means divide in this pipeline's notation).
 - **Small topics**: if the batch plan asks for more questions than the topic comfortably supports, vary contexts, skills and data rather than repeating the same recall; never let one question give away another's answer.
 - **Fewer MCQs**: with 10 MCQs, each of A–D is correct 2–3 times; with 15, 3–5 times.

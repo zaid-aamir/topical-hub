@@ -15,14 +15,14 @@ The owner is an IGCSE student building this as a business, and wants **speed**: 
 - Don't use Cambridge's logo or branding, and don't imply the site is endorsed by Cambridge. Naming the qualification ("Cambridge IGCSE Chemistry 0620") to describe what the questions are for is fine.
 - **This repo is public.** The syllabus PDF in `igcse-chem-pipeline/reference/` is Cambridge's copyright. It's kept on the owner's computer only and is gitignored. Never commit it, never publish it on the site, and never add any other Cambridge document.
 
-## Implemented website (documentation checked 2026-10-19, v1.1.0)
+## Implemented website (documentation checked 2026-10-26, v1.2.0)
 
 The Astro site is implemented in `Website/`. Start with `Website/README.md` for commands and `Website/CONTRACT.md` for the current routes and DOM. `Website/BUILD_V1.md` now records delivered scope, not an instruction to rebuild the site.
 
-- Three subjects, listed under `/#subjects` with counts computed from the data. On 2026-10-19 that was Chemistry 0620 (12 topics, 360 questions), Biology 0610 (21 topics, 590 questions) and Physics 0625 (6 topics, 420 questions). The build never requires a fixed total, because the pipeline may withhold questions.
-- Subjects are data-driven: each entry in `SUBJECTS` (`Website/src/config.ts`) carries its URL path, names, content folder (`contentSubpath`), override variable (`contentDirEnv`), batch-folder prefix (`batchPrefix`), anchor style and the `chemFormatting` / `powerFormatting` flags. The loader, pages, PDFs and build checks all loop over `SUBJECTS`, so a fourth subject is one new entry plus its approved content.
-- Tier labels: the data stays `tier: core | supplement`, but students see Cambridge tiers. Badges read Core / Extended, and the tier filter is Extended (all, default) / Core / Extended content only (supplement).
-- Topic pages have tier/type/subtopic filters, MCQ marking with Try again, answer toggles and print pages. There are 78 downloadable watermarked PDFs in total (24 Chemistry, 42 Biology, 12 Physics), two per topic.
+- Four subjects, listed under `/#subjects` and grouped by board (Cambridge IGCSE, Pearson Edexcel International GCSE), with counts computed from the data. On 2026-10-26 that was Cambridge Chemistry 0620 (12 topics, 360 questions), Biology 0610 (21 topics, 590 questions), Physics 0625 (6 topics, 420 questions) and Edexcel Physics 4PH1 (8 topics, 240 questions, at `/igcse/edexcel-physics-4ph1/`). The build never requires a fixed total, because the pipeline may withhold questions.
+- Subjects are data-driven: each entry in `SUBJECTS` (`Website/src/config.ts`) carries its URL path, names, `board`, `tiers` wording, content folder (`contentSubpath`), override variable (`contentDirEnv`), batch-folder prefix (`batchPrefix`), anchor style and the `chemFormatting` / `powerFormatting` flags. The loader, pages, PDFs and build checks all loop over `SUBJECTS`, so a new subject is one new entry plus its approved content.
+- Tier labels: the data stays `tier: core | supplement`; each subject's `tiers` wording sets what students see. Cambridge: badges Core / Extended, filter Extended (all, default) / Core / Extended content only (supplement). Edexcel is untiered and never shows Core/Extended: badges Paper 1 & 2 / Paper 2 only, filter All questions (default) / Paper 1 content (core). Print `syllabusYears` through `syllabusPhrase()`.
+- Topic pages have tier/type/subtopic filters, MCQ marking with Try again, answer toggles and print pages. There are 94 downloadable watermarked PDFs in total (24 Chemistry, 42 Biology, 12 Physics 0625, 16 Edexcel Physics 4PH1), two per topic.
 - Header: Subjects, About, theme toggle. Footer version comes from `Website/package.json`.
 - Chemistry question anchors remain `#q<n>`; Biology and Physics anchors use full source IDs. Every subject keeps the full source id in `data-question-id` and error reports. Chemistry's anchors differ from the original id-anchor requirement below; preserve current links unless explicitly migrating them.
 - Error reports currently open pre-filled GitHub issues because `REPORT_FORM_URL` is empty.
@@ -38,7 +38,7 @@ igcse-chem-pipeline/       the question pipeline: content source, read-only for 
   pipeline/04_approved/    THE CONTENT: 12 topic folders, 30 questions each (360 total)
   agents/FORMAT.md         the file-format spec ("Published output" section)
   config/syllabus_map.json topic/subtopic names, syllabus points, tiers
-question-pipeline/        the multi-subject pipeline (Biology 0610 and Physics 0625, both published; Chemistry moves here later): read-only for the website, owned by the managing chat
+question-pipeline/        the multi-subject pipeline (Biology 0610, Physics 0625 and Edexcel Physics 4PH1 published; Chemistry moves here later): read-only for the website, owned by the managing chat
 Website/                   the website lives here
 ```
 

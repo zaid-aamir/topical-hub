@@ -1,15 +1,19 @@
 ---
 /**
- * Tier badge for the topic and print pages. The data keeps core | supplement; students see the
- * Cambridge tiers, so Supplement questions are labelled Extended.
+ * Tier badge for the topic and print pages. The data keeps core | supplement; the subject's tier
+ * wording (config.ts) says what students see: Core / Extended for Cambridge, Paper 1 & 2 /
+ * Paper 2 only for Edexcel.
  */
 import type { Tier } from '../../content';
+import type { TierWording } from '../../config';
 import { tierLabel, tierTitle } from './labels';
 
 interface Props {
   tier: Tier;
+  wording: TierWording;
 }
 
-const { tier } = Astro.props;
+const { tier, wording } = Astro.props;
+const title = tierTitle(tier, wording);
 ---
-<span class={`badge badge-${tier}`} title={tierTitle(tier)}>{tierLabel(tier)}{tier === 'supplement' && <span class="visually-hidden"> ({tierTitle(tier)})</span>}</span>
+<span class={`badge badge-${tier}`} title={title}>{tierLabel(tier, wording)}{title !== undefined && <span class="visually-hidden"> ({title})</span>}</span>

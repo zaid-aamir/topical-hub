@@ -3,6 +3,7 @@
  * No DOM, no I/O: everything here is also safe to unit test.
  */
 import type { Tier, TopicCounts } from '../../content';
+import type { TierWording } from '../../config';
 
 /** "(a)" from the key "a", "(b)(i)" from "b.i". */
 export function partLabel(key: string): string {
@@ -12,14 +13,14 @@ export function partLabel(key: string): string {
     .join('');
 }
 
-/** Badge text for a tier: students think in Cambridge tiers, so Supplement content shows as Extended. */
-export function tierLabel(tier: Tier): string {
-  return tier === 'core' ? 'Core' : 'Extended';
+/** Badge text for a tier in the subject's wording ("Extended" for Cambridge supplement, "Paper 2 only" for Edexcel). */
+export function tierLabel(tier: Tier, wording: TierWording): string {
+  return wording.badge[tier];
 }
 
-/** Tooltip and screen-reader text for the Extended badge; Core needs none. */
-export function tierTitle(tier: Tier): string | undefined {
-  return tier === 'supplement' ? 'Supplement content: Extended tier only' : undefined;
+/** Tooltip and screen-reader text for a tier badge, or undefined where the badge says enough. */
+export function tierTitle(tier: Tier, wording: TierWording): string | undefined {
+  return wording.badgeTitle[tier];
 }
 
 /** "30 questions: 15 multiple choice, 15 structured" (no full stop, so pages can end it as they like). */

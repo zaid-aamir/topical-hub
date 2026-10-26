@@ -6,7 +6,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import TopicGrid from '../../../components/TopicGrid.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { subjectTopics } from '../../../lib/subjects';
-import { SITE_NAME, SUBJECTS } from '../../../config';
+import { SITE_NAME, SUBJECTS, syllabusPhrase } from '../../../config';
 
 export function getStaticPaths() {
   return SUBJECTS.map((subject) => ({ params: { subject: subject.path.split('/')[1] }, props: { subject } }));
@@ -20,13 +20,13 @@ const subjectPath = `/${subject.path}/`;
 const title = `${subject.shortName} exam-style questions by topic, with answers | ${SITE_NAME}`;
 const description =
   `${totalQuestions} original exam-style questions for ${subject.fullName} in ${topicCount} topics, ` +
-  'each with a mark scheme and a worked solution. Free, with Core and Extended filters.';
+  `each with a mark scheme and a worked solution. Free, with ${subject.tiers.filterSummary}.`;
 ---
 <BaseLayout title={title} description={description} canonicalPath={subjectPath}>
   <div class="shell">
     <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: subject.shortName, href: subjectPath }]} />
     <div class="page-title">
-      <p class="page-label">{subject.fullName}, syllabus for exams in {subject.syllabusYears}</p>
+      <p class="page-label">{subject.fullName}, {syllabusPhrase(subject)}</p>
       <h1>{subject.shortName}</h1>
       <p class="page-summary">
         {totalQuestions} original exam-style questions across {topicCount} topics, with mark schemes and worked
@@ -38,7 +38,7 @@ const description =
 
     <div class="prose">
       <p>
-        Choose a topic to see its questions. On a topic page you can filter by Core or Extended tier and by question
+        Choose a topic to see its questions. On a topic page you can filter by {subject.tiers.filterBy} and by question
         type, attempt a question, then reveal its mark scheme and worked solution. Each topic also has two print
         pages for practice on paper: the questions with ruled answer space, and the mark scheme. The questions
         are original, written with AI tools and approved by the site owner; <a href="/about/">more about the site</a>.

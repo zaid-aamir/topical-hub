@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_NAME, SUBJECTS, GITHUB_REPO, REPORT_FORM_URL } from '../config';
+import { SITE_NAME, SUBJECTS, GITHUB_REPO, REPORT_FORM_URL, syllabusPhrase } from '../config';
 
 
 const repoUrl = `https://github.com/${GITHUB_REPO}`;
@@ -18,17 +18,22 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
     <article class="prose">
       <h1>About {SITE_NAME}</h1>
       <p>
-        {SITE_NAME} is a free collection of exam-style practice questions for
-        {SUBJECTS.map((subject, index) => <Fragment>{joiner(index)}<a href={`/${subject.path}/`}>{subject.fullName}</a> (exams in {subject.syllabusYears})</Fragment>)},
-        sorted by topic. Every question comes with a mark scheme and a worked solution, hidden until you
-        choose to look, so you can attempt the question first and then mark your own answer.
+        {SITE_NAME} is a free collection of exam-style practice questions for Cambridge IGCSE and Pearson
+        Edexcel International GCSE subjects, sorted by topic:
+      </p>
+      <ul>
+        {SUBJECTS.map((subject) => <li><a href={`/${subject.path}/`}>{subject.fullName}</a>, {syllabusPhrase(subject)}</li>)}
+      </ul>
+      <p>
+        Every question comes with a mark scheme and a worked solution, hidden until you choose to look, so
+        you can attempt the question first and then mark your own answer.
       </p>
 
       <h2>Where the questions come from</h2>
       <p>
         The questions are original. They are written in the style of the exam so that practising them
-        feels like the real thing, but they are not past papers, and nothing is copied from Cambridge
-        question papers or mark schemes.
+        feels like the real thing, but they are not past papers, and nothing is copied from Cambridge or
+        Pearson Edexcel question papers or mark schemes.
       </p>
       <p>
         The questions, mark schemes and worked solutions were written with AI tools and approved by the site owner. Approval does not claim independent science verification. No teacher
@@ -36,12 +41,17 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
         error link under that question.
       </p>
 
-      <h2>Core and Extended</h2>
+      <h2>Tiers and papers</h2>
       <p>
-        Every question is tagged Core or Extended, as in the Cambridge tiers. Core questions are for everyone.
+        Every Cambridge IGCSE question is tagged Core or Extended, as in the Cambridge tiers. Core questions are for everyone.
         Extended questions use Supplement content and are only for students taking the Extended papers
         (Papers 2 and 4). On a topic page, Extended shows every question, Core shows the Core questions only,
         and Extended content only shows just the harder Supplement material.
+      </p>
+      <p>
+        Pearson Edexcel International GCSE has no tiers, so its questions are labelled Paper 1 &amp; 2 or
+        Paper 2 only instead. Paper 2 only questions use the bold content in the specification, which is
+        examined only on Paper 2.
       </p>
 
       <h2>Reporting an error</h2>
@@ -60,7 +70,8 @@ const reportsGoToForm = REPORT_FORM_URL !== '';
       <h2>Independence</h2>
       <p>
         {SITE_NAME} is independent and is not affiliated with or endorsed by Cambridge University Press
-        &amp; Assessment. The qualification is named only to say what the questions are for.
+        &amp; Assessment or Pearson Education. The qualifications are named only to say what the questions
+        are for.
       </p>
 
       <h2>Free, with no accounts</h2>

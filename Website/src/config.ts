@@ -15,6 +15,66 @@ export const SITE_NAME = 'Topical Hub';
  */
 export const SITE_URL = 'https://topical-hub.pages.dev';
 
+/** Exam board of a subject. The home page groups subject cards by board. */
+export type Board = 'cambridge' | 'edexcel';
+
+/** Heading for each board's group of subject cards, in the order the home page shows them. */
+export const BOARDS: readonly { readonly board: Board; readonly name: string }[] = [
+  { board: 'cambridge', name: 'Cambridge IGCSE' },
+  { board: 'edexcel', name: 'Pearson Edexcel International GCSE' },
+];
+
+/** The tier values in the content files (same as Tier in src/content/types.ts; config.ts has no imports). */
+export type TierValue = 'core' | 'supplement';
+
+/**
+ * How a subject names its tiers. The data is always core | supplement; this is the student-facing
+ * wording for badges, the tier filter and the copy that describes them.
+ */
+export interface TierWording {
+  /** Badge text per tier. */
+  readonly badge: Readonly<Record<TierValue, string>>;
+  /** Badge tooltip and screen-reader text, only where the badge text needs explaining. */
+  readonly badgeTitle: Readonly<Partial<Record<TierValue, string>>>;
+  /** Tier filter buttons in order. The first must be 'all': it is the default the script starts from. */
+  readonly filters: readonly { readonly value: 'all' | TierValue; readonly label: string }[];
+  /** One-line explanation under the topic-page filters. */
+  readonly hint: string;
+  /** Ends "On a topic page you can filter by …": what the tier filter filters by. */
+  readonly filterBy: string;
+  /** Ends "Free, with …" in the subject page's meta description. */
+  readonly filterSummary: string;
+}
+
+/** Cambridge: students think in Core / Extended tiers; Supplement content is Extended only. */
+export const CAMBRIDGE_TIERS: TierWording = {
+  badge: { core: 'Core', supplement: 'Extended' },
+  badgeTitle: { supplement: 'Supplement content: Extended tier only' },
+  filters: [
+    { value: 'all', label: 'Extended' },
+    { value: 'core', label: 'Core' },
+    { value: 'supplement', label: 'Extended content only' },
+  ],
+  hint:
+    'Core questions are for everyone. Extended questions use Supplement content and are only for students taking the Extended papers (Papers 2 and 4).',
+  filterBy: 'Core or Extended tier',
+  filterSummary: 'Core and Extended filters',
+};
+
+/** Edexcel International GCSE is untiered: core content is on both papers, supplement (bold) on Paper 2 only. */
+export const EDEXCEL_TIERS: TierWording = {
+  badge: { core: 'Paper 1 & 2', supplement: 'Paper 2 only' },
+  badgeTitle: { supplement: 'Paper 2 only: bold content in the specification' },
+  filters: [
+    { value: 'all', label: 'All questions' },
+    { value: 'core', label: 'Paper 1 content' },
+  ],
+  hint:
+    'Paper 1 & 2 questions use content examined on both papers. Paper 2 only questions use the bold content in the specification, which is examined only on Paper 2.',
+  filterBy: 'paper',
+  filterSummary: 'Paper 1 and Paper 2 filters',
+};
+
 /**
  * One subject: a qualification with its own topics, everything under /<path>/, and its content
  * source. Adding a subject is one entry in SUBJECTS below: the loader, the pages, the PDFs and
@@ -27,8 +87,16 @@ export interface Subject {
   readonly shortName: string;
   /** Full qualification name. Naming the qualification is fine; never imply endorsement. */
   readonly fullName: string;
-  /** Syllabus years the questions were written for. */
+  /** Exam board, for grouping on the home page. */
+  readonly board: Board;
+  /**
+   * Which syllabus the questions were written for. Cambridge: the exam years ("2026–2028"), printed
+   * as "syllabus for exams in 2026–2028". Edexcel: the whole phrase ("current specification (Issue 4)").
+   * Print it through syllabusPhrase(), never directly.
+   */
   readonly syllabusYears: string;
+  /** Badge, filter and hint wording for the tiers. */
+  readonly tiers: TierWording;
   /** One sentence for the subject's card on the home page. */
   readonly description: string;
   /** Approved content folder, relative to the repository root. Only questions.md and markscheme.md are read. */
@@ -49,6 +117,8 @@ export const CHEMISTRY_0620: Subject = {
   path: 'igcse/chemistry-0620',
   shortName: 'IGCSE Chemistry 0620',
   fullName: 'Cambridge IGCSE Chemistry 0620',
+  board: 'cambridge',
+  tiers: CAMBRIDGE_TIERS,
   syllabusYears: '2026–2028',
   description: 'Multiple-choice and structured questions on every topic of the syllabus, each tagged Core or Extended.',
   contentSubpath: 'igcse-chem-pipeline/pipeline/04_approved',
@@ -63,6 +133,8 @@ export const BIOLOGY_0610: Subject = {
   path: 'igcse/biology-0610',
   shortName: 'IGCSE Biology 0610',
   fullName: 'Cambridge IGCSE Biology 0610',
+  board: 'cambridge',
+  tiers: CAMBRIDGE_TIERS,
   syllabusYears: '2026–2028',
   description: 'Original multiple-choice and structured questions across all 21 topics, tagged Core or Extended.',
   contentSubpath: 'question-pipeline/subjects/0610-biology/batches/04_approved',
@@ -77,6 +149,8 @@ export const PHYSICS_0625: Subject = {
   path: 'igcse/physics-0625',
   shortName: 'IGCSE Physics 0625',
   fullName: 'Cambridge IGCSE Physics 0625',
+  board: 'cambridge',
+  tiers: CAMBRIDGE_TIERS,
   syllabusYears: '2026–2028',
   description: 'Original multiple-choice and structured questions on every topic of the syllabus, tagged Core or Extended.',
   contentSubpath: 'question-pipeline/subjects/0625-physics/batches/04_approved',
@@ -87,8 +161,29 @@ export const PHYSICS_0625: Subject = {
   powerFormatting: true,
 };
 
-/** Every subject, in the order the home page lists them. */
-export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610, PHYSICS_0625];
+export const EDEXCEL_PHYSICS_4PH1: Subject = {
+  path: 'igcse/edexcel-physics-4ph1',
+  shortName: 'Edexcel IGCSE Physics 4PH1',
+  fullName: 'Pearson Edexcel International GCSE Physics (4PH1)',
+  board: 'edexcel',
+  tiers: EDEXCEL_TIERS,
+  syllabusYears: 'current specification (Issue 4)',
+  description: 'Original multiple-choice and structured questions on all 8 topics, labelled Paper 1 & 2 or Paper 2 only.',
+  contentSubpath: 'question-pipeline/subjects/4ph1-physics/batches/04_approved',
+  contentDirEnv: 'EDEXCEL_PHYSICS_CONTENT_DIR',
+  batchPrefix: '4PH1_',
+  anchor: 'id',
+  chemFormatting: false,
+  powerFormatting: true,
+};
+
+/** Every subject, in the order the home page lists them (grouped by BOARDS there). */
+export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610, PHYSICS_0625, EDEXCEL_PHYSICS_4PH1];
+
+/** "syllabus for exams in 2026–2028" (Cambridge) or "current specification (Issue 4)" (Edexcel), lower case. */
+export function syllabusPhrase(subject: Subject): string {
+  return subject.board === 'cambridge' ? `syllabus for exams in ${subject.syllabusYears}` : subject.syllabusYears;
+}
 
 /** The subject when SUBJECTS has exactly one entry, else undefined. Home-page copy names it while it exists. */
 export const SOLE_SUBJECT: Subject | undefined = SUBJECTS.length === 1 ? SUBJECTS[0] : undefined;
@@ -99,11 +194,11 @@ export const SOLE_SUBJECT: Subject | undefined = SUBJECTS.length === 1 ? SUBJECT
  */
 export const SITE_TAGLINE = SOLE_SUBJECT
   ? `Free exam-style topical questions for ${SOLE_SUBJECT.shortName}, with mark schemes and worked solutions`
-  : 'Free exam-style topical questions with mark schemes and worked solutions';
+  : 'Free exam-style topical questions for Cambridge IGCSE and Pearson Edexcel International GCSE, with mark schemes and worked solutions';
 
 /** Footer sentence, required verbatim on every page. */
 export const DISCLAIMER =
-  'Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment.';
+  'Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment or Pearson Education.';
 
 /**
  * Kill switch for the display-only chemistry formatting (H2SO4 -> H₂SO₄, Cu2+ -> Cu²⁺, cm3 -> cm³)

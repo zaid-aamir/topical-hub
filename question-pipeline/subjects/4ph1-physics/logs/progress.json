@@ -1,0 +1,41 @@
+{
+  "subject_id": "4ph1-physics",
+  "batches": {
+    "T01_P1": {
+      "batch_id": "4PH1_T01_P1_20261026",
+      "status": "approved"
+    },
+    "T05_P1": {
+      "batch_id": "4PH1_T05_P1_20261026",
+      "status": "approved"
+    },
+    "T06_P1": {
+      "batch_id": "4PH1_T06_P1_20261026",
+      "status": "approved"
+    },
+    "T04_P1": {
+      "batch_id": "4PH1_T04_P1_20261026",
+      "status": "approved"
+    },
+    "T02_P1": {
+      "batch_id": "4PH1_T02_P1_20261026",
+      "status": "approved"
+    },
+    "T01_P2": {
+      "batch_id": "4PH1_T01_P2_20261026",
+      "status": "approved"
+    },
+    "T03_P1": {
+      "batch_id": "4PH1_T03_P1_20261026",
+      "status": "approved"
+    },
+    "T08_P1": {
+      "batch_id": "4PH1_T08_P1_20261026",
+      "status": "approved"
+    },
+    "T07_P1": {
+      "batch_id": "4PH1_T07_P1_20261026",
+      "status": "approved"
+    }
+  }
+}

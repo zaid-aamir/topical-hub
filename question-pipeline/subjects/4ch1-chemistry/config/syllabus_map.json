@@ -1,0 +1,1568 @@
+{
+  "subject_id": "4ch1-chemistry",
+  "subject_name": "Chemistry",
+  "syllabus": "4CH1",
+  "years": "current (first exam 2019)",
+  "source_file": "subjects/4ch1-chemistry/reference/4CH1_specification.pdf",
+  "syllabus_version": "Issue 3 (cover; footers read 'Specification – Issue 3 – September 2024'). Note: p. 1 still says 'This specification is Issue 2'.",
+  "tier_notes": "Untiered. All students sit both papers in the same series (p. 1). Paper 1 (4CH1/1C) assesses the content that is not in bold and does not have a 'C' reference; Paper 2 (4CH1/2C) assesses all the content, including content that is in bold and has a 'C' reference; bold statements cover some sub-topics in greater depth (pp. 7, 8, 27). 'C' statements are content found only in the International GCSE in Chemistry and not in the International GCSE in Science (Double Award) (p. 1). In this map tier 'core' = Paper 1 & 2 content (no suffix), 'supplement' = Paper 2 only (C suffix); the website labels these 'Paper 1 & 2' and 'Paper 2 only'. Total 180 marks (110 + 70, not scaled); grades 9–1 (p. 27).",
+  "papers": [
+    {
+      "paper": "1",
+      "name": "Chemistry Paper 1 (4CH1/1C)",
+      "type": "structured",
+      "tier": "all",
+      "marks": 110,
+      "duration_minutes": 120,
+      "weighting_percent": 61.1
+    },
+    {
+      "paper": "2",
+      "name": "Chemistry Paper 2 (4CH1/2C)",
+      "type": "structured",
+      "tier": "all",
+      "marks": 70,
+      "duration_minutes": 75,
+      "weighting_percent": 38.9
+    }
+  ],
+  "paper_notes": [
+    "Both papers: externally assessed written examinations set and marked by Pearson; availability November and June; first assessment June 2019 (pp. 7, 8, 27).",
+    "Both papers: 'A mixture of different question styles, including multiple-choice questions, short-answer questions, calculations and extended open-response questions'; questions may come from any topic area across the specification (pp. 7, 8, 27).",
+    "A calculator may be used in the examinations (pp. 7, 8, 28).",
+    "Assessment objectives (p. 29): AO1 Knowledge and understanding of chemistry 38–42%; AO2 Application of knowledge and understanding, analysis and evaluation of chemistry 38–42%; AO3 Experimental skills, analysis and evaluation of data and methods in chemistry 19–21%. Paper 1: AO1 23.2–25.7%, AO2 23.2–25.7%, AO3 11.6–12.8%; Paper 2: AO1 14.8–16.3%, AO2 14.8–16.3%, AO3 7.4–8.2%.",
+    "Page numbers cited in this map are the printed page numbers; PDF page = printed page + 6."
+  ],
+  "command_words": {
+    "Add/Label": "Requires the addition or labelling of a stimulus material given in the question, for example labelling a diagram or adding units to a table.",
+    "Calculate": "Obtain a numerical answer, showing relevant working.",
+    "Comment on": "Requires the synthesis of a number of variables from data/information to form a judgement.",
+    "Complete": "Requires the completion of a table/diagram.",
+    "Deduce": "Draw/reach conclusion(s) from the information provided.",
+    "Describe": "To give an account of something. Statements in the response need to be developed, as they are often linked but do not need to include a justification or reason.",
+    "Determine": "The answer must have an element that is quantitative from the stimulus provided, or must show how the answer can be reached quantitatively. To gain maximum marks, there must be a quantitative element to the answer.",
+    "Design": "Plan or invent a procedure from existing principles/ideas.",
+    "Discuss": "Identify the issue/situation/problem/argument that is being assessed within the question; Explore all aspects of an issue/situation/problem/argument; Investigate the issue/situation etc. by reasoning or argument.",
+    "Draw": "Produce a diagram either using a ruler or freehand.",
+    "Estimate": "Find an approximate value, number or quantity from a diagram/given data or through a calculation.",
+    "Evaluate": "Review information (e.g. data, methods) then bring it together to form a conclusion, drawing on evidence including strengths, weaknesses, alternative actions, relevant data or information. Come to a supported judgement of a subject’s quality and relate it to its context.",
+    "Explain": "An explanation requires a justification/exemplification of a point. The answer must contain some element of reasoning/justification – this can include mathematical explanations.",
+    "Give/State/Name": "All of these command words are really synonyms. They generally all require recall of one or more pieces of information.",
+    "Give a reason/reasons": "When a statement has been made and the requirement is only to give the reason(s) why.",
+    "Identify": "Usually requires some key information to be selected from a given stimulus/resource.",
+    "Justify": "Give evidence to support (either the statement given in the question or an earlier answer).",
+    "Plot": "Produce a graph by marking points accurately on a grid from data that is provided and then draw a line of best fit through these points. A suitable scale and appropriately labelled axes must be included if these are not provided in the question.",
+    "Predict": "Give an expected result.",
+    "Show that": "Verify the statement given in the question.",
+    "Sketch": "Produce a freehand drawing. For a graph, this would need a line and labelled axes with important features indicated. The axes are not scaled.",
+    "State what is meant by": "When the meaning of a term is expected but there are different ways for how these can be described.",
+    "Suggest": "Use your knowledge to propose a solution to a problem in a novel context.",
+    "Analyse the data/graph to explain": "Verb preceding a command word: Examine the data/graph in detail to provide an explanation.",
+    "What, Why, Which": "Direct command words used for multiple-choice questions."
+  },
+  "data_provided": {
+    "given": [
+      "Appendix 7: The Periodic Table (p. 49). It gives, for each element, the relative atomic mass, atomic symbol, name and atomic (proton) number (key: relative atomic mass above the symbol, atomic (proton) number below). Groups are numbered 1, 2, 3, 4, 5, 6, 7 and 0; hydrogen sits on its own above the table. Relative atomic masses are whole numbers except Cl = 35.5 and Cu = 63.5 (footnote: 'The relative atomic masses of copper and chlorine have not been rounded to the nearest whole number'). Values in square brackets for radioactive elements (e.g. Tc [98], Rn [222]). Lanthanoids (58–71) and actinoids (90–103) are omitted; elements 112–116 'have been reported but not fully authenticated'.",
+      "IMPORTANT: the specification does NOT state that the Periodic Table (or any other data) is printed in the examination papers; it only includes it as an appendix (checked pp. 7–8, 27–29, 43–49). Points 1.19 and 1.21 ask students to work from positions in the Periodic Table. Owner to confirm; draft rule in subject.md.",
+      "No formula sheet, equation list or data booklet is described anywhere in the specification.",
+      "A calculator may be used in the examinations (pp. 7, 8); students are expected to have access to a suitable electronic calculator for all examination papers; calculators that allow retrieval of text or formulae, or with QWERTY keyboards, are not allowed (p. 28).",
+      "Data supplied within questions: 1.25 (unfamiliar reactions 'where suitable information is provided'), 1.29 and 1.33 (experimental data), 2.24C ('given appropriate information'), 3.7C (bond energies — no values are printed in the specification, so they must be given in the question), 3.3 (a measured temperature change; no value of the specific heat capacity of water is printed in the specification, so c must be given in the question)."
+    ],
+    "not_given": [
+      "Relationships the specification asks students to calculate with but does not print, therefore to be recalled: 1.17 Ar from isotopic abundances (Ar = Σ(isotope mass × abundance) / total abundance); 1.26 Mr = sum of Ar; 1.28 amount (mol) = mass / Mr; 1.29 reacting masses from mole ratios in the equation; 1.30 percentage yield = (actual yield / theoretical yield) × 100; 1.12 Rf = distance moved by spot / distance moved by solvent front; 1.33 empirical and molecular formulae; 1.34C concentration (mol/dm^3) = amount (mol) / volume (dm^3) [Paper 2 only]; 1.35C gas volume = amount (mol) × 24 dm^3 at rtp [Paper 2 only]; 3.4 ΔH = Q / amount (mol), negative for exothermic [sign convention not stated in the specification]; 3.7C enthalpy change = bonds broken − bonds made [Paper 2 only].",
+      "3.3 Q = mcΔT is printed in the statement ('using the expression Q = mcΔT'); the specification does not say it is supplied in the exam, so treat it as recalled.",
+      "1.35C molar volume of a gas 24 dm^3 (24 000 cm^3) at rtp — stated in the content as something students know; not stated as given [Paper 2 only].",
+      "Facts to recall stated in the content: ion charges (1.38: Groups 1, 2, 3 metals; Groups 5, 6, 7 non-metals; Ag^+, Cu^2+, Fe^2+, Fe^3+, Pb^2+, Zn^2+; H^+, OH^–, NH4^+, CO3^2–, NO3^–, SO4^2–); solubility rules (2.34); order of reactivity K, Na, Li, Ca, Mg, Al, Zn, Fe, Cu, Ag, Au (2.17); pH bands 0–3, 4–6, 7, 8–10, 11–14 (2.29); flame colours Li^+ red, Na^+ yellow, K^+ lilac, Ca^2+ orange-red, Cu^2+ blue-green (2.46); cracking conditions silica or alumina, 600–700 °C (4.17); ethanol manufacture: ethene + steam, phosphoric acid catalyst, about 300 °C, about 60–70 atm; fermentation of glucose, absence of air, about 30 °C, enzymes in yeast (4.32C, Paper 2 only); oxidation of ethanol by potassium dichromate(VI) in dilute sulfuric acid (4.31C); names of crude oil fractions (4.9).",
+      "Facts to recall that the specification names but does not print the values of: approximate percentages by volume of the four most abundant gases in dry air (2.9); colours and physical states of chlorine, bromine and iodine (2.5); general formulae of alkanes and alkenes (4.19, 4.24); tests for gases, cations, anions and water (2.44, 2.47–2.50); conditions for rusting (2.18).",
+      "Explicitly NOT required: Le Chatelier's principle (3.22C); reaction mechanisms (4.6, 4.22); references to haemoglobin (4.13); cis/trans or E/Z notation (4.26); detailed knowledge of the extraction process of a specific metal (2.24C); reactions between nitric acid and metals (2.37); steels other than low-carbon (mild), high-carbon and stainless (2.25C); naming compounds with more than six carbon atoms (4.4); propanol/butanol isomers other than propan-1-ol and butan-1-ol (4.30C).",
+      "Not in the specification at all (do not use): the Avogadro constant, the mole defined by particle number, specific heat capacity values, standard enthalpy notation beyond ΔH, Kc or any equilibrium constant."
+    ],
+    "conventions": [
+      "Paper 1 (4CH1/1C) assesses only statements without the 'C' suffix (not in bold); Paper 2 (4CH1/2C) assesses all content including bold 'C' statements (pp. 7, 8, 27). In this map tier 'core' = Paper 1 & 2, tier 'supplement' = Paper 2 only (C suffix).",
+      "Equations: word equations and balanced chemical equations including state symbols (1.25); ionic half-equations for electrode reactions (1.59C, Paper 2 only); reversible reactions shown with ⇌ (3.17). The specification does not list the state symbols; the standard (s), (l), (g), (aq) are used. Full ionic equations (other than half-equations) are not mentioned in the specification.",
+      "Naming: IUPAC nomenclature for compounds relevant to the specification, up to six carbon atoms (4.4); the names propanol and butanol are acceptable for propan-1-ol and butan-1-ol (4.30C); polymer names written poly(ethene), poly(propene), poly(chloroethene), (poly)tetrafluoroethene (4.45); Roman-numeral oxidation states in names, e.g. copper(II) oxide, lead(II) bromide, potassium dichromate(VI) (1.36, 1.58C, 4.31C). Spellings used: sulfur, sulfate, sulfuric, aluminium, caesium.",
+      "Units used in the content: g per 100 g of solvent (1.5C); mol (1.27); mol/dm^3 (1.34C); dm^3 and cm^3 (1.35C); °C (4.17, 4.32C); atm (4.32C). Symbols: Ar, Mr (1.16, 1.26), Rf (1.12), Q, m, c, ΔT (3.3), ΔH (3.4, 3.14C).",
+      "Mathematical skills for chemistry (Appendix 4, pp. 43–44, column C): numbers in decimal and standard form; ratios, fractions, percentages, powers and roots; appropriate number of significant figures; arithmetic mean; bar charts; simple probability; scatter diagrams; order of magnitude calculations; symbols <, >, ∝, ~; change the subject of an equation; substitute numerical values using appropriate units; solve simple algebraic equations; translate between graphical and numerical form; y = mx + c; plot two variables; slope and intercept of a linear graph; slope of a tangent to a curve as a measure of rate of change. NOT ticked for chemistry: estimates without a calculator (1D), sin x (1E), frequency tables/histograms (2D), sampling (2E), mode and median (2G), area under a curve (4F), and all of section 5 (geometry and trigonometry).",
+      "Map transcription conventions (not from the specification): bulleted sub-items joined with '; ' after the printed lead-in; italic guidance notes printed under a statement appended in round brackets; superscripts written with ^ (dm^3, Cu^2+, SO4^2–); subscripts written inline (NH4, CO3, Ar, Mr, Rf, C60, H2O); the printed ordinal sign º in temperatures is written as the degree sign °; the minus sign of anion charges is written – (en dash), including nitrate which is printed with a hyphen (NO3-); functional groups and the polyester equation printed as displayed-formula images (4.34C, 4.38C, 4.49C) are rebuilt in one-line text."
+    ],
+    "appendices": [
+      "Appendix 1: Codes (p. 37) — subject code 4CH1 (and 4SD0 Double Award); paper codes 4CH1/1C (also 4SD0/1C) and 4CH1/2C.",
+      "Appendix 2: World Class Qualification design principles (pp. 39–40) — not content.",
+      "Appendix 3: Transferable skills (pp. 41–42) — not content.",
+      "Appendix 4: Mathematical skills (pp. 43–44) — see conventions; 'not explicitly referenced in the content' but 'developed and assessed throughout this qualification'.",
+      "Appendix 5: Command word taxonomy (pp. 45–46) — see command_words.",
+      "Appendix 6: Suggested practical investigations (pp. 47–48) — additional, non-statement practicals (e.g. thermal decomposition of carbonates, rusting, cracking paraffin oil, molar volume of hydrogen, % yield); these are suggestions only and are not numbered statements. Safety is an overriding requirement for all practical work.",
+      "Appendix 7: The Periodic Table (p. 49) — see given.",
+      "Appendix 8: Glossary (p. 51) — assessment objectives, external assessment, JCQ, linear; not content.",
+      "Experimental skills (p. 28): practical statements are printed in italics in the content and assessed through the written examinations (problem solving in practical contexts, planning, methods and safe technique, observations and measurements, independent/dependent/control variables, analysing data, communicating findings with calculations and graphs, reliability, evaluating accuracy and validity)."
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "1",
+      "topic_name": "Principles of chemistry",
+      "subtopics": [
+        {
+          "subtopic_id": "1a",
+          "subtopic_name": "States of matter",
+          "points": [
+            {
+              "point_id": "1.1",
+              "tier": "core",
+              "text": "understand the three states of matter in terms of the arrangement, movement and energy of the particles",
+              "diagram_dependence": "partial",
+              "diagram_note": "Particle diagrams are common; arrangement and movement can be described in words."
+            },
+            {
+              "point_id": "1.2",
+              "tier": "core",
+              "text": "understand the interconversions between the three states of matter in terms of: the names of the interconversions; how they are achieved; the changes in arrangement, movement and energy of the particles.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.3",
+              "tier": "core",
+              "text": "understand how the results of experiments involving the dilution of coloured solutions and diffusion of gases can be explained",
+              "diagram_dependence": "partial",
+              "diagram_note": "Diffusion apparatus (e.g. a tube with cotton wool at each end) is usually drawn; can be described in words."
+            },
+            {
+              "point_id": "1.4",
+              "tier": "core",
+              "text": "know what is meant by the terms: solvent; solute; solution; saturated solution.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.5C",
+              "tier": "supplement",
+              "text": "know what is meant by the term solubility in the units g per 100 g of solvent",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.6C",
+              "tier": "supplement",
+              "text": "understand how to plot and interpret solubility curves",
+              "diagram_dependence": "essential",
+              "diagram_note": "Plotting a solubility curve needs a drawn grid; reading values off a curve can be replaced by a data table, so the interpret part is testable only with tabulated data."
+            },
+            {
+              "point_id": "1.7C",
+              "tier": "supplement",
+              "text": "practical: investigate the solubility of a solid in water at a specific temperature",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: method, variables and results can be given as text and tables."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1b",
+          "subtopic_name": "Elements, compounds and mixtures",
+          "points": [
+            {
+              "point_id": "1.8",
+              "tier": "core",
+              "text": "understand how to classify a substance as an element, compound or mixture",
+              "diagram_dependence": "partial",
+              "diagram_note": "Questions often use particle diagrams; the particles can be described in words or by formulae."
+            },
+            {
+              "point_id": "1.9",
+              "tier": "core",
+              "text": "understand that a pure substance has a fixed melting and boiling point, but that a mixture may melt or boil over a range of temperatures",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.10",
+              "tier": "core",
+              "text": "describe these experimental techniques for the separation of mixtures: simple distillation; fractional distillation; filtration; crystallisation; paper chromatography.",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus diagrams are common; apparatus can be named and described in words."
+            },
+            {
+              "point_id": "1.11",
+              "tier": "core",
+              "text": "understand how a chromatogram provides information about the composition of a mixture",
+              "diagram_dependence": "partial",
+              "diagram_note": "Chromatograms are usually drawn; spot positions can be given as distances in a table."
+            },
+            {
+              "point_id": "1.12",
+              "tier": "core",
+              "text": "understand how to use the calculation of Rf values to identify the components of a mixture",
+              "diagram_dependence": "partial",
+              "diagram_note": "Distances moved by spots and solvent front can be given as numbers instead of a drawn chromatogram."
+            },
+            {
+              "point_id": "1.13",
+              "tier": "core",
+              "text": "practical: investigate paper chromatography using inks/food colourings",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: method and results can be given as text and tables."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1c",
+          "subtopic_name": "Atomic structure",
+          "points": [
+            {
+              "point_id": "1.14",
+              "tier": "core",
+              "text": "know what is meant by the terms atom and molecule",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.15",
+              "tier": "core",
+              "text": "know the structure of an atom in terms of the positions, relative masses and relative charges of sub-atomic particles",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.16",
+              "tier": "core",
+              "text": "know what is meant by the terms atomic number, mass number, isotopes and relative atomic mass (Ar)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.17",
+              "tier": "core",
+              "text": "be able to calculate the relative atomic mass of an element (Ar) from isotopic abundances",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1d",
+          "subtopic_name": "The Periodic Table",
+          "points": [
+            {
+              "point_id": "1.18",
+              "tier": "core",
+              "text": "understand how elements are arranged in the Periodic Table: in order of atomic number; in groups and periods.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.19",
+              "tier": "core",
+              "text": "understand how to deduce the electronic configurations of the first 20 elements from their positions in the Periodic Table",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.20",
+              "tier": "core",
+              "text": "understand how to use electrical conductivity and the acid-base character of oxides to classify elements as metals or non-metals",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.21",
+              "tier": "core",
+              "text": "identify an element as a metal or a non-metal according to its position in the Periodic Table",
+              "diagram_dependence": "partial",
+              "diagram_note": "Questions often use an outline Periodic Table with lettered positions; positions can be given as group and period in words."
+            },
+            {
+              "point_id": "1.22",
+              "tier": "core",
+              "text": "understand how the electronic configuration of a main group element is related to its position in the Periodic Table",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.23",
+              "tier": "core",
+              "text": "understand why elements in the same group of the Periodic Table have similar chemical properties",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.24",
+              "tier": "core",
+              "text": "understand why the noble gases (Group 0) do not readily react",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1e",
+          "subtopic_name": "Chemical formulae, equations and calculations",
+          "points": [
+            {
+              "point_id": "1.25",
+              "tier": "core",
+              "text": "write word equations and balanced chemical equations (including state symbols): for reactions studied in this specification; for unfamiliar reactions where suitable information is provided.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.26",
+              "tier": "core",
+              "text": "calculate relative formula masses (including relative molecular masses) (Mr) from relative atomic masses (Ar)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.27",
+              "tier": "core",
+              "text": "know that the mole (mol) is the unit for the amount of a substance",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.28",
+              "tier": "core",
+              "text": "understand how to carry out calculations involving amount of substance, relative atomic mass (Ar) and relative formula mass (Mr)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.29",
+              "tier": "core",
+              "text": "calculate reacting masses using experimental data and chemical equations",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.30",
+              "tier": "core",
+              "text": "calculate percentage yield",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.31",
+              "tier": "core",
+              "text": "understand how the formulae of simple compounds can be obtained experimentally, including metal oxides, water and salts containing water of crystallisation",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.32",
+              "tier": "core",
+              "text": "know what is meant by the terms empirical formula and molecular formula",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.33",
+              "tier": "core",
+              "text": "calculate empirical and molecular formulae from experimental data",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.34C",
+              "tier": "supplement",
+              "text": "understand how to carry out calculations involving amount of substance, volume and concentration (in mol/dm^3) of solution",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.35C",
+              "tier": "supplement",
+              "text": "understand how to carry out calculations involving gas volumes and the molar volume of a gas (24 dm^3 and 24 000 cm^3 at room temperature and pressure (rtp))",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.36",
+              "tier": "core",
+              "text": "practical: know how to determine the formula of a metal oxide by combustion (e.g. magnesium oxide) or by reduction (e.g. copper(II) oxide)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: crucible or reduction-tube apparatus can be described in words; masses given in a table."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1f",
+          "subtopic_name": "Ionic bonding",
+          "points": [
+            {
+              "point_id": "1.37",
+              "tier": "core",
+              "text": "understand how ions are formed by electron loss or gain",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.38",
+              "tier": "core",
+              "text": "know the charges of these ions: metals in Groups 1, 2 and 3; non-metals in Groups 5, 6 and 7; Ag^+, Cu^2+, Fe^2+, Fe^3+, Pb^2+, Zn^2+; hydrogen (H^+), hydroxide (OH^–), ammonium (NH4^+), carbonate (CO3^2–), nitrate (NO3^–), sulfate (SO4^2–).",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.39",
+              "tier": "core",
+              "text": "write formulae for compounds formed between the ions listed above",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.40",
+              "tier": "core",
+              "text": "draw dot-and-cross diagrams to show the formation of ionic compounds by electron transfer, limited to combinations of elements from Groups 1, 2, 3 and 5, 6, 7 (only outer electrons need be shown)",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing dot-and-cross diagrams needs a drawn answer."
+            },
+            {
+              "point_id": "1.41",
+              "tier": "core",
+              "text": "understand ionic bonding in terms of electrostatic attractions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.42",
+              "tier": "core",
+              "text": "understand why compounds with giant ionic lattices have high melting and boiling points",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.43",
+              "tier": "core",
+              "text": "know that ionic compounds do not conduct electricity when solid, but do conduct electricity when molten and in aqueous solution",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1g",
+          "subtopic_name": "Covalent bonding",
+          "points": [
+            {
+              "point_id": "1.44",
+              "tier": "core",
+              "text": "know that a covalent bond is formed between atoms by the sharing of a pair of electrons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.45",
+              "tier": "core",
+              "text": "understand covalent bonds in terms of electrostatic attractions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.46",
+              "tier": "core",
+              "text": "understand how to use dot-and-cross diagrams to represent covalent bonds in: diatomic molecules, including hydrogen, oxygen, nitrogen, halogens and hydrogen halides; inorganic molecules including water, ammonia and carbon dioxide; organic molecules containing up to two carbon atoms, including methane, ethane, ethene and those containing halogen atoms.",
+              "diagram_dependence": "essential",
+              "diagram_note": "Dot-and-cross diagrams of molecules must be drawn or read from a drawing."
+            },
+            {
+              "point_id": "1.47",
+              "tier": "core",
+              "text": "explain why substances with a simple molecular structures are gases or liquids, or solids with low melting and boiling points (the term intermolecular forces of attraction can be used to represent all forces between molecules)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.48",
+              "tier": "core",
+              "text": "explain why the melting and boiling points of substances with simple molecular structures increase, in general, with increasing relative molecular mass",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.49",
+              "tier": "core",
+              "text": "explain why substances with giant covalent structures are solids with high melting and boiling points",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.50",
+              "tier": "core",
+              "text": "explain how the structures of diamond, graphite and C60 fullerene influence their physical properties, including electrical conductivity and hardness",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structure diagrams are common; the structures can be described in words."
+            },
+            {
+              "point_id": "1.51",
+              "tier": "core",
+              "text": "know that covalent compounds do not usually conduct electricity",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1h",
+          "subtopic_name": "Metallic bonding",
+          "points": [
+            {
+              "point_id": "1.52C",
+              "tier": "supplement",
+              "text": "know how to represent a metallic lattice by a 2-D diagram",
+              "diagram_dependence": "essential",
+              "diagram_note": "Representing a metallic lattice by a 2-D diagram needs a drawn answer."
+            },
+            {
+              "point_id": "1.53C",
+              "tier": "supplement",
+              "text": "understand metallic bonding in terms of electrostatic attractions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.54C",
+              "tier": "supplement",
+              "text": "explain typical physical properties of metals, including electrical conductivity and malleability",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "1i",
+          "subtopic_name": "Electrolysis",
+          "points": [
+            {
+              "point_id": "1.55C",
+              "tier": "supplement",
+              "text": "understand why covalent compounds do not conduct electricity",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.56C",
+              "tier": "supplement",
+              "text": "understand why ionic compounds conduct electricity only when molten or in aqueous solution",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.57C",
+              "tier": "supplement",
+              "text": "know that anion and cation are terms used to refer to negative and positive ions respectively",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.58C",
+              "tier": "supplement",
+              "text": "describe experiments to investigate electrolysis, using inert electrodes, of molten compounds (including lead(II) bromide) and aqueous solutions (including sodium chloride, dilute sulfuric acid and copper(II) sulfate) and to predict the products",
+              "diagram_dependence": "partial",
+              "diagram_note": "Electrolysis cells are usually drawn; the apparatus can be described in words."
+            },
+            {
+              "point_id": "1.59C",
+              "tier": "supplement",
+              "text": "write ionic half-equations representing the reactions at the electrodes during electrolysis and understand why these reactions are classified as oxidation or reduction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "1.60C",
+              "tier": "supplement",
+              "text": "practical: investigate the electrolysis of aqueous solutions",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: apparatus and observations can be given as text and tables."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "2",
+      "topic_name": "Inorganic chemistry",
+      "subtopics": [
+        {
+          "subtopic_id": "2a",
+          "subtopic_name": "Group 1 (alkali metals) – lithium, sodium and potassium",
+          "points": [
+            {
+              "point_id": "2.1",
+              "tier": "core",
+              "text": "understand how the similarities in the reactions of these elements with water provide evidence for their recognition as a family of elements",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.2",
+              "tier": "core",
+              "text": "understand how the differences between the reactions of these elements with air and water provide evidence for the trend in reactivity in Group 1",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.3",
+              "tier": "core",
+              "text": "use knowledge of trends in Group 1 to predict the properties of other alkali metals",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.4C",
+              "tier": "supplement",
+              "text": "explain the trend in reactivity in Group 1 in terms of electronic configurations",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2b",
+          "subtopic_name": "Group 7 (halogens) – chlorine, bromine and iodine",
+          "points": [
+            {
+              "point_id": "2.5",
+              "tier": "core",
+              "text": "know the colours, physical states (at room temperature) and trends in physical properties of these elements",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.6",
+              "tier": "core",
+              "text": "use knowledge of trends in Group 7 to predict the properties of other halogens",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.7",
+              "tier": "core",
+              "text": "understand how displacement reactions involving halogens and halides provide evidence for the trend in reactivity in Group 7",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.8C",
+              "tier": "supplement",
+              "text": "explain the trend in reactivity in Group 7 in terms of electronic configurations",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2c",
+          "subtopic_name": "Gases in the atmosphere",
+          "points": [
+            {
+              "point_id": "2.9",
+              "tier": "core",
+              "text": "know the approximate percentages by volume of the four most abundant gases in dry air",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.10",
+              "tier": "core",
+              "text": "understand how to determine the percentage by volume of oxygen in air using experiments involving the reactions of metals (e.g. iron) and non-metals (e.g. phosphorus) with air",
+              "diagram_dependence": "partial",
+              "diagram_note": "Gas-syringe or measuring-cylinder apparatus is usually drawn; can be described in words with volumes in a table."
+            },
+            {
+              "point_id": "2.11",
+              "tier": "core",
+              "text": "describe the combustion of elements in oxygen, including magnesium, hydrogen and sulfur",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.12",
+              "tier": "core",
+              "text": "describe the formation of carbon dioxide from the thermal decomposition of metal carbonates, including copper(II) carbonate",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.13",
+              "tier": "core",
+              "text": "know that carbon dioxide is a greenhouse gas and that increasing amounts in the atmosphere may contribute to climate change",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.14",
+              "tier": "core",
+              "text": "practical: determine the approximate percentage by volume of oxygen in air using a metal or a non-metal",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: apparatus described in words; readings in a table."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2d",
+          "subtopic_name": "Reactivity series",
+          "points": [
+            {
+              "point_id": "2.15",
+              "tier": "core",
+              "text": "understand how metals can be arranged in a reactivity series based on their reactions with: water; dilute hydrochloric or sulfuric acid.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.16",
+              "tier": "core",
+              "text": "understand how metals can be arranged in a reactivity series based on their displacement reactions between: metals and metal oxides; metals and aqueous solutions of metal salts.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.17",
+              "tier": "core",
+              "text": "know the order of reactivity of these metals: potassium, sodium, lithium, calcium, magnesium, aluminium, zinc, iron, copper, silver, gold",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.18",
+              "tier": "core",
+              "text": "know the conditions under which iron rusts",
+              "diagram_dependence": "partial",
+              "diagram_note": "Rusting experiments are usually shown as drawn test tubes; the contents of each tube can be described in words."
+            },
+            {
+              "point_id": "2.19",
+              "tier": "core",
+              "text": "understand how the rusting of iron may be prevented by: barrier methods; galvanising; sacrificial protection.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.20",
+              "tier": "core",
+              "text": "understand the terms: oxidation; reduction; redox; oxidising agent; reducing agent; in terms of gain or loss of oxygen and loss or gain of electrons.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.21",
+              "tier": "core",
+              "text": "practical: investigate reactions between dilute hydrochloric and sulfuric acids and metals (e.g. magnesium, zinc and iron)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: method and observations can be given as text and tables."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2e",
+          "subtopic_name": "Extraction and uses of metals",
+          "points": [
+            {
+              "point_id": "2.22C",
+              "tier": "supplement",
+              "text": "know that most metals are extracted from ores found in the Earth’s crust and that unreactive metals are often found as the uncombined element",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.23C",
+              "tier": "supplement",
+              "text": "explain how the method of extraction of a metal is related to its position in the reactivity series, illustrated by carbon extraction for iron and electrolysis for aluminium",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.24C",
+              "tier": "supplement",
+              "text": "be able to comment on a metal extraction process, given appropriate information (detailed knowledge of the processes used in the extraction of a specific metal is not required)",
+              "diagram_dependence": "partial",
+              "diagram_note": "The 'appropriate information' is often a flow chart or plant diagram; it can be given as text or a table."
+            },
+            {
+              "point_id": "2.25C",
+              "tier": "supplement",
+              "text": "explain the uses of aluminium, copper, iron and steel in terms of their properties (the types of steel will be limited to low-carbon (mild), high-carbon and stainless)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.26C",
+              "tier": "supplement",
+              "text": "know that an alloy is a mixture of a metal and one or more elements, usually other metals or carbon",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.27C",
+              "tier": "supplement",
+              "text": "explain why alloys are harder than pure metals",
+              "diagram_dependence": "partial",
+              "diagram_note": "Layer-of-atoms diagrams are common; the arrangement can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2f",
+          "subtopic_name": "Acids, alkalis and titrations",
+          "points": [
+            {
+              "point_id": "2.28",
+              "tier": "core",
+              "text": "describe the use of litmus, phenolphthalein and methyl orange to distinguish between acidic and alkaline solutions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.29",
+              "tier": "core",
+              "text": "understand how to use the pH scale, from 0–14, can be used to classify solutions as strongly acidic (0–3), weakly acidic (4–6), neutral (7), weakly alkaline (8–10) and strongly alkaline (11–14)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.30",
+              "tier": "core",
+              "text": "describe the use of universal indicator to measure the approximate pH value of an aqueous solution",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.31",
+              "tier": "core",
+              "text": "know that acids in aqueous solution are a source of hydrogen ions and alkalis in a aqueous solution are a source of hydroxide ions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.32",
+              "tier": "core",
+              "text": "know that alkalis can neutralise acids",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.33C",
+              "tier": "supplement",
+              "text": "describe how to carry out an acid-alkali titration",
+              "diagram_dependence": "partial",
+              "diagram_note": "Burette readings are often shown as drawn scales; readings can be given as numbers in a table."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2g",
+          "subtopic_name": "Acids, bases and salt preparations",
+          "points": [
+            {
+              "point_id": "2.34",
+              "tier": "core",
+              "text": "know the general rules for predicting the solubility of ionic compounds in water: common sodium, potassium and ammonium compounds are soluble; all nitrates are soluble; common chlorides are soluble, except those of silver and lead(II); common sulfates are soluble, except for those of barium, calcium and lead(II); common carbonates are insoluble, except for those of sodium, potassium and ammonium; common hydroxides are insoluble except for those of sodium, potassium and calcium (calcium hydroxide is slightly soluble).",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.35",
+              "tier": "core",
+              "text": "understand acids and bases in terms of proton transfer",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.36",
+              "tier": "core",
+              "text": "understand that an acid is a proton donor and a base is a proton acceptor",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.37",
+              "tier": "core",
+              "text": "describe the reactions of hydrochloric acid, sulfuric acid and nitric acid with metals, bases and metal carbonates (excluding the reactions between nitric acid and metals) to form salts",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.38",
+              "tier": "core",
+              "text": "know that metal oxides, metal hydroxides and ammonia can act as bases, and that alkalis are bases that are soluble in water",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.39",
+              "tier": "core",
+              "text": "describe an experiment to prepare a pure, dry sample of a soluble salt, starting from an insoluble reactant",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.40C",
+              "tier": "supplement",
+              "text": "describe an experiment to prepare a pure, dry sample of a soluble salt, starting from an acid and alkali",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.41C",
+              "tier": "supplement",
+              "text": "describe an experiment to prepare a pure, dry sample of an insoluble salt, starting from two soluble reactants",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.42",
+              "tier": "core",
+              "text": "practical: prepare a sample of pure, dry hydrated copper(II) sulfate crystals starting from copper(II) oxide",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: filtration and evaporation apparatus can be described in words."
+            },
+            {
+              "point_id": "2.43C",
+              "tier": "supplement",
+              "text": "practical: prepare a sample of pure, dry lead(II) sulfate",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: filtration apparatus can be described in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "2h",
+          "subtopic_name": "Chemical tests",
+          "points": [
+            {
+              "point_id": "2.44",
+              "tier": "core",
+              "text": "describe tests for these gases: hydrogen; oxygen; carbon dioxide; ammonia; chlorine.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.45",
+              "tier": "core",
+              "text": "describe how to carry out a flame test",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.46",
+              "tier": "core",
+              "text": "know the colours formed in flame tests for these cations: Li^+ is red; Na^+ is yellow; K^+ is lilac; Ca^2+ is orange-red; Cu^2+ is blue-green.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.47",
+              "tier": "core",
+              "text": "describe tests for these cations: NH4^+ using sodium hydroxide solution and identifying the gas evolved; Cu^2+, Fe^2+ and Fe^3+ using sodium hydroxide solution.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.48",
+              "tier": "core",
+              "text": "describe tests for these anions: Cl^–, Br^– and I^– using acidified silver nitrate solution; SO4^2– using acidified barium chloride solution; CO3^2– using hydrochloric acid and identifying the gas evolved.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.49",
+              "tier": "core",
+              "text": "describe a test for the presence of water using anhydrous copper(II) sulfate",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "2.50",
+              "tier": "core",
+              "text": "describe a physical test to show whether a sample of water is pure",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "3",
+      "topic_name": "Physical chemistry",
+      "subtopics": [
+        {
+          "subtopic_id": "3a",
+          "subtopic_name": "Energetics",
+          "points": [
+            {
+              "point_id": "3.1",
+              "tier": "core",
+              "text": "know that chemical reactions in which heat energy is given out are described as exothermic, and those in which heat energy is taken in are described as endothermic",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.2",
+              "tier": "core",
+              "text": "describe simple calorimetry experiments for reactions such as combustion, displacement, dissolving and neutralisation",
+              "diagram_dependence": "partial",
+              "diagram_note": "Calorimetry apparatus (spirit burner and can, polystyrene cup) is usually drawn; can be described in words."
+            },
+            {
+              "point_id": "3.3",
+              "tier": "core",
+              "text": "calculate the heat energy change from a measured temperature change using the expression Q = mcΔT",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.4",
+              "tier": "core",
+              "text": "calculate the molar enthalpy change (ΔH) from the heat energy change, Q",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.5C",
+              "tier": "supplement",
+              "text": "draw and explain energy level diagrams to represent exothermic and endothermic reactions",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing energy level diagrams needs a drawn answer."
+            },
+            {
+              "point_id": "3.6C",
+              "tier": "supplement",
+              "text": "know that bond-breaking is an endothermic process and that bond-making is an exothermic process",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.7C",
+              "tier": "supplement",
+              "text": "use bond energies to calculate the enthalpy change during a chemical reaction",
+              "diagram_dependence": "partial",
+              "diagram_note": "Displayed formulae are often drawn to show the bonds; the bonds broken and made can be listed in words or a table."
+            },
+            {
+              "point_id": "3.8",
+              "tier": "core",
+              "text": "practical: investigate temperature changes accompanying some of the following types of change: salts dissolving in water; neutralisation reactions; displacement reactions; combustion reactions.",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: apparatus described in words; temperatures in a table."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3b",
+          "subtopic_name": "Rates of reaction",
+          "points": [
+            {
+              "point_id": "3.9",
+              "tier": "core",
+              "text": "describe experiments to investigate the effects of changes in surface area of a solid, concentration of a solution, temperature and the use of a catalyst on the rate of a reaction",
+              "diagram_dependence": "partial",
+              "diagram_note": "Apparatus (gas syringe, balance) and rate graphs are common; can be described in words with data tables."
+            },
+            {
+              "point_id": "3.10",
+              "tier": "core",
+              "text": "describe the effects of changes in surface area of a solid, concentration of a solution, pressure of a gas, temperature and the use of a catalyst on the rate of a reaction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.11",
+              "tier": "core",
+              "text": "explain the effects of changes in surface area of a solid, concentration of a solution, pressure of a gas and temperature on the rate of a reaction in terms of particle collision theory",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.12",
+              "tier": "core",
+              "text": "know that a catalyst is a substance that increases the rate of a reaction, but is chemically unchanged at the end of the reaction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.13",
+              "tier": "core",
+              "text": "know that a catalyst works by providing an alternative pathway with lower activation energy",
+              "diagram_dependence": "partial",
+              "diagram_note": "Often shown on a reaction profile; can be tested in words."
+            },
+            {
+              "point_id": "3.14C",
+              "tier": "supplement",
+              "text": "draw and explain reaction profile diagrams showing ΔH and activation energy",
+              "diagram_dependence": "essential",
+              "diagram_note": "Drawing reaction profile diagrams needs a drawn answer."
+            },
+            {
+              "point_id": "3.15",
+              "tier": "core",
+              "text": "practical: investigate the effect of changing the surface area of marble chips and of changing the concentration of hydrochloric acid on the rate of reaction between marble chips and dilute hydrochloric acid",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: results as tables of volume or mass against time instead of graphs."
+            },
+            {
+              "point_id": "3.16",
+              "tier": "core",
+              "text": "practical: investigate the effect of different solids on the catalytic decomposition of hydrogen peroxide solution",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: results as tables instead of graphs."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "3c",
+          "subtopic_name": "Reversible reactions and equilibria",
+          "points": [
+            {
+              "point_id": "3.17",
+              "tier": "core",
+              "text": "know that some reactions are reversible and this is indicated by the symbol ⇌ in equations",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.18",
+              "tier": "core",
+              "text": "describe reversible reactions such as the dehydration of hydrated copper(II) sulfate and the effect of heat on ammonium chloride",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.19C",
+              "tier": "supplement",
+              "text": "know that a reversible reaction can reach dynamic equilibrium in a sealed container",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.20C",
+              "tier": "supplement",
+              "text": "know that the characteristics of a reaction at dynamic equilibrium are: the forward and reverse reactions occur at the same rate; the concentrations of reactants and products remain constant.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.21C",
+              "tier": "supplement",
+              "text": "understand why a catalyst does not affect the position of equilibrium in a reversible reaction",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "3.22C",
+              "tier": "supplement",
+              "text": "know the effect of changing either temperature or pressure on the position of equilibrium in a reversible reaction: an increase (or decrease) in temperature shifts the position of equilibrium in the direction of the endothermic (or exothermic) reaction; an increase (or decrease) in pressure shifts the position of equilibrium in the direction that produces fewer (or more) moles of gas (References to Le Chatelier's principle are not required)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topic_id": "4",
+      "topic_name": "Organic chemistry",
+      "subtopics": [
+        {
+          "subtopic_id": "4a",
+          "subtopic_name": "Introduction",
+          "points": [
+            {
+              "point_id": "4.1",
+              "tier": "core",
+              "text": "know that a hydrocarbon is a compound of hydrogen and carbon only",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.2",
+              "tier": "core",
+              "text": "understand how to represent organic molecules using empirical formulae, molecular formulae, general formulae, structural formulae and displayed formulae",
+              "diagram_dependence": "partial",
+              "diagram_note": "Empirical, molecular, general and structural formulae are text; displayed formulae are drawings and must not be asked for as a drawn answer."
+            },
+            {
+              "point_id": "4.3",
+              "tier": "core",
+              "text": "know what is meant by the terms homologous series, functional group and isomerism",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.4",
+              "tier": "core",
+              "text": "understand how to name compounds relevant to this specification using the rules of International Union of Pure and Applied Chemistry (IUPAC) nomenclature (students will be expected to name compounds containing up to six carbon atoms)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Naming is often from a displayed formula; give a structural formula in text (e.g. CH3CH2CH(CH3)CH3) instead."
+            },
+            {
+              "point_id": "4.5",
+              "tier": "core",
+              "text": "understand how to write the possible structural and displayed formulae of an organic molecule given its molecular formula",
+              "diagram_dependence": "partial",
+              "diagram_note": "Isomers can be written as structural formulae in text; drawn displayed formulae are out of scope."
+            },
+            {
+              "point_id": "4.6",
+              "tier": "core",
+              "text": "understand how to classify reactions of organic compounds as substitution, addition and combustion (knowledge of reaction mechanisms is not required)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4b",
+          "subtopic_name": "Crude oil",
+          "points": [
+            {
+              "point_id": "4.7",
+              "tier": "core",
+              "text": "know that crude oil is a mixture of hydrocarbons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.8",
+              "tier": "core",
+              "text": "describe how the industrial process of fractional distillation separates crude oil into fractions",
+              "diagram_dependence": "partial",
+              "diagram_note": "A fractionating column is usually drawn; can be described in words."
+            },
+            {
+              "point_id": "4.9",
+              "tier": "core",
+              "text": "know the names and uses of the main fractions obtained from crude oil: refinery gases, gasoline, kerosene, diesel, fuel oil and bitumen",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.10",
+              "tier": "core",
+              "text": "know the trend in colour, boiling point and viscosity of the main fractions",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.11",
+              "tier": "core",
+              "text": "know that a fuel is a substance that, when burned, releases heat energy",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.12",
+              "tier": "core",
+              "text": "know the possible products of complete and incomplete combustion of hydrocarbons with oxygen in the air",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.13",
+              "tier": "core",
+              "text": "understand why carbon monoxide is poisonous, in terms of its effect on the capacity of blood to transport oxygen (references to haemoglobin are not required)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.14",
+              "tier": "core",
+              "text": "know that, in car engines, the temperature reached is high enough to allow nitrogen and oxygen from air to react, forming oxides of nitrogen",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.15",
+              "tier": "core",
+              "text": "explain how the combustion of some impurities in hydrocarbon fuels results in the formation of sulfur dioxide",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.16",
+              "tier": "core",
+              "text": "understand how sulfur dioxide and oxides of nitrogen contribute to acid rain",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.17",
+              "tier": "core",
+              "text": "describe how long-chain alkanes are converted to alkenes and shorter-chain alkanes by catalytic cracking (using silica or alumina as the catalyst and a temperature in the range of 600–700 °C)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Laboratory cracking apparatus is often drawn; can be described in words."
+            },
+            {
+              "point_id": "4.18",
+              "tier": "core",
+              "text": "explain why cracking is necessary, in terms of the balance between supply and demand for different fractions",
+              "diagram_dependence": "partial",
+              "diagram_note": "Supply and demand data is often a bar chart; give it as a table."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4c",
+          "subtopic_name": "Alkanes",
+          "points": [
+            {
+              "point_id": "4.19",
+              "tier": "core",
+              "text": "know the general formula for alkanes",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.20",
+              "tier": "core",
+              "text": "explain why alkanes are classified as saturated hydrocarbons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.21",
+              "tier": "core",
+              "text": "understand how to draw the structural and displayed formulae for alkanes with up to five carbon atoms in the molecule, and to name the unbranched-chain isomers",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structural formulae and names are text; drawing displayed formulae is out of scope."
+            },
+            {
+              "point_id": "4.22",
+              "tier": "core",
+              "text": "describe the reactions of alkanes with halogens in the presence of ultraviolet radiation, limited to mono-substitution (knowledge of reaction mechanisms is not required)",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4d",
+          "subtopic_name": "Alkenes",
+          "points": [
+            {
+              "point_id": "4.23",
+              "tier": "core",
+              "text": "know that alkenes contain the functional group >C=C<",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.24",
+              "tier": "core",
+              "text": "know the general formula for alkenes",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.25",
+              "tier": "core",
+              "text": "explain why alkenes are classified as unsaturated hydrocarbons",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.26",
+              "tier": "core",
+              "text": "understand how to draw the structural and displayed formulae for alkenes with up to four carbon atoms in the molecule, and name the unbranched-chain isomers (knowledge of cis/trans or E/Z notation is not required)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structural formulae (e.g. CH2=CHCH2CH3) and names are text; drawing displayed formulae is out of scope."
+            },
+            {
+              "point_id": "4.27",
+              "tier": "core",
+              "text": "describe the reactions of alkenes with bromine to produce dibromoalkanes",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.28",
+              "tier": "core",
+              "text": "describe how bromine water can be used to distinguish between an alkane and an alkene",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4e",
+          "subtopic_name": "Alcohols",
+          "points": [
+            {
+              "point_id": "4.29C",
+              "tier": "supplement",
+              "text": "know that alcohols contain the functional group −OH",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.30C",
+              "tier": "supplement",
+              "text": "understand how to draw structural and displayed formulae for methanol, ethanol, propanol (propan-1-ol only) and butanol (butan-1-ol only), and name each compound (the names propanol and butanol are acceptable)",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structural formulae and names are text; drawing displayed formulae is out of scope."
+            },
+            {
+              "point_id": "4.31C",
+              "tier": "supplement",
+              "text": "know that ethanol can be oxidised by: burning in air or oxygen (complete combustion); reaction with oxygen in the air to form ethanoic acid (microbial oxidation); heating with potassium dichromate(VI) in dilute sulfuric acid to form ethanoic acid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.32C",
+              "tier": "supplement",
+              "text": "know that ethanol can be manufactured by: reacting ethene with steam in the presence of a phosphoric acid catalyst at a temperature of about 300 °C and a pressure of about 60–70 atm; the fermentation of glucose, in the absence of air, at an optimum temperature of about 30 °C and using the enzymes in yeast",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.33C",
+              "tier": "supplement",
+              "text": "understand the reasons for fermentation, in the absence of air, and at an optimum temperature",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4f",
+          "subtopic_name": "Carboxylic acids",
+          "points": [
+            {
+              "point_id": "4.34C",
+              "tier": "supplement",
+              "text": "know that carboxylic acids contain the functional group –C(=O)–OH",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.35C",
+              "tier": "supplement",
+              "text": "understand how to draw structural and displayed formulae for unbranched-chain carboxylic acids with up to four carbon atoms in the molecule, and name each compound",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structural formulae and names are text; drawing displayed formulae is out of scope."
+            },
+            {
+              "point_id": "4.36C",
+              "tier": "supplement",
+              "text": "describe the reactions of aqueous solutions of carboxylic acids with metals and metal carbonates",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.37C",
+              "tier": "supplement",
+              "text": "know that vinegar is an aqueous solution containing ethanoic acid",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4g",
+          "subtopic_name": "Esters",
+          "points": [
+            {
+              "point_id": "4.38C",
+              "tier": "supplement",
+              "text": "know that esters contain the functional group –C(=O)–O–",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.39C",
+              "tier": "supplement",
+              "text": "know that ethyl ethanoate is the ester produced when ethanol and ethanoic acid react in the presence of an acid catalyst",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.40C",
+              "tier": "supplement",
+              "text": "understand how to write the structural and displayed formulae of ethyl ethanoate",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structural formula (CH3COOCH2CH3) is text; drawing the displayed formula is out of scope."
+            },
+            {
+              "point_id": "4.41C",
+              "tier": "supplement",
+              "text": "understand how to write the structural and displayed formulae of an ester, given the name or formula of the alcohol and carboxylic acid from which it is formed and vice versa",
+              "diagram_dependence": "partial",
+              "diagram_note": "Structural formulae are text; drawing displayed formulae is out of scope."
+            },
+            {
+              "point_id": "4.42C",
+              "tier": "supplement",
+              "text": "know that esters are volatile compounds with distinctive smells and are used as food flavourings and in perfumes",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.43C",
+              "tier": "supplement",
+              "text": "practical: prepare a sample of an ester such as ethyl ethanoate",
+              "diagram_dependence": "partial",
+              "diagram_note": "Practical: method can be given and answered in words."
+            }
+          ]
+        },
+        {
+          "subtopic_id": "4h",
+          "subtopic_name": "Synthetic polymers",
+          "points": [
+            {
+              "point_id": "4.44",
+              "tier": "core",
+              "text": "know that an addition polymer is formed by joining up many small molecules called monomers",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.45",
+              "tier": "core",
+              "text": "understand how to draw the repeat unit of an addition polymer, including poly(ethene), poly(propene), poly(chloroethene) and (poly)tetrafluoroethene",
+              "diagram_dependence": "partial",
+              "diagram_note": "Repeat units are normally drawn with extension bonds; they can be written in text as –[CH2–CHCl]–n style formulae, but drawn answers are out of scope."
+            },
+            {
+              "point_id": "4.46",
+              "tier": "core",
+              "text": "understand how to deduce the structure of a monomer from the repeat unit of an addition polymer and vice versa",
+              "diagram_dependence": "partial",
+              "diagram_note": "Monomer and repeat unit can be given as text structural formulae (e.g. CH2=CHCl and –[CH2–CHCl]–n)."
+            },
+            {
+              "point_id": "4.47",
+              "tier": "core",
+              "text": "explain problems in the disposal of addition polymers, including: their inertness and inability to biodegrade; the production of toxic gases when they are burned.",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.48C",
+              "tier": "supplement",
+              "text": "know that condensation polymerisation, in which a dicarboxylic acid reacts with a diol, produces a polyester and water",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            },
+            {
+              "point_id": "4.49C",
+              "tier": "supplement",
+              "text": "understand how to write the structural and displayed formula of a polyester, showing the repeat unit, given the formulae of the monomers from which it is formed including the reaction of ethanedioic acid and ethanediol: n H–O–C(=O)–C(=O)–O–H + n H–O–CH2CH2–O–H → [–C(=O)–C(=O)–O–CH2CH2–O–]n + 2n H2O",
+              "diagram_dependence": "partial",
+              "diagram_note": "The specification prints this as a displayed-formula equation; repeat units can be written as text structural formulae, but drawn displayed formulae are out of scope."
+            },
+            {
+              "point_id": "4.50C",
+              "tier": "supplement",
+              "text": "know that some polyesters, known as biopolyesters, are biodegradable",
+              "diagram_dependence": "none",
+              "diagram_note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

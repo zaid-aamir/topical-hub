@@ -31,7 +31,7 @@ const stemId = `${anchor}-stem`;
   data-type={question.type}
   data-number={question.number}
 >
-  <QuestionHead question={question} />
+  <QuestionHead question={question} tiers={subject.tiers} />
   <div class="question-body">
     {question.stem !== '' && <div class="stem" id={stemId} set:html={mdBlock(question.stem, format)} />}
     {

@@ -1,8 +1,10 @@
 ---
 /**
- * The home page's subject cards, one per entry in SUBJECTS (src/config.ts). Counts are computed
- * from the data. Styled like the topic cards (global.css section 6); the whole card is one link.
+ * The home page's subject cards, one per entry in SUBJECTS (src/config.ts), grouped by exam board
+ * (BOARDS) under a small h3 each; a board with no subjects is skipped. Counts are computed from the
+ * data. Styled like the topic cards (global.css section 6); the whole card is one link.
  *
+ *   <h3 class="subject-board">Cambridge IGCSE</h3>
  *   <ul class="subject-grid"><li><a class="subject-card" href="/igcse/chemistry-0620/">
  *     <span class="subject-card-name">IGCSE Chemistry 0620</span>
  *     <span class="subject-card-syllabus">Syllabus for exams in 2026–2028</span>
@@ -10,28 +12,40 @@
  *     <span class="subject-card-counts">12 topics · 360 questions</span>
  *   </a></li></ul>
  */
-import { SUBJECTS } from '../config';
+import { BOARDS, SUBJECTS, syllabusPhrase } from '../config';
 import { subjectCounts } from '../lib/subjects';
 
 function plural(count: number, noun: string): string {
   return `${count} ${noun}${count === 1 ? '' : 's'}`;
 }
 
-const cards = SUBJECTS.map((subject) => ({ subject, counts: subjectCounts(subject) }));
+function capitalise(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+const groups = BOARDS.map(({ board, name }) => ({
+  name,
+  cards: SUBJECTS.filter((subject) => subject.board === board).map((subject) => ({ subject, counts: subjectCounts(subject) })),
+})).filter((group) => group.cards.length > 0);
 ---
-<ul class="subject-grid">
-  {
-    cards.map(({ subject, counts }) => (
-      <li>
-        <a class="subject-card" href={`/${subject.path}/`}>
-          <span class="subject-card-name">{subject.shortName}</span>
-          <span class="subject-card-syllabus">Syllabus for exams in {subject.syllabusYears}</span>
-          <span class="subject-card-description">{subject.description}</span>
-          <span class="subject-card-counts">
-            {plural(counts.topics, 'topic')} · {plural(counts.questions, 'question')}
-          </span>
-        </a>
-      </li>
-    ))
-  }
-</ul>
+{
+  groups.map(({ name, cards }) => (
+    <Fragment>
+      <h3 class="subject-board">{name}</h3>
+      <ul class="subject-grid">
+        {cards.map(({ subject, counts }) => (
+          <li>
+            <a class="subject-card" href={`/${subject.path}/`}>
+              <span class="subject-card-name">{subject.shortName}</span>
+              <span class="subject-card-syllabus">{capitalise(syllabusPhrase(subject))}</span>
+              <span class="subject-card-description">{subject.description}</span>
+              <span class="subject-card-counts">
+                {plural(counts.topics, 'topic')} · {plural(counts.questions, 'question')}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Fragment>
+  ))
+}

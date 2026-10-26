@@ -6,15 +6,15 @@
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SubjectGrid from '../components/SubjectGrid.astro';
-import { SITE_NAME, SITE_TAGLINE, SOLE_SUBJECT } from '../config';
+import { SITE_NAME, SITE_TAGLINE, SOLE_SUBJECT, syllabusPhrase } from '../config';
 
 // While there is one subject the title names it (good for search); with more it is generic.
 const title = SOLE_SUBJECT
   ? `${SITE_NAME}: free ${SOLE_SUBJECT.shortName} exam-style questions with answers`
   : `${SITE_NAME}: free exam-style topical questions with answers`;
 const writtenFor = SOLE_SUBJECT
-  ? `the ${SOLE_SUBJECT.fullName} papers for the ${SOLE_SUBJECT.syllabusYears} syllabus`
-  : 'the exam papers of each subject’s current syllabus';
+  ? `the ${SOLE_SUBJECT.fullName} papers (${syllabusPhrase(SOLE_SUBJECT)})`
+  : 'the Cambridge IGCSE and Pearson Edexcel International GCSE papers of each subject’s current syllabus or specification';
 ---
 <BaseLayout title={title} description={SITE_TAGLINE} canonicalPath="/">
   <div class="shell">
