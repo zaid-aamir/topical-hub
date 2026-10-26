@@ -556,6 +556,24 @@ th {
       </a></li></ul>
    --------------------------------------------------------------------------- */
 
+/* A split topic on the subject page: its number and name above the grid of its pages. */
+.topic-group {
+  margin-top: var(--space-8);
+}
+
+.topic-group-heading {
+  font-size: var(--text-h3);
+}
+
+.topic-group-number {
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.topic-group .topic-grid {
+  margin-top: var(--space-3);
+}
+
 .topic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));

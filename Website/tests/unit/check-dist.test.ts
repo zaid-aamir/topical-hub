@@ -43,6 +43,7 @@ const CLEAN: Record<string, string> = {
   'igcse/biology-0610/index.html': page('<h1>IGCSE Biology</h1>'),
   'igcse/physics-0625/index.html': page('<h1>IGCSE Physics</h1>'),
   'igcse/edexcel-physics-4ph1/index.html': page('<h1>Edexcel IGCSE Physics</h1>'),
+  'igcse/edexcel-biology-4bi1/index.html': page('<h1>Edexcel IGCSE Biology</h1>'),
   'igcse/chemistry-0620/index.html': page('<h1>IGCSE Chemistry</h1><a href="electrochemistry/">Electrochemistry</a>'),
   'igcse/chemistry-0620/electrochemistry/index.html': page(
     '<h1>Electrochemistry</h1><article class="question" id="q16"><h2>16</h2><a href="print/">Print</a> <a href="print-answers/">Answers</a></article>',

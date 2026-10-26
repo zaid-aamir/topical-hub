@@ -166,7 +166,12 @@ export interface Topic {
   topicNumber: number;
   /** e.g. "Electrochemistry" */
   topicName: string;
-  /** kebab-case of topicName, e.g. "acids-bases-and-salts". Used in URLs. */
+  /**
+   * Title of a split page (one part of a topic listed in the subject's splitPages), e.g.
+   * "Nutrition". Unset on whole-topic pages, which are titled by topicName.
+   */
+  pageTitle?: string;
+  /** kebab-case of pageTitle ?? topicName, e.g. "acids-bases-and-salts". Used in URLs and PDF names. */
   slug: string;
   /** Sub-topics in order of first appearance in the file. */
   subtopics: Subtopic[];

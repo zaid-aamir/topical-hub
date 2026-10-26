@@ -5,7 +5,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import TopicGrid from '../../../components/TopicGrid.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import { subjectTopics } from '../../../lib/subjects';
+import { subjectPages, subjectTopics } from '../../../lib/subjects';
 import { SITE_NAME, SUBJECTS, syllabusPhrase } from '../../../config';
 
 export function getStaticPaths() {
@@ -13,6 +13,15 @@ export function getStaticPaths() {
 }
 const { subject } = Astro.props;
 const topics = subjectTopics(subject);
+const pages = subjectPages(subject);
+// Consecutive whole-topic pages share one grid; a split topic gets its own heading and grid.
+const sections: { topic?: (typeof topics)[number]; pages: typeof pages }[] = [];
+for (const page of pages) {
+  const last = sections.at(-1);
+  const split = page.pageTitle !== undefined;
+  if (last && (split ? last.topic?.topicId === page.topicId : last.topic === undefined)) last.pages.push(page);
+  else sections.push({ topic: split ? topics.find((t) => t.topicId === page.topicId) : undefined, pages: [page] });
+}
 const totalQuestions = topics.reduce((sum, topic) => sum + topic.counts.total, 0);
 const topicCount = topics.length;
 const subjectPath = `/${subject.path}/`;
@@ -34,7 +43,20 @@ const description =
       </p>
     </div>
 
-    <TopicGrid subject={subject} topics={topics} />
+    {
+      sections.map((section) =>
+        section.topic ? (
+          <section class="topic-group" aria-labelledby={`topic-${section.topic.topicId}`}>
+            <h2 class="topic-group-heading" id={`topic-${section.topic.topicId}`}>
+              <span class="topic-group-number">{section.topic.topicNumber}</span> {section.topic.topicName}
+            </h2>
+            <TopicGrid subject={subject} topics={section.pages} />
+          </section>
+        ) : (
+          <TopicGrid subject={subject} topics={section.pages} />
+        ),
+      )
+    }
 
     <div class="prose">
       <p>

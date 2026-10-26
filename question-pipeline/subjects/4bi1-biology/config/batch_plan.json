@@ -1,0 +1,172 @@
+{
+  "subject_id": "4bi1-biology",
+  "ratio_questions_per_point": 1.35,
+  "note": "Written by the managing chat (26 Oct 2026). Edexcel mix: about one third MCQ, two thirds structured. Topic 2 split by sub-topic because the website will show Edexcel Biology by sub-topic.",
+  "batches": [
+    {
+      "key": "T01_P1",
+      "topic_id": "1",
+      "topic_name": "The nature and variety of living organisms",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "1a",
+        "1b"
+      ],
+      "in_scope_points": 4,
+      "questions": 10,
+      "mcq": 3,
+      "structured": 7
+    },
+    {
+      "key": "T02_P1",
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "part": 1,
+      "parts": 6,
+      "subtopic_ids": [
+        "2a",
+        "2b",
+        "2c",
+        "2d"
+      ],
+      "in_scope_points": 17,
+      "questions": 25,
+      "mcq": 8,
+      "structured": 17
+    },
+    {
+      "key": "T02_P2",
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "part": 2,
+      "parts": 6,
+      "subtopic_ids": [
+        "2e"
+      ],
+      "in_scope_points": 16,
+      "questions": 20,
+      "mcq": 7,
+      "structured": 13
+    },
+    {
+      "key": "T02_P3",
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "part": 3,
+      "parts": 6,
+      "subtopic_ids": [
+        "2f",
+        "2g"
+      ],
+      "in_scope_points": 17,
+      "questions": 25,
+      "mcq": 8,
+      "structured": 17
+    },
+    {
+      "key": "T02_P4",
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "part": 4,
+      "parts": 6,
+      "subtopic_ids": [
+        "2h"
+      ],
+      "in_scope_points": 19,
+      "questions": 25,
+      "mcq": 8,
+      "structured": 17
+    },
+    {
+      "key": "T02_P5",
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "part": 5,
+      "parts": 6,
+      "subtopic_ids": [
+        "2i"
+      ],
+      "in_scope_points": 10,
+      "questions": 15,
+      "mcq": 5,
+      "structured": 10
+    },
+    {
+      "key": "T02_P6",
+      "topic_id": "2",
+      "topic_name": "Structure and functions in living organisms",
+      "part": 6,
+      "parts": 6,
+      "subtopic_ids": [
+        "2j"
+      ],
+      "in_scope_points": 16,
+      "questions": 20,
+      "mcq": 7,
+      "structured": 13
+    },
+    {
+      "key": "T03_P1",
+      "topic_id": "3",
+      "topic_name": "Reproduction and inheritance",
+      "part": 1,
+      "parts": 2,
+      "subtopic_ids": [
+        "3a"
+      ],
+      "in_scope_points": 13,
+      "questions": 20,
+      "mcq": 7,
+      "structured": 13
+    },
+    {
+      "key": "T03_P2",
+      "topic_id": "3",
+      "topic_name": "Reproduction and inheritance",
+      "part": 2,
+      "parts": 2,
+      "subtopic_ids": [
+        "3b"
+      ],
+      "in_scope_points": 25,
+      "questions": 30,
+      "mcq": 10,
+      "structured": 20
+    },
+    {
+      "key": "T04_P1",
+      "topic_id": "4",
+      "topic_name": "Ecology and the environment",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "4a",
+        "4b",
+        "4c",
+        "4d"
+      ],
+      "in_scope_points": 18,
+      "questions": 25,
+      "mcq": 8,
+      "structured": 17
+    },
+    {
+      "key": "T05_P1",
+      "topic_id": "5",
+      "topic_name": "Use of biological resources",
+      "part": 1,
+      "parts": 1,
+      "subtopic_ids": [
+        "5a",
+        "5b",
+        "5c",
+        "5d"
+      ],
+      "in_scope_points": 20,
+      "questions": 25,
+      "mcq": 8,
+      "structured": 17
+    }
+  ]
+}

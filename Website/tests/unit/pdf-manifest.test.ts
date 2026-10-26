@@ -167,4 +167,25 @@ describe('multi-part subject PDF inputs', () => {
     write(path.join(content, topic.batches[1], 'markscheme.md'), 'Changed part 2');
     expect(computeInputs(web, both).hash).not.toBe(before);
   });
+
+  it('gives each part of a split topic its own PDF pair named from its page title', () => {
+    for (const part of [1, 2]) {
+      const batch = `0610_T14_P${part}_20261013`;
+      write(path.join(content, batch, 'questions.md'), `---
+topic_id: "14"
+topic_name: "Coordination and response"
+part: ${part}
+---
+`);
+      write(path.join(content, batch, 'markscheme.md'), `Part ${part}`);
+    }
+    const split = { ...BIOLOGY_0610, splitPages: { '14': { 1: 'Nervous control', 2: 'Hormones' } } };
+    const pages = listTopics(content, split).filter((t) => t.topicName === 'Coordination and response');
+    expect(pages.map((t) => [t.slug, t.batches])).toEqual([
+      ['hormones', ['0610_T14_P2_20261013']],
+      ['nervous-control', ['0610_T14_P1_20261013']],
+    ]);
+    expect(expectedPdfs(pages).map((p) => p.file)).toContain('topical-hub-igcse-biology-0610-nervous-control-questions.pdf');
+    expect(listTopics(content, BIOLOGY_0610).filter((t) => t.topicName === 'Coordination and response')).toHaveLength(1);
+  });
 });

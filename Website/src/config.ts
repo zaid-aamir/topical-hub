@@ -111,6 +111,12 @@ export interface Subject {
   readonly chemFormatting: boolean;
   /** Display-only power notation: "^" + optional minus + digits becomes a superscript (m^3 -> m³). */
   readonly powerFormatting: boolean;
+  /**
+   * Topics too big for one page: topic_id -> { part -> page title }. A listed topic becomes one page
+   * per part (slug from the title, PDFs named from it) instead of one merged page; every part of the
+   * topic must be listed. Topics not listed keep one page.
+   */
+  readonly splitPages?: Readonly<Record<string, Readonly<Record<number, string>>>>;
 }
 
 export const CHEMISTRY_0620: Subject = {
@@ -177,8 +183,41 @@ export const EDEXCEL_PHYSICS_4PH1: Subject = {
   powerFormatting: true,
 };
 
+export const EDEXCEL_BIOLOGY_4BI1: Subject = {
+  path: 'igcse/edexcel-biology-4bi1',
+  shortName: 'Edexcel IGCSE Biology 4BI1',
+  fullName: 'Pearson Edexcel International GCSE Biology (4BI1)',
+  board: 'edexcel',
+  tiers: EDEXCEL_TIERS,
+  syllabusYears: 'current specification (Issue 3)',
+  description: 'Original multiple-choice and structured questions on all 5 topics, labelled Paper 1 & 2 or Paper 2 only.',
+  contentSubpath: 'question-pipeline/subjects/4bi1-biology/batches/04_approved',
+  contentDirEnv: 'EDEXCEL_BIOLOGY_CONTENT_DIR',
+  batchPrefix: '4BI1_',
+  anchor: 'id',
+  chemFormatting: false,
+  powerFormatting: true,
+  splitPages: {
+    '2': {
+      1: 'Cells, biological molecules and movement of substances',
+      2: 'Nutrition',
+      3: 'Respiration and gas exchange',
+      4: 'Transport',
+      5: 'Excretion',
+      6: 'Co-ordination and response',
+    },
+    '3': { 1: 'Reproduction', 2: 'Inheritance' },
+  },
+};
+
 /** Every subject, in the order the home page lists them (grouped by BOARDS there). */
-export const SUBJECTS: readonly Subject[] = [CHEMISTRY_0620, BIOLOGY_0610, PHYSICS_0625, EDEXCEL_PHYSICS_4PH1];
+export const SUBJECTS: readonly Subject[] = [
+  CHEMISTRY_0620,
+  BIOLOGY_0610,
+  PHYSICS_0625,
+  EDEXCEL_PHYSICS_4PH1,
+  EDEXCEL_BIOLOGY_4BI1,
+];
 
 /** "syllabus for exams in 2026–2028" (Cambridge) or "current specification (Issue 4)" (Edexcel), lower case. */
 export function syllabusPhrase(subject: Subject): string {

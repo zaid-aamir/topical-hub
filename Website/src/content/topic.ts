@@ -106,6 +106,40 @@ function mergeQuestion(q: ParsedQuestion, entry: ParsedMarkscheme, topicId: stri
   throw new ContentError(`Q${q.number}: question type "${q.type}" does not match mark scheme shape "${entry.kind}"`);
 }
 
+/**
+ * One page per part of a merged topic, titled from `titles` (part -> page title), in part order.
+ * Each page is a Topic of that part's questions with its own slug (from the title), counts and
+ * sub-topics; topicId, topicNumber and topicName stay as context. Throws ContentError when a part of
+ * the topic has no title or a title names a part with no questions, so no question is dropped.
+ */
+export function splitTopic(topic: Topic, titles: Readonly<Record<number, string>>): Topic[] {
+  const parts = [...new Set(topic.questions.map((q) => q.part ?? 1))].sort((a, b) => a - b);
+  const listed = Object.keys(titles).map(Number).sort((a, b) => a - b);
+  const problems = [
+    ...parts.filter((part) => !titles[part]?.trim()).map((part) => `topic ${topic.topicId} part ${part} has no page title in splitPages`),
+    ...listed.filter((part) => !parts.includes(part)).map((part) => `splitPages names topic ${topic.topicId} part ${part}, which has no questions`),
+  ];
+  if (problems.length) throw new ContentError(`splitPages does not match topic ${topic.topicId}`, problems);
+  return parts.map((part) => {
+    const questions = topic.questions.filter((q) => (q.part ?? 1) === part);
+    const batchId = questions[0]?.batchId ?? topic.batchId;
+    const pageTitle = titles[part]!.trim();
+    return {
+      part,
+      batchIds: [batchId],
+      batchId,
+      topicId: topic.topicId,
+      topicNumber: topic.topicNumber,
+      topicName: topic.topicName,
+      pageTitle,
+      slug: slugify(pageTitle),
+      subtopics: collectSubtopics(questions),
+      questions,
+      counts: countQuestions(questions),
+    };
+  });
+}
+
 /** Sub-topics in order of first appearance. */
 function collectSubtopics(questions: Question[]): Subtopic[] {
   const seen = new Map<string, Subtopic>();

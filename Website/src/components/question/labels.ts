@@ -2,8 +2,18 @@
  * Small pure helpers shared by the question components and the topic/print pages.
  * No DOM, no I/O: everything here is also safe to unit test.
  */
-import type { Tier, TopicCounts } from '../../content';
+import type { Tier, Topic, TopicCounts } from '../../content';
 import type { TierWording } from '../../config';
+
+/** What a topic page is called: the split page's title, else the topic name. */
+export function pageName(topic: Topic): string {
+  return topic.pageTitle ?? topic.topicName;
+}
+
+/** "Nutrition (Structure and functions in living organisms)" for a split page, else the topic name. */
+export function pageNameWithTopic(topic: Topic): string {
+  return topic.pageTitle === undefined ? topic.topicName : `${topic.pageTitle} (${topic.topicName})`;
+}
 
 /** "(a)" from the key "a", "(b)(i)" from "b.i". */
 export function partLabel(key: string): string {

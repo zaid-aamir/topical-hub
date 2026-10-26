@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { validateTopics } from '../../../src/content';
 import { BIOLOGY_0610, CHEMISTRY_0620, PHYSICS_0625, SUBJECTS, REPORT_FORM_FIELDS, REPORT_FORM_URL, reportErrorUrl, SITE_URL } from '../../../src/config';
-import { subjectCounts, subjectTopics } from '../../../src/lib/subjects';
+import { subjectCounts, subjectPages, subjectTopics } from '../../../src/lib/subjects';
 import { questionAnchor } from '../../../src/lib/question-anchor';
 import { mdBlock, mdInline, subjectFormat } from '../../../src/lib/markdown';
 import { expectedPdfs, listTopics, findContentDir, pdfFileName } from '../../../scripts/pdf-manifest.mjs';
@@ -36,14 +36,15 @@ describe('subject publication', () => {
         }
       });
 
-      it('plans two distinct PDFs per topic, named after the subject path', () => {
+      it('plans two distinct PDFs per topic page, named after the subject path', () => {
+        const pages = subjectPages(subject);
         const planned = listTopics(findContentDir(process.cwd(), subject), subject);
         const pdfs = expectedPdfs(planned);
-        expect(planned.map((t) => t.slug).sort()).toEqual(topics.map((t) => t.slug).sort());
-        expect(new Set(pdfs.map((p) => p.file)).size).toBe(2 * topics.length);
+        expect(planned.map((t) => t.slug).sort()).toEqual(pages.map((t) => t.slug).sort());
+        expect(new Set(pdfs.map((p) => p.file)).size).toBe(2 * pages.length);
         const prefix = `topical-hub-${subject.path.replace(/\//g, '-')}-`;
         expect(pdfs.every((p) => p.file.startsWith(prefix))).toBe(true);
-        for (const t of planned) expect(t.batches).toEqual(topics.find((x) => x.slug === t.slug)?.batchIds);
+        for (const t of planned) expect(t.batches).toEqual(pages.find((x) => x.slug === t.slug)?.batchIds);
       });
     });
   }

@@ -6,11 +6,12 @@
  *   <TopicGrid topics={subjectTopics(subject)} subject={subject} />
  */
 import type { Topic } from '../content';
+import { pageName } from './question/labels';
 import type { Subject } from '../config';
 
 interface Props {
   subject: Subject;
-  /** Topics in display order (subjectTopics() is already sorted by topic number). */
+  /** Topic pages in display order (subjectPages() is sorted by topic, then part). */
   topics: Topic[];
 }
 
@@ -25,8 +26,8 @@ function plural(count: number, noun: string): string {
   {topics.map((topic) => (
     <li>
       <a class="topic-card" href={`${subjectBase}${topic.slug}/`}>
-        <span class="topic-card-number"><span class="visually-hidden">Topic </span>{topic.topicNumber}</span>
-        <span class="topic-card-name">{topic.topicName}</span>
+        <span class="topic-card-number"><span class="visually-hidden">Topic </span>{topic.topicNumber}{topic.pageTitle !== undefined && <span class="visually-hidden">, part {topic.part}</span>}</span>
+        <span class="topic-card-name">{pageName(topic)}</span>
         <span class="topic-card-counts">{plural(topic.counts.total, 'question')}: <span class="topic-card-count">{topic.counts.mcq} multiple choice</span>, <span class="topic-card-count">{topic.counts.structured} structured</span></span>
       </a>
     </li>

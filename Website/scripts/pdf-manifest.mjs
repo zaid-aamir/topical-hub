@@ -115,10 +115,11 @@ export function findContentDir(startDir, subject) {
 }
 
 /**
- * A subject's topics, from the batch folders' questions.md frontmatter; a topic's parts merge in
- * numeric part order.
+ * A subject's topic pages, from the batch folders' questions.md frontmatter; a topic's parts merge
+ * in numeric part order, except for a topic listed in subject.splitPages, whose parts each get a
+ * page slugged from their title (same rule as subjectPages() in src/lib/subjects.ts).
  * @param {string} contentDir
- * @param {{ path: string, batchPrefix: string }} subject
+ * @param {{ path: string, batchPrefix: string, splitPages?: Record<string, Record<number, string>> }} subject
  * @returns {{ batch: string, batches: string[], topicName: string, slug: string, part: number, subjectPath: string }[]}
  */
 export function listTopics(contentDir, subject) {
@@ -131,7 +132,11 @@ export function listTopics(contentDir, subject) {
       if (!front || !line) throw new Error(`${batch}/questions.md has no topic_name in its frontmatter`);
       const topicName = line[1].trim().replace(/^("|')(.*)\1$/, '$2');
       const part = Number(front[1].match(/^part:\s*(\d+)/m)?.[1] ?? 1);
-      return { batch, topicName, slug: slugify(topicName), part, subjectPath: subject.path };
+      const topicId = front[1].match(/^topic_id:\s*(.+)$/m)?.[1].trim().replace(/^("|')(.*)\1$/, '$2') ?? '';
+      const titles = subject.splitPages?.[topicId];
+      if (titles && !titles[part]) throw new Error(`${batch}: topic ${topicId} part ${part} has no page title in splitPages`);
+      const slug = slugify(titles ? titles[part] : topicName);
+      return { batch, topicName, slug, part, subjectPath: subject.path };
     }).sort((a, b) => a.slug.localeCompare(b.slug) || a.part - b.part);
   /** @type {Map<string, any>} */
   const topics = new Map();

@@ -43,7 +43,7 @@ export type {
   ParsedMarkscheme,
   ParsedMarkschemeFile,
 } from './parse';
-export { buildTopic } from './topic';
+export { buildTopic, splitTopic } from './topic';
 export { validateTopics } from './validate';
 export type { ValidateOptions } from './validate';
 export { slugify } from './slug';
