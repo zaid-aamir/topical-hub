@@ -19,7 +19,7 @@ export const SITE_URL = 'https://topical-hub.pages.dev';
  * Google Search Console HTML-tag verification code (the `content` value only).
  * BaseLayout prints <meta name="google-site-verification"> on every page while this is non-empty.
  */
-export const GOOGLE_SITE_VERIFICATION = 'PASTE_CODE_HERE';
+export const GOOGLE_SITE_VERIFICATION = 'v7HFbGLAKvPVb_B4t7tf4rHXXex1bq5vb43mC3LA4_4';
 
 /** Exam board of a subject. The home page groups subject cards by board. */
 export type Board = 'cambridge' | 'edexcel';
