@@ -17,7 +17,7 @@ import '../styles/global.css';
 import '../styles/print.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { SITE_NAME, SITE_URL } from '../config';
+import { GOOGLE_SITE_VERIFICATION, SITE_NAME, SITE_URL } from '../config';
 
 interface Props {
   /** Full document title, e.g. "About Topical Hub". */
@@ -65,6 +65,7 @@ const DARK_PAPER = '#1e1f22';
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
+    {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
