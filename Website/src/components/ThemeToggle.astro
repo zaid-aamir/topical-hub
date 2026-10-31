@@ -24,8 +24,6 @@
   if (button instanceof HTMLButtonElement) {
     const root = document.documentElement;
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
-    const LIGHT_PAPER = '#f4f5f2';
-    const DARK_PAPER = '#1e1f22';
 
     const isDark = (): boolean => {
       const chosen = root.dataset.theme;
@@ -36,7 +34,8 @@
       const dark = isDark();
       button.setAttribute('aria-pressed', dark ? 'true' : 'false');
       button.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-      const colour = dark ? DARK_PAPER : LIGHT_PAPER;
+      // The browser UI follows the page's --paper token (tokens.css) for the theme now in force.
+      const colour = getComputedStyle(root).getPropertyValue('--paper').trim();
       document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
         meta.setAttribute('content', colour);
       });

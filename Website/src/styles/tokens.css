@@ -11,19 +11,21 @@
 :root {
   color-scheme: light;
 
-  /* Colour: copper(II) sulfate blue on cool off-white paper, blue-black ink. */
-  --paper: #f4f5f2;
+  /* Colour: teal and coral. Teal accent on cool grey-green paper, deep teal ink; coral marks the higher tier. */
+  --paper: #f5f7f7;
   --surface: #ffffff;
-  --ink: #15202b;
-  --ink-muted: #526069;
-  --rule: #d5dad7;
-  --accent: #16628f;
+  --ink: #102224;
+  --ink-muted: #4e6466;
+  --rule: #d9e2e2;
+  --accent: #0f766e;
   --on-accent: #ffffff;
-  --accent-soft: #e3eef6;
-  --ok: #1b7a45;
-  --ok-soft: #e4f3ea;
-  --bad: #b42318;
-  --bad-soft: #fbe9e7;
+  --accent-soft: #dff3f0;
+  --ok: #2d7c31;
+  --ok-soft: #e6f4e3;
+  --bad: #b3261e;
+  --bad-soft: #fbe7e5;
+  --tier: #b4441f;
+  --tier-soft: #fdebe5;
 
   /* Theme toggle icons: show the moon in light mode (pressing goes dark) and the sun in dark mode. */
   --show-moon: block;
@@ -82,18 +84,20 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --paper: #1e1f22;
-    --surface: #2b2d31;
-    --ink: #ececee;
-    --ink-muted: #b5b7bd;
-    --rule: #3f4147;
-    --accent: #7cb9e3;
-    --on-accent: #1e1f22;
-    --accent-soft: #263746;
-    --ok: #5bc98a;
-    --ok-soft: #1f3a2b;
-    --bad: #f08a80;
-    --bad-soft: #44292a;
+    --paper: #111a1b;
+    --surface: #1a2627;
+    --ink: #e8f1f1;
+    --ink-muted: #a3b9bb;
+    --rule: #2f4042;
+    --accent: #5ccfc3;
+    --on-accent: #111a1b;
+    --accent-soft: #173a38;
+    --ok: #6fcf7a;
+    --ok-soft: #1c3320;
+    --bad: #f2867d;
+    --bad-soft: #3d1f1d;
+    --tier: #f59a7a;
+    --tier-soft: #3d2219;
     --show-moon: none;
     --show-sun: block;
   }
@@ -101,18 +105,20 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #1e1f22;
-  --surface: #2b2d31;
-  --ink: #ececee;
-  --ink-muted: #b5b7bd;
-  --rule: #3f4147;
-  --accent: #7cb9e3;
-  --on-accent: #1e1f22;
-  --accent-soft: #263746;
-  --ok: #5bc98a;
-  --ok-soft: #1f3a2b;
-  --bad: #f08a80;
-  --bad-soft: #44292a;
+  --paper: #111a1b;
+  --surface: #1a2627;
+  --ink: #e8f1f1;
+  --ink-muted: #a3b9bb;
+  --rule: #2f4042;
+  --accent: #5ccfc3;
+  --on-accent: #111a1b;
+  --accent-soft: #173a38;
+  --ok: #6fcf7a;
+  --ok-soft: #1c3320;
+  --bad: #f2867d;
+  --bad-soft: #3d1f1d;
+  --tier: #f59a7a;
+  --tier-soft: #3d2219;
   --show-moon: none;
   --show-sun: block;
 }

@@ -922,9 +922,9 @@ p[data-filter-count]:empty {
 }
 
 .badge-supplement {
-  background: var(--accent-soft);
-  border-color: var(--accent-soft);
-  color: var(--accent);
+  background: var(--tier-soft);
+  border-color: var(--tier-soft);
+  color: var(--tier);
 }
 
 .subtopic {

@@ -1,6 +1,6 @@
 # Topical Hub — design plan (v1)
 
-Brief (from BUILD_V1.md §5): *a calm, well-typeset exam booklet that became a fast web app*, not a template. Readability first; one accent colour; light and dark themes; mobile first; WCAG AA.
+Brief (from BUILD_V1.md §5): *a calm, well-typeset exam booklet that became a fast web app*, not a template. Readability first; one accent colour plus one tier colour; light and dark themes; mobile first; WCAG AA.
 
 ## Who and what
 
@@ -12,43 +12,47 @@ The typesetting of a real exam paper, done properly on screen: the question **nu
 
 ## Colour
 
-Grounded in the subject: the accent is **copper(II) sulfate blue**, the one colour every chemistry student has seen in a beaker. Ink is a blue-black fountain-pen ink, not a tinted near-black. Paper is a cool off-white, deliberately not cream.
+**Teal and coral.** The accent is a deep teal for links, buttons and selected states; coral is kept for one job, marking the higher-tier badge (Cambridge "Extended", Edexcel "Paper 2 only"). Ink is a deep teal-black, and paper is a cool grey-green off-white, deliberately not cream. Ratios are WCAG contrast; every text colour reaches at least 4.5:1 on paper, on surface and on its own soft background.
 
 Light theme
 
 | token | value | use |
 |---|---|---|
-| `--paper` | `#F4F5F2` | page background |
+| `--paper` | `#F5F7F7` | page background |
 | `--surface` | `#FFFFFF` | cards, header, inputs |
-| `--ink` | `#15202B` | text |
-| `--ink-muted` | `#526069` | secondary text (6.5:1 on white) |
-| `--rule` | `#D5DAD7` | borders, table rules |
-| `--accent` | `#16628F` | links, primary buttons, selected states (6.6:1 on white) |
-| `--on-accent` | `#FFFFFF` | text on accent |
-| `--accent-soft` | `#E3EEF6` | selected-option and Supplement-badge background |
-| `--ok` | `#1B7A45` | correct (5.4:1 on white) |
-| `--ok-soft` | `#E4F3EA` | correct background |
-| `--bad` | `#B42318` | wrong (6.6:1 on white) |
-| `--bad-soft` | `#FBE9E7` | wrong background |
+| `--ink` | `#102224` | text (15.3:1 on paper) |
+| `--ink-muted` | `#4E6466` | secondary text (5.9:1 on paper) |
+| `--rule` | `#D9E2E2` | borders, table rules |
+| `--accent` | `#0F766E` | links, primary buttons, selected states (5.1:1 on paper, 4.8:1 on accent-soft) |
+| `--on-accent` | `#FFFFFF` | text on accent (5.5:1) |
+| `--accent-soft` | `#DFF3F0` | selected-option background |
+| `--ok` | `#2D7C31` | correct (4.8:1 on paper, 4.6:1 on ok-soft) |
+| `--ok-soft` | `#E6F4E3` | correct background |
+| `--bad` | `#B3261E` | wrong (6.1:1 on paper) |
+| `--bad-soft` | `#FBE7E5` | wrong background |
+| `--tier` | `#B4441F` | higher-tier badge text (5.2:1 on paper, 4.8:1 on tier-soft) |
+| `--tier-soft` | `#FDEBE5` | higher-tier badge background |
 
-Dark theme (follows `prefers-color-scheme`, overridable by the toggle via `html[data-theme]`; neutral charcoal backgrounds with no blue tint, the copper(II) sulfate blue kept for the accent)
+Dark theme (follows `prefers-color-scheme`, overridable by the toggle via `html[data-theme]`; dark teal-grey backgrounds, a lighter teal accent and coral tier)
 
 | token | value |
 |---|---|
-| `--paper` | `#1E1F22` |
-| `--surface` | `#2B2D31` |
-| `--ink` | `#ECECEE` |
-| `--ink-muted` | `#B5B7BD` |
-| `--rule` | `#3F4147` |
-| `--accent` | `#7CB9E3` (6.5:1 on surface) |
-| `--on-accent` | `#1E1F22` |
-| `--accent-soft` | `#263746` |
-| `--ok` | `#5BC98A` |
-| `--ok-soft` | `#1F3A2B` |
-| `--bad` | `#F08A80` |
-| `--bad-soft` | `#44292A` |
+| `--paper` | `#111A1B` |
+| `--surface` | `#1A2627` |
+| `--ink` | `#E8F1F1` |
+| `--ink-muted` | `#A3B9BB` |
+| `--rule` | `#2F4042` |
+| `--accent` | `#5CCFC3` (8.3:1 on surface) |
+| `--on-accent` | `#111A1B` |
+| `--accent-soft` | `#173A38` |
+| `--ok` | `#6FCF7A` |
+| `--ok-soft` | `#1C3320` |
+| `--bad` | `#F2867D` |
+| `--bad-soft` | `#3D1F1D` |
+| `--tier` | `#F59A7A` |
+| `--tier-soft` | `#3D2219` |
 
-Correct and wrong states never rely on colour alone: a text label ("Correct", "Not quite. The answer is C") and an inline SVG tick or cross accompany the colour.
+Coral (`--tier`) and red (`--bad`) are close in hue, so neither relies on colour alone. The tier badge always carries its text ("Extended", "Paper 2 only"). Correct and wrong states always carry a text label ("Correct", "Not quite. The answer is C") and an inline SVG tick or cross. The Core / Paper 1 & 2 badge and sub-topic text stay muted ink. Print stays black and white (print.css).
 
 ## Type
 

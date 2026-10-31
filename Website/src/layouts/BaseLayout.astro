@@ -41,9 +41,10 @@ const { title, description, canonicalPath, noindex = false, bodyClass, ogType = 
 const canonical = new URL(canonicalPath, SITE_URL).href;
 const showHeader = chrome ?? !/\bprint-page\b/.test(bodyClass ?? '');
 
-// Paper colours from tokens.css, for the browser UI. The theme toggle script keeps these in step.
-const LIGHT_PAPER = '#f4f5f2';
-const DARK_PAPER = '#1e1f22';
+// Paper colours from tokens.css, for the browser UI before CSS loads (keep in step with --paper).
+// The theme toggle then reads --paper itself.
+const LIGHT_PAPER = '#f5f7f7';
+const DARK_PAPER = '#111a1b';
 ---
 <!doctype html>
 <html lang="en">
