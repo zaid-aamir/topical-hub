@@ -1,10 +1,10 @@
 # Topical Hub website
 
-Free, original exam-style topical practice questions for Cambridge IGCSE Chemistry 0620, Biology 0610 and Physics 0625 (2026–2028) and Pearson Edexcel International GCSE Physics 4PH1 (Issue 4) and Biology 4BI1 (Issue 3). Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment or Pearson Education.
+Free, original exam-style topical practice questions for Cambridge IGCSE Chemistry 0620, Biology 0610 and Physics 0625 (2026–2028) and Pearson Edexcel International GCSE Physics 4PH1 (Issue 4), Biology 4BI1 (Issue 3) and Chemistry 4CH1 (Issue 3). Topical Hub is independent and is not affiliated with or endorsed by Cambridge University Press & Assessment or Pearson Education.
 
 ## Published content
 
-Counts as of v1.3.0 (2026-10-26). The site computes them from the loaded content on every build, and validation never requires a fixed total, because the pipeline may withhold questions.
+Counts as of v1.4.0 (2026-10-31). The site computes them from the loaded content on every build, and validation never requires a fixed total, because the pipeline may withhold questions.
 
 | Subject | Topics | Approved batches | Questions | Downloadable PDFs |
 |---|---:|---:|---:|---:|
@@ -13,6 +13,7 @@ Counts as of v1.3.0 (2026-10-26). The site computes them from the loaded content
 | Physics 0625 | 6 | 14 | 420 | 12 |
 | Edexcel Physics 4PH1 | 8 | 9 | 240 | 16 |
 | Edexcel Biology 4BI1 | 5 (11 pages) | 11 | 240 | 22 |
+| Edexcel Chemistry 4CH1 | 4 (8 pages) | 8 | 220 | 16 |
 
 The home page lists every subject in `SUBJECTS` with counts computed from loaded content. Subject pages list topic cards. Every topic reuses tier/type/subtopic filters, MCQ marking, answer panels, worked solutions, breadcrumbs and error reports. Scores last only for the page session. All questions are original, written with AI tools and approved by the owner; Biology and Physics approval does not claim a new independent science review.
 
@@ -31,7 +32,7 @@ Use `npm.cmd` if PowerShell blocks `npm.ps1`. The whole repository is required b
 
 After changes, run `npm run build` and `npm test` once. The build first checks PDF freshness without Chromium, then validates content and builds Astro, then checks output labelling, links, anchors, headings, print noindex and sitemap consistency. Vitest covers the parser, every subject, merging, anchors, formatting, Markdown and PDF guards. Run `npm run check` for explicit type checking when needed. Browser suites, screenshots, axe, link crawls and `audit:render` are opt-in only; do not run them for routine maintenance.
 
-For PDF-affecting changes, run `npm run pdfs` before the normal build and test commands. It builds the final website print routes and uses Playwright Chromium to create 116 A4 PDFs in `public/pdfs/` (two per topic page of every subject; a topic split by `splitPages` has a pair per page), with the site watermark and Page X of Y footer. If Chromium is installed but hidden from the shell, set `PLAYWRIGHT_BROWSERS_PATH` to its local installation directory. Missing Chromium can be installed with `npx playwright install chromium`.
+For PDF-affecting changes, run `npm run pdfs` before the normal build and test commands. It builds the final website print routes and uses Playwright Chromium to create 132 A4 PDFs in `public/pdfs/` (two per topic page of every subject; a topic split by `splitPages` has a pair per page), with the site watermark and Page X of Y footer. If Chromium is installed but hidden from the shell, set `PLAYWRIGHT_BROWSERS_PATH` to its local installation directory. Missing Chromium can be installed with `npx playwright install chromium`.
 
 The generator writes `public/pdfs/manifest.json`, including source hashes, PDF hashes, byte sizes, subject paths and constituent batches. Download links read file sizes from this manifest. The subsequent normal build refreshes link labels using the generated manifest. `scripts/pdf-manifest.mjs` hashes every subject's approved source, shared print routes/components, parser, formatting, config, layout/styles and generator. Cloudflare's stale-PDF guard uses only Node, not Chromium. Generated PDFs and manifest stay available for the owner to review and commit. Assistants never stage, commit or push.
 

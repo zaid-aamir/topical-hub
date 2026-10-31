@@ -216,6 +216,32 @@ export const EDEXCEL_BIOLOGY_4BI1: Subject = {
   },
 };
 
+export const EDEXCEL_CHEMISTRY_4CH1: Subject = {
+  path: 'igcse/edexcel-chemistry-4ch1',
+  shortName: 'Edexcel IGCSE Chemistry 4CH1',
+  fullName: 'Pearson Edexcel International GCSE Chemistry (4CH1)',
+  board: 'edexcel',
+  tiers: EDEXCEL_TIERS,
+  syllabusYears: 'current specification (Issue 3)',
+  description: 'Original multiple-choice and structured questions on all 4 topics, labelled Paper 1 & 2 or Paper 2 only.',
+  contentSubpath: 'question-pipeline/subjects/4ch1-chemistry/batches/04_approved',
+  contentDirEnv: 'EDEXCEL_CHEMISTRY_CONTENT_DIR',
+  batchPrefix: '4CH1_',
+  anchor: 'id',
+  chemFormatting: true,
+  // The sources write units and charges with a caret: cm^3, Cu^2+, SO4^2–, e^–.
+  powerFormatting: true,
+  splitPages: {
+    '1': {
+      1: 'States of matter, atoms and the Periodic Table',
+      2: 'Formulae, calculations and ionic bonding',
+      3: 'Covalent and metallic bonding, and electrolysis',
+    },
+    '2': { 1: 'Groups 1 and 7, gases in the atmosphere and reactivity', 2: 'Metals, acids, salts and chemical tests' },
+    '4': { 1: 'Crude oil, alkanes and alkenes', 2: 'Alcohols, carboxylic acids, esters and polymers' },
+  },
+};
+
 /** Every subject, in the order the home page lists them (grouped by BOARDS there). */
 export const SUBJECTS: readonly Subject[] = [
   CHEMISTRY_0620,
@@ -223,6 +249,7 @@ export const SUBJECTS: readonly Subject[] = [
   PHYSICS_0625,
   EDEXCEL_PHYSICS_4PH1,
   EDEXCEL_BIOLOGY_4BI1,
+  EDEXCEL_CHEMISTRY_4CH1,
 ];
 
 /** "syllabus for exams in 2026–2028" (Cambridge) or "current specification (Issue 4)" (Edexcel), lower case. */

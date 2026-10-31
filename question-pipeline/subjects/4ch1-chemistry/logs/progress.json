@@ -1,1 +1,37 @@
-{ "subject_id": "4ch1-chemistry", "batches": {} }
+{
+  "subject_id": "4ch1-chemistry",
+  "batches": {
+    "T01_P1": {
+      "batch_id": "4CH1_T01_P1_20261028",
+      "status": "approved"
+    },
+    "T01_P2": {
+      "batch_id": "4CH1_T01_P2_20261028",
+      "status": "approved"
+    },
+    "T01_P3": {
+      "batch_id": "4CH1_T01_P3_20261028",
+      "status": "approved"
+    },
+    "T03_P1": {
+      "batch_id": "4CH1_T03_P1_20261028",
+      "status": "approved"
+    },
+    "T02_P1": {
+      "batch_id": "4CH1_T02_P1_20261028",
+      "status": "approved"
+    },
+    "T02_P2": {
+      "batch_id": "4CH1_T02_P2_20261028",
+      "status": "approved"
+    },
+    "T04_P1": {
+      "batch_id": "4CH1_T04_P1_20261028",
+      "status": "approved"
+    },
+    "T04_P2": {
+      "batch_id": "4CH1_T04_P2_20261028",
+      "status": "approved"
+    }
+  }
+}

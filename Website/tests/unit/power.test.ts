@@ -5,9 +5,10 @@
 import { describe, expect, it } from 'vitest';
 import { applyPowers, formatPowers } from '../../src/lib/power';
 import { mdBlock, mdInline, subjectFormat } from '../../src/lib/markdown';
-import { CHEMISTRY_0620, PHYSICS_0625 } from '../../src/config';
+import { CHEMISTRY_0620, EDEXCEL_CHEMISTRY_4CH1, PHYSICS_0625 } from '../../src/config';
 
 const physics = subjectFormat(PHYSICS_0625);
+const edexcelChemistry = subjectFormat(EDEXCEL_CHEMISTRY_4CH1);
 
 describe('formatPowers (plain text)', () => {
   it.each([
@@ -24,13 +25,33 @@ describe('formatPowers (plain text)', () => {
   });
 
   it('leaves a caret followed by anything other than digits as it is', () => {
-    for (const text of ['In ^A_Z X, the top number', 'x^n', 'a ^ 2', '^-', '^-x', 'caret at the end ^']) {
+    for (const text of ['In ^A_Z X, the top number', 'x^n', 'a ^ 2', '^-x', '^+y', 'caret at the end ^']) {
       expect(formatPowers(text)).toBe(text);
     }
   });
 
   it('changes nothing else in the text', () => {
     expect(formatPowers('2H2O and CO2 at 25 °C, 3 × 4 = 12')).toBe('2H2O and CO2 at 25 °C, 3 × 4 = 12');
+  });
+});
+
+describe('caret charges (Edexcel Chemistry sources)', () => {
+  it.each([
+    ['Cu^2+ + 2e^– → Cu', 'Cu²⁺ + 2e⁻ → Cu'],
+    ['H^+ and OH^–(aq)', 'H⁺ and OH⁻(aq)'],
+    ['(Cl^–)', '(Cl⁻)'],
+    ['ends in Br^-', 'ends in Br⁻'],
+    ['25.0 cm^3 of 0.10 mol/dm^3 acid', '25.0 cm³ of 0.10 mol/dm³ acid'],
+    ['a^2+b^2', 'a²+b²'],
+  ])('%s -> %s', (source, expected) => {
+    expect(formatPowers(source)).toBe(expected);
+  });
+
+  it('sets charges as <sup> after chemistry formatting, with a real minus sign', () => {
+    expect(mdInline('SO4^2– and NH4^+ in 25.0 cm^3', edexcelChemistry)).toBe(
+      'SO<sub>4</sub><sup>2−</sup> and NH<sub>4</sub><sup>+</sup> in 25.0 cm<sup>3</sup>',
+    );
+    expect(mdInline('Cu^2+ + 2e^– → Cu', edexcelChemistry)).toBe('Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu');
   });
 });
 
